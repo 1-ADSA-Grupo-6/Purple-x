@@ -1,26 +1,30 @@
-/*font-family: "Inter", sans-serif;
-font-family: "Kumbh Sans", sans-serif;
-font-family: "Dongle", sans-serif;
-*/
+@import url('https://fonts.googleapis.com/css2?family=Dongle&family=Inter:wght@100..900&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Dongle&family=Inter:wght@100..900&family=Kumbh+Sans:wght@100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Dongle&family=Inter:wght@100..900&family=Kumbh+Sans:wght@100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Dongle&family=Inter:wght@100..900&family=Kumbh+Sans:wght@100..900&display=swap');
+@font-face {
+    font-family: 'Kumbh Sans';
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/kumbhsans/v22/c4mw1n92AsfhuCq6tVsaoIx1LQICk0boNoq0ShMzVo0iPw.woff2) format('woff2');
+    unicode-range: U+0302-0303, U+0305, U+0307-0308, U+0330, U+0391-03A1, U+03A3-03A9, U+03B1-03C9, U+03D1, U+03D5-03D6, U+03F0-03F1, U+03F4-03F5, U+2034-2037, U+2057, U+20D0-20DC, U+20E1, U+20E5-20EF, U+2102, U+210A-210E, U+2110-2112, U+2115, U+2119-211D, U+2124, U+2128, U+212C-212D, U+212F-2131, U+2133-2138, U+213C-2140, U+2145-2149, U+2190, U+2192, U+2194-21AE, U+21B0-21E5, U+21F1-21F2, U+21F4-2211, U+2213-2214, U+2216-22FF, U+2308-230B, U+2310, U+2319, U+231C-2321, U+2336-237A, U+237C, U+2395, U+239B-23B6, U+23D0, U+23DC-23E1, U+2474-2475, U+25AF, U+25B3, U+25B7, U+25BD, U+25C1, U+25CA, U+25CC, U+25FB, U+266D-266F, U+27C0-27FF, U+2900-2AFF, U+2B0E-2B11, U+2B30-2B4C, U+2BFE, U+FF5B, U+FF5D, U+1D400-1D7FF, U+1EE00-1EEFF;
+  }
+
+
+/*font-family: 'Inter', sans-serif;
+font-family: 'Kumbh Sans', sans-serif;
+font-family: 'Dongle', sans-serif;
+*/
 
 *{
     padding: 0;
     margin: 0;
 }
 
-html, body {
-    overflow-x: hidden;
-}
-
 body{
     background-color: black;
     display: flex;
     flex-direction: column;
-    color: white;
+    overflow-x: hidden;
 }
 
 header{
@@ -29,17 +33,18 @@ header{
     display: flex;
     justify-content: space-around;
     background-color: black;
-    padding-top: 8px;
-    padding-bottom: 8px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    z-index: 2;
 }
 
-main{
-    margin-top: 100px;
+.a_logo_header{
+    width: 15%;
+    height: 15%;
 }
 
 .logo{
-    width: 20%;
-    height: 20%;
+    width: 200px;
 }
 
 .navbar{
@@ -58,26 +63,42 @@ main{
     font-weight: bold;
 }
 
-.home{
+.navbar a:hover{
+    color: #880094;
+}
+
+main{
+    padding-top: 100px;
+}
+
+.conteudo_home{
     height: 700px;
+    display: flex;
+    flex-direction: row-reverse;
 }
 
 .imagem_home{
-    background-image: url('imgs/img_home.jpeg');
+    background-image: url('imgs/img_home.jpg');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 400%; 
-    max-width: 1200px; 
-    height: 520px;
-    margin-left: 335px;
-    
+    width: 100%; 
+    height: 500px;
+    margin-left: 50px;
+    z-index: -1;
 }
 
 .texto_home{
-    color: #880094;
-    font-size: 100px;
     font-family: "Kumbh Sans", sans-serif;
-    font-weight: bold;
+    color: #880094;
+    font-weight: 800;
+    text-shadow: 0.056em 0.02em 0.01em #550B5B;
+    user-select: none;
+    z-index: 1;
+    float: right;
+    margin-right: -250px;
+    margin-left: 200px;
+    margin-top: 30px;
+    font-size: 110px;
 }
 
 .quem_somos{
@@ -95,13 +116,36 @@ main{
     height: 700px;
 }
 
+.conteudo_quem_somos{
+    padding-top: 20px;
+    margin-top: 100px;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
 .texto_btn_quemsomos{
     width: 50%;
 }
 
 .logo_quemsomos{
-    width: 600px;
+    width: 450px;
 }
+
+.projeto{
+
+}
+
+.conteudo_projeto{
+    padding-top: 20px;
+    margin-top: 100px;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
 .calculadora{
     width: 100vw;
     height:700px;
@@ -165,8 +209,8 @@ button{
 }
 
 #btn_simular{
-    background-color: white;
-    color: black;
+    background-color: #ffffff;
+    color: #550B5B;
 }
 
 .contato{
