@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>PurpleX</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <header>
+            <img class="logo" src="imgs/logo.png">
+            <ul class="navbar">
+                <li><a href="#quem_somos_id">QUEM SOMOS</a></li>
+                <li><a href="#projeto_id">PROJETO</a></li>
+                <li><a href="#calculadora_id">SIMULADOR</a></li>
+                <li><a href="#contato_id">CONTATO</a></li>
+            </ul>
+        </div>
+    </header>
+    <main>
+        <div class="home" id="home_id">
+            <div class="imagem_home">
+                <div class="texto_home">
+                    BUILD<br>
+                    YOUR<br>
+                    BODY
+                </div>
+            </div>
+        </div>
+
+        <div class="quem_somos" id="quem_somos_id">
+            <div class="textura_quem_somos">
+                <div class="texto_btn_quemsomos">
+                    <p>Oferecemos soluções inovadoras <br> 
+                    para academias de todos os <br>  
+                    tamanhos, visando otimizar seu <br>  
+                    gerenciamento. Nosso compromisso <br>  
+                    é eliminar perdas de clientes e <br>  
+                    recursos, proporcionando serviços<br>  
+                    de alta qualidade.</p>
+                    <button id="btn_quem_somos">Simular</button><br>
+                </div>
+                <div class="img_quemsomos">
+                    <img class="logo_quemsomos" src="imgs/logo.png" href="#home_id">
+                </div>
+            </div>
+        </div>
+
+        <div class="projeto" id="projeto_id">
+
+        </div>
+
+        <div class="calculadora" id="calculadora_id">
+            <div class="img_fundo_calculadora">
+                <div class="conteudo_simulador">
+                    <h3 class="titulo">Tome o Controle: Descubra Suas Perdas e Potenciais Ganhos!</h3>
+                    <div class="container_simulador">
+                        <input class="input" id="matriculados_input" placeholder="&nbsp;Quantidade de alunos matriculados&nbsp;"><br>
+                        <input class="input" id="mensalidade_input" placeholder="&nbsp;Valor da mensalidade&nbsp;"><br><br>
+                        <button onclick="Resultado()" id="btn_simular">Simular</button><br>
+                    </div>
+                </div>
+                <div id="resultado_simulacao">
+                </div>
+            </div>
+        </div>
+
+        <div class="contato" id="contato_id">
+                        <h3>Para dúvidas ou orçamentos, preencha os campos<br>
+                        abaixo e entre em contato conosco. Estamos<br> 
+                        prontos para lhe atender e lhe ajudar.</h3>
+                        <div class="container_contato">
+                            <input class="input_contato"><br>
+                            <input class="input_contato"><br><br>
+                            <button onclick="Resultado()" id="btn_contato">Entrar em Contato</button><br>
+                        </div>
+        </div>
+
+    </main>
+    <footer>
+
+    </footer>
+</body>
+</html>
+
+<script>
+    function Resultado(){
+        const porcentagem = 0.26;
+        const matriculados = Number(matriculados_input.value);
+        const mensalidade = Number(mensalidade_input.value);
+        
+        const evasão_retenção_mensal = matriculados * porcentagem;
+        const ganhoAtualMensal = matriculados * mensalidade;
+        const matriculadosProjeto = matriculados + evasão_retenção_mensal;
+        const ganhoMensalComProjeto = matriculadosProjeto * mensalidade;
+        
+        exibir.innerHTML = `Sua academia tem ${matriculados} de matriculados, 
+        com o projeto essa quantidade aumentaria para ${matriculadosProjeto} 
+        sendo a mensalidade paga por cada um de R$${mensalidade.toFixed(2)}, 
+        assim seu ganho mensal é de R$${ganhoAtualMensal.toFixed(2)} sem o projeto <b>PurpleX</b>, 
+        porém com o projeto poderia ser de <b>R$${ganhoMensalComProjeto.toFixed(2)}</b>`
+    }
+</script>
