@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Dongle&family=Inter:wght@100..900&display=swap');
-
 @font-face {
     font-family: 'Kumbh Sans';
     font-style: normal;
@@ -8,7 +7,6 @@
     src: url(https://fonts.gstatic.com/s/kumbhsans/v22/c4mw1n92AsfhuCq6tVsaoIx1LQICk0boNoq0ShMzVo0iPw.woff2) format('woff2');
     unicode-range: U+0302-0303, U+0305, U+0307-0308, U+0330, U+0391-03A1, U+03A3-03A9, U+03B1-03C9, U+03D1, U+03D5-03D6, U+03F0-03F1, U+03F4-03F5, U+2034-2037, U+2057, U+20D0-20DC, U+20E1, U+20E5-20EF, U+2102, U+210A-210E, U+2110-2112, U+2115, U+2119-211D, U+2124, U+2128, U+212C-212D, U+212F-2131, U+2133-2138, U+213C-2140, U+2145-2149, U+2190, U+2192, U+2194-21AE, U+21B0-21E5, U+21F1-21F2, U+21F4-2211, U+2213-2214, U+2216-22FF, U+2308-230B, U+2310, U+2319, U+231C-2321, U+2336-237A, U+237C, U+2395, U+239B-23B6, U+23D0, U+23DC-23E1, U+2474-2475, U+25AF, U+25B3, U+25B7, U+25BD, U+25C1, U+25CA, U+25CC, U+25FB, U+266D-266F, U+27C0-27FF, U+2900-2AFF, U+2B0E-2B11, U+2B30-2B4C, U+2BFE, U+FF5B, U+FF5D, U+1D400-1D7FF, U+1EE00-1EEFF;
   }
-
 
 /*font-family: 'Inter', sans-serif;
 font-family: 'Kumbh Sans', sans-serif;
@@ -20,11 +18,24 @@ font-family: 'Dongle', sans-serif;
     margin: 0;
 }
 
+h3{
+    text-transform: uppercase;
+    font-family: "Kumbh Sans", sans-serif;
+    font-weight: 900;
+}
+
+h2{
+    font-family: 'Inter', sans-serif;
+    color: black;
+}
+
 body{
     background-color: black;
     display: flex;
     flex-direction: column;
     overflow-x: hidden;
+    user-select: none;
+    color: white;
 }
 
 header{
@@ -72,7 +83,7 @@ main{
 }
 
 .conteudo_home{
-    height: 700px;
+    height: 690px;
     display: flex;
     flex-direction: row-reverse;
 }
@@ -87,23 +98,23 @@ main{
     z-index: -1;
 }
 
-.texto_home{
-    font-family: "Kumbh Sans", sans-serif;
+.texto_home h3{
     color: #880094;
-    font-weight: 800;
     text-shadow: 0.056em 0.02em 0.01em #550B5B;
-    user-select: none;
+    padding-top: 20px;
     z-index: 1;
     float: right;
     margin-right: -250px;
     margin-left: 200px;
-    margin-top: 30px;
-    font-size: 110px;
+    margin-top: 60px;
+    font-size: 100px;
+    letter-spacing: -3px;
+    line-height: 120px; 
 }
 
 .quem_somos{
     width: 100vw;
-    height:700px;
+    height: 690px;
     background-color: #550B5B;
 }
 
@@ -113,12 +124,11 @@ main{
     justify-content: space-around;
     background-image: url('imgs/background_quemSomos.png');
     background-repeat: no-repeat;
-    height: 700px;
+    height: 690px;
 }
 
 .conteudo_quem_somos{
-    padding-top: 20px;
-    margin-top: 100px;
+    padding-top: 120px;
     margin: auto;
     display: flex;
     flex-direction: row;
@@ -134,7 +144,9 @@ main{
 }
 
 .projeto{
-
+    padding-top: 120px;
+    width: 100vw;
+    height:690px;
 }
 
 .conteudo_projeto{
@@ -142,13 +154,17 @@ main{
     margin-top: 100px;
     margin: auto;
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+}
+
+.texto_projeto{
+    color: white;
 }
 
 .calculadora{
     width: 100vw;
-    height:700px;
+    height:690px;
     background-color: black;
     
 }
@@ -156,7 +172,7 @@ main{
 .img_fundo_calculadora{
     background-image: url('imgs/sim_financeiro_img.png');
     background-repeat: no-repeat;
-    height: 700px;
+    height: 690px;
 }
 
 .conteudo_simulador{
@@ -173,6 +189,7 @@ main{
     font-family: "Kumbh Sans", sans-serif;
     color: white;
     padding: 120px 200px 70px;
+    text-align: center
 }
 
 .container_simulador{
@@ -201,6 +218,7 @@ main{
 }
 
 button{
+    font-family: 'Dongle', sans-serif;
     width: 130px;
     height: 35px;
     cursor: pointer;
@@ -215,5 +233,15 @@ button{
 
 .contato{
     background-color: #380A3C;
-    height: 700px;
+    height: 690px;
 }
+
+.conteudo_contato{
+    padding-top: 120px;
+}
+
+.container_contato{
+    display: flex;
+    flex-direction: row;
+}
+
