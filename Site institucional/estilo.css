@@ -11,6 +11,9 @@
 /*font-family: 'Inter', sans-serif;
 font-family: 'Kumbh Sans', sans-serif;
 font-family: 'Dongle', sans-serif;
+
+Cores:
+#6F0F77
 */
 
 *{
@@ -79,7 +82,7 @@ header{
 }
 
 main{
-    padding-top: 100px;
+    padding-top: 80px;
 }
 
 .conteudo_home{
@@ -105,7 +108,7 @@ main{
     z-index: 1;
     float: right;
     margin-right: -250px;
-    margin-left: 200px;
+    margin-left: 150px;
     margin-top: 60px;
     font-size: 100px;
     letter-spacing: -3px;
@@ -121,26 +124,39 @@ main{
 .textura_quem_somos{
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     background-image: url('imgs/background_quemSomos.png');
     background-repeat: no-repeat;
     height: 690px;
 }
 
 .conteudo_quem_somos{
-    padding-top: 120px;
+    padding-top: 40px;
     margin: auto;
     display: flex;
-    flex-direction: row;
     justify-content: space-evenly;
 }
 
-.texto_btn_quemsomos{
-    width: 50%;
+.texto_quemsomos h3{
+    font-size: 20px;
+    font-weight: 500;
+    text-transform: none;
+    margin-right: 90px;
+    letter-spacing: 1.5px;
+    line-height: 35px; 
+}
+
+#btn_quem_somos{
+    background-color: #ffffff;
+    margin-top: 50px;
+    color: #550B5B;
+    font-size: 23px;
+    width: 43%;
+    border: 3px solid #ffffff;
 }
 
 .logo_quemsomos{
-    width: 450px;
+    width: 500px;
 }
 
 .projeto{
@@ -150,7 +166,7 @@ main{
 }
 
 .conteudo_projeto{
-    padding-top: 20px;
+    padding-top: 25px;
     margin-top: 100px;
     margin: auto;
     display: flex;
@@ -159,7 +175,11 @@ main{
 }
 
 .texto_projeto{
+    font-size: 30px;
+    font-family: "Kumbh Sans", sans-serif;
     color: white;
+    padding: 30px 200px;
+    text-align: center;
 }
 
 .calculadora{
@@ -176,7 +196,7 @@ main{
 }
 
 .conteudo_simulador{
-    padding-top: 20px;
+    padding-top: 25px;
     margin-top: 100px;
     margin: auto;
     display: flex;
@@ -185,7 +205,7 @@ main{
 }
 
 .titulo{
-    font-size: 40px;
+    font-size: 30px;
     font-family: "Kumbh Sans", sans-serif;
     color: white;
     padding: 120px 200px 70px;
@@ -202,7 +222,7 @@ main{
     align-items: center;
     justify-content: center;
     border-radius: 30px;
-    background-color: #272328;
+    background-color: #272328b7;
 }
 
 .input{
@@ -219,29 +239,103 @@ main{
 
 button{
     font-family: 'Dongle', sans-serif;
-    width: 130px;
-    height: 35px;
+    height: 15%;
     cursor: pointer;
-    border-radius: 20px;
+    border-radius: 35px;
     font-weight: bold;
+    text-transform: uppercase;
 }
 
 #btn_simular{
     background-color: #ffffff;
     color: #550B5B;
+    width: 30%;
 }
 
 .contato{
     background-color: #380A3C;
-    height: 690px;
+    height: 800px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
 }
 
 .conteudo_contato{
     padding-top: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .container_contato{
     display: flex;
+    margin: auto;
+    width: 700px; 
+    height: 300px;
+    padding: 20px; 
+    margin-top: 25px;
     flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 30px;
+    background-color: #ffffff;
 }
 
+.esquerdo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.direito{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.esquerdo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.direito h2{
+    font-size: 18px;
+}
+
+.esquerdo h2{
+    font-size: 18px;
+}
+
+.texto_contato{
+    font-size: 20px;
+    font-family: "Kumbh Sans", sans-serif;
+    color: white;
+    padding: 30px 200px;
+    text-align: center
+}
+
+.input_contato{
+    padding: 10px;
+    border-radius: 10px;
+    width: 115%;
+    border: 2px solid #6F0F77;
+}
+
+.input_contato_descreva{
+    padding: 100px 20px;
+    border-radius: 10px;
+    width: 115%;
+    border: 2px solid #6F0F77;
+}
+
+#btn_contato{
+    margin-top: 50px;
+    border-radius: 30px;
+    height: 45px;
+    width: 14.8%;
+    font-size: 25px;
+}

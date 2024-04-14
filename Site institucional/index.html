@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="imagex/png" href="imgs/icon.png">
     <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
@@ -24,9 +25,10 @@
                 <div class="imagem_home"></div>
                 <div class="texto_home">
                     <h3>
-                        arrase<br>
-                        na sua<br>
-                        gestão
+                        BOOST<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;YOUR<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GYM<br>
+                        <br>
                     </h3>
                 </div>
             </div>
@@ -35,15 +37,15 @@
         <div class="quem_somos" id="quem_somos_id">
             <div class="textura_quem_somos">
                 <div class="conteudo_quem_somos">
-                    <div class="texto_btn_quemsomos">
-                        <p>Oferecemos soluções inovadoras <br> 
+                    <div class="texto_quemsomos">
+                        <h3>Oferecemos soluções inovadoras <br> 
                         para academias de todos os <br>  
                         tamanhos, visando otimizar seu <br>  
                         gerenciamento. Nosso compromisso <br>  
                         é eliminar perdas de clientes e <br>  
                         recursos, proporcionando serviços<br>  
-                        de alta qualidade.</p>
-                        <button id="btn_quem_somos">Simular</button><br>
+                        de alta qualidade.</h3>
+                        <button id="btn_quem_somos">SABER MAIS sobre nós</button><br>
                     </div>
                 <div class="img_quemsomos">
                     <img class="logo_quemsomos" src="imgs/logo2.png" href="#home_id">
@@ -54,11 +56,7 @@
         <div class="projeto" id="projeto_id">
             <div class="conteudo_projeto">
                 <div class="texto_projeto">
-                    <h3>
-                        arrase<br>
-                        na sua<br>
-                        gestão
-                    </h3>
+                    <h3>O Projeto PurpleX</h3>
                 </div>
             </div>
         </div>
@@ -74,16 +72,19 @@
                         <button onclick="Resultado()" id="btn_simular">Simular</button><br>
                     </div>
                 </div>
-                <div id="resultado_simulacao">
+                <div id="exibir">
                 </div>
             </div>
         </div>
 
         <div class="contato" id="contato_id">
             <div class="conteudo_contato">
-                <h3>Para dúvidas ou orçamentos, preencha os campos<br>
-                    abaixo e entre em contato conosco. Estamos<br> 
-                    prontos para lhe atender e lhe ajudar.</h3>
+                <div class="texto_contato">
+                    <h3>Para dúvidas ou orçamentos, preencha os campos<br>
+                        abaixo e entre em contato conosco. Estamos<br> 
+                        prontos para lhe atender e lhe ajudar.
+                    </h3>
+                </div>
                 <div class="container_contato">
                     <div class="esquerdo">
                         <h2>Nome:</h2>
@@ -95,7 +96,7 @@
                     </div>
                     <div class="direito">
                         <h2>Descreva:</h2>
-                            <input class="input_contato"><br>
+                            <input class="input_contato_descreva"><br>
                     </div>
                 </div>
                 <button id="btn_contato">Entrar em Contato</button><br>
@@ -109,7 +110,7 @@
 
 <script>
     function Resultado(){
-        const porcentagem = 0.26;
+        const porcentagem = 0.16;
         const matriculados = Number(matriculados_input.value);
         const mensalidade = Number(mensalidade_input.value);
         
@@ -119,9 +120,9 @@
         const ganhoMensalComProjeto = matriculadosProjeto * mensalidade;
         
         exibir.innerHTML = `Sua academia tem ${matriculados} de matriculados, 
-        com o projeto essa quantidade aumentaria para ${matriculadosProjeto} 
         sendo a mensalidade paga por cada um de R$${mensalidade.toFixed(2)}, 
         assim seu ganho mensal é de R$${ganhoAtualMensal.toFixed(2)} sem o projeto <b>PurpleX</b>, 
-        porém com o projeto poderia ser de <b>R$${ganhoMensalComProjeto.toFixed(2)}</b>`
+        Com o projeto essa quantidade de matriculados aumentaria aproximandamente para ${matriculadosProjeto} 
+        e consequentemento o seu ganho para aproximadamente <b>R$${ganhoMensalComProjeto.toFixed(2)}</b>`
     }
 </script>
