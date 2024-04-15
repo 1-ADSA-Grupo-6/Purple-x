@@ -1,0 +1,99 @@
+body {
+    background-color: black;
+    display: flex;
+    margin-top: 70px;
+    justify-content: space-around;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+    height: 200%;
+    width: 37%;
+    border-radius: 50px 50px 0px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: top;
+    flex-direction: column;
+}
+
+.color1 {
+    background-color: #880094;
+}
+
+.color2 {
+    background-color: #7000ff;
+}
+
+.text {
+    color: white;
+}
+
+.img-supino {
+    height: 28%;
+    width: 60%;
+}
+
+.img-leg-press {
+    height: 28%;
+    width: 70%;
+}
+
+.index {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+    align-items: center;
+}
+
+.index h1{
+    color: white;
+    font-size: 50px;
+}
+
+.index select{
+    /* background-color: #880094; */
+    border: none;
+    color: white;
+    font-size: 35px;
+    height: 40px;
+    width: 260px;
+    text-align: center;
+}
+
+.container-text {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    font-size: 30px;
+    justify-content: space-around;
+}
+
+
+.container-media {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.container-media-text {
+    margin-top: 10px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.baixa {
+    color: green;
+}
+
+.média {
+    color: yellow;
+}
+
+.alta {
+    color: red;
+}

@@ -1,0 +1,110 @@
+<html lang="pt-BR">
+
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+
+<body>
+    <div class="container color1">
+        <img src="./img/supino_inclinado_articulado.webp" alt="supino_inclinado_articulado" class="img-supino">
+        <div class="index">
+            <h1>Supino Inclinado</h1>
+            <select id="select_dia" class="color1">
+                <option value="segunda">Segunda-Feira</option>
+                <option value="terca">Terça-Feira</option>
+                <option value="quarta">Quarta-Feira</option>
+                <option value="quinta">Quinta-Feira</option>
+                <option value="sexta">Sexta-Feira</option>
+                <option value="sabado">Sábado</option>
+                <option value="domingo">Domingo</option>
+            </select>
+            <div class="container-text">
+                <div class="container-media">
+                    <div class="container-media-text">
+                        <span>Média de uso diário:</span>
+                        <span>500</span>
+                    </div>
+                    <div class="container-media-text">
+                        <span>Média de tempo por uso:</span>
+                        <span>10:00</span>
+                    </div>
+                </div>
+                <div class="container-media">
+                    <div class="container-media-text">
+                        <span>Ultima manutenção</span>
+                        <span>01/12/2023</span>
+                    </div>
+                    <div class="container-media-text">
+                        <span id="span_demanda">Demanda na </span>
+                        <span id="span_demanda_valor" class="baixa"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container color2">
+        <img src="./img/leg-press.png" alt="leg-press" class="img-leg-press">
+        <div class="index">
+            <h1>Leg Press</h1>
+            <select id="select_dia2" onclick="filtro()" class="color2">
+                <option value="segunda">Segunda-Feira</option>
+                <option value="Terca">Terça-Feira</option>
+                <option value="quarta">Quarta-Feira</option>
+                <option value="quinta">Quinta-Feira</option>
+                <option value="sexta">Sexta-Feira</option>
+                <option value="sabado">Sábado</option>
+                <option value="domingo">Domingo</option>
+            </select>
+            <div class="container-text">
+                <div class="container-media">
+                    <div class="container-media-text">
+                        <span>Média de uso diário:</span>
+                        <span>500</span>
+                    </div>
+                    <div class="container-media-text">
+                        <span>Média de tempo por uso:</span>
+                        <span>10:00</span>
+                    </div>
+                </div>
+                <div class="container-media">
+                    <div class="container-media-text">
+                        <span>Ultima manutenção</span>
+                        <span>01/12/2023</span>
+                    </div>
+                    <div class="container-media-text">
+                        <span id="span_demanda">Demanda na </span>
+                        <span id="span_demanda_valor" class="baixa"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+
+    let demanda = 'media'
+
+    function filtro() {
+
+
+        span_demanda.innerHTML = `Demanda na ${select_dia2.value}:`
+
+        if (demanda == 'media') {
+            span_demanda_valor.classList.remove('baixa');
+            span_demanda_valor.classList.add('média');
+            span_demanda_valor.innerHTML = `Média`
+        }
+        else if (demanda == 'alta') {
+            span_demanda_valor.classList.remove('baixa')
+            span_demanda_valor.classList.add('alta')
+            span_demanda_valor.innerHTML = `Alta`
+        }
+        else {
+            span_demanda_valor.innerHTML = `Baixa`
+        }
+    }
+</script>
