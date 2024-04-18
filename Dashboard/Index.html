@@ -8,12 +8,16 @@
 
 <body>
     <header>
-        <div>
+        <div id="titulo_logo">
             <img src="./img/logo.png" alt="logoPurpleX" id="logo">
             <h1 class="text">Check Fit Dashboard</h1>
         </div>
-        <div>
+        <div id="controle_perfil">
+            <label for="ativar_controle" class="text">
+                <h3>-controle-</h3>
+            </label>
             <input type="checkbox" id="ativar_controle" onclick="controle()" checked>
+            <span class="text">-Sair-</span>
         </div>
     </header>
     <main>
@@ -35,14 +39,56 @@
                     <div><input type="checkbox" id="chk_fly"><label for="chk_fly">Fly</label></div>
                 </div>
                 <div id="chk_pernas">
-                    <div><input type="checkbox" id="chk_legPress" onclick="check()"><label for="chk_legPress">Leg
-                            Press</label>
-                    </div>
+                    <div><input type="checkbox" id="chk_legPress" onclick="check()" checked><label
+                            for="chk_legPress">Leg
+                            Press</label></div>
                     <div><input type="checkbox" id="chk_smith"><label for="chk_smith">Smith</label></div>
                 </div>
             </div>
+            <div id="checked">
+                <!-- <label for="chk_legPress"><input type="checkbox" checked><label for="chk_legPress">Leg Press</label> -->
+            </div>
         </div>
-        <div id="main_container"></div>
+        <div id="main_container">
+            <div class="um_container color2">
+                <div id="info_maq" class="info_maq">
+                    <img src="./img/leg-press.png" alt="leg-press" class="img-leg-press">
+                    <h1 class="text">Leg Press</h1>
+                </div>
+                <div id="index_maq" class="index_maq">
+                    <div id="container_grafico" class="container_grafico">
+                        <div><span class="text">Filtro: </span><select id="select_dia2" onclick="filtro()" class="color2">
+                            <!-- <option value="">Dia da semana</option> -->
+                            <option value="Segunda-Feira">Segunda-Feira</option>
+                            <option value="Terça-Feira">Terça-Feira</option>
+                            <option value="Quarta-Feira">Quarta-Feira</option>
+                            <option value="Quinta-Feira">Quinta-Feira</option>
+                            <option value="Sexta-Feira">Sexta-Feira</option>
+                            <option value="Sábado">Sábado</option>
+                            <option value="Domingo">Domingo</option>
+                        </select></div>
+                    </div>
+                    <div class="container-text">
+                        <div class="container-media-text text">
+                            <span>Média de uso diário:</span>
+                            <span>500</span>
+                        </div>
+                        <div class="container-media-text text">
+                            <span>Média de tempo por uso:</span>
+                            <span>10:00</span>
+                        </div>
+                        <div class="container-media-text text">
+                            <span>Ultima manutenção</span>
+                            <span>01/12/2023</span>
+                        </div>
+                        <div class="container-media-text text">
+                            <span id="span_demanda">Demanda na </span>
+                            <span id="span_demanda_valor"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
 </body>
 
@@ -59,27 +105,22 @@
         }
     }
 
-    // let demanda = 'media'
+    let demanda = 'Média'
 
-    // function filtro() {
+        span_demanda.innerHTML += `${select_dia2.value}:`
 
-
-    //     span_demanda.innerHTML = `Demanda na ${select_dia2.value}:`
-
-    //     if (demanda == 'media') {
-    //         span_demanda_valor.classList.remove('baixa');
-    //         span_demanda_valor.classList.add('média');
-    //         span_demanda_valor.innerHTML = `Média`
-    //     }
-    //     else if (demanda == 'alta') {
-    //         span_demanda_valor.classList.remove('baixa')
-    //         span_demanda_valor.classList.add('alta')
-    //         span_demanda_valor.innerHTML = `Alta`
-    //     }
-    //     else {
-    //         span_demanda_valor.innerHTML = `Baixa`
-    //     }
-    // }
+        if (demanda == 'Média') {
+            span_demanda_valor.style.color = 'yellow'
+            span_demanda_valor.innerHTML += demanda
+        }
+        else if (demanda == 'Alta') {
+            span_demanda_valor.style.color = 'red'
+            span_demanda_valor.innerHTML += demanda
+        }
+        else {
+            span_demanda_valor.style.color = 'green'
+            span_demanda_valor.innerHTML += demanda
+        }
 
     function filtro() {
         const categoria = select_categoria.value
