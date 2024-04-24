@@ -108,21 +108,4 @@
 </body>
 </html>
 
-<script>
-    function Resultado(){
-        const porcentagem = 0.16;
-        const matriculados = Number(matriculados_input.value);
-        const mensalidade = Number(mensalidade_input.value);
-        
-        const evasão_retenção_mensal = matriculados * porcentagem;
-        const ganhoAtualMensal = matriculados * mensalidade;
-        const matriculadosProjeto = matriculados + evasão_retenção_mensal;
-        const ganhoMensalComProjeto = matriculadosProjeto * mensalidade;
-        
-        exibir.innerHTML = `Sua academia tem ${matriculados} de matriculados, 
-        sendo a mensalidade paga por cada um de R$${mensalidade.toFixed(2)}, 
-        assim seu ganho mensal é de R$${ganhoAtualMensal.toFixed(2)} sem o projeto <b>PurpleX</b>, 
-        Com o projeto essa quantidade de matriculados aumentaria aproximandamente para ${matriculadosProjeto} 
-        e consequentemento o seu ganho para aproximadamente <b>R$${ganhoMensalComProjeto.toFixed(2)}</b>`
-    }
-</script>
+<script src="js/calculadora.js"></script>

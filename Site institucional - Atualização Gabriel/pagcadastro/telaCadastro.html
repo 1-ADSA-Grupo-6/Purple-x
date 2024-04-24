@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+
+    <link rel="icon" href="./imgs/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/cadastro.css">
+</head>
+
+<body>
+    <div id="container">
+        <div class="header">
+            <img id="logo" src="./imgs/logo.png">
+        </div>
+        <div class="conteudo">
+            <div class="quadro-empresa texto" id="quadroEmpresaDiv">
+                <div class="titulo">
+                    <span>Agora, vamos cadastrar sua
+                        empresa no purpleX:
+                    </span>
+                </div>
+                <div class="primeiro">
+                    <input type="text" placeholder="Digite o nome da empresa" id="nomeEmpresaInput">
+                    <br>
+                    <input type="text" placeholder="Digite o CNPJ" id="cnpjInput">
+                    <br>
+                    <button onclick="continuarCadastro()" class="botaoRoxo">Continuar</button>
+                </div>
+            </div>
+
+            <div class="quadro-usuario texto" id="quadroUsuarioDiv">
+                <div class="titulo">
+                    <span>Agora, vamos cadastrar seus
+                        dados PurpleX:
+                    </span>
+                </div>
+                <div class="form">
+                    <input type="text" placeholder="Nome" id="nomeCompletoInput">
+                    <br>
+                    <input type="text" placeholder="CPF" id="cpfInput">
+                    <br>
+                    <input type="text" placeholder="Data de nascimento" id="dtNascInput">
+                    <br>
+                    <input type="text" placeholder="Celular" id="cpfInput">
+                    <br>
+                    <button onclick="cadastrar()" class="botaoRoxo" id="openModal">Cadastrar</button>
+                    <button class="voltar">Voltar</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- MODAL -->
+    <div id="myModal" class="modal">
+        <!-- Conteúdo do modal -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Cadastro realizado com sucesso</p>
+            <span>Seja bem vindo, clique aqui e faça seu primeiro login</span>
+            <br>
+            <button id="botaoFinal">
+                <a href="index.html">Login</a>
+            </button>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+
+    // function continuarCadastro() {
+    //     quadroUsuarioDiv.style.display = "block";
+    // }
+
+    function cadastrar() {
+        var btnAbrirModal = document.getElementById("openModal");
+
+        // Seleciona o modal
+        var modal = document.getElementById("myModal");
+
+        // Seleciona o botão de fechar do modal
+        var btnFecharModal = document.getElementsByClassName("close")[0];
+
+        // Quando o usuário clicar no botão, abra o modal
+        btnAbrirModal.onclick = function () {
+            modal.style.display = "block";
+        }
+
+        // Quando o usuário clicar no botão de fechar, feche o modal
+        btnFecharModal.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        // Quando o usuário clicar fora do modal, feche-o
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    }
+</script>
