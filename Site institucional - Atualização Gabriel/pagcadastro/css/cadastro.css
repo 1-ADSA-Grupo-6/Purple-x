@@ -30,7 +30,8 @@ body {
 
 .conteudo {
     display: flex;
-    justify-content: space-around;
+    justify-content: start;
+    margin-left: 150px;
 }
 
 .quadro-empresa {
@@ -39,24 +40,9 @@ body {
     flex-direction: column;
     text-align: center;
     border: 1px solid #CCCCCC;
-    padding: 20px;
     background-color: #FFFFFF;
     width: 300px;
-    height: 450PX;
-    justify-content: center;
-    border-radius: 30px;
-}
-
-.quadro-usuario {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    border: 1px solid #CCCCCC;
-    padding: 20px;
-    background-color: #FFFFFF;
-    width: 300px;
-    height: 450PX;
+    height: 490PX;
     justify-content: center;
     border-radius: 30px;
 }
@@ -68,30 +54,16 @@ body {
     text-transform: uppercase;
 }
 
-.quadro-final {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    border: 1px solid #CCCCCC;
-    padding: 20px;
-    background-color: #FFFFFF;
-    width: 300px;
-    height: 450PX;
-    justify-content: center;
-    border-radius: 30px;
-}
-
-.form{
+.form {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    margin-top: 30px;
+    margin-top: 20px;
     align-items: center;
 }
 
-input{
-    padding: 10px;
+input {
+    padding: 5px;
     border: 1px solid #CCCCCC;
     border-radius: 5px;
     font-size: 16px;
@@ -103,101 +75,104 @@ input[type="time"] {
     margin-top: 15px;
 }
 
-input[type="date"]{
+input[type="date"] {
     color: #808080;
 }
 
-p{
-    font-size: 14px; /* Tamanho da fonte */
-    line-height: 1.5; /* Altura da linha */
-    margin-bottom: 10px; /* Espaço entre os parágrafos */
-
+p {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 10px;
 }
 
-button{
+button {
     width: 200px;
     height: 35px;
     border-radius: 35px;
-    border-style: solid;
+    border: none;
     outline: none;
     cursor: pointer;
     background-color: #880094;
     color: #FFFFFF;
 }
 
-button:hover{
+button:hover {
     background-color: rgb(85, 24, 79);
+    color: #FFFFFF;
 }
 
 .voltar {
     background: none;
     border: none;
-    color: #880094; 
-    text-decoration: underline; 
-    cursor: pointer; 
-    padding: 0; 
-    font: inherit; 
+    color: #880094;
+    text-decoration: underline;
+    cursor: pointer;
+    padding: 0;
+    font: inherit;
     margin-top: 10px;
 }
 
-.quadroFinalDiv p {
-    font-size: 1.2em;
-    color: green;
-    margin-bottom: 10px;
+.voltar a {
+    color: #880094;
 }
 
-.quadroFinalDiv span {
-    display: block;
-    color: #333;
-    
-}
-
-a{
+a {
     text-decoration: none;
     color: #FFFFFF;
     margin-bottom: 30px;
 }
 
-#botaoFinal {
-    margin-top: 15px;
-}
-
-
 /* MODAL */
 
+/* Estilo do modal */
 .modal {
-    display: none; /* Por padrão, o modal não é exibido */
-    position: fixed; /* Fixa o modal na tela */
-    z-index: 1; /* Coloca o modal acima de todos os outros elementos */
+    display: none;
+    position: fixed;
+    z-index: 1;
     left: 0;
     top: 0;
-    width: 100%; /* Largura total da tela */
-    height: 100%; /* Altura total da tela */
-    overflow: auto; /* Adiciona rolagem se necessário */
-    background-color: rgba(0,0,0,0.4); /* Fundo preto semi-transparente */
-    padding-top: 50px; /* Espaço extra acima do modal */
-  }
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
 
-  /* Estilo para o conteúdo do modal */
-  .modal-content {
-    background-color: #fefefe;
-    margin: auto;
+/* Conteúdo do modal */
+.modal-content {
+    background-color: #FEFEFE;
+    margin: 15% auto;
     padding: 20px;
-    border: 1px solid #888;
-    width: 80%; /* Largura do conteúdo do modal */
-  }
+    border: 1px solid #888888;
+    width: 40%;
+    border-radius: 20px;
+    height: 30%;
+}
 
-  /* Estilo para o botão fechar */
-  .close {
-    color: #aaa;
+/* Botão para fechar o modal */
+.close {
+    color: #AAAAAA;
     float: right;
     font-size: 28px;
     font-weight: bold;
-  }
+}
 
-  .close:hover,
-  .close:focus {
+.close:hover,
+.close:focus {
     color: black;
     text-decoration: none;
     cursor: pointer;
-  }
+}
+
+.conteudo-modal{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 25px;
+}
+
+.conteudo-modal p{
+    font-weight: 600;
+    text-align: center;
+    color: #880094;
+    text-transform: uppercase;
+}
