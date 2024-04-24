@@ -82,23 +82,24 @@ header{
 }
 
 main{
-    padding-top: 80px;
+    padding-top: 50px;
 }
 
 .conteudo_home{
-    height: 690px;
+    height: 550px;
     display: flex;
     flex-direction: row-reverse;
+    padding-top: 50px;
 }
 
 .imagem_home{
     background-image: url('imgs/img_home.jpg');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 100%; 
-    height: 500px;
-    margin-left: 50px;
+    width: 180%; 
+    height: 600px;
     z-index: -1;
+
 }
 
 .texto_home h3{
@@ -109,41 +110,61 @@ main{
     float: right;
     margin-right: -250px;
     margin-left: 150px;
-    margin-top: 60px;
+    margin-top: 100px;
     font-size: 100px;
     letter-spacing: -3px;
-    line-height: 120px; 
+    line-height: 120px;
 }
 
 .quem_somos{
     width: 100vw;
-    height: 690px;
-    background-color: #550B5B;
+    height: 100vh;
+    background-color: black;
+    padding-top: 10px;
 }
 
 .textura_quem_somos{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
     background-image: url('imgs/background_quemSomos.png');
+    background-size: cover;
     background-repeat: no-repeat;
-    height: 690px;
+    display: flex;
+    margin-top: 100px;
+    height: 100vh;
+    background-color: #550B5B;
 }
 
 .conteudo_quem_somos{
-    padding-top: 40px;
-    margin: auto;
     display: flex;
-    justify-content: space-evenly;
+    flex-direction: row-reverse;
+    gap: 100px;
+    align-items: center;
+    align-content: center;
+}
+
+.quemsomos_descricao{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    gap: 20px;
+    width: 550px;
+}
+
+.imgQuems img{
+    height: 100vh;
+    padding-top: 4px;
+
+}
+
+.titulo_quemsomos{
+    font-size: 35px;
 }
 
 .texto_quemsomos h3{
     font-size: 20px;
     font-weight: 500;
     text-transform: none;
-    margin-right: 90px;
     letter-spacing: 1.5px;
-    line-height: 35px; 
+    line-height: 35px;
 }
 
 #btn_quem_somos{
@@ -153,16 +174,14 @@ main{
     font-size: 23px;
     width: 43%;
     border: 3px solid #ffffff;
-}
-
-.logo_quemsomos{
-    width: 500px;
+    margin-left: 80px;
 }
 
 .projeto{
     padding-top: 120px;
+    margin-top: 10px;
     width: 100vw;
-    height:690px;
+    height:100vh;
 }
 
 .conteudo_projeto{
@@ -184,15 +203,16 @@ main{
 
 .calculadora{
     width: 100vw;
-    height:690px;
+    height:100vh;
     background-color: black;
     
 }
 
 .img_fundo_calculadora{
     background-image: url('imgs/sim_financeiro_img.png');
+    background-size: cover;
     background-repeat: no-repeat;
-    height: 690px;
+    height: 100vh;
 }
 
 .conteudo_simulador{
@@ -254,14 +274,14 @@ button{
 
 .contato{
     background-color: #380A3C;
-    height: 800px;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     gap: 30px;
 }
 
 .conteudo_contato{
-    padding-top: 120px;
+    padding-top: 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -273,7 +293,7 @@ button{
     width: 700px; 
     height: 300px;
     padding: 20px; 
-    margin-top: 25px;
+    margin-top: 15px;
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
@@ -333,7 +353,7 @@ button{
 }
 
 #btn_contato{
-    margin-top: 50px;
+    margin-top: 30px;
     border-radius: 30px;
     height: 45px;
     width: 14.8%;

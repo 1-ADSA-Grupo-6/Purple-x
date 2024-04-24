@@ -7,8 +7,17 @@ grant all privileges on *.* to 'purplex'@'localhost';
 
 create table sensor (
 idSensor int primary key auto_increment,
+nome varchar(45),
+descricao varchar(100)
+);
+
+create table dados(
+idDados int auto_increment,
 medida char(1) not null,
-momento datetime not null
+momento datetime not null,
+fkDados int,
+constraint fkDadosSen foreign key (fkDados) references sensor(idSensor),
+constraint pkCompostaDados primary key (idDados, fkDados)
 );
 
 create table empresa (
@@ -18,6 +27,17 @@ telefone char(11) not null,
 tamanhoEmpresa varchar(45),
 constraint chkTamanhoEmpresa check(tamanhoEmpresa in('Pequeno', 'Médio', 'Grande')),
 qtdFuncionario int
+);
+ 
+create table aparelhos (
+idAparelhos int, 
+fkAparelhos char(14), 
+constraint pkCompostaAparelhos primary key (idAparelhos, fkAparelhos),
+nome varchar(45),
+descricao varchar(100),
+fkSensor int,
+constraint fkEmpresaApa foreign key (fkAparelhos) references empresa(cnpj),
+constraint fkSensorApa foreign key (fkSensor) references sensor(idSensor)
 );
 
 create table endereco(
@@ -30,7 +50,7 @@ constraint fkEnderecoEmpresa foreign key (fkEndereco) references empresa(cnpj)
 );
 
 create table funcionario (
-idFuncionario int primary key not null auto_increment,
+idFuncionario int not null auto_increment,
 cpf char(11) not null,
 nomeCompleto varchar(100) not null,
 genero varchar(45) not null,
@@ -39,6 +59,7 @@ dataNascimento date not null,
 telefone char(8),
 nomeEmpresa varchar(100) not null,
 fkCnpj char(14),
+constraint pkCompostaFunc primary key (idFuncionario, fkCnpj),
 constraint fkCnpjFunc foreign key (fkCnpj) references empresa(cnpj)
 );
 

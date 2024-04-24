@@ -37,18 +37,23 @@
         <div class="quem_somos" id="quem_somos_id">
             <div class="textura_quem_somos">
                 <div class="conteudo_quem_somos">
-                    <div class="texto_quemsomos">
-                        <h3>Oferecemos soluções inovadoras <br> 
-                        para academias de todos os <br>  
-                        tamanhos, visando otimizar seu <br>  
-                        gerenciamento. Nosso compromisso <br>  
-                        é eliminar perdas de clientes e <br>  
-                        recursos, proporcionando serviços<br>  
-                        de alta qualidade.</h3>
-                        <button id="btn_quem_somos">SABER MAIS sobre nós</button><br>
+                    <div class="quemsomos_descricao">
+                        <div class="titulo_quemsomos">
+                            <h3>Quem é a PurpleX?</h3>
+                        </div>
+                        <div class="texto_quemsomos">
+                            <h3>Todos são PurpleX, os funcionarios,
+                                os clientes, somos todos. 
+                                Oferecemos soluções inovadoras para academias
+                                 de todos os tamanhos, visando otimizar seu 
+                                 gerenciamento. Nosso compromisso é eliminar
+                                  perdas de clientes e recursos, proporcionando
+                                 serviços de alta qualidade.</h3>
+                        </div>
                     </div>
-                <div class="img_quemsomos">
-                    <img class="logo_quemsomos" src="imgs/logo2.png" href="#home_id">
+                    <div class="imgQuems">
+                        <img src="imgs/imgQuemSomos.jpg">
+                    </div>
                 </div>
             </div>
         </div>
@@ -67,11 +72,13 @@
                     <h3 class="titulo">Tome o Controle: Descubra Suas <br>
                         Perdas e Potenciais Ganhos!</h3>
                     <div class="container_simulador">
+                        <h3 style="padding-bottom: 10px;">Preencha abaixo:</h3>
                         <input class="input" id="matriculados_input" placeholder="&nbsp;Quantidade de alunos matriculados&nbsp;"><br>
                         <input class="input" id="mensalidade_input" placeholder="&nbsp;Valor da mensalidade&nbsp;"><br><br>
                         <button onclick="Resultado()" id="btn_simular">Simular</button><br>
                     </div>
                 </div>
+                <div id="resultado"></div>
                 <div id="exibir">
                 </div>
             </div>
