@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Dongle&family=Inter:wght@100..900&display=swap');
+
 @font-face {
     font-family: 'Kumbh Sans';
     font-style: normal;
@@ -6,7 +7,7 @@
     font-display: swap;
     src: url(https://fonts.gstatic.com/s/kumbhsans/v22/c4mw1n92AsfhuCq6tVsaoIx1LQICk0boNoq0ShMzVo0iPw.woff2) format('woff2');
     unicode-range: U+0302-0303, U+0305, U+0307-0308, U+0330, U+0391-03A1, U+03A3-03A9, U+03B1-03C9, U+03D1, U+03D5-03D6, U+03F0-03F1, U+03F4-03F5, U+2034-2037, U+2057, U+20D0-20DC, U+20E1, U+20E5-20EF, U+2102, U+210A-210E, U+2110-2112, U+2115, U+2119-211D, U+2124, U+2128, U+212C-212D, U+212F-2131, U+2133-2138, U+213C-2140, U+2145-2149, U+2190, U+2192, U+2194-21AE, U+21B0-21E5, U+21F1-21F2, U+21F4-2211, U+2213-2214, U+2216-22FF, U+2308-230B, U+2310, U+2319, U+231C-2321, U+2336-237A, U+237C, U+2395, U+239B-23B6, U+23D0, U+23DC-23E1, U+2474-2475, U+25AF, U+25B3, U+25B7, U+25BD, U+25C1, U+25CA, U+25CC, U+25FB, U+266D-266F, U+27C0-27FF, U+2900-2AFF, U+2B0E-2B11, U+2B30-2B4C, U+2BFE, U+FF5B, U+FF5D, U+1D400-1D7FF, U+1EE00-1EEFF;
-  }
+}
 
 /*font-family: 'Inter', sans-serif;
 font-family: 'Kumbh Sans', sans-serif;
@@ -16,23 +17,23 @@ Cores:
 #6F0F77
 */
 
-*{
+* {
     padding: 0;
     margin: 0;
 }
 
-h3{
+h3 {
     text-transform: uppercase;
     font-family: "Kumbh Sans", sans-serif;
     font-weight: 900;
 }
 
-h2{
+h2 {
     font-family: 'Inter', sans-serif;
     color: black;
 }
 
-body{
+body {
     background-color: black;
     display: flex;
     flex-direction: column;
@@ -41,7 +42,7 @@ body{
     color: white;
 }
 
-header{
+header {
     position: fixed;
     width: 100%;
     display: flex;
@@ -52,18 +53,18 @@ header{
     z-index: 2;
 }
 
-.a_logo_header{
+.a_logo_header {
     width: 15%;
     height: 15%;
 }
 
-.logo{
+.logo {
     width: 200px;
 }
 
-.navbar{
+.navbar {
     font-family: "Inter", sans-serif;
-    color:#ffffff;
+    color: #ffffff;
     width: 600px;
     display: flex;
     align-items: center;
@@ -71,38 +72,38 @@ header{
     list-style: none;
 }
 
-.navbar a{
+.navbar a {
     text-decoration: none;
     color: #ffffff;
     font-weight: bold;
 }
 
-.navbar a:hover{
+.navbar a:hover {
     color: #880094;
 }
 
-main{
+main {
     padding-top: 50px;
 }
 
-.conteudo_home{
+.conteudo_home {
     height: 550px;
     display: flex;
     flex-direction: row-reverse;
     padding-top: 50px;
 }
 
-.imagem_home{
+.imagem_home {
     background-image: url('imgs/img_home.jpg');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 180%; 
+    width: 180%;
     height: 600px;
     z-index: -1;
 
 }
 
-.texto_home h3{
+.texto_home h3 {
     color: #880094;
     text-shadow: 0.056em 0.02em 0.01em #550B5B;
     padding-top: 20px;
@@ -116,14 +117,14 @@ main{
     line-height: 120px;
 }
 
-.quem_somos{
+.quem_somos {
     width: 100vw;
     height: 100vh;
     background-color: black;
     padding-top: 10px;
 }
 
-.textura_quem_somos{
+.textura_quem_somos {
     background-image: url('imgs/background_quemSomos.png');
     background-size: cover;
     background-repeat: no-repeat;
@@ -133,7 +134,7 @@ main{
     background-color: #550B5B;
 }
 
-.conteudo_quem_somos{
+.conteudo_quem_somos {
     display: flex;
     flex-direction: row-reverse;
     gap: 100px;
@@ -141,7 +142,7 @@ main{
     align-content: center;
 }
 
-.quemsomos_descricao{
+.quemsomos_descricao {
     display: flex;
     flex-direction: column;
     align-content: center;
@@ -149,17 +150,17 @@ main{
     width: 550px;
 }
 
-.imgQuems img{
+.imgQuems img {
     height: 100vh;
     padding-top: 4px;
 
 }
 
-.titulo_quemsomos{
+.titulo_quemsomos {
     font-size: 35px;
 }
 
-.texto_quemsomos h3{
+.texto_quemsomos h3 {
     font-size: 20px;
     font-weight: 500;
     text-transform: none;
@@ -167,7 +168,7 @@ main{
     line-height: 35px;
 }
 
-#btn_quem_somos{
+#btn_quem_somos {
     background-color: #ffffff;
     margin-top: 50px;
     color: #550B5B;
@@ -177,14 +178,14 @@ main{
     margin-left: 80px;
 }
 
-.projeto{
+.projeto {
     padding-top: 120px;
     margin-top: 10px;
     width: 100vw;
-    height:100vh;
+    height: 100vh;
 }
 
-.conteudo_projeto{
+.conteudo_projeto {
     padding-top: 25px;
     margin-top: 100px;
     margin: auto;
@@ -193,7 +194,7 @@ main{
     align-items: center;
 }
 
-.texto_projeto{
+.texto_projeto {
     font-size: 30px;
     font-family: "Kumbh Sans", sans-serif;
     color: white;
@@ -201,21 +202,21 @@ main{
     text-align: center;
 }
 
-.calculadora{
+.calculadora {
     width: 100vw;
-    height:100vh;
+    height: 100vh;
     background-color: black;
-    
+
 }
 
-.img_fundo_calculadora{
+.img_fundo_calculadora {
     background-image: url('imgs/sim_financeiro_img.png');
     background-size: cover;
     background-repeat: no-repeat;
     height: 100vh;
 }
 
-.conteudo_simulador{
+.conteudo_simulador {
     padding-top: 25px;
     margin-top: 100px;
     margin: auto;
@@ -224,7 +225,7 @@ main{
     align-items: center;
 }
 
-.titulo{
+.titulo {
     font-size: 30px;
     font-family: "Kumbh Sans", sans-serif;
     color: white;
@@ -232,11 +233,11 @@ main{
     text-align: center
 }
 
-.container_simulador{
+.container_simulador {
     margin: auto;
-    width: 350px; 
+    width: 350px;
     height: 250px;
-    padding: 20px; 
+    padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -245,7 +246,7 @@ main{
     background-color: #272328b7;
 }
 
-.input{
+.input {
     border-radius: 50px;
     width: 220px;
     height: 22px;
@@ -257,7 +258,7 @@ main{
     color: #550B5B;
 }
 
-button{
+button {
     font-family: 'Dongle', sans-serif;
     height: 15%;
     cursor: pointer;
@@ -266,13 +267,13 @@ button{
     text-transform: uppercase;
 }
 
-#btn_simular{
+#btn_simular {
     background-color: #ffffff;
     color: #550B5B;
     width: 30%;
 }
 
-.contato{
+.contato {
     background-color: #380A3C;
     height: 100vh;
     display: flex;
@@ -280,19 +281,19 @@ button{
     gap: 30px;
 }
 
-.conteudo_contato{
+.conteudo_contato {
     padding-top: 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.container_contato{
+.container_contato {
     display: flex;
     margin: auto;
-    width: 700px; 
+    width: 700px;
     height: 300px;
-    padding: 20px; 
+    padding: 20px;
     margin-top: 15px;
     flex-direction: row;
     align-items: center;
@@ -301,36 +302,36 @@ button{
     background-color: #ffffff;
 }
 
-.esquerdo{
+.esquerdo {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 4px;
 }
 
-.direito{
+.direito {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 4px;
 }
 
-.esquerdo{
+.esquerdo {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 4px;
 }
 
-.direito h2{
+.direito h2 {
     font-size: 18px;
 }
 
-.esquerdo h2{
+.esquerdo h2 {
     font-size: 18px;
 }
 
-.texto_contato{
+.texto_contato {
     font-size: 20px;
     font-family: "Kumbh Sans", sans-serif;
     color: white;
@@ -338,24 +339,103 @@ button{
     text-align: center
 }
 
-.input_contato{
+.input_contato {
     padding: 10px;
     border-radius: 10px;
     width: 115%;
     border: 2px solid #6F0F77;
 }
 
-.input_contato_descreva{
+.input_contato_descreva {
     padding: 100px 20px;
     border-radius: 10px;
     width: 115%;
     border: 2px solid #6F0F77;
 }
 
-#btn_contato{
+#btn_contato {
     margin-top: 30px;
     border-radius: 30px;
     height: 45px;
     width: 14.8%;
     font-size: 25px;
+}
+
+
+
+/* MODAL */
+
+/* Estilo do modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Conteúdo do modal */
+.modal-content {
+    background-color: #FEFEFE;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888888;
+    width: 40%;
+    border-radius: 20px;
+    height: 30%;
+}
+
+/* Estilo do modal */
+.modal {
+    display: none;
+    /* Oculta o modal por padrão */
+    position: fixed;
+    /* Posição fixa na tela */
+    z-index: 1;
+    /* Define a ordem de empilhamento */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Fundo semi-transparente */
+}
+
+/* Conteúdo do modal */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    /* Centraliza verticalmente e deixa uma margem em cima */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 60%;
+    height: 40%;
+}
+
+/* Botão para fechar o modal */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#exibir {
+    background-color: #f9f9f9; 
+    border-radius: 10px; 
+    padding-top: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif; 
+    color: #333;
+    line-height: 1.6;     
 }

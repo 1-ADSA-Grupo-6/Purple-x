@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <title>PurpleX</title>
     <meta charset="UTF-8">
@@ -8,15 +9,16 @@
     <link rel="shortcut icon" type="imagex/png" href="imgs/icon.png">
     <link rel="stylesheet" href="estilo.css">
 </head>
+
 <body>
     <header>
-            <a href="#comeco" class="a_logo_header"><img class="logo" src="imgs/logo.png"></a>
-            <ul class="navbar">
-                <li><a href="#quem_somos_id">QUEM SOMOS</a></li>
-                <li><a href="#projeto_id">PROJETO</a></li>
-                <li><a href="#calculadora_id">SIMULADOR</a></li>
-                <li><a href="#contato_id">CONTATO</a></li>
-            </ul>
+        <a href="#comeco" class="a_logo_header"><img class="logo" src="imgs/logo.png"></a>
+        <ul class="navbar">
+            <li><a href="#quem_somos_id">QUEM SOMOS</a></li>
+            <li><a href="#projeto_id">PROJETO</a></li>
+            <li><a href="#calculadora_id">SIMULADOR</a></li>
+            <li><a href="#contato_id">CONTATO</a></li>
+        </ul>
         </div>
     </header>
     <main id="comeco">
@@ -43,12 +45,12 @@
                         </div>
                         <div class="texto_quemsomos">
                             <h3>Todos são PurpleX, os funcionarios,
-                                os clientes, somos todos. 
+                                os clientes, somos todos.
                                 Oferecemos soluções inovadoras para academias
-                                 de todos os tamanhos, visando otimizar seu 
-                                 gerenciamento. Nosso compromisso é eliminar
-                                  perdas de clientes e recursos, proporcionando
-                                 serviços de alta qualidade.</h3>
+                                de todos os tamanhos, visando otimizar seu
+                                gerenciamento. Nosso compromisso é eliminar
+                                perdas de clientes e recursos, proporcionando
+                                serviços de alta qualidade.</h3>
                         </div>
                     </div>
                     <div class="imgQuems">
@@ -73,37 +75,46 @@
                         Perdas e Potenciais Ganhos!</h3>
                     <div class="container_simulador">
                         <h3 style="padding-bottom: 10px;">Preencha abaixo:</h3>
-                        <input class="input" id="matriculados_input" placeholder="&nbsp;Quantidade de alunos matriculados&nbsp;"><br>
-                        <input class="input" id="mensalidade_input" placeholder="&nbsp;Valor da mensalidade&nbsp;"><br><br>
+                        <input class="input" id="matriculados_input"
+                            placeholder="&nbsp;Quantidade de alunos matriculados&nbsp;"><br>
+
+                        <input class="input" id="mensalidade_input"
+                            placeholder="&nbsp;Valor da mensalidade&nbsp;"><br><br>
                         <button onclick="Resultado()" id="btn_simular">Simular</button><br>
                     </div>
                 </div>
-                <div id="resultado"></div>
-                <div id="exibir">
+                <!-- MODAL -->
+                <div id="myModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <div id="exibir"></div>
+                    </div>
                 </div>
+
             </div>
+        </div>
         </div>
 
         <div class="contato" id="contato_id">
             <div class="conteudo_contato">
                 <div class="texto_contato">
                     <h3>Para dúvidas ou orçamentos, preencha os campos<br>
-                        abaixo e entre em contato conosco. Estamos<br> 
+                        abaixo e entre em contato conosco. Estamos<br>
                         prontos para lhe atender e lhe ajudar.
                     </h3>
                 </div>
                 <div class="container_contato">
                     <div class="esquerdo">
                         <h2>Nome:</h2>
-                            <input class="input_contato"><br>
+                        <input class="input_contato"><br>
                         <h2>Email:</h2>
-                            <input class="input_contato"><br>
+                        <input class="input_contato"><br>
                         <h2>Assunto:</h2>
-                            <input class="input_contato"><br>
+                        <input class="input_contato"><br>
                     </div>
                     <div class="direito">
                         <h2>Descreva:</h2>
-                            <input class="input_contato_descreva"><br>
+                        <input class="input_contato_descreva"><br>
                     </div>
                 </div>
                 <button id="btn_contato">Entrar em Contato</button><br>
@@ -112,7 +123,10 @@
     </main>
     <footer>
     </footer>
+
+
 </body>
+
 </html>
 
 <script src="js/calculadora.js"></script>
