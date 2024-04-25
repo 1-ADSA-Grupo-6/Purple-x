@@ -4,6 +4,7 @@
     <title>Dashboard</title>
     <link rel="shortcut icon" type="imagex/png" href="img/icon.png">
     <link rel="stylesheet" href="Style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body>
@@ -12,11 +13,7 @@
             <img src="./img/logo.png" alt="logoPurpleX" id="logo">
             <h1 class="text">Check Fit Dashboard</h1>
         </div>
-        <div id="controle_perfil">
-            <label for="ativar_controle" class="text">
-                <h3>-controle-</h3>
-            </label>
-            <input type="checkbox" id="ativar_controle" onclick="controle()" checked>
+        <div id="perfil">
             <span class="text">-Sair-</span>
         </div>
     </header>
@@ -49,6 +46,22 @@
                 <!-- <label for="chk_legPress"><input type="checkbox" checked><label for="chk_legPress">Leg Press</label> -->
             </div>
         </div>
+        <div id="menu_lateral">
+            <div id="fixo_controle" class="fixo_lateral">
+                <label for="ativar_controle" class="text">
+                    <img src="./img/controller.png" id="control-icon">
+                </label>
+                <input type="checkbox" id="ativar_controle" onclick="controle()" checked>
+            </div>
+            <div id="fixo_grafico" class="fixo_lateral text">
+                icon <br> 
+                graf
+                <!-- <label for="ativar_grafico" class="text">
+                    <img src="./img/controller.png" id="control-icon">
+                </label>
+                <input type="checkbox" id="ativar_controle" onclick="controle()" checked> -->
+            </div>
+        </div>
         <div id="main_container">
             <div class="um_container color2">
                 <div id="info_maq" class="info_maq">
@@ -57,29 +70,35 @@
                 </div>
                 <div id="index_maq" class="index_maq">
                     <div id="container_grafico" class="container_grafico">
-                        <div><span class="text">Filtro: </span><select id="select_dia2" onclick="filtro()" class="color2">
-                            <!-- <option value="">Dia da semana</option> -->
-                            <option value="Segunda-Feira">Segunda-Feira</option>
-                            <option value="Terça-Feira">Terça-Feira</option>
-                            <option value="Quarta-Feira">Quarta-Feira</option>
-                            <option value="Quinta-Feira">Quinta-Feira</option>
-                            <option value="Sexta-Feira">Sexta-Feira</option>
-                            <option value="Sábado">Sábado</option>
-                            <option value="Domingo">Domingo</option>
-                        </select></div>
+                        <div>
+                            <span class="text">Filtro: </span><select id="select_dia2" onclick="filtro()"
+                                class="color2">
+                                <!-- <option value="">Dia da semana</option> -->
+                                <option value="Segunda-Feira">Segunda-Feira</option>
+                                <option value="Terça-Feira">Terça-Feira</option>
+                                <option value="Quarta-Feira">Quarta-Feira</option>
+                                <option value="Quinta-Feira">Quinta-Feira</option>
+                                <option value="Sexta-Feira">Sexta-Feira</option>
+                                <option value="Sábado">Sábado</option>
+                                <option value="Domingo">Domingo</option>
+                            </select>
+                        </div>
+                        <div class="lineChart">
+                            <canvas id="lineChart"></canvas>
+                        </div>
                     </div>
                     <div class="container-text">
                         <div class="container-media-text text">
                             <span>Média de uso diário:</span>
-                            <span>500</span>
+                            <span id="data_media_diario"></span>
                         </div>
                         <div class="container-media-text text">
                             <span>Média de tempo por uso:</span>
-                            <span>10:00</span>
+                            <span id="data_media_tempo"></span>
                         </div>
                         <div class="container-media-text text">
                             <span>Ultima manutenção</span>
-                            <span>01/12/2023</span>
+                            <span id="data_ultima_manutencao"></span>
                         </div>
                         <div class="container-media-text text">
                             <span id="span_demanda">Demanda na </span>
@@ -94,53 +113,11 @@
 
 </html>
 
+<script src="./js/control.js"></script>
+<script src="./js/lineChart.js"></script>
+<script src="./js/data.js"></script>
+
 <script>
-
-    function controle() {
-        if (ativar_controle.checked) {
-            control.style.display = 'flex'
-        }
-        else {
-            control.style.display = 'none'
-        }
-    }
-
-    let demanda = 'Média'
-
-        span_demanda.innerHTML += `${select_dia2.value}:`
-
-        if (demanda == 'Média') {
-            span_demanda_valor.style.color = 'yellow'
-            span_demanda_valor.innerHTML += demanda
-        }
-        else if (demanda == 'Alta') {
-            span_demanda_valor.style.color = 'red'
-            span_demanda_valor.innerHTML += demanda
-        }
-        else {
-            span_demanda_valor.style.color = 'green'
-            span_demanda_valor.innerHTML += demanda
-        }
-
-    function filtro() {
-        const categoria = select_categoria.value
-        if (categoria != '') {
-            div_check.style.display = 'block'
-
-            if (categoria == 'peito') {
-                chk_peito.style.display = 'block'
-                chk_pernas.style.display = 'none'
-            }
-            else if (categoria == 'perna') {
-                chk_peito.style.display = 'none'
-                chk_pernas.style.display = 'block'
-            }
-        }
-        else {
-            div_check.style.display = 'none'
-        }
-
-    }
     function check() {
         if (chk_supino.checked) {
             main_container.innerHTML = `<div class="container color1">

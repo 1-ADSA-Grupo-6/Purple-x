@@ -1,5 +1,5 @@
 body {
-    background-color: #000000;
+    background-color: #000000ff;
     display: flex;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     flex-direction: column;
@@ -22,7 +22,7 @@ header {
     margin-left: 1%;
 }
 
-#controle_perfil {
+#perfil {
     height: 100%;
     width: 55%;
     display: flex;
@@ -50,20 +50,22 @@ main {
     align-items: flex-start;
 }
 
-main > #control{
-    margin-top: 3%;
-}
-
 #control {
     position: absolute;
     width: 25%;
     height: 50%;
+    margin-top: 3%;
     background-color: #ffffff;
     border-radius: 50px;
     display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+#control-icon {
+    width: 95%;
+    height: 90%;
 }
 
 #select_categoria {
@@ -74,6 +76,24 @@ main > #control{
     display: none;
     border-top: 1px solid #00000048;
     margin-top: 10px;
+}
+
+#menu_lateral {
+    margin-left: -97%;
+    height: 20%;
+    width: 3%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.fixo_lateral {
+    width: 100%;
+    height: 40%;
+    background-color: #6F0F77;
+    border-radius: 0px 20px 20px 0px;
+    border: solid wheat;
 }
 
 #main_container {
@@ -139,9 +159,22 @@ main > #control{
     height: 75%;
     margin-top: 1%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.lineChart {
+    margin-top: 1%;
+    height: 90%;
+    width: 100%;
+    display: flex;
     justify-content: center;
-    align-items: flex-start;
+}
+
+#lineChart {
+    border-radius: 10px;
+    background-color: #ffffff;
 }
 
 #select_dia2 {
@@ -156,6 +189,7 @@ main > #control{
 .container-text {
     width: 100%;
     height: 25%;
+    margin-right: 5%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
