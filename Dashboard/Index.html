@@ -13,8 +13,8 @@
             <img src="./img/logo.png" alt="logoPurpleX" id="logo">
             <h1 class="text">Check Fit Dashboard</h1>
         </div>
-        <div id="perfil">
-            <span class="text">-Sair-</span>
+        <div id="config">
+            <img src="./img/icon menu.png" id="icon_menu">
         </div>
     </header>
     <main>
@@ -54,19 +54,42 @@
                 <input type="checkbox" id="ativar_controle" onclick="controle()" checked>
             </div>
             <div id="fixo_grafico" class="fixo_lateral text">
-                icon <br> 
-                graf
-                <!-- <label for="ativar_grafico" class="text">
-                    <img src="./img/controller.png" id="control-icon">
+                <label for="ativar_grafico">
+                    <img src="./img/icon_graph.png" id="graph-icon">
                 </label>
-                <input type="checkbox" id="ativar_controle" onclick="controle()" checked> -->
+                <input type="checkbox" id="ativar_grafico" onclick="grafico()" checked>
             </div>
         </div>
         <div id="main_container">
             <div class="um_container color2">
                 <div id="info_maq" class="info_maq">
-                    <img src="./img/leg-press.png" alt="leg-press" class="img-leg-press">
-                    <h1 class="text">Leg Press</h1>
+                    <div id="img_maquina" class="img-maquina">
+                        <img src="./img/leg-press.png" alt="leg-press" id="img-leg-press">
+                    </div>
+                    <div class="dados_maq">
+                        <div class="div_nome_maq text_titulo">
+                            <span>Leg Press</span>
+                        </div>
+                        <div class="div_dados_maq text_pequeno">
+                            <span>ID:</span>
+                            <span id="id_maq"></span>
+                        </div>
+                        <div class="div_dados_maq text_pequeno">
+                            <span>Ultima manutenção:</span>
+                            <span id="data_ultima_manutencao"></span>
+                        </div>
+                        <div class="div_dados_maq text_pequeno">
+                            <span>Média de uso diário:</span>
+                            <span id="data_media_diario"></span>
+                        </div>
+                        <div class="div_dados_maq text_pequeno">
+                            <span>Média de tempo inativo:</span>
+                            <span id="data_media_tempo"></span>
+                        </div>
+                    </div>
+                    <div class="div_template_musculos">
+                        <img src="./img/template musculos/pernas.png" id="template_pernas">
+                    </div>
                 </div>
                 <div id="index_maq" class="index_maq">
                     <div id="container_grafico" class="container_grafico">
@@ -89,16 +112,13 @@
                     </div>
                     <div class="container-text">
                         <div class="container-media-text text">
-                            <span>Média de uso diário:</span>
-                            <span id="data_media_diario"></span>
+                            
                         </div>
                         <div class="container-media-text text">
-                            <span>Média de tempo por uso:</span>
-                            <span id="data_media_tempo"></span>
+                            
                         </div>
                         <div class="container-media-text text">
-                            <span>Ultima manutenção</span>
-                            <span id="data_ultima_manutencao"></span>
+                            
                         </div>
                         <div class="container-media-text text">
                             <span id="span_demanda">Demanda na </span>

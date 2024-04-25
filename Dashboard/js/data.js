@@ -1,3 +1,7 @@
+let id_maqtest = '001'
+
+    id_maq.innerHTML = id_maqtest
+
 let dataMediaDiario = 500
 
     data_media_diario.innerHTML = dataMediaDiario

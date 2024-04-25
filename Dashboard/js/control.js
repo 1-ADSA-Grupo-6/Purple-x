@@ -25,3 +25,7 @@ function filtro() {
         div_check.style.display = 'none'
     }
 }
+
+function grafico() {
+    
+}

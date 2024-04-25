@@ -15,18 +15,19 @@ header {
 
 #titulo_logo {
     height: 100%;
-    width: 45%;
+    width: 50%;
     display: flex;
     flex-direction: row;
     align-items: center;
     margin-left: 1%;
 }
 
-#perfil {
+#config {
     height: 100%;
-    width: 55%;
+    width: 50%;
     display: flex;
-    flex-direction: row;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
     align-items: center;
     justify-content: space-between;
     margin-right: 1%;
@@ -37,9 +38,15 @@ header {
     height: 100%;
 }
 
-#ativar_controle {
+#icon_menu {
+    height: 55%;
+    width: 5%;
+}   
+
+#ativar_controle, #ativar_grafico{
     display: none;
 }
+
 
 main {
     display: flex;
@@ -61,11 +68,19 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    border: solid;
 }
 
 #control-icon {
-    width: 95%;
-    height: 90%;
+    width: 90%;
+    height: 85%;
+    margin-left: 10%;
+}
+
+#graph-icon {
+    width: 90%;
+    height: 70%;
+    margin: 10%;
 }
 
 #select_categoria {
@@ -81,7 +96,7 @@ main {
 #menu_lateral {
     margin-left: -97%;
     height: 20%;
-    width: 3%;
+    width: 4%;
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -93,7 +108,9 @@ main {
     height: 40%;
     background-color: #6F0F77;
     border-radius: 0px 20px 20px 0px;
-    border: solid wheat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #main_container {
@@ -129,24 +146,62 @@ main {
     flex-direction: row;
 }
 
-.um_container > .info_maq{
+.info_maq {
     width: 25%;
     height: 100%;
-}
-
-.info_maq {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
 }
 
-.info_maq > h1 {
-    font-size: 50px;
+.img-maquina {
+    height: 40%;
+    width: 100%;
+}
+
+.dados_maq {
+    width: 100%;
+    height: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.div_nome_maq {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text_titulo {
+    color: #ffffff;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.div_dados_maq {
+    width: 95%;
+    margin-left: 5%;
+}
+
+.div_template_musculos {
+    width: 100%;
+    height: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center ;
+}
+
+#template_pernas {
+    width: 80%;
+    height: 100%;
 }
 
 .index_maq {
-    width: 100%;
+    width: 75%;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -189,6 +244,7 @@ main {
 .container-text {
     width: 100%;
     height: 25%;
+    margin-top: 1%;
     margin-right: 5%;
     display: flex;
     flex-direction: row;
@@ -216,14 +272,19 @@ main {
     font-size: 30px;
 }
 
+.text_pequeno {
+    color: #ffffff;
+    font-size: 25px;
+}
+
 .img-supino {
     height: 50%;
     width: 60%;
 }
 
-.img-leg-press {
-    height: 30%;
+#img-leg-press {
     width: 100%;
+    height: 100%;
 }
 
 /* .index {
