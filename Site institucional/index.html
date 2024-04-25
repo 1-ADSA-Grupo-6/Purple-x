@@ -75,11 +75,33 @@
                         Perdas e Potenciais Ganhos!</h3>
                     <div class="container_simulador">
                         <h3 style="padding-bottom: 10px;">Preencha abaixo:</h3>
+
+                        <div class="input-container">
+                            <input type="text" id="matriculados_input" class="input-com-imagem"
+                                placeholder="&nbsp;Quantidade de alunos matriculados&nbsp;">
+                            <label class="label-imagem" id="imagemInputMatriculado">
+                                <img src="imgs/advertencia-violeta.png" alt="Imagem" class="imagem-input" >
+                            </label>
+                            <p class="texto-pequeno" id="textoMatricula">Preencha esse campo para continuar</p>
+                        </div>
+                        <br>
+                        <div class="input-container">
+                            <input type="text" id="mensalidade_input" class="input-com-imagem"
+                            placeholder="&nbsp;Valor da mensalidade&nbsp;">
+                            <label class="label-imagem" id="imagemInputMensalidade">
+                                <img src="imgs/advertencia-violeta.png" alt="Imagem" class="imagem-input">
+                            </label>
+                            <p class="texto-pequeno" id="textoMensalidade">Preencha esse campo para continuar</p>
+                        </div>
+                        <!-- <img id="imagemAdvertencia" class="image" src="imgs/advertencia-violeta.png">
                         <input class="input" id="matriculados_input"
                             placeholder="&nbsp;Quantidade de alunos matriculados&nbsp;"><br>
-
+                        <span class="pequeno">Preencha esse campo!</span>
+                            
+                        <img id="imagemAdvertencia2" src="imgs/advertencia-violeta.png">
                         <input class="input" id="mensalidade_input"
                             placeholder="&nbsp;Valor da mensalidade&nbsp;"><br><br>
+                        <span class="pequeno">Preencha esse campo!</span> -->
                         <button onclick="Resultado()" id="btn_simular">Simular</button><br>
                     </div>
                 </div>

@@ -229,15 +229,15 @@ main {
     font-size: 30px;
     font-family: "Kumbh Sans", sans-serif;
     color: white;
-    padding: 120px 200px 70px;
+    padding: 100px 100px 50px;
     text-align: center
 }
 
 .container_simulador {
     margin: auto;
     width: 350px;
-    height: 250px;
-    padding: 20px;
+    height: 290px;
+    padding: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -246,23 +246,93 @@ main {
     background-color: #272328b7;
 }
 
-.input {
-    border-radius: 50px;
-    width: 220px;
+/* .input {
+    border: 1px solid #CCCCCC;
+    border-radius: 5px;
+    width: 270px;
     height: 22px;
     padding: 2px;
+    margin-top: 10px;
+    position: relative;
 }
 
 .input::placeholder {
-    padding: 5px;
     color: #550B5B;
+}
+
+#imagemAdvertencia{
+    position: absolute;
+    width: 20px;
+    margin-left: 248px;
+    margin-top: 2px;
+    z-index: 1;
+    display: none;
+}
+
+#imagemAdvertencia2{
+    position: absolute;
+    width: 20px;
+    margin-left: 248px;
+    margin-top: 2px;
+    z-index: 1;
+    display: none;
+}
+
+.pequeno{
+    font-size: 10px;
+    margin-right: 185px;
+    left: 0;
+    bottom: -5px;
+}
+
+.image{
+    margin-bottom: 118px;
+} */
+
+.input-container {
+    position: relative;
+}
+
+.input-com-imagem {
+    padding-left: 30px;
+    border: 1px solid #CCCCCC;
+    border-radius: 5px;
+    width: 270px;
+    height: 22px;
+    padding: 2px;
+    margin-top: 10px;
+    position: relative;
+}
+
+.input-com-imagem::placeholder{
+    color: #550B5B;
+}
+
+.label-imagem {
+    position: absolute;
+    width: 20px;
+    z-index: 1;
+    top: 24%;
+    left: 254px;
+    display: none;
+}
+
+.imagem-input {
+    width: 20px;
+    height: auto;
+}
+
+.texto-pequeno {
+    font-size: 10px;
+    margin-top: 5px;
+    display: none;
 }
 
 button {
     font-family: 'Dongle', sans-serif;
     height: 15%;
     cursor: pointer;
-    border-radius: 35px;
+    border-radius: 25px;
     font-weight: bold;
     text-transform: uppercase;
 }
@@ -270,12 +340,14 @@ button {
 #btn_simular {
     background-color: #ffffff;
     color: #550B5B;
-    width: 30%;
+    width: 40%;
+    font-size: 20px;
+    margin-top: 25px;
 }
 
 .contato {
     background-color: #380A3C;
-    height: 100vh;
+    /* height: 100vh; */
     display: flex;
     flex-direction: column;
     gap: 30px;
@@ -431,11 +503,11 @@ button {
 }
 
 #exibir {
-    background-color: #f9f9f9; 
-    border-radius: 10px; 
+    background-color: #f9f9f9;
+    border-radius: 10px;
     padding-top: 30px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    font-family: Arial, sans-serif; 
+    font-family: Arial, sans-serif;
     color: #333;
-    line-height: 1.6;     
+    line-height: 1.6;
 }
