@@ -458,33 +458,29 @@ button {
     width: 40%;
     border-radius: 20px;
     height: 30%;
+    align-items: center;
 }
 
 /* Estilo do modal */
 .modal {
     display: none;
-    /* Oculta o modal por padrão */
     position: fixed;
-    /* Posição fixa na tela */
     z-index: 1;
-    /* Define a ordem de empilhamento */
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
-    /* Fundo semi-transparente */
 }
 
 /* Conteúdo do modal */
 .modal-content {
     background-color: #fefefe;
     margin: 15% auto;
-    /* Centraliza verticalmente e deixa uma margem em cima */
     padding: 20px;
     border: 1px solid #888;
-    width: 60%;
-    height: 40%;
+    width: 35%;
+    height: auto;
 }
 
 /* Botão para fechar o modal */
@@ -510,4 +506,12 @@ button {
     font-family: Arial, sans-serif;
     color: #333;
     line-height: 1.6;
+
+}
+
+#contatoButton {
+    display: inline-block;
+    color: #6F0F77;   
+    text-align: center;
+    font-weight: bold;
 }

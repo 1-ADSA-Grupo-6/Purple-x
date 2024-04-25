@@ -34,20 +34,26 @@ function Resultado() {
         modal.style.display = "block";
         const Valormatriculados = Number(matriculados.value);
         const Valormensalidade = Number(mensalidade.value);
-        const totalAnualSemProjeto = (Valormatriculados * Valormensalidade) * 12;
-        const perdaSemProjetoAnual = (totalAnualSemProjeto * 16) / 100;
-        const totalMensalPerda = perdaSemProjetoAnual / 12;
-        const totalAnualComProjeto = totalAnualSemProjeto + perdaSemProjetoAnual;
 
-        exibir.innerHTML = `Sem a implementação do projeto PurpleX, sua empresa está perdendo uma média mensal de R$${totalMensalPerda.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}, 
-                o que totaliza uma perda anual de R$${perdaSemProjetoAnual.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}. No entanto, com a execução do nosso projeto, você pode reduzir a evasão 
-                de matrículas decorrente da superlotação em 16%, resultando em um lucro total de R$${totalAnualComProjeto.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })} por ano. 
-                Não deixe que essas oportunidades escapem por entre os dedos. Investir no projeto PurpleX é investir 
-                no crescimento sustentável e no sucesso futuro da sua empresa.`;
+        const totalAno = (Valormatriculados * Valormensalidade) * 12;
+        const perdaTotal = (totalAno * 16) / 100;
+
+        exibir.innerHTML = `No Brasil, 16% da evasão de matrículas nas academias ocorre devido à superlotação. 
+        Com base nos dados fornecidos, você está <span style="color:red"><b>perdendo um total de ${perdaTotal.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</b></span> por ano. 
+        Ao investir em nosso projeto, você poderá obter um <span style="color: green"><b>ganho anual de ${totalAno.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</b></span>. 
+        Não perca tempo, invista na <span style="color: #6F0F77"><b>PurpleX</b></span> e impulsione o crescimento da sua empresa!
+        <br>
+        Entre em contato! <a href="#contato_id" id="contatoButton">Contato</a>`;
+
+        var fecharModal = document.getElementById("contatoButton");
 
         btnFecharModal.onclick = function () {
             modal.style.display = "none";
         };
+
+        fecharModal.onclick = function() {
+            modal.style.display = "none";   
+        }
 
         window.onclick = function (event) {
             if (event.target == modal) {
@@ -55,8 +61,6 @@ function Resultado() {
             }
         };
     }
-
-
-
-
 }
+
+
