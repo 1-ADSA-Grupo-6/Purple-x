@@ -80,6 +80,7 @@ header {
 
 .navbar a:hover {
     color: #880094;
+    transition: color 0.7s ease;
 }
 
 main {
@@ -182,7 +183,34 @@ main {
     padding-top: 120px;
     margin-top: 10px;
     width: 100vw;
-    height: 100vh;
+    height: 200vh;
+}
+
+.imagemProjeto {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 85px;
+}
+
+.imagemProjeto img{
+    display: block;
+    width: 20%;
+    height: 20%;
+    border-radius: 250px;
+}
+
+.textoProjeto{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 25px;
+    
+}
+
+.textoProjeto h3{
+    font-size: 15px;
+
 }
 
 .conteudo_projeto {
@@ -200,6 +228,17 @@ main {
     color: white;
     padding: 30px 200px;
     text-align: center;
+}
+
+.imagem_quebraProjeto{
+    background-image: url('./imgs/imgs.projeto/3d92ea48bc0f5b3e95f7fc7718a1ea96\ \(1\).gif');
+    margin-top: 125px;
+    width: 100vw;
+}
+
+.imagem_quebraProjeto h1{
+    margin: auto;
+    padding: 70px;
 }
 
 .calculadora {
@@ -236,7 +275,7 @@ main {
 .container_simulador {
     margin: auto;
     width: 350px;
-    height: 290px;
+    height: 310px;
     padding: 10px;
     display: flex;
     flex-direction: column;
@@ -246,49 +285,6 @@ main {
     background-color: #272328b7;
 }
 
-/* .input {
-    border: 1px solid #CCCCCC;
-    border-radius: 5px;
-    width: 270px;
-    height: 22px;
-    padding: 2px;
-    margin-top: 10px;
-    position: relative;
-}
-
-.input::placeholder {
-    color: #550B5B;
-}
-
-#imagemAdvertencia{
-    position: absolute;
-    width: 20px;
-    margin-left: 248px;
-    margin-top: 2px;
-    z-index: 1;
-    display: none;
-}
-
-#imagemAdvertencia2{
-    position: absolute;
-    width: 20px;
-    margin-left: 248px;
-    margin-top: 2px;
-    z-index: 1;
-    display: none;
-}
-
-.pequeno{
-    font-size: 10px;
-    margin-right: 185px;
-    left: 0;
-    bottom: -5px;
-}
-
-.image{
-    margin-bottom: 118px;
-} */
-
 .input-container {
     position: relative;
 }
@@ -296,16 +292,20 @@ main {
 .input-com-imagem {
     padding-left: 30px;
     border: 1px solid #CCCCCC;
-    border-radius: 5px;
-    width: 270px;
-    height: 22px;
+    width: 300px;
+    height: 30px;
     padding: 2px;
     margin-top: 10px;
     position: relative;
+    background-color: #380a3c00;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    color: #ffffff;
 }
 
-.input-com-imagem::placeholder{
-    color: #550B5B;
+.input-com-imagem::placeholder {
+    color: #ffffff;
 }
 
 .label-imagem {
@@ -320,6 +320,7 @@ main {
 .imagem-input {
     width: 20px;
     height: auto;
+
 }
 
 .texto-pequeno {
@@ -333,17 +334,75 @@ button {
     height: 15%;
     cursor: pointer;
     border-radius: 25px;
-    font-weight: bold;
     text-transform: uppercase;
 }
 
+/* Início: Botão do Simulado */
+
 #btn_simular {
-    background-color: #ffffff;
-    color: #550B5B;
-    width: 40%;
-    font-size: 20px;
-    margin-top: 25px;
+    width: 150px;
+    height: 35px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+    font-size: 25px;
+    margin-top: 30px;
 }
+
+
+#btn_simular:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+#btn_simular:hover:before {
+    opacity: 1;
+}
+
+#btn_simular:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 400% 0;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
+}
+
+/* Fim: Botão do Simulado */
 
 .contato {
     background-color: #380A3C;
@@ -511,7 +570,7 @@ button {
 
 #contatoButton {
     display: inline-block;
-    color: #6F0F77;   
+    color: #6F0F77;
     text-align: center;
     font-weight: bold;
 }
