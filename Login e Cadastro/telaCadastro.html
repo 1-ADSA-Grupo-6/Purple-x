@@ -23,15 +23,28 @@
                 <div class="form">
                     <input type="text" placeholder="Digite o nome da empresa" id="nomeEmpresaInput">
                     <br>
-                    <input type="text" placeholder="Digite o CNPJ" id="cnpjInput">
+                    <input type="text" placeholder="Digite o CNPJ" id="cnpjInput" maxlength="18">
                     <br>
                     <input type="text" placeholder="Nome" id="nomeCompletoInput">
                     <br>
-                    <input type="text" placeholder="CPF" id="cpfInput">
+                    <input type="text" placeholder="CPF" id="cpfInput" maxlength="14">
                     <br>
-                    <input type="text" placeholder="Data de nascimento" id="dtNascInput">
+                    <input type="text" placeholder="Data de nascimento" id="dtNascInput" maxlength="10">
                     <br>
-                    <input type="text" placeholder="Celular" id="cpfInput">
+                    <input type="text" placeholder="Celular" id="celularInput">
+                    <br>
+                    <input type="text" placeholder="Email" id="emailInput">
+                    <br>
+                    <div class="senha">
+                        <input name="txtSenha" id="txtSenha" class="input" type="password" placeholder="Digite sua senha">
+                        <img src="imgs/olho-fechado.png" class="lnr lnr-eye" alt="">
+                    </div>
+                    <br>
+                    <div class="senha">
+                        <input name="txtSenha_confirmation" id="txtSenha_confirmation" class="input" type="password"
+                            placeholder="Confirme sua senha" required>
+                        <img src="imgs/olho-fechado.png" id="eye-confirm" class="lnr lnr-eye" alt="">
+                    </div>
                     <br>
                     <button onclick="cadastrar()" class="botaoRoxo" id="openModal">Cadastrar</button>
                     <a class="voltar" href="index.html">Voltar</a>
@@ -58,27 +71,6 @@
 
 </html>
 
-<script>
-
-    function cadastrar() {
-        var btnAbrirModal = document.getElementById("openModal");
-        // Seleciona o modal
-        var modal = document.getElementById("myModal");
-        // Seleciona o botão de fechar do modal
-        var btnFecharModal = document.getElementsByClassName("close")[0];
-        // Quando o usuário clicar no botão, abra o modal
-        btnAbrirModal.onclick = function () {
-            modal.style.display = "block";
-        }
-        // Quando o usuário clicar no botão de fechar, feche o modal
-        btnFecharModal.onclick = function () {
-            modal.style.display = "none";
-        }
-        // Quando o usuário clicar fora do modal, feche-o
-        window.onclick = function (event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
-    }
-</script>
+<script src="js/cadastro.js"></script>
+<script src="js/mostrarSenha.js"></script>
+<script src="js/formatacaoCampos.js"></script>
