@@ -180,36 +180,28 @@ main {
 }
 
 .projeto {
-    padding-top: 120px;
+    padding-top: 110px;
     margin-top: 10px;
     width: 100vw;
     height: 200vh;
+    align-items: center;
 }
 
-.imagemProjeto {
+.conteudo1{
     display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    margin-top: 85px;
+    flex-direction: row;
+    padding-top: 90px;
 }
 
 .imagemProjeto img{
-    display: block;
-    width: 20%;
-    height: 20%;
-    border-radius: 250px;
+    width: 50%;
+    height: 50%;
+    border-radius: 50%;
 }
 
-.textoProjeto{
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    margin-top: 25px;
-    
-}
-
-.textoProjeto h3{
-    font-size: 15px;
+.divImgTex h3{
+    font-size: 20px;
+    padding-top: 10px;
 
 }
 
@@ -337,8 +329,6 @@ button {
     text-transform: uppercase;
 }
 
-/* Início: Botão do Simulado */
-
 #btn_simular {
     width: 150px;
     height: 35px;
@@ -402,11 +392,9 @@ button {
     }
 }
 
-/* Fim: Botão do Simulado */
 
 .contato {
     background-color: #380A3C;
-    /* height: 100vh; */
     display: flex;
     flex-direction: column;
     gap: 30px;
@@ -492,11 +480,6 @@ button {
     font-size: 25px;
 }
 
-
-
-/* MODAL */
-
-/* Estilo do modal */
 .modal {
     display: none;
     position: fixed;
@@ -508,7 +491,6 @@ button {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
-/* Conteúdo do modal */
 .modal-content {
     background-color: #FEFEFE;
     margin: 15% auto;
@@ -520,7 +502,6 @@ button {
     align-items: center;
 }
 
-/* Estilo do modal */
 .modal {
     display: none;
     position: fixed;
@@ -532,7 +513,6 @@ button {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
-/* Conteúdo do modal */
 .modal-content {
     background-color: #fefefe;
     margin: 15% auto;
@@ -542,7 +522,6 @@ button {
     height: auto;
 }
 
-/* Botão para fechar o modal */
 .close {
     color: #aaa;
     float: right;
