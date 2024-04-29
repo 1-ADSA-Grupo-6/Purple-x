@@ -1,13 +1,34 @@
 body {
     background-color: #000000ff;
-    display: flex;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
     flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1%;
+}
+
+.color1 {
+    background-color: #6F0F77;
+}
+
+.color2 {
+    background-color: #7000ff;
+}
+
+.text {
+    color: #ffffff;
+    font-size: 30px;
+}
+
+.text_pequeno {
+    color: #ffffff;
+    font-size: 25px;
 }
 
 header {
     width: 100%;
-    height: 10%;
+    height: 9%;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -19,7 +40,6 @@ header {
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-left: 1%;
 }
 
 #config {
@@ -43,64 +63,55 @@ header {
     width: 5%;
 }   
 
-#ativar_controle, #ativar_grafico{
-    display: none;
-}
-
-
-main {
-    display: flex;
-    justify-content: space-around;
-    height: 90%;
-    width: 100%;
-    justify-content: center;
-    align-items: flex-start;
-}
+/* CONTROLE */
 
 #control {
-    position: absolute;
+    position: fixed;
+    margin-top: 10%;
     width: 25%;
     height: 50%;
-    margin-top: 3%;
-    background-color: #ffffff;
+    background-color: #6F0F77;
     border-radius: 50px;
     display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: solid;
-}
-
-#control-icon {
-    width: 90%;
-    height: 85%;
-    margin-left: 10%;
-}
-
-#graph-icon {
-    width: 90%;
-    height: 70%;
-    margin: 10%;
+    color: #ffffff;
 }
 
 #select_categoria {
     border-radius: 10px;
 }
 
-#checked {
+#div_check{
     display: none;
+}
+
+#div_checked {
+    display: flex;
     border-top: 1px solid #00000048;
     margin-top: 10px;
 }
 
+/* BOTÕES LATERAIS */
+
 #menu_lateral {
-    margin-left: -97%;
+    margin-left: -96%;
+    margin-top: 5%;
     height: 20%;
     width: 4%;
-    position: absolute;
+    position: fixed;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+}
+
+#ativar_controle, #ativar_grafico{
+    display: none;
+}
+.lateral_icon {
+    width: 100%;
+    height: 75%;
 }
 
 .fixo_lateral {
@@ -113,18 +124,89 @@ main {
     align-items: center;
 }
 
-#main_container {
+/* GRÁFICO GERAL */
+
+#main_grafico_geral {
+    height: 90%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#container_grafico_geral {
+    width: 99%;
+    height: 99%;
+    background-color: #7000ff;
+    border-radius: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+#div_chk_graficos {
+    margin-top: 1%;
+    width: 100%;
+    height: 6%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#div_chk_graficos div {
+    width: 14%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.container_dois_grafico {
+    width: 100%;
+    height: 74%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-evenly;
+}
+
+.div_grafico {
+    width: 48%;
+    height: 80%;
+    background-color: #ffffff;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#container_dado_geral {
+    width: 100%;
+    height: 20%;
+}
+
+/* MÁQUINAS */
+
+main {
+    height: 90%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    justify-content: center;
+    align-items: flex-start;
+    justify-content: space-around;
+}
+
+/* .main_container {
     width: 100%;
     height: 100%;
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
-    justify-content: space-around;
-}
-
-#div_check{
-    display: none;
-}
+    border: solid red;
+} */
 
 /* .dois_container {
     height: 100%;
@@ -146,6 +228,8 @@ main {
     flex-direction: row;
 }
 
+/* PARTE DA ESQUERDA, INFO DA MÁQUINA */
+
 .info_maq {
     width: 25%;
     height: 100%;
@@ -155,7 +239,7 @@ main {
     align-items: center;
 }
 
-.img-maquina {
+.img_maquina {
     height: 40%;
     width: 100%;
 }
@@ -195,10 +279,12 @@ main {
     align-items: center ;
 }
 
-#template_pernas {
+.template_musculos {
     width: 80%;
     height: 100%;
 }
+
+/* PARTE DA DIREITA, GRÁFICO E DADOS DA MÁQUINA */
 
 .index_maq {
     width: 75%;
@@ -219,29 +305,26 @@ main {
     align-items: center;
 }
 
-.lineChart {
+.grafico_maq {
     margin-top: 1%;
     height: 90%;
-    width: 100%;
+    width: 75%;
     display: flex;
     justify-content: center;
-}
-
-#lineChart {
     border-radius: 10px;
     background-color: #ffffff;
 }
 
-#select_dia2 {
+/* #select_dia2 {
     border: none;
     color: #ffffff;
     font-size: 35px;
     height: 40px;
     width: 260px;
     text-align: center;
-}
+} */
 
-.container-text {
+.container_valor {
     width: 100%;
     height: 25%;
     margin-top: 1%;
@@ -251,7 +334,7 @@ main {
     justify-content: space-around;
 }
 
-.container-media-text {
+.div_valor {
     width: 50%;
     display: flex;
     flex-direction: column;
@@ -259,30 +342,12 @@ main {
     align-items: center;
 }
 
-.color1 {
-    background-color: #6F0F77;
+#img-supino {
+    height: 100%;
+    width: 100%;
 }
 
-.color2 {
-    background-color: #7000ff;
-}
-
-.text {
-    color: #ffffff;
-    font-size: 30px;
-}
-
-.text_pequeno {
-    color: #ffffff;
-    font-size: 25px;
-}
-
-.img-supino {
-    height: 50%;
-    width: 60%;
-}
-
-#img-leg-press {
+#img_leg_press {
     width: 100%;
     height: 100%;
 }

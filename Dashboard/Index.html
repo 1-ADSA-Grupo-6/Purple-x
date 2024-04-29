@@ -2,214 +2,130 @@
 
 <head>
     <title>Dashboard</title>
+    <meta charset="utf-8">
     <link rel="shortcut icon" type="imagex/png" href="img/icon.png">
     <link rel="stylesheet" href="Style.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
-<body>
+<body id="body">
+
     <header>
         <div id="titulo_logo">
             <img src="./img/logo.png" alt="logoPurpleX" id="logo">
             <h1 class="text">Check Fit Dashboard</h1>
         </div>
         <div id="config">
-            <img src="./img/icon menu.png" id="icon_menu">
+            <img src="./img/iconMenu.png" id="icon_menu">
         </div>
     </header>
-    <main>
-        <div id="control">
-            <p>Selecione a categoria desejada:</p><br>
-            <select id="select_categoria" onclick="filtro()">
-                <option value="">--Selecione aqui--</option>
-                <!-- <option value="superiores">Superiores</option>
-                <option value="inferiores">Inferiores</option> -->
-                <option value="peito">Peito</option>
-                <!-- <option value="braco">Braço</option>
-                <option value="costas">Costas</option> -->
-                <option value="perna">Pernas</option>
-            </select>
-            <div id="div_check">
-                <div id="chk_peito">
-                    <div><input type="checkbox" id="chk_supino" onclick="check()"><label for="chk_supino">Supino</label>
-                    </div>
-                    <div><input type="checkbox" id="chk_fly"><label for="chk_fly">Fly</label></div>
-                </div>
-                <div id="chk_pernas">
-                    <div><input type="checkbox" id="chk_legPress" onclick="check()" checked><label
-                            for="chk_legPress">Leg
-                            Press</label></div>
-                    <div><input type="checkbox" id="chk_smith"><label for="chk_smith">Smith</label></div>
+
+    <!-- CONTROLE PARA MOSTRAR OU ESCONDER ALGUMA MÁQUINA -->
+
+    <div id="control">
+        <p>Selecione a categoria desejada:</p><br>
+        <select id="select_categoria" onclick="filtro()">
+            <option value="">--Selecione aqui--</option>
+            <option value="todos">Todos</option>
+            <option value="peito">Peito</option>
+            <option value="braco">Braço</option>
+            <option value="costas">Costas</option>
+            <option value="perna">Pernas</option>
+        </select>
+        <div id="div_check">
+            <!-- MÁQUINAS DE PEITO -->
+            <div id="chk_peito">
+                <div>
+                    <input type="checkbox" id="chk_supino" onclick="mostrarMaquinas()" checked>
+                    <label for="chk_supino">Supino Inclinado</label>
                 </div>
             </div>
-            <div id="checked">
-                <!-- <label for="chk_legPress"><input type="checkbox" checked><label for="chk_legPress">Leg Press</label> -->
+            <!-- MÁQUINAS DE BRAÇO -->
+            <div id="chk_braco">
+                máquinas de braco
             </div>
-        </div>
-        <div id="menu_lateral">
-            <div id="fixo_controle" class="fixo_lateral">
-                <label for="ativar_controle" class="text">
-                    <img src="./img/controller.png" id="control-icon">
-                </label>
-                <input type="checkbox" id="ativar_controle" onclick="controle()" checked>
+            <!-- MÁQUINAS DE COSTAS -->
+            <div id="chk_costas">
+                máquinas de costas
             </div>
-            <div id="fixo_grafico" class="fixo_lateral text">
-                <label for="ativar_grafico">
-                    <img src="./img/icon_graph.png" id="graph-icon">
-                </label>
-                <input type="checkbox" id="ativar_grafico" onclick="grafico()" checked>
+            <!-- MÁQUINAS DE PERNAS -->
+            <div id="chk_pernas">
+                <div>
+                    <input type="checkbox" id="chk_legPress" onclick="mostrarMaquinas()" checked>
+                    <label for="chk_legPress">Leg Press</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="chk_smith" onclick="mostrarMaquinas()" checked>
+                    <label for="chk_smith">Smith</label>
+                </div>
             </div>
         </div>
-        <div id="main_container">
-            <div class="um_container color2">
-                <div id="info_maq" class="info_maq">
-                    <div id="img_maquina" class="img-maquina">
-                        <img src="./img/leg-press.png" alt="leg-press" id="img-leg-press">
-                    </div>
-                    <div class="dados_maq">
-                        <div class="div_nome_maq text_titulo">
-                            <span>Leg Press</span>
-                        </div>
-                        <div class="div_dados_maq text_pequeno">
-                            <span>ID:</span>
-                            <span id="id_maq"></span>
-                        </div>
-                        <div class="div_dados_maq text_pequeno">
-                            <span>Ultima manutenção:</span>
-                            <span id="data_ultima_manutencao"></span>
-                        </div>
-                        <div class="div_dados_maq text_pequeno">
-                            <span>Média de uso diário:</span>
-                            <span id="data_media_diario"></span>
-                        </div>
-                        <div class="div_dados_maq text_pequeno">
-                            <span>Média de tempo inativo:</span>
-                            <span id="data_media_tempo"></span>
-                        </div>
-                    </div>
-                    <div class="div_template_musculos">
-                        <img src="./img/template musculos/pernas.png" id="template_pernas">
-                    </div>
+        <div id="div_checked">
+        </div>
+    </div>
+
+    <!-- BOTÕES FIXOS NA ESQUERDA PARA ATIVAR CONTROLE OU GRÁFICO DE COMPARAÇÃO -->
+
+    <div id="menu_lateral">
+
+        <!-- ATIVAR CONTROLE -->
+
+        <div id="fixo_controle" class="fixo_lateral">
+            <label for="ativar_controle" class="text">
+                <img src="./img/controller.png" class="lateral_icon">
+            </label>
+            <input type="checkbox" id="ativar_controle" onclick="controle()">
+        </div>
+
+        <!-- ATIVAR GRÁFICO -->
+
+        <div id="fixo_grafico" class="fixo_lateral text">
+            <label for="ativar_grafico">
+                <img src="./img/iconGraph.png" class="lateral_icon">
+            </label>
+            <input type="checkbox" id="ativar_grafico" onclick="grafico()" checked>
+        </div>
+    </div>
+
+    <!-- GRÁFICO GERAL -->
+
+    <main id="main_grafico_geral">
+        <div id="container_grafico_geral">
+            <!-- ATIVAR OU DESATIVAR GRÁFICOS -->
+            <div id="div_chk_graficos">
+                <div>
+                    <input type="checkbox" id="chk_grafico_barra" onclick="grafico()">
+                    <label for="chk_grafico_barra" class="text">Gráfico de Barras</label>
                 </div>
-                <div id="index_maq" class="index_maq">
-                    <div id="container_grafico" class="container_grafico">
-                        <div>
-                            <span class="text">Filtro: </span><select id="select_dia2" onclick="filtro()"
-                                class="color2">
-                                <!-- <option value="">Dia da semana</option> -->
-                                <option value="Segunda-Feira">Segunda-Feira</option>
-                                <option value="Terça-Feira">Terça-Feira</option>
-                                <option value="Quarta-Feira">Quarta-Feira</option>
-                                <option value="Quinta-Feira">Quinta-Feira</option>
-                                <option value="Sexta-Feira">Sexta-Feira</option>
-                                <option value="Sábado">Sábado</option>
-                                <option value="Domingo">Domingo</option>
-                            </select>
-                        </div>
-                        <div class="lineChart">
-                            <canvas id="lineChart"></canvas>
-                        </div>
-                    </div>
-                    <div class="container-text">
-                        <div class="container-media-text text">
-                            
-                        </div>
-                        <div class="container-media-text text">
-                            
-                        </div>
-                        <div class="container-media-text text">
-                            
-                        </div>
-                        <div class="container-media-text text">
-                            <span id="span_demanda">Demanda na </span>
-                            <span id="span_demanda_valor"></span>
-                        </div>
-                    </div>
+                <div>
+                    <input type="checkbox" id="chk_grafico_linha" onclick="grafico()" checked>
+                    <label for="chk_grafico_linha" class="text">Gráfico de Linhas</label>
                 </div>
+            </div>
+            <div id="container_graficos" class="container_dois_grafico">
+                    <div id="container_grafico_barra" class="div_grafico">
+                        <canvas id="grafico_barra"></canvas>
+                    </div>
+                    <div id="container_grafico_linha" class="div_grafico">
+                        <canvas id="grafico_linha"></canvas>
+                    </div>
+            </div>
+            <div id="container_dado_geral">
+
             </div>
         </div>
     </main>
+
 </body>
 
 </html>
 
-<script src="./js/control.js"></script>
-<script src="./js/lineChart.js"></script>
-<script src="./js/data.js"></script>
+<script src="./js/funcControle.js"></script>
+<script src="./js/dadosMaquina.js"></script>
+<script src="./js/funcMaquina.js"></script>
+<script src="./js/funcGrafico.js"></script>
+<!-- USAR SOMENTE SE O BANCO NÃO ESTIVER CONECTADO 👇 -->
+<script src="./js/funcVerificarDados.js"></script>
 
-<script>
-    function check() {
-        if (chk_supino.checked) {
-            main_container.innerHTML = `<div class="container color1">
-            <img src="./img/supino_inclinado_articulado.webp" alt="supino_inclinado_articulado" class="img-supino">
-            <div class="index">
-                <h1>Supino Inclinado</h1>
-                <select id="select_dia" class="color1">
-                    <option value="segunda">Segunda-Feira</option>
-                    <option value="terca">Terça-Feira</option>
-                    <option value="quarta">Quarta-Feira</option>
-                    <option value="quinta">Quinta-Feira</option>
-                    <option value="sexta">Sexta-Feira</option>
-                    <option value="sabado">Sábado</option>
-                    <option value="domingo">Domingo</option>
-                </select>
-                <div class="container-text">
-                    <div class="container-media">
-                        <div class="container-media-text">
-                            <span>Média de uso diário:</span>
-                            <span>500</span>
-                        </div>
-                        <div class="container-media-text">
-                            <span>Média de tempo por uso:</span>
-                            <span>10:00</span>
-                        </div>
-                    </div>`
-        }
-        else if (!chk_supino.checked) {
-            main_container.innerHTML = ``
-        }
-
-        if (chk_legPress.checked) {
-            main_container.innerHTML += `<div class="container color2">
-            <img src="./img/leg-press.png" alt="leg-press" class="img-leg-press">
-            <div class="index">
-                <h1>Leg Press</h1>
-                <select id="select_dia2" onclick="filtro()" class="color2">
-                    <option value="segunda">Segunda-Feira</option>
-                    <option value="Terca">Terça-Feira</option>
-                    <option value="quarta">Quarta-Feira</option>
-                    <option value="quinta">Quinta-Feira</option>
-                    <option value="sexta">Sexta-Feira</option>
-                    <option value="sabado">Sábado</option>
-                    <option value="domingo">Domingo</option>
-                </select>
-                <div class="container-text">
-                    <div class="container-media">
-                        <div class="container-media-text">
-                            <span>Média de uso diário:</span>
-                            <span>500</span>
-                        </div>
-                        <div class="container-media-text">
-                            <span>Média de tempo por uso:</span>
-                            <span>10:00</span>
-                        </div>
-                    </div>
-                    <div class="container-media">
-                        <div class="container-media-text">
-                            <span>Ultima manutenção</span>
-                            <span>01/12/2023</span>
-                        </div>
-                        <div class="container-media-text">
-                            <span id="span_demanda">Demanda na </span>
-                            <span id="span_demanda_valor" class="baixa"></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>`
-        }
-        else if (!chk_legPress) {
-            main_container.innerHTML += `a`
-        }
-    }
-</script>
+<!-- EXECUTA FUNÇÔES DEPOIS DA <body> SER CARREGADA -->
+<body onload="carregarGraficos(), mostrarMaquinas(), verificarDados(), grafico()">
