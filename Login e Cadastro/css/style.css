@@ -60,6 +60,11 @@ body {
     margin: 20px;
 }
 
+#fraseClicavel:hover {
+    text-decoration: underline; /* Adiciona um sublinhado quando o mouse passa por cima */
+}
+
+
 h1 {
     color: #ffffff;
     font-family: "Kumbh Sans", sans-serif;
@@ -69,8 +74,17 @@ h2{
     font-family: "Kumbh Sans", sans-serif;
     text-align: center;
     justify-content: center;
+    font-size: xx-large;
 }
 
+input {
+    padding: 5px;
+    border: 1px solid #CCCCCC;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+    background-color: #F0F0F0;
+}
 button{
     background-color: #88009400;
     color: #ffffff;
@@ -105,11 +119,15 @@ button:hover{
 
 }
 
+#page2{
+    background-color: #880094;
+}
+
 #botaologin{
     background-color: #880094;
     color: #ffffff;
-    width: 200px;
-    height: 35px;
+    width: 202px;
+    height: 40px;
     border-radius: 35px;
     border-color: #ffffff;
     border-style: solid;
