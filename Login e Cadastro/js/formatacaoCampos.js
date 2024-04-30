@@ -17,22 +17,20 @@ function formatarCNPJ(cnpj) {
     return [cnpj, posicao];
 }
 
-// Função para formatar CPF
-function formatarCPF(cpf) {
-    cpf = cpf.replace(/\D/g, '');
-    cpf = cpf.replace(/(\d{3})(\d)/, '$1.$2');
-    cpf = cpf.replace(/(\d{3})(\d)/, '$1.$2');
-    cpf = cpf.replace(/(\d{3})(\d{1,2})$/, '$1-$2');
+// Função para formatar telefone fixo e celular
+function formatarTelefone(numero) {
+    // Remove todos os caracteres não numéricos
+    numero = numero.replace(/\D/g, '');
 
-    // Corrige a posição do cursor após a formatação
-    let posicao = cpf.length;
-    if (posicao === 4 || posicao === 5) {
-        posicao += 1;
-    } else if (posicao === 8 || posicao === 9) {
-        posicao += 2;
+    // Verifica se é um número de celular (9 dígitos) ou um número fixo (8 dígitos)
+    const celular = numero.length === 11;
+
+    // Formata o número de acordo com o formato brasileiro
+    if (celular) {
+        return numero.replace(/(\d{2})(\d{5})(\d{4})/, '($1) $2-$3');
+    } else {
+        return numero.replace(/(\d{2})(\d{4})(\d{4})/, '($1) $2-$3');
     }
-
-    return [cpf, posicao];
 }
 
 // Função para aplicar a formatação enquanto o usuário digita
@@ -50,34 +48,17 @@ function formatarCampo(input, formatter) {
     });
 }
 
-// Função para formatar data de nascimento
-function formatarDataNascimento(dataNasc) {
-    dataNasc = dataNasc.replace(/\D/g, ''); // Remove todos os caracteres não numéricos
-    dataNasc = dataNasc.replace(/^(\d{2})(\d)/, '$1/$2'); // Adiciona barra após os dois primeiros dígitos
-    dataNasc = dataNasc.replace(/^(\d{2})\/(\d{2})(\d)/, '$1/$2/$3'); // Adiciona barra após o quarto dígito
-
-    // Corrige a posição do cursor após a formatação
-    let posicao = dataNasc.length;
-    if (posicao === 3 || posicao === 4) {
-        posicao += 1;
-    } else if (posicao === 6 || posicao === 7) {
-        posicao += 2;
-    }
-
-    return [dataNasc, posicao];
-}
-
 // Função para aplicar a formatação enquanto o usuário digita
-function formatarCampo(input, formatter) {
+function formatarCampoTelefone(input) {
     input.addEventListener('input', function() {
         let start = input.selectionStart;
         let end = input.selectionEnd;
 
-        // Chamando a função de formatação
-        let [valorFormatado, novaPosicao] = formatter(input.value);
-        input.value = valorFormatado;
+        // Formata o número de telefone
+        input.value = formatarTelefone(input.value);
 
-        // Ajustando a posição do cursor
+        // Mantém a posição do cursor
+        let novaPosicao = start + (input.value.length - (end - start));
         input.setSelectionRange(novaPosicao, novaPosicao);
     });
 }
@@ -85,10 +66,17 @@ function formatarCampo(input, formatter) {
 
 // Selecionando os campos que iremos formatar
 let cnpj = document.getElementById('cnpjInput');
-let cpf = document.getElementById('cpfInput');
-let dataNasc = document.getElementById('dtNascInput');
+let telefone = document.getElementById('telefoneEmpresaInput');
 
 // Chamando a função enquanto o usuario digita
 formatarCampo(cnpj, formatarCNPJ);
-formatarCampo(cpf, formatarCPF);
-formatarCampo(dataNasc, formatarDataNascimento);
+formatarCampoTelefone(telefone);
+
+
+
+
+
+
+
+
+
