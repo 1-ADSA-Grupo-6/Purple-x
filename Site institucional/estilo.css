@@ -553,3 +553,20 @@ button {
     text-align: center;
     font-weight: bold;
 }
+
+footer{
+    width: 100%;
+    height: 200px;
+    display: flex;
+    background-color: black;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    color: #fff;
+    align-items: center;
+    justify-content: center;
+}
+
+.alinhando_rodape{
+    display: flex;
+    text-align: center;
+}
