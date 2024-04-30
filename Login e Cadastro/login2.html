@@ -14,44 +14,26 @@
         <div class="conteudo">
             <div class="header">
                 <img id="logo3" src="./imgs/logo3.png">
-
-
                 <h1>CADASTRE JÁ SEU <br> FUNCIONÁRIO</h1>
-
-
-
-
-
-
-
-
                 <br> <button onclick="cadastro()"><b>CADASTRAR</b></button>
-
-
-
-
             </div>
         </div>
     </div>
     <div class="container">
         <div class="conteudo2">
-
-
-
             <br>
             <h2>ENTRE JÁ COM<br>SUA CONTA</h2> <br> <br> <br>
-
-            <input type="text" id="" placeholder="CNPJ"> <br> <br>
-            <input type="text" id="" placeholder="Senha">
-
-
-
+            <span id="textCnpj">CNPJ</span>
+            <input type="text" placeholder="00.000.000/0000-00" id="cnpjInput" maxlength="18"><br> <br>
+            <span id="textSenha">Senha</span>
+            <div class="senha">
+                <input name="txtSenha" id="txtSenha" class="input" type="password"
+                    placeholder="●●●●●●">
+                <img src="imgs/olho-fechado.png" class="lnr lnr-eye" alt="">
+            </div>
             <br> <br> <br><br> <button onclick="entrar()" id="botaologin"><b> ENTRAR</b></button><br>
-
             <p id="fraseClicavel" style="color:#880094;font-family:sans-serif;font-size:x-small;"><b>ESQUECEU SUA
                     SENHA?</b></p>
-
-
         </div>
     </div>
 
@@ -61,22 +43,20 @@
 
 <script>
     function entrar() {
-
-
-
-
+        window.location.href = '../Dashboard/index.html'
     }
     function cadastro() {
-
     }
+
+    function esqueceu() {
+    }
+
 
     document.getElementById("fraseClicavel").addEventListener("click", function () {
         esqueceu();
     });
 
-    function esqueceu() {
-
-    }
-
-
 </script>
+
+<script src="js/mostrarSenha.js"></script>
+<script src="js/formatacaoCampos.js"></script>
