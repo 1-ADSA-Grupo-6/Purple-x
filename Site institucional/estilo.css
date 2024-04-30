@@ -231,13 +231,11 @@ main {
     width: 100vw;
     display: flex;
     align-items: center;
-    justify-content: center;
-    height: 150px;
+    height: 100px;
 }
 
-.imagem_quebraProjeto h1{
+.imagem_quebraProjeto h3{
     margin: auto;
-    padding: 70px;
     font-size: 30px;
 }
 
