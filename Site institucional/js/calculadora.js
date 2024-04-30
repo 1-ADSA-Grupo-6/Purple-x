@@ -37,13 +37,14 @@ function Resultado() {
 
         const totalAno = (Valormatriculados * Valormensalidade) * 12;
         const perdaTotal = (totalAno * 16) / 100;
+        const perdaTotalMensal = perdaTotal/12;
 
-        exibir.innerHTML = `No Brasil, 16% da evasão de matrículas nas academias ocorre devido à superlotação. 
-        Com base nos dados fornecidos, você está <span style="color:red"><b>perdendo um total de ${perdaTotal.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</b></span> por ano. 
-        Ao investir em nosso projeto, você poderá obter um <span style="color: green"><b>ganho anual de ${totalAno.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</b></span>. 
-        Não perca tempo, invista na <span style="color: #6F0F77"><b>PurpleX</b></span> e impulsione o crescimento da sua empresa!
-        <br>
-        Entre em contato! <a href="#contato_id" id="contatoButton">Contato</a>`;
+        exibir.innerHTML = `No Brasil, <b>16%</b>  da evasão de matrículas nas academias ocorre devido à superlotação. 
+        Ao investir no nosso projeto você deixará de<span style="color:red"><b> perder um total de  ${perdaTotal.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</b></span> por ano. <br>
+      
+        Não perca tempo, invista na <span style="color: #6F0F77"><b>PURPLE X</b></span> e impulsione o crescimento da sua empresa!
+        <br><br>
+         <a href="#contato_id" id="contatoButton">Entre em contato!</a>`;
 
         var fecharModal = document.getElementById("contatoButton");
 
