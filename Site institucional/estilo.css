@@ -180,7 +180,7 @@ main {
 }
 
 .projeto {
-    padding-top: 110px;
+    padding-top: 120px;
     margin-top: 10px;
     width: 100vw;
     height: 200vh;
@@ -190,17 +190,20 @@ main {
 .conteudo1{
     display: flex;
     flex-direction: row;
-    padding-top: 90px;
+    padding-top: 100px;
+    height: 300px;  
+    margin: 0px 150px;
+    padding-bottom: 10px;
 }
 
 .imagemProjeto img{
-    width: 50%;
-    height: 50%;
+    width: 55%;
+    height: 55%;
     border-radius: 50%;
 }
 
 .divImgTex h3{
-    font-size: 20px;
+    font-size: 15px;
     padding-top: 10px;
 
 }
@@ -224,19 +227,25 @@ main {
 
 .imagem_quebraProjeto{
     background-image: url('./imgs/imgs.projeto/3d92ea48bc0f5b3e95f7fc7718a1ea96\ \(1\).gif');
-    margin-top: 125px;
+    margin-top: 100px;
     width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 150px;
 }
 
 .imagem_quebraProjeto h1{
     margin: auto;
     padding: 70px;
+    font-size: 30px;
 }
 
 .calculadora {
     width: 100vw;
     height: 100vh;
     background-color: black;
+    padding-top: 50px;
 
 }
 
@@ -248,19 +257,18 @@ main {
 }
 
 .conteudo_simulador {
-    padding-top: 25px;
-    margin-top: 100px;
     margin: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-top: 10px;
 }
 
 .titulo {
     font-size: 30px;
     font-family: "Kumbh Sans", sans-serif;
     color: white;
-    padding: 100px 100px 50px;
+    padding: 100px 100px 80px;
     text-align: center
 }
 
@@ -275,6 +283,7 @@ main {
     justify-content: center;
     border-radius: 30px;
     background-color: #272328b7;
+    margin-bottom: 15px;
 }
 
 .input-container {
@@ -347,7 +356,7 @@ button {
 
 #btn_simular:before {
     content: '';
-    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    background: linear-gradient(45deg,#ff0000, #ff7300, #fffb00, #48ff00, #00ffd5 #00ffd5, #002bff, #7a00ff, #ff00c8);
     position: absolute;
     top: -2px;
     left: -2px;
@@ -552,21 +561,4 @@ button {
     color: #6F0F77;
     text-align: center;
     font-weight: bold;
-}
-
-footer{
-    width: 100%;
-    height: 200px;
-    display: flex;
-    background-color: black;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    color: #fff;
-    align-items: center;
-    justify-content: center;
-}
-
-.alinhando_rodape{
-    display: flex;
-    text-align: center;
 }
