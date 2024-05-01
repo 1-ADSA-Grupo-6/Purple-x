@@ -6,6 +6,7 @@ let idMaximo = 99
 // DADOS QUE VEM DO BANCO (FUTURAMENTE)
 idMaximo++ //VARIÁVEL LIMITADORA DO FOR
 let idMaq_100 = 100
+let qtdMaq_legPress = 2
 let nomeMaq_100 = 'Leg Press'
 let categoria_100 = 'Pernas'
 let dataMediaDiario_100 = 200
@@ -25,16 +26,28 @@ body.innerHTML += `
 <main id="maq_${idMaq_100}">
     <div id="container_${idMaq_100}" class="um_container color2">
         <div class="info_maq">
+            <div id="nome_${idMaq_100}" class="div_nome_maq text_titulo">
+                <span>${nomeMaq_100}</span>
+            </div>
+            <div class="div_idMaq">
+                <span class="text_pequeno">Máquina exibida:</span>
+                <select id="select_legPress" class="select_maq">
+                    <option value="todas">Todas</option>
+                    <option value="100">100</option>
+                    <option value="103">103</option>
+                </select>
+            </div>
             <div id="img_${idMaq_100}" class="img_maquina">
                 <img src="${imgMaq_100}" id="img_leg_press">
             </div>
             <div class="dados_maq">
-                <div id="nome_${idMaq_100}" class="div_nome_maq text_titulo">
-                    <span>${nomeMaq_100}</span>
+                <div class="div_dados_maq text_pequeno">
+                    <span>Categoria:</span>
+                    <span id="categoria_${idMaq_100}">${categoria_100}</span>
                 </div>
                 <div class="div_dados_maq text_pequeno">
-                    <span>Número da máquina:</span>
-                    <span id="id_${idMaq_100}">${idMaq_100}</span>
+                    <span>Quantidade de máquinas:</span>
+                    <span id="qtdMaq_${nomeMaq_100}">${qtdMaq_legPress}</span>
                 </div>
                 <div class="div_dados_maq text_pequeno">
                     <span>Ultima manutenção:</span>
@@ -48,9 +61,6 @@ body.innerHTML += `
                     <span>Média de tempo inativo:</span>
                     <span id="mediaInativo_${idMaq_100}">${dataMediaTempo_100}</span>
                 </div>
-            </div>
-            <div id="musculo_${idMaq_100}" class="div_template_musculos">
-                <img src="${template_musculo_100}" class="template_musculos">
             </div>
         </div>
         <div id="index_${idMaq_100}" class="index_maq">
@@ -85,6 +95,7 @@ idMaximo++ //VARIÁVEL LIMITADORA DO FOR
 let idMaq_101 = 101
 let nomeMaq_101 = 'Supino Inclinado'
 let categoria_101 = 'Peito'
+let qtdMaq_supinoInclinado = 1
 let dataMediaDiario_101 = 500
 let dataMediaTempo_101 = '1:00'
 let ultimaManutencao_101 = '10/04/2024'
@@ -100,16 +111,27 @@ body.innerHTML += `
 <main id="maq_${idMaq_101}">
     <div id="container_${idMaq_101}" class="um_container color2">
         <div class="info_maq">
+            <div id="nome_${idMaq_101}" class="div_nome_maq text_titulo">
+                <span>${nomeMaq_101}</span>
+            </div>
+            <div class="div_idMaq">
+                <span class="text_pequeno">Máquina exibida:</span>
+                <select id="select_legPress" class="select_maq">
+                    <option value="todas">Todas</option>
+                    <option value="101">101</option>
+                </select>
+            </div>
             <div id="img_${idMaq_101}" class="img_maquina">
                 <img src="${imgMaq_101}" id="img-supino">
             </div>
             <div class="dados_maq">
-                <div id="nome_${idMaq_101}" class="div_nome_maq text_titulo">
-                    <span>${nomeMaq_101}</span>
+                <div class="div_dados_maq text_pequeno">
+                    <span>Categoria:</span>
+                    <span id="categoria_${idMaq_101}">${categoria_101}</span>
                 </div>
                 <div class="div_dados_maq text_pequeno">
-                    <span>Número da máquina:</span>
-                    <span id="id_${idMaq_101}">${idMaq_101}</span>
+                    <span>Quantidade de máquinas:</span>
+                    <span id="qtdMaq_${nomeMaq_101}">${qtdMaq_supinoInclinado}</span>
                 </div>
                 <div class="div_dados_maq text_pequeno">
                     <span>Ultima manutenção:</span>
@@ -124,17 +146,14 @@ body.innerHTML += `
                     <span id="mediaInativo_${idMaq_101}">${dataMediaTempo_101}</span>
                 </div>
             </div>
-            <div id="musculo_${idMaq_101}" class="div_template_musculos">
-                <img src="${template_musculo_101}" class="template_musculos">
-            </div>
         </div>
-        <div id="index_${idMaq_101}" class="index_maq">
+        <div id="index_${idMaq_101}" class="index_maq invertido">
             <div class="container_grafico">
                 <div class="grafico_maq">
                     <canvas id="grafico_${idMaq_101}"></canvas>
                 </div>
             </div>
-            <div class="container_valor">
+            <div class="container_valor invertido">
                 <div class="div_valor text">
                     <span>Total de usos:</span>
                     <span id="total_usos_${idMaq_101}">${totalUsos_101}</span>
@@ -159,6 +178,7 @@ idMaximo++ //VARIÁVEL LIMITADORA DO FOR
 let idMaq_102 = 102
 let nomeMaq_102 = 'Smith'
 let categoria_102 = 'Pernas'
+let qtdMaq_smith = 1
 let dataMediaDiario_102 = 300
 let dataMediaTempo_102 = '14:00'
 let ultimaManutencao_102 = '15/01/2024'
@@ -174,16 +194,27 @@ body.innerHTML += `
 <main id="maq_${idMaq_102}">
     <div id="container_${idMaq_102}" class="um_container color2">
         <div class="info_maq">
+            <div id="nome_${idMaq_102}" class="div_nome_maq text_titulo">
+                <span>${nomeMaq_102}</span>
+            </div>
+            <div class="div_idMaq">
+                <span class="text_pequeno">Máquina exibida:</span>
+                <select id="select_legPress" class="select_maq">
+                    <option value="todas">Todas</option>
+                    <option value="102">102</option>
+                </select>
+            </div>
             <div id="img_${idMaq_102}" class="img_maquina">
                 <img src="${imgMaq_102}" id="img_leg_press">
             </div>
             <div class="dados_maq">
-                <div id="nome_${idMaq_102}" class="div_nome_maq text_titulo">
-                    <span>${nomeMaq_102}</span>
+                <div class="div_dados_maq text_pequeno">
+                    <span>Categoria:</span>
+                    <span id="categoria_${idMaq_102}">${categoria_102}</span>
                 </div>
                 <div class="div_dados_maq text_pequeno">
-                    <span>Número da máquina:</span>
-                    <span id="id_${idMaq_102}">${idMaq_102}</span>
+                    <span>Quantidade de máquinas:</span>
+                    <span id="qtdMaq_${nomeMaq_102}">${qtdMaq_smith}</span>
                 </div>
                 <div class="div_dados_maq text_pequeno">
                     <span>Ultima manutenção:</span>
@@ -197,9 +228,6 @@ body.innerHTML += `
                     <span>Média de tempo inativo:</span>
                     <span id="mediaInativo_${idMaq_102}">${dataMediaTempo_102}</span>
                 </div>
-            </div>
-            <div id="musculo_${idMaq_102}" class="div_template_musculos">
-                <img src="${template_musculo_102}" class="template_musculos">
             </div>
         </div>
         <div id="index_${idMaq_102}" class="index_maq">
