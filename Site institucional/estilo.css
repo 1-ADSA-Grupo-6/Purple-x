@@ -183,7 +183,6 @@ main {
     padding-top: 120px;
     margin-top: 10px;
     width: 100vw;
-    height: 200vh;
     align-items: center;
 }
 
@@ -239,18 +238,84 @@ main {
     font-size: 30px;
 }
 
+.texto_projeto1{
+    margin-top: 40px;
+    padding: 0px 150px;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: row;
+    gap: 150px;
+}
+
+.projeto_secao{
+    display: flex;
+    flex-direction: column;
+    padding-top: 60px;
+}
+
+.solucao h3{
+    font-size: 15px;
+    font-weight: 500;
+    text-transform: none;
+    letter-spacing: 1.5px;
+    line-height: 25px;
+}
+
+.funcionamento h3{
+    font-size: 15px;
+    font-weight: 500;
+    text-transform: none;
+    letter-spacing: 1.5px;
+    line-height: 25px;
+}
+
+.titulo_secao h3{
+    font-size: 20px;
+    padding: 15px 0px;
+}
+
+.beneficios{
+    padding: 15px 80px;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: row;
+    gap: 80px;
+    align-items: center;
+}
+
+.beneficio h3{
+    font-size: 15px;
+    font-weight: 500;
+    text-transform: none;
+    letter-spacing: 1.5px;
+    line-height: 25px;
+    text-align: left;
+}
+
+.ultima_secao_projeto{
+    padding: 50px 180px 0px;
+}
+
+.ultima_secao_projeto h3{
+    font-size: 20px;
+    line-height: 35px;
+}
+
 .calculadora {
     width: 100vw;
-    height: 100vh;
     background-color: black;
     padding-top: 50px;
-
+    height: 100vh;
 }
 
 .img_fundo_calculadora {
     background-image: url('imgs/sim_financeiro_img.png');
     background-size: cover;
     background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     height: 100vh;
 }
 
@@ -259,14 +324,14 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 10px;
+    gap: 60px;
 }
 
 .titulo {
     font-size: 30px;
     font-family: "Kumbh Sans", sans-serif;
     color: white;
-    padding: 100px 100px 80px;
+    padding: 0px 100px;
     text-align: center
 }
 
@@ -274,7 +339,7 @@ main {
     margin: auto;
     width: 350px;
     height: 310px;
-    padding: 10px;
+    padding: 15px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -404,11 +469,13 @@ button {
     background-color: #380A3C;
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: auto;
 }
 
 .conteudo_contato {
-    padding-top: 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -426,6 +493,7 @@ button {
     justify-content: space-around;
     border-radius: 30px;
     background-color: #ffffff;
+    margin-bottom: 20px;
 }
 
 .esquerdo {
@@ -436,13 +504,6 @@ button {
 }
 
 .direito {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 4px;
-}
-
-.esquerdo {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -479,12 +540,18 @@ button {
     border: 2px solid #6F0F77;
 }
 
-#btn_contato {
-    margin-top: 30px;
+#btn_contato{
+    margin-top: 17px;
     border-radius: 30px;
     height: 45px;
-    width: 14.8%;
     font-size: 25px;
+    font-weight: 700;
+    padding: 0px 15px;
+}
+
+#btn_contato a{
+    text-decoration: none;
+    color: black;
 }
 
 .modal {
