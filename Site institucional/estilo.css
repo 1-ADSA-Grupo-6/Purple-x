@@ -560,22 +560,51 @@ button {
     text-align: center;
     font-weight: bold;
 }
+
 .rodape_conteudo{
     display: flex;
     justify-content: space-around;
     width: 100%;
     align-items: center;
-    padding: 30px 50px;
+    padding: 50px 10px;
 }
+
 .colunas{
-    width: 30%;
+    width: 50%;
     display: flex;
     justify-content: space-around;
+    gap: 50px;
 }
+
 .logo_rodape{
-    width: 30%;
+    width: 23%;
 }
+
 .button_rodape {
     color: white;
     text-align: center;
+}
+
+.coluna1  a{
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    display: flex;
+    justify-content: left;
+}
+
+.coluna2  a{
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    display: flex;
+    justify-content: left;
+}
+
+.coluna3  a{
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    display: flex;
+    justify-content: left;
 }
