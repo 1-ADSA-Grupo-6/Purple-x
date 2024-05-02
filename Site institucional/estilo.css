@@ -59,18 +59,18 @@ header {
     height: 15%;
 }
 
-.menus_header{
+.menus_header {
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-.btn_header{
+.btn_header {
     display: flex;
     gap: 12px
 }
 
-#btn_login{
+#btn_login {
     font-size: 25px;
     width: 90px;
     height: 40%;
@@ -79,7 +79,7 @@ header {
     cursor: pointer;
 }
 
-#btn_cadastro{
+#btn_cadastro {
     font-size: 25px;
     width: 120px;
     height: 40%;
@@ -88,14 +88,27 @@ header {
     cursor: pointer;
 }
 
-#btn_cadastro a{
+#btn_cadastro a {
     text-decoration: none;
     color: #000000;
 }
 
-#btn_login a{
+#btn_login a {
     text-decoration: none;
     color: #000000;
+}
+
+#btn_login:hover,
+#btn_cadastro:hover {
+    background-color: rgba(0, 0, 0, 0.153);
+    border: 2px solid #ffffff;
+    border-radius: 35px;
+}
+
+#btn_login a:hover,
+#btn_cadastro a:hover {
+    color: #ffffff;
+
 }
 
 .logo {
@@ -342,6 +355,37 @@ main {
     margin-bottom: 20px
 }
 
+#btn_projeto {
+    margin-top: 15px;
+    font-size: 25px;
+    font-weight: 700;
+    width: 250px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #ffffff;
+    background-color: #111;
+    cursor: pointer;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+#btn_projeto:hover {
+    color: white;
+    background: #880094;
+}
+
+#btn_projeto:active {
+    letter-spacing: 2px;
+    letter-spacing: 2px;
+}
+
+#btn_projeto a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
 .calculadora {
     width: 100vw;
     background-color: black;
@@ -512,20 +556,20 @@ button {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: auto;
+    height: 110vh;
 }
 
 .conteudo_contato {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 20px;
 }
 
 .container_contato {
     display: flex;
     margin: auto;
-    width: 700px;
+    width: 800px;
     height: 300px;
     padding: 20px;
     margin-top: 15px;
@@ -589,22 +633,23 @@ button {
     height: 50px;
     border: none;
     outline: none;
-    color: #ffffff;
-    background-color: #111;
+    color: black;
+    background-color: white;
     cursor: pointer;
     position: relative;
     cursor: pointer;
 
-  transition: all 0.25s ease;
-  &:hover {
-    color:white;
-    background: #880094;
-  }
+    transition: all 0.25s ease;
 
-  &:active {
-    letter-spacing: 2px;
-    letter-spacing: 2px ;
-  } 
+    &:hover {
+        color: white;
+        background: #880094;
+    }
+
+    &:active {
+        letter-spacing: 2px;
+        letter-spacing: 2px;
+    }
 
 }
 
