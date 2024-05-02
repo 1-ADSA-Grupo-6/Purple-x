@@ -186,22 +186,22 @@ main {
     align-items: center;
 }
 
-.conteudo1{
+.conteudo1 {
     display: flex;
     flex-direction: row;
     padding-top: 100px;
-    height: 300px;  
+    height: 300px;
     margin: 0px 150px;
     padding-bottom: 10px;
 }
 
-.imagemProjeto img{
+.imagemProjeto img {
     width: 55%;
     height: 55%;
     border-radius: 50%;
 }
 
-.divImgTex h3{
+.divImgTex h3 {
     font-size: 15px;
     padding-top: 10px;
 
@@ -224,21 +224,21 @@ main {
     text-align: center;
 }
 
-.imagem_quebraProjeto{
+.imagem_quebraProjeto {
     background-image: url('./imgs/imgs.projeto/3d92ea48bc0f5b3e95f7fc7718a1ea96\ \(1\).gif');
     margin-top: 100px;
     width: 100vw;
     display: flex;
     align-items: center;
-    height: 100px;
+    height: 175px;
 }
 
-.imagem_quebraProjeto h3{
+.imagem_quebraProjeto h3 {
     margin: auto;
     font-size: 30px;
 }
 
-.texto_projeto1{
+.texto_projeto1 {
     margin-top: 40px;
     padding: 0px 150px;
     margin-bottom: 50px;
@@ -247,13 +247,13 @@ main {
     gap: 150px;
 }
 
-.projeto_secao{
+.projeto_secao {
     display: flex;
     flex-direction: column;
     padding-top: 60px;
 }
 
-.solucao h3{
+.solucao h3 {
     font-size: 15px;
     font-weight: 500;
     text-transform: none;
@@ -261,7 +261,7 @@ main {
     line-height: 25px;
 }
 
-.funcionamento h3{
+.funcionamento h3 {
     font-size: 15px;
     font-weight: 500;
     text-transform: none;
@@ -269,12 +269,12 @@ main {
     line-height: 25px;
 }
 
-.titulo_secao h3{
+.titulo_secao h3 {
     font-size: 20px;
     padding: 15px 0px;
 }
 
-.beneficios{
+.beneficios {
     padding: 15px 80px;
     margin-bottom: 50px;
     display: flex;
@@ -283,7 +283,7 @@ main {
     align-items: center;
 }
 
-.beneficio h3{
+.beneficio h3 {
     font-size: 15px;
     font-weight: 500;
     text-transform: none;
@@ -292,13 +292,14 @@ main {
     text-align: left;
 }
 
-.ultima_secao_projeto{
+.ultima_secao_projeto {
     padding: 50px 180px 0px;
 }
 
-.ultima_secao_projeto h3{
+.ultima_secao_projeto h3 {
     font-size: 20px;
     line-height: 35px;
+    margin-bottom: 20px
 }
 
 .calculadora {
@@ -402,8 +403,8 @@ button {
 }
 
 #btn_simular {
-    width: 150px;
-    height: 35px;
+    width: 200px;
+    height: 50px;
     border: none;
     outline: none;
     color: #fff;
@@ -419,7 +420,7 @@ button {
 
 #btn_simular:before {
     content: '';
-    background: linear-gradient(45deg,#ff0000, #ff7300, #fffb00, #48ff00, #00ffd5 #00ffd5, #002bff, #7a00ff, #ff00c8);
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
     position: absolute;
     top: -2px;
     left: -2px;
@@ -540,18 +541,36 @@ button {
     border: 2px solid #6F0F77;
 }
 
-#btn_contato{
-    margin-top: 17px;
-    border-radius: 30px;
-    height: 45px;
+#btn_contato {
+    margin-top: 15px;
     font-size: 25px;
     font-weight: 700;
-    padding: 0px 15px;
+    width: 250px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #ffffff;
+    background-color: #111;
+    cursor: pointer;
+    position: relative;
+    cursor: pointer;
+
+  transition: all 0.25s ease;
+  &:hover {
+    color:white;
+    background: #880094;
+  }
+
+  &:active {
+    letter-spacing: 2px;
+    letter-spacing: 2px ;
+  } 
+
 }
 
-#btn_contato a{
+#btn_contato a {
     text-decoration: none;
-    color: black;
+    color: rgb(255, 255, 255);
 }
 
 .modal {
@@ -628,7 +647,7 @@ button {
     font-weight: bold;
 }
 
-.rodape_conteudo{
+.rodape_conteudo {
     display: flex;
     justify-content: space-around;
     width: 100%;
@@ -636,14 +655,14 @@ button {
     padding: 50px 10px;
 }
 
-.colunas{
+.colunas {
     width: 50%;
     display: flex;
     justify-content: space-around;
     gap: 50px;
 }
 
-.logo_rodape{
+.logo_rodape {
     width: 23%;
 }
 
@@ -652,7 +671,7 @@ button {
     text-align: center;
 }
 
-.coluna1  a{
+.coluna1 a {
     text-decoration: none;
     font-family: 'Inter', sans-serif;
     font-size: 15px;
@@ -660,7 +679,7 @@ button {
     justify-content: left;
 }
 
-.coluna2  a{
+.coluna2 a {
     text-decoration: none;
     font-family: 'Inter', sans-serif;
     font-size: 15px;
@@ -668,7 +687,7 @@ button {
     justify-content: left;
 }
 
-.coluna3  a{
+.coluna3 a {
     text-decoration: none;
     font-family: 'Inter', sans-serif;
     font-size: 15px;
