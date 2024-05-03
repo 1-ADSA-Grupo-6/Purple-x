@@ -51,11 +51,64 @@ header {
     padding-top: 15px;
     padding-bottom: 15px;
     z-index: 2;
+    align-items: center;
 }
 
 .a_logo_header {
     width: 15%;
     height: 15%;
+}
+
+.menus_header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn_header {
+    display: flex;
+    gap: 12px
+}
+
+#btn_login {
+    font-size: 25px;
+    width: 90px;
+    height: 40%;
+    border: none;
+    background-color: #f1f1f1;
+    cursor: pointer;
+}
+
+#btn_cadastro {
+    font-size: 25px;
+    width: 120px;
+    height: 40%;
+    border: none;
+    background-color: #f1f1f1;
+    cursor: pointer;
+}
+
+#btn_cadastro a {
+    text-decoration: none;
+    color: #000000;
+}
+
+#btn_login a {
+    text-decoration: none;
+    color: #000000;
+}
+
+#btn_login:hover,
+#btn_cadastro:hover {
+    background-color: rgba(0, 0, 0, 0.153);
+    border: 2px solid #ffffff;
+    border-radius: 35px;
+}
+
+#btn_login a:hover,
+#btn_cadastro a:hover {
+    color: #ffffff;
+
 }
 
 .logo {
@@ -250,7 +303,7 @@ main {
 .projeto_secao {
     display: flex;
     flex-direction: column;
-    padding-top: 60px;
+    padding-top: 50px;
 }
 
 .solucao h3 {
@@ -274,23 +327,80 @@ main {
     padding: 15px 0px;
 }
 
+.titulo_secao h6 {
+    font-size: 10px;
+    margin-top: -10px;
+}
+
 .beneficios {
     padding: 15px 80px;
     margin-bottom: 50px;
     display: flex;
     flex-direction: row;
     gap: 80px;
-    align-items: center;
+    margin: auto;
 }
 
-.beneficio h3 {
+.card {
+    width: 250px;
+    height: 200px;
+    perspective: 1000px;
+  }
+  
+  .card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.999s;
+  }
+  
+  .card:hover .card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .card-front,
+  .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+  }
+  
+  .card-front {
+    background-color: #6A2C70;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    border: 10px solid #6A2C70;
+    border-radius: 10px;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bolder;
+    transform: rotateY(0deg);
+  }
+  
+  .card-back {
+    background-color: #111;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    border: 10px solid #111;
+    border-radius: 10px;
+    justify-content: center;
+    font-size: 15px;
+    transform: rotateY(180deg);
+  }
+
+
+/* .beneficio h3 {
     font-size: 15px;
     font-weight: 500;
     text-transform: none;
     letter-spacing: 1.5px;
     line-height: 25px;
     text-align: left;
-}
+} */
 
 .ultima_secao_projeto {
     padding: 50px 180px 0px;
@@ -300,6 +410,37 @@ main {
     font-size: 20px;
     line-height: 35px;
     margin-bottom: 20px
+}
+
+#btn_projeto {
+    margin-top: 15px;
+    font-size: 25px;
+    font-weight: 700;
+    width: 250px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #ffffff;
+    background-color: #111;
+    cursor: pointer;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+#btn_projeto:hover {
+    color: white;
+    background: #880094;
+}
+
+#btn_projeto:active {
+    letter-spacing: 2px;
+    letter-spacing: 2px;
+}
+
+#btn_projeto a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
 }
 
 .calculadora {
@@ -472,20 +613,20 @@ button {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: auto;
+    height: 110vh;
 }
 
 .conteudo_contato {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 20px;
 }
 
 .container_contato {
     display: flex;
     margin: auto;
-    width: 700px;
+    width: 800px;
     height: 300px;
     padding: 20px;
     margin-top: 15px;
@@ -509,14 +650,16 @@ button {
     flex-direction: column;
     align-items: center;
     gap: 4px;
+    
 }
 
 .direito h2 {
-    font-size: 18px;
+    font-size: 15px;
 }
 
 .esquerdo h2 {
-    font-size: 18px;
+    font-size: 15px;
+
 }
 
 .texto_contato {
@@ -524,22 +667,56 @@ button {
     font-family: "Kumbh Sans", sans-serif;
     color: white;
     padding: 30px 200px;
-    text-align: center
+    text-align: center;
 }
 
 .input_contato {
-    padding: 10px;
-    border-radius: 10px;
-    width: 115%;
-    border: 2px solid #6F0F77;
-}
+    width: 220px;
+    background-color: #f0efef;
+    color: #242424;
+    padding: .15rem .5rem;
+    min-height: 40px;
+    border-radius: 4px;
+    outline: none;
+    border: none;
+    line-height: 1.15;
+    box-shadow: 0px 10px 20px -18px;
+  }
+  
+  .input_contato:focus {
+    border-bottom: 2px solid #5b5fc7;
+    border-radius: 4px 4px 2px 2px;
+  }
+  
+  .input_contato:hover {
+    outline: 1px solid lightgrey;
+  }
 
-.input_contato_descreva {
-    padding: 100px 20px;
+  .input_contato_descreva {
+    background-color: #f0efef;
+    padding: 175px 20px;
     border-radius: 10px;
     width: 115%;
-    border: 2px solid #6F0F77;
-}
+    color: #242424;
+    min-height: 40px;
+    border-radius: 4px;
+    outline: none;
+    border: none;
+    line-height: 1.15;
+    box-shadow: 0px 10px 20px -18px;
+    resize: vertical;
+    padding-top: 10px;
+  }
+  
+  .input_contato_descreva:focus {
+    border-bottom: 2px solid #5b5fc7;
+    border-radius: 4px 4px 2px 2px;
+  }
+  
+  .input_contato_descreva:hover {
+    outline: 1px solid lightgrey;
+  }
+
 
 #btn_contato {
     margin-top: 15px;
@@ -549,22 +726,23 @@ button {
     height: 50px;
     border: none;
     outline: none;
-    color: #ffffff;
-    background-color: #111;
+    color: black;
+    background-color: white;
     cursor: pointer;
     position: relative;
     cursor: pointer;
 
-  transition: all 0.25s ease;
-  &:hover {
-    color:white;
-    background: #880094;
-  }
+    transition: all 0.25s ease;
 
-  &:active {
-    letter-spacing: 2px;
-    letter-spacing: 2px ;
-  } 
+    &:hover {
+        color: white;
+        background: #880094;
+    }
+
+    &:active {
+        letter-spacing: 2px;
+        letter-spacing: 2px;
+    }
 
 }
 

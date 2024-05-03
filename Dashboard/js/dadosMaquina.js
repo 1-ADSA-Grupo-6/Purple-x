@@ -1,5 +1,7 @@
 //VARIÁVEL LIMITADORA DO FOR
 let idMaximo = 99
+let demandaMedia = 200
+let demandaAlta = 500
 
 // LEG PRESS
 
@@ -20,6 +22,7 @@ let tempoInativo_100 = '10:00'
 let demanda_100 = 'Baixa'
 let corGrafico_100 = '#7000ff'
 
+idMaximo++
 let idMaq_103 = 103
 let ultimaManutencao_103 = '01/01/2024'
 let usosInicial_103 = 190

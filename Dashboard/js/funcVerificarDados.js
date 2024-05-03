@@ -1,11 +1,11 @@
 //USAR SOMENTE SE O BANCO NÃO ESTIVER CONECTADO
 function verificarDados() {
     //LEG PRESS
-    if (totalUsos_100 > 200 && totalUsos_100 <= 500) {
+    if (totalUsos_100 > demandaMedia && totalUsos_100 <= demandaAlta) {
         total_usos_100.style.color = 'yellow'
         container_100.style.border = '5px solid yellow'
     }
-    else if (totalUsos_100 > 500) {
+    else if (totalUsos_100 > demandaAlta) {
         total_usos_100.style.color = 'red'
         container_100.style.border = '5px solid red'
     }
@@ -24,11 +24,11 @@ function verificarDados() {
     }
 
     //SUPINO INCLINADO
-    if (totalUsos_101 > 200 && totalUsos_101 <= 500) {
+    if (totalUsos_101 > demandaMedia && totalUsos_101 <= demandaAlta) {
         total_usos_101.style.color = 'yellow'
         container_101.style.border = '5px solid yellow'
     }
-    else if (totalUsos_101 > 500) {
+    else if (totalUsos_101 > demandaAlta) {
         total_usos_101.style.color = 'red'
         container_101.style.border = '5px solid red'
     }
@@ -46,11 +46,11 @@ function verificarDados() {
         span_demanda_101.style.color = 'green'
     }
 
-    if (totalUsos_102 > 200 && totalUsos_102 <= 500) {
+    if (totalUsos_102 > demandaMedia && totalUsos_102 <= demandaAlta) {
         total_usos_102.style.color = 'yellow'
         container_102.style.border = '5px solid yellow'
     }
-    else if (totalUsos_102 > 500) {
+    else if (totalUsos_102 > demandaAlta) {
         total_usos_102.style.color = 'red'
         um_container.style.border = '5px solid red'
     }
