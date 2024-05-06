@@ -68,3 +68,8 @@ function verificarDados() {
         span_demanda_102.style.color = 'green'
     }
 }
+
+// REPETIR A FUNÇÃO EM UM INTERVALO DE TEMPO
+setInterval(function () {
+    verificarDados()
+}, 1500) // EM MILISSEGUNDOS

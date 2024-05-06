@@ -8,7 +8,7 @@ body {
 }
 
 header {
-    height: 10%;
+    height: 15%;
     width: 100%;
     display: flex;
     justify-content: flex-start;
@@ -20,7 +20,7 @@ header {
 
 #main_aside {
     width: 100%;
-    height: 90%;
+    height: 85%;
     display: flex;
     flex-direction: row;
     gap: 0.5%;
@@ -71,10 +71,6 @@ main {
 
 /* MENU LATERAL */
 
-#ativar_controle, #ativar_grafico{
-    display: none;
-}
-
 .fixo_lateral {
     width: 100%;
     height: 10%;
@@ -112,15 +108,14 @@ main {
 
 #container_grafico_geral {
     width: 100%;
-    height: 99%;
+    height: 100%;
     background-color: #7000ff;
     border-radius: 50px;
     display: flex;
     flex-direction: column;
-    border: solid orange;
 }
 
-#div_chk_graficos {
+/* #div_chk_graficos {
     margin-top: 1%;
     width: 100%;
     height: 6%;
@@ -136,7 +131,7 @@ main {
     justify-content: center;
     align-items: center;
     justify-content: space-around;
-}
+} */
 
 .container_dois_grafico {
     width: 100%;
@@ -165,27 +160,7 @@ main {
 
 /* MÁQUINAS */
 
-
-/* .main_container {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    border: solid red;
-} */
-
-/* .dois_container {
-    height: 100%;
-    width: 40%;
-    border-radius: 50px 50px 0px 0px;
-    display: flex;
-    align-items: center;
-    justify-content: top;
-    flex-direction: column;
-} */
-
-.um_container {
+.container_maq {
     height: 99%;
     width: 99%;
     border-radius: 50px;
@@ -257,19 +232,6 @@ main {
     margin-left: 5%;
 }
 
-.div_template_musculos {
-    width: 100%;
-    height: 35%;
-    display: flex;
-    justify-content: center;
-    align-items: center ;
-}
-
-.template_musculos {
-    width: 80%;
-    height: 100%;
-}
-
 /* PARTE DA DIREITA, GRÁFICO E DADOS DA MÁQUINA */
 
 .index_maq {
@@ -307,15 +269,6 @@ main {
     background-color: #ffffff;
 }
 
-/* #select_dia2 {
-    border: none;
-    color: #ffffff;
-    font-size: 35px;
-    height: 40px;
-    width: 260px;
-    text-align: center;
-} */
-
 .container_valor {
     width: 95%;
     height: 25%;
@@ -345,17 +298,3 @@ main {
     width: 100%;
     height: 100%;
 }
-
-/* .index {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: top;
-    align-items: center;
-} */
-
-/* .container-media {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-} */

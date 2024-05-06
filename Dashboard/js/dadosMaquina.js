@@ -3,85 +3,19 @@ let idMaximo = 99
 let demandaMedia = 200
 let demandaAlta = 500
 
+let nomeMaq_99 = 'Todas Máquinas'
+
 // <!-- GRÁFICO GERAL -->
-function mostrarTodasMaquinas() {
-    main.innerHTML = `
+main_aside.innerHTML += `
+<main id="main_graficoGeral">
     <div id="container_grafico_geral">
-            <div id="div_chk_graficos">
-                <div>
-                    <input type="checkbox" id="chk_grafico_barra" onclick="grafico()">
-                    <label for="chk_grafico_barra" class="text">Gráfico de Barras</label>
-                </div>
-                <div>
-                    <input type="checkbox" id="chk_grafico_linha" onclick="grafico()" checked>
-                    <label for="chk_grafico_linha" class="text">Gráfico de Linhas</label>
-                </div>
+        <div id="container_graficos" class="container_dois_grafico">
+            <div id="container_grafico_linha" class="div_grafico">
+                <canvas id="grafico_linha"></canvas>
             </div>
-            <div id="container_graficos" class="container_dois_grafico">
-                <div id="container_grafico_barra" class="div_grafico">
-                    <canvas id="grafico_barra"></canvas>
-                </div>
-                <div id="container_grafico_linha" class="div_grafico">
-                    <canvas id="grafico_linha"></canvas>
-                </div>
-            </div>
-        </div>`
-
-        // GRÁFICO GERAL
-
-    let graficoGeral = new Chart(grafico_linha, {
-        type: 'line',
-        data: {
-            labels: labels,
-            datasets: [
-            // {
-            //     label: `Demanda média`,
-            //     data: data_demandaMedia,
-            //     borderColor: 'yellow',
-            //     tension: 0.1,
-            //     borderWidth: 1
-            // },
-            // {
-            //     label: `Demanda Alta`,
-            //     data: data_demandaAlta,
-            //     borderColor: 'red',
-            //     tension: 0.1,
-            //     borderWidth: 1
-            // },
-            {
-                label: `${nomeMaq_legPress}-${idMaq_100}`,
-                data: data_100,
-                borderColor: corGrafico_100,
-                tension: 0.1
-            },
-            {
-                label: `${nomeMaq_101}-${idMaq_101}`,
-                data: data_101,
-                borderColor: corGrafico_101,
-                tension: 0.1
-            },
-            {
-                label: `${nomeMaq_102}-${idMaq_102}`,
-                data: data_102,
-                borderColor: corGrafico_102,
-                tension: 0.1
-            },
-            {
-                label: `${nomeMaq_legPress}-${idMaq_103}`,
-                data: data_103,
-                borderColor: corGrafico_103,
-                tension: 0.1
-            }]
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: false
-                }
-            }
-        }
-    });
-}
+        </div>
+    </div>
+</main>`
 
 // LEG PRESS
 
@@ -112,9 +46,9 @@ let demanda_103 = 'Baixa'
 let corGrafico_103 = '#5A00CC'
 
 // ESTRUTURA PARA O HTML
-function mostrarLegPress() {
-    main.innerHTML = `
-    <div id="container_${idMaq_100}" class="um_container color2">
+main_aside.innerHTML += `
+<main id="main_legPress">
+    <div id="container_${idMaq_100}" class="container_maq color2">
         <div class="info_maq">
             <div id="nome_${idMaq_100}" class="div_nome_maq text_titulo">
                 <span>${nomeMaq_legPress}</span>
@@ -174,31 +108,8 @@ function mostrarLegPress() {
                 </div>
             </div>
         </div>
-    </div>`
-
-    // LEG PRESS
-    let graficoLegPress = new Chart(grafico_100, {
-        type: 'line',
-        data: {
-            labels: labels,
-            datasets: [{
-                label: `${nomeMaq_legPress}-${idMaq_100}`,
-                data: data_100,
-                borderWidth: 4,
-                borderColor: corGrafico_100
-            },
-            {
-                label: `${nomeMaq_legPress}-${idMaq_103}`,
-                data: data_103,
-                borderWidth: 4,
-                borderColor: corGrafico_103
-            }
-            ],
-            options: {}
-        }
-    })
-}
-
+    </div>
+</main>`
 
 // SUPINO INCLINADO
 
@@ -220,9 +131,9 @@ let imgMaq_101 = './img/imgMaq/supinoInclinado.webp'
 let corGrafico_101 = '#ff9900'
 
 // ESTRUTURA PARA O HTML
-function mostrarSupinoInclinado() {
-    main.innerHTML = `
-    <div id="container_${idMaq_101}" class="um_container color2">
+main_aside.innerHTML += `
+<main id="main_supinoInclinado">
+    <div id="container_${idMaq_101}" class="container_maq color2">
         <div class="info_maq">
             <div id="nome_${idMaq_101}" class="div_nome_maq text_titulo">
                 <span>${nomeMaq_101}</span>
@@ -281,23 +192,8 @@ function mostrarSupinoInclinado() {
                 </div>
             </div>
         </div>
-    </div>`
-
-    // SUPINO INCLINADO
-    let graficoSupinoInclinado = new Chart(grafico_101, {
-        type: 'line',
-        data: {
-            labels: labels,
-            datasets: [{
-                label: `${nomeMaq_101}-${idMaq_101}`,
-                data: data_101,
-                borderWidth: 4,
-                borderColor: corGrafico_101
-            }],
-            options: {}
-        }
-    })
-}
+    </div>
+</main>`
 
 // SMITH
 
@@ -319,9 +215,9 @@ let imgMaq_102 = './img/imgMaq/smith.png'
 let corGrafico_102 = 'green'
 
 // ESTRUTURA PARA O HTML
-function mostrarSmith() {
-    main.innerHTML = `
-    <div id="container_${idMaq_102}" class="um_container color2">
+main_aside.innerHTML += `
+<main id="main_smith">
+    <div id="container_${idMaq_102}" class="container_maq color2">
         <div class="info_maq">
             <div id="nome_${idMaq_102}" class="div_nome_maq text_titulo">
                 <span>${nomeMaq_102}</span>
@@ -380,20 +276,5 @@ function mostrarSmith() {
                 </div>
             </div>
         </div>
-    </div>`
-
-    // SMITH
-    let graficoSmith = new Chart(grafico_102, {
-        type: 'line',
-        data: {
-            labels: labels,
-            datasets: [{
-                label: `${nomeMaq_102}-${idMaq_102}`,
-                data: data_102,
-                borderWidth: 4,
-                borderColor: corGrafico_102
-            }],
-            options: {}
-        }
-    })
-}
+    </div>
+</main>`

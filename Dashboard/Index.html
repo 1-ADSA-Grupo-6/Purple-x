@@ -12,131 +12,10 @@
 
     <!-- CARROCEL -->
     <header id="carrocel">
-        <div class="div_carrocel" onclick="mostrarTodasMaquinas()">
-            <div class="img_carrocel">
-                <img src="" alt="">
-            </div>
-            <div class="titulo_carrocel">
-                <span>Todas máquinas</span>
-            </div>
-        </div>
-        <div class="div_carrocel" onclick="mostrarTodasMaquinas()">
-            <div class="img_carrocel">
-                <img src="" alt="">
-            </div>
-            <div class="titulo_carrocel">
-                <span>Por categoria</span>
-            </div>
-        </div>
-        <div class="div_carrocel" onclick="mostrarLegPress()">
-            <div class="img_carrocel">
-                <img src="" alt="">
-            </div>
-            <div class="titulo_carrocel">
-                <span>Leg Press</span>
-            </div>
-        </div>
-        <div class="div_carrocel" onclick="mostrarSupinoInclinado()">
-            <div class="img_carrocel">
-                <img src="" alt="">
-            </div>
-            <div class="titulo_carrocel">
-                <span>Supino Inclinado</span>
-            </div>
-        </div>
-        <div class="div_carrocel" onclick="mostrarSmith()">
-            <div class="img_carrocel">
-                <img src="" alt="">
-            </div>
-            <div class="titulo_carrocel">
-                <span>Smith</span>
-            </div>
-        </div>
-
-        <!-- TESTE -->
-        <div class="div_carrocel">
-            <div class="img_carrocel">
-                <img src="" alt="">
-            </div>
-            <div class="titulo_carrocel">
-                <span>TESTE</span>
-            </div>
-        </div>
-        <div class="div_carrocel">
-            <div class="img_carrocel">
-                <img src="" alt="">
-            </div>
-            <div class="titulo_carrocel">
-                <span>TESTE</span>
-            </div>
-        </div>
-        <div class="div_carrocel">
-            <div class="img_carrocel">
-                <img src="" alt="">
-            </div>
-            <div class="titulo_carrocel">
-                <span>TESTE</span>
-            </div>
-        </div>
-        <div class="div_carrocel">
-            <div class="img_carrocel">
-                <img src="" alt="">
-            </div>
-            <div class="titulo_carrocel">
-                <span>TESTE</span>
-            </div>
-        </div>
-        <div class="div_carrocel">
-            <div class="img_carrocel">
-                <img src="" alt="">
-            </div>
-            <div class="titulo_carrocel">
-                <span>TESTE</span>
-            </div>
-        </div>
-        <div class="div_carrocel">
-            <div class="img_carrocel">
-                <img src="" alt="">
-            </div>
-            <div class="titulo_carrocel">
-                <span>TESTE</span>
-            </div>
-        </div>
-        <div class="div_carrocel">
-            <div class="img_carrocel">
-                <img src="" alt="">
-            </div>
-            <div class="titulo_carrocel">
-                <span>TESTE</span>
-            </div>
-        </div>
-        <div class="div_carrocel">
-            <div class="img_carrocel">
-                <img src="" alt="">
-            </div>
-            <div class="titulo_carrocel">
-                <span>TESTE</span>
-            </div>
-        </div>
-        <div class="div_carrocel">
-            <div class="img_carrocel">
-                <img src="" alt="">
-            </div>
-            <div class="titulo_carrocel">
-                <span>TESTE</span>
-            </div>
-        </div>
-        <div class="div_carrocel">
-            <div class="img_carrocel">
-                <img src="" alt="">
-            </div>
-            <div class="titulo_carrocel">
-                <span>TESTE</span>
-            </div>
-        </div>
     </header>
 
     <div id="main_aside">
+        <!-- MENU LATERAL -->
         <aside id="menu_lateral">
             <div id="fixo_controle" class="fixo_lateral">
                 <img src="./img/controller.png" class="lateral_icon">
@@ -145,42 +24,17 @@
                 <img src="./img/iconGraph.png" class="lateral_icon">
             </div>
         </aside>
-
-        <main id="main">
-            <div id="container_grafico_geral">
-                <div id="div_chk_graficos">
-                    <div>
-                        <input type="checkbox" id="chk_grafico_barra" onclick="grafico()">
-                        <label for="chk_grafico_barra" class="text">Gráfico de Barras</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="chk_grafico_linha" onclick="grafico()" checked>
-                        <label for="chk_grafico_linha" class="text">Gráfico de Linhas</label>
-                    </div>
-                </div>
-                <div id="container_graficos" class="container_dois_grafico">
-                    <div id="container_grafico_barra" class="div_grafico">
-                        <canvas id="grafico_barra"></canvas>
-                    </div>
-                    <div id="container_grafico_linha" class="div_grafico">
-                        <canvas id="grafico_linha"></canvas>
-                    </div>
-                </div>
-            </div>
-        </main>
     </div>
 </body>
-
 </html>
 
-<script src="./js/carrocel.js"></script>
-<script src="./js/funcControle.js"></script>
+<script src="./js/funcCarrocel.js"></script>
 <script src="./js/dadosMaquina.js"></script>
-<!-- <script src="./js/funcMaquina.js"></script> -->
+<script src="./js/funcMaquina.js"></script>
 <script src="./js/funcGrafico.js"></script>
 <!-- USAR SOMENTE SE O BANCO NÃO ESTIVER CONECTADO 👇 -->
 <script src="./js/funcVerificarDados.js"></script>
 
 <!-- EXECUTA FUNÇÔES DEPOIS DA <body> SER CARREGADA -->
 
-<body onload="carregarGraficos(), verificarDados(), grafico(), mostrarTodasMaquinas()">
+<body onload="carregarGraficos(), verificarDados(), mostrarTodasMaquinas()">

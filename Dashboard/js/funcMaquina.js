@@ -29,26 +29,30 @@
 //     }
 // }
 
-function mostrarMaquinas() {
+function mostrarTodasMaquinas() {
+    main_graficoGeral.style.display = 'flex'
+    main_legPress.style.display = 'none'
+    main_supinoInclinado.style.display = 'none'
+    main_smith.style.display = 'none'
+}
 
-    if (chk_legPress.checked) {
-        maq_100.style.display = 'flex'
-    }
-    else {
-        maq_100.style.display = 'none'
-    }
+function mostrarLegPress(){
+    main_graficoGeral.style.display = 'none'
+    main_legPress.style.display = 'flex'
+    main_supinoInclinado.style.display = 'none'
+    main_smith.style.display = 'none'
+}
 
-    if (chk_supino.checked) {
-        maq_101.style.display = 'flex'
-    }
-    else {
-        maq_101.style.display = 'none'
-    }
+function mostrarSupinoInclinado(){
+    main_graficoGeral.style.display = 'none'
+    main_legPress.style.display = 'none'
+    main_supinoInclinado.style.display = 'flex'
+    main_smith.style.display = 'none'
+}
 
-    if (chk_smith.checked) {
-        maq_102.style.display = 'flex'
-    }
-    else {
-        maq_102.style.display = 'none'
-    }
+function mostrarSmith(){
+    main_graficoGeral.style.display = 'none'
+    main_legPress.style.display = 'none'
+    main_supinoInclinado.style.display = 'none'
+    main_smith.style.display = 'flex'
 }
