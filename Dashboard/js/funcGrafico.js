@@ -37,7 +37,7 @@ function carregarGraficos() {
         data_demandaAlta.push(demandaAlta)
 
         // SUBSTITUIR DADOS ANTIGOS
-        if (labels.length > 10) {
+        if (labels.length > 20) {
             labels.shift()
             data_100.shift()
             data_101.shift()
@@ -77,11 +77,11 @@ function carregarGraficos() {
     // GRÁFICOS
     // GRÁFICO GERAL
 
-    let graficoGeral = new Chart(grafico_linha, {
-        type: 'line',
-        data: {
-            labels: labels,
-            datasets: [
+    // let graficoGeral = new Chart(grafico_linha, {
+    //     type: 'line',
+    //     data: {
+    //         labels: labels,
+    //         datasets: [
             // {
             //     label: `Demanda média`,
             //     data: data_demandaMedia,
@@ -96,91 +96,91 @@ function carregarGraficos() {
             //     tension: 0.1,
             //     borderWidth: 1
             // },
-            {
-                label: `${nomeMaq_legPress}-${idMaq_100}`,
-                data: data_100,
-                borderColor: corGrafico_100,
-                tension: 0.1
-            },
-            {
-                label: `${nomeMaq_101}-${idMaq_101}`,
-                data: data_101,
-                borderColor: corGrafico_101,
-                tension: 0.1
-            },
-            {
-                label: `${nomeMaq_102}-${idMaq_102}`,
-                data: data_102,
-                borderColor: corGrafico_102,
-                tension: 0.1
-            },
-            {
-                label: `${nomeMaq_legPress}-${idMaq_103}`,
-                data: data_103,
-                borderColor: corGrafico_103,
-                tension: 0.1
-            }]
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: false
-                }
-            }
-        }
-    });
+    //         {
+    //             label: `${nomeMaq_legPress}-${idMaq_100}`,
+    //             data: data_100,
+    //             borderColor: corGrafico_100,
+    //             tension: 0.1
+    //         },
+    //         {
+    //             label: `${nomeMaq_101}-${idMaq_101}`,
+    //             data: data_101,
+    //             borderColor: corGrafico_101,
+    //             tension: 0.1
+    //         },
+    //         {
+    //             label: `${nomeMaq_102}-${idMaq_102}`,
+    //             data: data_102,
+    //             borderColor: corGrafico_102,
+    //             tension: 0.1
+    //         },
+    //         {
+    //             label: `${nomeMaq_legPress}-${idMaq_103}`,
+    //             data: data_103,
+    //             borderColor: corGrafico_103,
+    //             tension: 0.1
+    //         }]
+    //     },
+    //     options: {
+    //         scales: {
+    //             y: {
+    //                 beginAtZero: false
+    //             }
+    //         }
+    //     }
+    // });
 
     // LEG PRESS
-    let graficoLegPress = new Chart(grafico_100, {
-        type: 'line',
-        data: {
-            labels: labels,
-            datasets: [{
-                label: `${nomeMaq_legPress}-${idMaq_100}`,
-                data: data_100,
-                borderWidth: 4,
-                borderColor: corGrafico_100
-            },
-            {
-                label: `${nomeMaq_legPress}-${idMaq_103}`,
-                data: data_103,
-                borderWidth: 4,
-                borderColor: corGrafico_103
-            }
-            ],
-            options: {}
-        }
-    })
+    // let graficoLegPress = new Chart(grafico_100, {
+    //     type: 'line',
+    //     data: {
+    //         labels: labels,
+    //         datasets: [{
+    //             label: `${nomeMaq_legPress}-${idMaq_100}`,
+    //             data: data_100,
+    //             borderWidth: 4,
+    //             borderColor: corGrafico_100
+    //         },
+    //         {
+    //             label: `${nomeMaq_legPress}-${idMaq_103}`,
+    //             data: data_103,
+    //             borderWidth: 4,
+    //             borderColor: corGrafico_103
+    //         }
+    //         ],
+    //         options: {}
+    //     }
+    // })
 
     // SUPINO INCLINADO
-    let graficoSupinoInclinado = new Chart(grafico_101, {
-        type: 'line',
-        data: {
-            labels: labels,
-            datasets: [{
-                label: `${nomeMaq_101}-${idMaq_101}`,
-                data: data_101,
-                borderWidth: 4,
-                borderColor: corGrafico_101
-            }],
-            options: {}
-        }
-    })
+    // let graficoSupinoInclinado = new Chart(grafico_101, {
+    //     type: 'line',
+    //     data: {
+    //         labels: labels,
+    //         datasets: [{
+    //             label: `${nomeMaq_101}-${idMaq_101}`,
+    //             data: data_101,
+    //             borderWidth: 4,
+    //             borderColor: corGrafico_101
+    //         }],
+    //         options: {}
+    //     }
+    // })
 
     // SMITH
-    let graficoSmith = new Chart(grafico_102, {
-        type: 'line',
-        data: {
-            labels: labels,
-            datasets: [{
-                label: `${nomeMaq_102}-${idMaq_102}`,
-                data: data_102,
-                borderWidth: 4,
-                borderColor: corGrafico_102
-            }],
-            options: {}
-        }
-    })
+    // let graficoSmith = new Chart(grafico_102, {
+    //     type: 'line',
+    //     data: {
+    //         labels: labels,
+    //         datasets: [{
+    //             label: `${nomeMaq_102}-${idMaq_102}`,
+    //             data: data_102,
+    //             borderWidth: 4,
+    //             borderColor: corGrafico_102
+    //         }],
+    //         options: {}
+    //     }
+    // })
 }
 
 //         // Obter o tempo atual para adicionar ao rótulo de tempo
