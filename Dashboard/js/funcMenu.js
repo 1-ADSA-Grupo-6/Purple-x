@@ -1,26 +1,23 @@
 function esconderMenu() {
-    if (chk_ocultar.checked) {
-        menu_lateral.classList.add('hide_menu_lateral')
-        menu_lateral.innerHTML = `
-        <div id="esconder_menu" class="fixo" onclick="esconderMenu()">
-            <input type="checkbox" id="chk_ocultar" >
-            <label for="chk_ocultar" class="ocultar_menu">
-                <img src="./img/icon-eye.png" class="lateral_icon">
-            </label>
+    menu_lateral.innerHTML = `
+        <div id="esconder_menu" class="fixo_oculto" onclick="mostrarMenu()">
+        <img src="./img/icon-eye.png" class="lateral_icon">
         </div>`
-    }
-    else {
-        menu_lateral.classList.remove('hide_menu_lateral')
-        menu_lateral.innerHTML = `
-        <div id="help" class="menu">
+    menu_lateral.classList.add('hide_menu_lateral')
+}
+function mostrarMenu() {
+    menu_lateral.classList.remove('hide_menu_lateral')
+    menu_lateral.innerHTML = `
+            <div id="help" class="fixo">
                 <img src="./img/menu.png" class="lateral_icon">
             </div>
-            <div id="esconder_menu" class="fixo" onclick="esconderMenu()">
-                <input type="checkbox" id="chk_ocultar">
-                <label for="chk_ocultar" class="ocultar_menu">
-                    <img src="./img/icon-eye.png" class="lateral_icon">
-                </label>
-            </div>
+            <div id="esconder_menu" class="fixo">
+            <input type="checkbox" id="chk_ocultar" class="oculto">
+            <label for="chk_ocultar" style="height: 100%; width: 100%; display: flex; justify-content: center; align-items: center;">
+            <img src="./img/icon-eye.png" class="lateral_icon" onclick="esconderMenu()">
+            </label>
+                </div>
+            <!-- </label> -->
             <div id="trocar_academia" class="fixo">
                 <img src="./img/icon-gym.png" class="lateral_icon">
             </div>
@@ -30,11 +27,10 @@ function esconderMenu() {
             <div id="remover_maq" class="fixo">
                 <img src="./img/icon-minus.png" class="lateral_icon">
             </div>
-            <div id="help" class="help">
+            <div id="help" class="fixo">
                 <img src="./img/help.png" class="lateral_icon">
             </div>
-            <div id="logout" class="logout">
+            <div id="logout" class="fixo">
                 <img src="./img/door.png" class="lateral_icon">
             </div>`
-    }
 }

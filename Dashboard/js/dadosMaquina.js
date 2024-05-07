@@ -6,7 +6,7 @@ let demandaAlta = 10
 let nomeMaq_99 = 'Todas Máquinas'
 
 // <!-- GRÁFICO GERAL -->
-main_aside.innerHTML += `
+header_main.innerHTML += `
 <main id="main_graficoGeral">
     <div id="container_grafico_geral">
         <div id="container_graficos" class="container_dois_grafico">
@@ -46,7 +46,7 @@ let demanda_103 = 'Baixa'
 let corGrafico_103 = '#5A00CC'
 
 // ESTRUTURA PARA O HTML
-main_aside.innerHTML += `
+header_main.innerHTML += `
 <main id="main_legPress">
     <div id="container_${idMaq_100}" class="container_maq color2">
         <div class="info_maq">
@@ -131,7 +131,7 @@ let imgMaq_101 = './img/imgMaq/supinoInclinado.webp'
 let corGrafico_101 = '#ff9900'
 
 // ESTRUTURA PARA O HTML
-main_aside.innerHTML += `
+header_main.innerHTML += `
 <main id="main_supinoInclinado">
     <div id="container_${idMaq_101}" class="container_maq color2">
         <div class="info_maq">
@@ -215,7 +215,7 @@ let imgMaq_102 = './img/imgMaq/smith.png'
 let corGrafico_102 = 'green'
 
 // ESTRUTURA PARA O HTML
-main_aside.innerHTML += `
+header_main.innerHTML += `
 <main id="main_smith">
     <div id="container_${idMaq_102}" class="container_maq color2">
         <div class="info_maq">
