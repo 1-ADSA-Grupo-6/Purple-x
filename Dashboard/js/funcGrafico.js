@@ -37,7 +37,7 @@ function carregarGraficos() {
         data_demandaAlta.push(demandaAlta)
 
         // SUBSTITUIR DADOS ANTIGOS
-        if (labels.length > 10) {
+        if (labels.length > 20) {
             labels.shift()
             data_100.shift()
             data_101.shift()
@@ -183,9 +183,9 @@ function carregarGraficos() {
     })
 }
 
-//         // Obter o tempo atual para adicionar ao rótulo de tempo
-//         let currentDate = new Date();
-//         let hours = currentDate.getHours();
-//         let minutes = currentDate.getMinutes();
-//         let seconds = currentDate.getSeconds();
-//         let timeLabel = `${hours}:${minutos}`;
+//// CAPTURA MOMENTO ATUAL E SEPARA 
+//let horaAtual = new Date();
+//let hora = horaAtual.getHours();
+//let minuto = horaAtual.getMinutes();
+//let segundo = horaAtual.getSeconds();
+//let timeLabel = `${hora}:${minuto}:${segundo}`;

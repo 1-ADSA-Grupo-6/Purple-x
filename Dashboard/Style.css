@@ -4,9 +4,140 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: center;
-    gap: 1%;
+    align-items: flex-start;
+    gap: 0.5%;
 }
+
+header {
+    height: 14.5%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+#main_aside {
+    width: 100%;
+    height: 85%;
+    display: flex;
+    flex-direction: row;
+    gap: 0.5%;
+}
+
+aside {
+    height: 100%;
+    width: 6%;
+    margin-left: -0.4%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #6F0F77;
+    border-radius: 0px 20px 20px 0px;
+}
+
+main {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+/* CARROCEL */
+
+.div_carrocel {
+    width: 8%;
+    height: 100%;
+    background-color: #7000ff;
+    border-radius: 10px;
+    margin-right: 10px;
+    flex-shrink: 0;
+}
+
+.img_carrocel {
+    height: 70%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img {
+    height: 100%;
+    width: 100%;
+}
+
+.titulo_carrocel {
+    height: 30%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+::-webkit-scrollbar {
+    height: 8px;
+    background-color: #ffffff46;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #ffffff;
+}
+
+/* MENU LATERAL */
+
+.menu {
+    width: 50%;
+    height: 10%;
+    display: flex;
+    padding-top: 20px;
+}
+
+.fixo {
+    width: 50%;
+    height: 10%;
+    display: flex;
+    padding-top: 5px;
+}
+
+.help{
+    display: flex;
+    width: 50%;
+    height: 9%;
+    padding-top: 10px;
+}
+
+.lateral_icon {
+    width: 90%;
+    height: 75%;
+}
+
+.logout{
+    display: flex;
+    width: 50%;
+    height: 10%;
+    display: flex;
+    padding-top: 230px;
+}
+
+.ocultar_menu {
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+
+.hide_menu_lateral {
+    position: fixed;
+    height: 10%;
+}
+
+/* GRÁFICOS */
 
 .color1 {
     background-color: #6F0F77;
@@ -16,160 +147,15 @@ body {
     background-color: #7000ff;
 }
 
-.text {
-    color: #ffffff;
-    font-size: 30px;
-}
-
-.text_pequeno {
-    color: #ffffff;
-    font-size: 25px;
-}
-
-header {
-    width: 100%;
-    height: 9%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
-#titulo_logo {
-    height: 100%;
-    width: 50%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
-#config {
-    height: 100%;
-    width: 50%;
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: flex-start;
-    align-items: center;
-    justify-content: space-between;
-    margin-right: 1%;
-}
-
-#logo {
-    width: 13%;
-    height: 100%;
-}
-
-#icon_menu {
-    height: 55%;
-    width: 5%;
-}   
-
-/* CONTROLE */
-
-/* #container_control {
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    background-color: #00000079;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-} */
-
-#control {
-    position: fixed;
-    margin-top: 10%;
-    width: 25%;
-    height: 50%;
-    background-color: #6F0F77;
-    border-radius: 50px;
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: #ffffff;
-}
-
-#select_categoria {
-    border-radius: 10px;
-}
-
-#div_check{
-    display: none;
-}
-
-#div_checked {
-    display: flex;
-    border-top: 1px solid #00000048;
-    margin-top: 10px;
-}
-
-/* BOTÕES LATERAIS */
-
-#menu_lateral {
-    margin-left: -96%;
-    margin-top: 5%;
-    height: 20%;
-    width: 4%;
-    position: fixed;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-}
-
-#ativar_controle, #ativar_grafico{
-    display: none;
-}
-.lateral_icon {
-    width: 100%;
-    height: 75%;
-}
-
-.fixo_lateral {
-    width: 100%;
-    height: 40%;
-    background-color: #6F0F77;
-    border-radius: 0px 20px 20px 0px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 /* GRÁFICO GERAL */
 
-#main_grafico_geral {
-    height: 90%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-}
-
 #container_grafico_geral {
-    width: 99%;
-    height: 99%;
+    width: 100%;
+    height: 100%;
     background-color: #7000ff;
     border-radius: 50px;
     display: flex;
     flex-direction: column;
-}
-
-#div_chk_graficos {
-    margin-top: 1%;
-    width: 100%;
-    height: 6%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    justify-content: space-around;
-}
-
-#div_chk_graficos div {
-    width: 14%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    justify-content: space-around;
 }
 
 .container_dois_grafico {
@@ -199,36 +185,7 @@ header {
 
 /* MÁQUINAS */
 
-main {
-    height: 90%;
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    justify-content: center;
-    align-items: flex-start;
-    justify-content: space-around;
-}
-
-/* .main_container {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    border: solid red;
-} */
-
-/* .dois_container {
-    height: 100%;
-    width: 40%;
-    border-radius: 50px 50px 0px 0px;
-    display: flex;
-    align-items: center;
-    justify-content: top;
-    flex-direction: column;
-} */
-
-.um_container {
+.container_maq {
     height: 99%;
     width: 99%;
     border-radius: 50px;
@@ -247,6 +204,8 @@ main {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    color: #ffffff;
+    font-size: 1.55vw;
 }
 
 .div_nome_maq {
@@ -270,7 +229,8 @@ main {
     width: 18%;
     height: 70%;
     border-radius: 10px;
-    font-size: 18px;
+    font-size: 0.8vw;
+    font-weight: bold;
     text-align: center;
 }
 
@@ -291,26 +251,14 @@ main {
 .text_titulo {
     margin-top: 1%;
     color: #ffffff;
-    font-size: 40px;
+    font-size: 2.5vw;
+    /* font-size: 40px; */
     font-weight: bold;
 }
 
 .div_dados_maq {
     width: 95%;
     margin-left: 5%;
-}
-
-.div_template_musculos {
-    width: 100%;
-    height: 35%;
-    display: flex;
-    justify-content: center;
-    align-items: center ;
-}
-
-.template_musculos {
-    width: 80%;
-    height: 100%;
 }
 
 /* PARTE DA DIREITA, GRÁFICO E DADOS DA MÁQUINA */
@@ -350,15 +298,6 @@ main {
     background-color: #ffffff;
 }
 
-/* #select_dia2 {
-    border: none;
-    color: #ffffff;
-    font-size: 35px;
-    height: 40px;
-    width: 260px;
-    text-align: center;
-} */
-
 .container_valor {
     width: 95%;
     height: 25%;
@@ -377,6 +316,9 @@ main {
     align-items: center;
     background-color: #ffffffa2;
     border-radius: 10px;
+    color: #ffffff;
+    font-size: 1.5vw;
+    font-weight: 600;
 }
 
 #img-supino {
@@ -389,16 +331,11 @@ main {
     height: 100%;
 }
 
-/* .index {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: top;
-    align-items: center;
-} */
+.img_todas_maq {
+    height: 100%;
+    width: 90%;
+} 
 
-/* .container-media {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-} */
+.oculto {
+    display: none;
+}

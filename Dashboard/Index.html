@@ -8,126 +8,53 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
-<body id="body">
+<body>
 
-    <header>
-        <div id="titulo_logo">
-            <img src="./img/logo.png" alt="logoPurpleX" id="logo">
-            <h1 class="text">Check Fit Dashboard</h1>
-        </div>
-        <div id="config">
-            <img src="./img/iconMenu.png" id="icon_menu">
-        </div>
+    <!-- CARROCEL -->
+    <header id="carrocel">
     </header>
 
-    <!-- CONTROLE PARA MOSTRAR OU ESCONDER ALGUMA MÁQUINA -->
-    <!-- <div id="container_control"> -->
-        <div id="control">
-            <p>Selecione a categoria desejada:</p><br>
-            <select id="select_categoria" onclick="filtro()">
-                <option value="">--Selecione aqui--</option>
-                <option value="todos">Todos</option>
-                <option value="peito">Peito</option>
-                <option value="braco">Braço</option>
-                <option value="costas">Costas</option>
-                <option value="perna">Pernas</option>
-            </select>
-            <div id="div_check">
-                <!-- MÁQUINAS DE PEITO -->
-                <div id="chk_peito">
-                    <div>
-                        <input type="checkbox" id="chk_supino" onclick="mostrarMaquinas()" checked>
-                        <label for="chk_supino">Supino Inclinado</label>
-                    </div>
-                </div>
-                <!-- MÁQUINAS DE BRAÇO -->
-                <div id="chk_braco">
-                    máquinas de braco
-                </div>
-                <!-- MÁQUINAS DE COSTAS -->
-                <div id="chk_costas">
-                    máquinas de costas
-                </div>
-                <!-- MÁQUINAS DE PERNAS -->
-                <div id="chk_pernas">
-                    <div>
-                        <input type="checkbox" id="chk_legPress" onclick="mostrarMaquinas()" checked>
-                        <label for="chk_legPress">Leg Press</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="chk_smith" onclick="mostrarMaquinas()" checked>
-                        <label for="chk_smith">Smith</label>
-                    </div>
-                </div>
+    <div id="main_aside">
+        <!-- MENU LATERAL  -->
+        <aside id="menu_lateral">
+            <div id="help" class="menu">
+                <img src="./img/menu.png" class="lateral_icon">
             </div>
-            <div id="div_checked">
+            <!-- <input type="checkbox" id="chk_ocultar">
+            <label for="chk_ocultar" class="ocultar_menu"> -->
+            <div id="esconder_menu" class="fixo" onclick="esconderMenu()">
+                    <img src="./img/icon-eye.png" class="lateral_icon">
+                </div>
+            <!-- </label> -->
+            <div id="trocar_academia" class="fixo">
+                <img src="./img/icon-gym.png" class="lateral_icon">
             </div>
-        </div>
-    <!-- </div> -->
-
-
-    <!-- BOTÕES FIXOS NA ESQUERDA PARA ATIVAR CONTROLE OU GRÁFICO DE COMPARAÇÃO -->
-
-    <div id="menu_lateral">
-
-        <!-- ATIVAR CONTROLE -->
-
-        <div id="fixo_controle" class="fixo_lateral">
-            <label for="ativar_controle" class="text">
-                <img src="./img/controller.png" class="lateral_icon">
-            </label>
-            <input type="checkbox" id="ativar_controle" onclick="controle()">
-        </div>
-
-        <!-- ATIVAR GRÁFICO -->
-
-        <div id="fixo_grafico" class="fixo_lateral text">
-            <label for="ativar_grafico">
-                <img src="./img/iconGraph.png" class="lateral_icon">
-            </label>
-            <input type="checkbox" id="ativar_grafico" onclick="grafico()" checked>
-        </div>
+            <div id="adicionar_maq" class="fixo">
+                <img src="./img/icon-plus.png" class="lateral_icon">
+            </div>
+            <div id="remover_maq" class="fixo">
+                <img src="./img/icon-minus.png" class="lateral_icon">
+            </div>
+            <div id="help" class="help">
+                <img src="./img/help.png" class="lateral_icon">
+            </div>
+            <div id="logout" class="logout">
+                <img src="./img/door.png" class="lateral_icon">
+            </div>
+        </aside>
     </div>
-
-    <!-- GRÁFICO GERAL -->
-
-    <main id="main_grafico_geral">
-        <div id="container_grafico_geral">
-            <!-- ATIVAR OU DESATIVAR GRÁFICOS -->
-            <div id="div_chk_graficos">
-                <div>
-                    <input type="checkbox" id="chk_grafico_barra" onclick="grafico()">
-                    <label for="chk_grafico_barra" class="text">Gráfico de Barras</label>
-                </div>
-                <div>
-                    <input type="checkbox" id="chk_grafico_linha" onclick="grafico()" checked>
-                    <label for="chk_grafico_linha" class="text">Gráfico de Linhas</label>
-                </div>
-            </div>
-            <div id="container_graficos" class="container_dois_grafico">
-                <div id="container_grafico_barra" class="div_grafico">
-                    <canvas id="grafico_barra"></canvas>
-                </div>
-                <div id="container_grafico_linha" class="div_grafico">
-                    <canvas id="grafico_linha"></canvas>
-                </div>
-            </div>
-            <div id="container_dado_geral">
-
-            </div>
-        </div>
-    </main>
-
 </body>
 
 </html>
 
-<script src="./js/funcControle.js"></script>
+<!-- <script src="./js/funcMenu.js"></script> -->
 <script src="./js/dadosMaquina.js"></script>
+<script src="./js/funcCarrocel.js"></script>
 <script src="./js/funcMaquina.js"></script>
 <script src="./js/funcGrafico.js"></script>
 <!-- USAR SOMENTE SE O BANCO NÃO ESTIVER CONECTADO 👇 -->
 <script src="./js/funcVerificarDados.js"></script>
 
 <!-- EXECUTA FUNÇÔES DEPOIS DA <body> SER CARREGADA -->
-<body onload="carregarGraficos(), mostrarMaquinas(), verificarDados(), grafico()">
+
+<body onload="carregarGraficos(), verificarDados(), mostrarTodasMaquinas(), atualizarDados()">

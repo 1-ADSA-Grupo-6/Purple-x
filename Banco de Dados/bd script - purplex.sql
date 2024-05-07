@@ -20,6 +20,28 @@ constraint fkDadosSen foreign key (fkDados) references sensor(idSensor),
 constraint pkCompostaDados primary key (idDados, fkDados)
 );
 
+INSERT INTO sensor VALUES (default, 'bloqueio', 'maquina de peito');
+INSERT INTO sensor VALUES (default, 'bloqueio', 'legPress');
+
+SELECT * FROM sensor;
+ALTER TABLE sensor ADD COLUMN fator DECIMAL(4,2);
+
+UPDATE sensor SET fator = 1.5 WHERE idSensor = 2;
+
+INSERT INTO dados VALUES (default, 1, current_timestamp(), 1);
+INSERT INTO dados VALUES (default, 1, current_timestamp(), 1);
+INSERT INTO dados VALUES (default, 1, current_timestamp(), 1);
+INSERT INTO dados VALUES (default, 1, current_timestamp(), 1);
+INSERT INTO dados VALUES (default, 1, current_timestamp(), 1);
+INSERT INTO dados VALUES (default, 1, current_timestamp(), 1);
+INSERT INTO dados VALUES (default, 1, current_timestamp(), 1);
+INSERT INTO dados VALUES (default, 1, current_timestamp(), 1);
+INSERT INTO dados VALUES (default, 1, current_timestamp(), 1);
+INSERT INTO dados VALUES (default, 1, '2024-05-03 16:07:05', 1);
+
+SELECT * FROM dados;
+SELECT s.descricao as maquina, SUM(d.medida*s.fator) as ocupação, HOUR(d.momento) as hora FROM dados AS d, sensor AS s GROUP BY s.descricao, HOUR(d.momento) ORDER BY s.descricao;
+
 create table empresa (
 cnpj char(14) primary key not null,
 nomeEmpresa varchar(100) not null,
@@ -194,3 +216,5 @@ where assunto like 'Orçamento%';
 select assunto as Assunto,
 descreva as Decrição from contato 
 where assunto like '%Suporte%';
+
+SELECT * FROM dados;

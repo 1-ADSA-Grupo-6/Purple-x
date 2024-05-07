@@ -29,26 +29,40 @@
 //     }
 // }
 
-function mostrarMaquinas() {
-
-    if (chk_legPress.checked) {
-        maq_100.style.display = 'flex'
-    }
-    else {
-        maq_100.style.display = 'none'
-    }
-
-    if (chk_supino.checked) {
-        maq_101.style.display = 'flex'
-    }
-    else {
-        maq_101.style.display = 'none'
-    }
-
-    if (chk_smith.checked) {
-        maq_102.style.display = 'flex'
-    }
-    else {
-        maq_102.style.display = 'none'
-    }
+function mostrarTodasMaquinas() {
+    main_graficoGeral.style.display = 'flex'
+    main_legPress.style.display = 'none'
+    main_supinoInclinado.style.display = 'none'
+    main_smith.style.display = 'none'
 }
+
+function mostrarLegPress(){
+    main_graficoGeral.style.display = 'none'
+    main_legPress.style.display = 'flex'
+    main_supinoInclinado.style.display = 'none'
+    main_smith.style.display = 'none'
+}
+
+function mostrarSupinoInclinado(){
+    main_graficoGeral.style.display = 'none'
+    main_legPress.style.display = 'none'
+    main_supinoInclinado.style.display = 'flex'
+    main_smith.style.display = 'none'
+}
+
+function mostrarSmith(){
+    main_graficoGeral.style.display = 'none'
+    main_legPress.style.display = 'none'
+    main_supinoInclinado.style.display = 'none'
+    main_smith.style.display = 'flex'
+}
+
+// ATUALIZAR DADOS CONSTANTEMENTE
+function atualizarDados() {
+        total_usos_100.innerHTML = totalUsos_100
+        total_usos_101.innerHTML = totalUsos_101
+        total_usos_102.innerHTML = totalUsos_102
+}
+
+
+setInterval(atualizarDados, 1500) // DEVE SER O MESMO TEMPO DO GRÁFICO 
