@@ -28,9 +28,10 @@ header {
 
 aside {
     height: 100%;
-    width: 4%;
+    width: 6%;
     margin-left: -0.4%;
     display: flex;
+    align-items: center;
     flex-direction: column;
     background-color: #6F0F77;
     border-radius: 0px 20px 20px 0px;
@@ -71,17 +72,37 @@ main {
 
 /* MENU LATERAL */
 
-.fixo_lateral {
-    width: 100%;
+.menu {
+    width: 50%;
     height: 10%;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    padding-top: 20px;
+}
+.fixo {
+    width: 50%;
+    height: 10%;
+    display: flex;
+    padding-top: 5px;
+}
+
+.help{
+    display: flex;
+    width: 50%;
+    height: 9%;
+    padding-top: 10px;
 }
 
 .lateral_icon {
     width: 90%;
     height: 75%;
+}
+
+.logout{
+    display: flex;
+    width: 50%;
+    height: 10%;
+    display: flex;
+    padding-top: 230px;
 }
 
 /* GRÁFICOS */
