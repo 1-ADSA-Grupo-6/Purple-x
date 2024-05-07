@@ -15,16 +15,25 @@
     </header>
 
     <div id="main_aside">
-        <!-- MENU LATERAL -->
+        <!-- MENU LATERAL  -->
         <aside id="menu_lateral">
             <div id="help" class="menu">
                 <img src="./img/menu.png" class="lateral_icon">
             </div>
-            <div id="fixo_controle" class="fixo">
-                <img src="./img/controller.png" class="lateral_icon">
+            <!-- <input type="checkbox" id="chk_ocultar">
+            <label for="chk_ocultar" class="ocultar_menu"> -->
+            <div id="esconder_menu" class="fixo" onclick="esconderMenu()">
+                    <img src="./img/icon-eye.png" class="lateral_icon">
+                </div>
+            <!-- </label> -->
+            <div id="trocar_academia" class="fixo">
+                <img src="./img/icon-gym.png" class="lateral_icon">
             </div>
-            <div id="fixo_grafico" class="fixo">
-                <img src="./img/iconGraph.png" class="lateral_icon">
+            <div id="adicionar_maq" class="fixo">
+                <img src="./img/icon-plus.png" class="lateral_icon">
+            </div>
+            <div id="remover_maq" class="fixo">
+                <img src="./img/icon-minus.png" class="lateral_icon">
             </div>
             <div id="help" class="help">
                 <img src="./img/help.png" class="lateral_icon">
@@ -35,10 +44,12 @@
         </aside>
     </div>
 </body>
+
 </html>
 
-<script src="./js/funcCarrocel.js"></script>
+<!-- <script src="./js/funcMenu.js"></script> -->
 <script src="./js/dadosMaquina.js"></script>
+<script src="./js/funcCarrocel.js"></script>
 <script src="./js/funcMaquina.js"></script>
 <script src="./js/funcGrafico.js"></script>
 <!-- USAR SOMENTE SE O BANCO NÃO ESTIVER CONECTADO 👇 -->
@@ -46,4 +57,4 @@
 
 <!-- EXECUTA FUNÇÔES DEPOIS DA <body> SER CARREGADA -->
 
-<body onload="carregarGraficos(), verificarDados(), mostrarTodasMaquinas()">
+<body onload="carregarGraficos(), verificarDados(), mostrarTodasMaquinas(), atualizarDados()">

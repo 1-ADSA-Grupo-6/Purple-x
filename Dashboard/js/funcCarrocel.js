@@ -38,7 +38,7 @@
 carrocel.innerHTML += `
     <div class="div_carrocel" onclick="mostrarTodasMaquinas()">
         <div class="img_carrocel">
-            <img src="" alt="">
+            <img src="./img/icon-gym(2).png" class="img_todas_maq">
         </div>
         <div class="titulo_carrocel">
             <span>Todas Máquinas</span>
@@ -49,7 +49,7 @@ carrocel.innerHTML += `
 carrocel.innerHTML +=`
     <div class="div_carrocel" onclick="mostrarLegPress()">
         <div class="img_carrocel">
-            <img src="" alt="">
+            <img src="${imgMaq_legPress}" class="img">
         </div>
         <div class="titulo_carrocel">
             <span>Leg Press</span>
@@ -60,7 +60,7 @@ carrocel.innerHTML +=`
 carrocel.innerHTML += `
     <div class="div_carrocel" onclick="mostrarSupinoInclinado()">
         <div class="img_carrocel">
-            <img src="" alt="">
+            <img src="${imgMaq_101}" class="img">
         </div>
         <div class="titulo_carrocel">
             <span>Supino Inclinado</span>
@@ -71,7 +71,7 @@ carrocel.innerHTML += `
 carrocel.innerHTML += `
     <div class="div_carrocel" onclick="mostrarSmith()">
         <div class="img_carrocel">
-            <img src="" alt="">
+            <img src="${imgMaq_102}" class="img">
         </div>
         <div class="titulo_carrocel">
             <span>Smith</span>

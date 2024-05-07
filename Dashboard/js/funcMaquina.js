@@ -56,3 +56,13 @@ function mostrarSmith(){
     main_supinoInclinado.style.display = 'none'
     main_smith.style.display = 'flex'
 }
+
+// ATUALIZAR DADOS CONSTANTEMENTE
+function atualizarDados() {
+        total_usos_100.innerHTML = totalUsos_100
+        total_usos_101.innerHTML = totalUsos_101
+        total_usos_102.innerHTML = totalUsos_102
+}
+
+
+setInterval(atualizarDados, 1500) // DEVE SER O MESMO TEMPO DO GRÁFICO 
