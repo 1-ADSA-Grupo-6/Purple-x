@@ -9,8 +9,8 @@ body {
 }
 
 aside {
+    width: 5%;
     height: 100%;
-    width: 6%;
     margin-left: -0.4%;
     display: flex;
     align-items: center;
@@ -20,7 +20,7 @@ aside {
 }
 
 #header_main {
-    width: 94%;
+    width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -28,8 +28,8 @@ aside {
 }
 
 header {
-    height: 14.5%;
     width: 100%;
+    height: 14.5%;
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
@@ -50,11 +50,12 @@ main {
 
 .div_carrocel {
     width: 8%;
-    height: 100%;
+    height: 94%;
     background-color: #7000ff;
     border-radius: 10px;
     margin-right: 10px;
     flex-shrink: 0;
+    flex-direction: column;
 }
 
 .img_carrocel {
@@ -80,6 +81,18 @@ main {
     font-weight: 600;
 }
 
+.baixa {
+    border: 3px solid green;
+}
+
+.media {
+    border: 3px solid yellow;
+}
+
+.alta {
+    border: 3px solid red;
+}
+
 ::-webkit-scrollbar {
     height: 8px;
     background-color: #ffffff46;
@@ -92,23 +105,24 @@ main {
 
 /* MENU LATERAL */
 
-.menu {
-    width: 50%;
-    height: 10%;
+#container_menu_lateral {
+    width: 100%;
+    height: 90%;
     display: flex;
-    padding-top: 20px;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
 }
 
-.fixo {
+.menu {
     width: 100%;
     height: 10%;
     display: flex;
-    gap: 5%;
     justify-content: center;
     align-items: center;
 }
 
-.fixo_oculto {
+.menu_oculto {
     width: 100%;
     height: 100%;
     display: flex;
@@ -116,47 +130,28 @@ main {
     align-items: center;
 }
 
-.help{
-    display: flex;
-    width: 50%;
-    height: 9%;
-    padding-top: 10px;
+.logo {
+    width: 100%;
+    height: 100%;
 }
 
 .lateral_icon {
-    width: 50%;
-    height: 90%;
+    width: 70%;
+    height: 70%;
 }
 
-.lateral_icon_oculto {
-    width: 50%;
-    height: 90%;
-}
-
-.logout{
-    display: flex;
-    width: 50%;
-    height: 10%;
-    display: flex;
-    padding-top: 230px;
-}
-
-.ocultar_menu {
-    height: 100%;
+#logout {
     width: 100%;
+    height: 100%;
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .hide_menu_lateral {
+    width: 4.7%;
+    height: 12.4%;
     position: fixed;
-    height: 10%;
-    width: 6%;
-    margin-left: -0.4%;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    background-color: #6F0F77;
-    border-radius: 0px 20px 20px 0px;
 }
 
 /* GRÁFICOS */
@@ -360,4 +355,8 @@ main {
 
 .oculto {
     display: none;
+}
+
+.green {
+    color: green;
 }

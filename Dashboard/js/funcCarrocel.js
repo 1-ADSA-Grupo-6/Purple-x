@@ -9,7 +9,7 @@
 
 //     if (c <= 102) {
 //         carrocel.innerHTML += `
-// <div class="div_carrocel" onclick="${func_$c}">
+// <div class="div_carrocel" onclick="${func_${c}}">
 //         <div class="img_carrocel">
 //             <img src="" alt="">
 //         </div>
@@ -33,10 +33,9 @@
 
 
 // CARREGA CARDS DAS MÁQUINAS
-
 // GRÁFICO GERAL
 carrocel.innerHTML += `
-    <div class="div_carrocel" onclick="mostrarTodasMaquinas()">
+    <div id="card_todas_maq" class="div_carrocel" onclick="mostrarTodasMaquinas()">
         <div class="img_carrocel">
             <img src="./img/icon-gym(2).png" class="img_todas_maq">
         </div>
@@ -45,9 +44,12 @@ carrocel.innerHTML += `
         </div>
     </div>`
 
+// funcVerificarDados.js FAZ A TROCA DE POSIÇÃO DE CARDS
+// MAQUINAS COM DEMANDA ALTA
+
 // LEG PRESS
 carrocel.innerHTML +=`
-    <div class="div_carrocel" onclick="mostrarLegPress()">
+    <div id="leg_press_alta" class="div_carrocel oculto alta" onclick="mostrarLegPress()">
         <div class="img_carrocel">
             <img src="${imgMaq_legPress}" class="img">
         </div>
@@ -56,9 +58,45 @@ carrocel.innerHTML +=`
         </div>
     </div>`
 
+    // SUPINO INCLINADO
+carrocel.innerHTML += `
+<div id="supino_inclinado_alta" class="div_carrocel oculto alta" onclick="mostrarSupinoInclinado()">
+    <div class="img_carrocel">
+        <img src="${imgMaq_101}" class="img">
+    </div>
+    <div class="titulo_carrocel">
+        <span>Supino Inclinado</span>
+    </div>
+</div>`
+
+// SMITH
+carrocel.innerHTML += `
+    <div id="smith_alta" class="div_carrocel oculto alta" onclick="mostrarSmith()">
+        <div class="img_carrocel">
+            <img src="${imgMaq_102}" class="img">
+        </div>
+        <div class="titulo_carrocel">
+            <span>Smith</span>
+        </div>
+    </div>`
+
+
+// MAQUINAS COM DEMANDA MEDIA
+
+// LEG PRESS
+carrocel.innerHTML +=`
+<div id="leg_press_media" class="div_carrocel oculto media" onclick="mostrarLegPress()">
+    <div class="img_carrocel">
+        <img src="${imgMaq_legPress}" class="img">
+    </div>
+    <div class="titulo_carrocel">
+        <span>Leg Press</span>
+    </div>
+</div>`
+
 // SUPINO INCLINADO
 carrocel.innerHTML += `
-    <div class="div_carrocel" onclick="mostrarSupinoInclinado()">
+    <div id="supino_inclinado_media" class="div_carrocel oculto media" onclick="mostrarSupinoInclinado()">
         <div class="img_carrocel">
             <img src="${imgMaq_101}" class="img">
         </div>
@@ -69,7 +107,43 @@ carrocel.innerHTML += `
 
 // SMITH
 carrocel.innerHTML += `
-    <div class="div_carrocel" onclick="mostrarSmith()">
+    <div id="smith_media" class="div_carrocel oculto media" onclick="mostrarSmith()">
+        <div class="img_carrocel">
+            <img src="${imgMaq_102}" class="img">
+        </div>
+        <div class="titulo_carrocel">
+            <span>Smith</span>
+        </div>
+    </div>`
+
+
+// MAQUINAS COM DEMANDA BAIXA
+
+// LEG PRESS
+carrocel.innerHTML +=`
+    <div id="leg_press_baixa" class="div_carrocel baixa" onclick="mostrarLegPress()">
+        <div class="img_carrocel">
+            <img src="${imgMaq_legPress}" class="img">
+        </div>
+        <div class="titulo_carrocel">
+            <span>Leg Press</span>
+        </div>
+    </div>`
+
+// SUPINO INCLINADO
+carrocel.innerHTML += `
+    <div id="supino_inclinado_baixa" class="div_carrocel baixa" onclick="mostrarSupinoInclinado()">
+        <div class="img_carrocel">
+            <img src="${imgMaq_101}" class="img">
+        </div>
+        <div class="titulo_carrocel">
+            <span>Supino Inclinado</span>
+        </div>
+    </div>`
+
+// SMITH
+carrocel.innerHTML += `
+    <div id="smith_baixa" class="div_carrocel baixa" onclick="mostrarSmith()">
         <div class="img_carrocel">
             <img src="${imgMaq_102}" class="img">
         </div>

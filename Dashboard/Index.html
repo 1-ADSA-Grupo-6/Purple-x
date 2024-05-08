@@ -12,35 +12,38 @@
 
     <!-- MENU LATERAL  -->
     <aside id="menu_lateral">
-        <div id="help" class="fixo">
-            <img src="./img/menu.png" class="lateral_icon">
-        </div>
-        <div id="esconder_menu" class="fixo">
-                <img src="./img/icon-eye.png" class="lateral_icon" onclick="esconderMenu()">
+        <div id="container_menu_lateral">
+            <div id="logo" class="menu">
+                <img src="./img/logo.png" class="logo">
             </div>
-        <!-- </label> -->
-        <div id="trocar_academia" class="fixo">
-            <img src="./img/icon-gym.png" class="lateral_icon">
+            <div id="esconder_menu" class="menu" onclick="esconderMenu()">
+                <img src="./img/icon-closedEye.png" class="lateral_icon">
+            </div>
+            <!-- </label> -->
+            <div id="trocar_academia" class="menu">
+                <img src="./img/icon-gym.png" class="lateral_icon">
+            </div>
+            <div id="adicionar_maq" class="menu">
+                <img src="./img/icon-plus.png" class="lateral_icon">
+            </div>
+            <div id="remover_maq" class="menu">
+                <img src="./img/icon-minus.png" class="lateral_icon">
+            </div>
+            <!-- <div id="help" class="menu">
+                <img src="./img/help.png" class="lateral_icon">
+            </div> -->
         </div>
-        <div id="adicionar_maq" class="fixo">
-            <img src="./img/icon-plus.png" class="lateral_icon">
-        </div>
-        <div id="remover_maq" class="fixo">
-            <img src="./img/icon-minus.png" class="lateral_icon">
-        </div>
-        <div id="help" class="fixo">
-            <img src="./img/help.png" class="lateral_icon">
-        </div>
-        <div id="logout" class="fixo">
-            <img src="./img/door.png" class="lateral_icon">
-        </div>
+        <a href="../Login e Cadastro/login.html" class="menu">
+        <div id="logout">
+                <img src="./img/door.png" class="lateral_icon">
+            </div>
+        </a>
     </aside>
-    
+
     <div id="header_main">
         <!-- CARROCEL -->
-        <header id="carrocel">
-        </header>
-    
+        <header id="carrocel"></header>
+        <!-- GRÁFICO OU MÁQUINAS NO dadosMaquina.js -->
     </div>
 </body>
 
@@ -55,5 +58,4 @@
 <script src="./js/funcVerificarDados.js"></script>
 
 <!-- EXECUTA FUNÇÔES DEPOIS DA <body> SER CARREGADA -->
-
 <body onload="carregarGraficos(), verificarDados(), mostrarTodasMaquinas(), atualizarDados()">
