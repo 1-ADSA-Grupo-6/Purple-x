@@ -17,7 +17,7 @@ function carregarGraficos() {
         let aleatorio_102 = Math.round(Math.random())
         let aleatorio_103 = Math.round(Math.random())
 
-        // console.log(`${aleatorio_100} | ${aleatorio_101} | ${aleatorio_102} | ${aleatorio_103}`)
+        console.log(`${aleatorio_100} | ${aleatorio_101} | ${aleatorio_102} | ${aleatorio_103} | ${data_demandaMedia}`)
 
         // SOMA COM OS NÚMEROS ANTERIORES, ADICIONAR UM PARA CADA MÁQUINA
         totalUsos_100 += aleatorio_100
@@ -145,7 +145,7 @@ function carregarGraficos() {
             datasets: [{
                 type: 'line',
                 label: `Demanda Média`,
-                data: data_demandaMedia,
+                data: demandaMedia,
                 borderWidth: 4,
                 borderColor: 'yellow'
             },

@@ -1,14 +1,14 @@
 function esconderMenu() {
     menu_lateral.innerHTML = `
-        <div id="esconder_menu" class="menu_oculto" onclick="mostrarMenu()">
+        <div id="esconder_menu" class="div_menu_oculto" onclick="mostrarMenu()">
         <img src="./img/icon-eye.png" class="lateral_icon">
         </div>`
-    menu_lateral.classList.add('hide_menu_lateral')
+    menu_lateral.classList.add('menu_oculto')
     carrocel.style.width = '95.2%'
     carrocel.style.marginLeft = '4.8%'
 }
 function mostrarMenu() {
-    menu_lateral.classList.remove('hide_menu_lateral')
+    menu_lateral.classList.remove('menu_oculto')
     carrocel.style.width = '100%'
     carrocel.style.marginLeft = '0%'
     menu_lateral.innerHTML = `

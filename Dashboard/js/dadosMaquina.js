@@ -8,9 +8,28 @@ let nomeMaq_99 = 'Todas Máquinas'
 header_main.innerHTML += `
 <main id="main_graficoGeral">
     <div id="container_grafico_geral">
-        <div id="container_graficos" class="container_dois_grafico">
+        <div class="container_dois_grafico">
             <div id="container_grafico_linha" class="div_grafico">
                 <canvas id="grafico_linha"></canvas>
+            </div>
+        </div>
+        <div id="container_dado_geral">
+                <div class="div_valor_geral">
+                    <span>PEITO:</span>
+                    <span id="span_demanda_" class="green">TESTE</span>
+                </div>
+                <div class="div_valor_geral">
+                    <span>COSTAS:</span>
+                    <span id="span_demanda_" class="green">TESTE</span>
+                </div>
+                <div class="div_valor_geral">
+                    <span>BRAÇO:</span>
+                    <span id="span_demanda_" class="green">TESTE</span>
+                </div>
+                <div class="div_valor_geral">
+                    <span>PERNAS:</span>
+                    <span id="span_demanda_" class="green">TESTE</span>
+                </div>
             </div>
         </div>
     </div>
@@ -102,10 +121,8 @@ header_main.innerHTML += `
                     <span id="tempo_inativo_${idMaq_100}">${tempoInativo_100}</span>
                 </div>
                 <div class="div_valor ">
-                    <div class="demandas_alinhamento"> 
-                        <span>Demanda da máquina:&nbsp; 
-                        <span id="span_demanda_${idMaq_100}" class="green">${demanda_100}</span></span>
-                    </div>
+                    <span>Demanda da máquina:</span>
+                    <span id="span_demanda_${idMaq_100}" class="green">${demanda_100}</span>
                 </div>
             </div>
         </div>
@@ -188,11 +205,8 @@ header_main.innerHTML += `
                     <span id="tempo_inativo_${idMaq_101}">${tempoInativo_101}</span>
                 </div>
                 <div class="div_valor ">
-                    <div class="demandas_alinhamento"> 
-                        <span>Demanda da máquina:&nbsp;
-                        <span id="span_demanda_${idMaq_101}" class="green">${demanda_101}</span>
-                        </span>
-                    </div>
+                    <span>Demanda da máquina:</span>
+                    <span id="span_demanda_${idMaq_101}" class="green">${demanda_101}</span>
                 </div>
             </div>
         </div>
@@ -275,11 +289,8 @@ header_main.innerHTML += `
                     <span id="tempo_inativo_${idMaq_102}">${tempoInativo_102}</span>
                 </div>
                 <div class="div_valor ">
-                    <div class="demandas_alinhamento"> 
-                        <span>Demanda da máquina:&nbsp; 
-                            <span id="span_demanda_${idMaq_102}" class="green">${demanda_102}</span>
-                        </span>
-                    </div>
+                    <span>Demanda da máquina:</span>
+                    <span id="span_demanda_${idMaq_102}" class="green">${demanda_102}</span>
                 </div>
             </div>
         </div>

@@ -6,6 +6,7 @@ body {
     justify-content: flex-start;
     align-items: flex-start;
     gap: 0.5%;
+    user-select: none;
 }
 
 aside {
@@ -15,65 +16,74 @@ aside {
     display: flex;
     align-items: center;
     flex-direction: column;
+    /* background-color: #6F0F77; */
     background-color: #880094;
     border-radius: 0px 20px 20px 0px;
+    transition: transform 0.3s ease;
 }
+
 
 #header_main {
     width: 100%;
     height: 100%;
     display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
     flex-direction: column;
     gap: 0.5%;
 }
 
 header {
     width: 100%;
-    height: 14.5%;
+    height: 9.5%;
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
+    gap: 0.5%;
     overflow-x: auto;
     white-space: nowrap;
 }
-
 main {
-    height: 100%;
+    height: 90%;
     width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
-    align-items: flex-start;
+    justify-content: center;
+    align-items: center;
 }
 
 /* CARROCEL */
 
 .div_carrocel {
     width: 8%;
-    height: 94%;
+    height: 90%;
+    /* background-color: #7000ff; */
     background-color: #880094;
     border-radius: 10px;
-    margin-right: 10px;
-    flex-shrink: 0;
-    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0; 
+    cursor: pointer;
 }
 
 .div_carrocel:hover{
-    background-color: #600e68;
+    /* background-color: #600e68; */
+    background-color: #550B5B;
 }
 
-.img_carrocel {
+/* .img_carrocel {
     height: 70%;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-}
+} */
 
-.img {
+/* .img {
     height: 100%;
     width: 100%;
-}
+} */
 
 .titulo_carrocel {
     height: 30%;
@@ -81,6 +91,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: center;
     color: #ffffff;
     font-weight: 600;
 }
@@ -118,6 +129,11 @@ main {
     align-items: center;
 }
 
+aside:hover {
+    transform: translateX(100px); /* Move a aside para a direita */
+    background-color: #880094; /* Mantém a mesma cor de fundo ao expandir */
+}
+
 .menu {
     width: 100%;
     height: 10%;
@@ -126,13 +142,6 @@ main {
     align-items: center;
 }
 
-.menu_oculto {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
 .logo {
     width: 100%;
@@ -152,28 +161,39 @@ main {
     align-items: center;
 }
 
-.hide_menu_lateral {
+.menu_oculto {
     width: 4.7%;
-    height: 12.4%;
+    height: 9.4%;
     position: fixed;
 }
+
+.div_menu_oculto {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 
 /* GRÁFICOS */
 
 .color1 {
+    /* background-color: #6F0F77; */
     background-color: #880094;
 }
 
 .color2 {
-    background-color: #880094;
+    background-color: #7000ff;
 }
 
 /* GRÁFICO GERAL */
 
 #container_grafico_geral {
-    width: 100%;
-    height: 100%;
-    background-color: #880094;
+    width: 99%;
+    height: 99%;
+    background-color: #7000ff;
+    /* background-color: #880094; */
     border-radius: 50px;
     display: flex;
     flex-direction: column;
@@ -181,17 +201,18 @@ main {
 
 .container_dois_grafico {
     width: 100%;
-    height: 74%;
+    height: 75%;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     justify-content: space-evenly;
+    border: solid orange;
 }
 
 .div_grafico {
-    width: 48%;
-    height: 80%;
+    width: 65%;
+    height: 98%;
     background-color: #ffffff;
     border-radius: 10px;
     display: flex;
@@ -201,7 +222,37 @@ main {
 
 #container_dado_geral {
     width: 100%;
-    height: 20%;
+    height: 25%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+    border: solid green;
+}
+
+.div_valor_geral {
+    width: 15%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* background-color: #ffffffa2;
+    border-radius: 10px; */
+    background-color: #ffffff;
+    border-radius: 20px;
+    transition: 0.4s;
+    color: #880094;
+    /* border-radius: 30px; */
+    font-size: 1.5vw;
+    font-weight: 600;
+    /* padding: 20px 30px; */
+}
+
+#grafico_linha {
+    width: 100%;
+    height: 100%;
 }
 
 /* MÁQUINAS */
@@ -227,6 +278,8 @@ main {
     align-items: center;
     color: #ffffff;
     font-size: 1.55vw;
+    margin-top: 1.9%;
+    margin-left: 1.5%;
 }
 
 .div_nome_maq {
@@ -273,7 +326,6 @@ main {
     margin-top: 1%;
     color: #ffffff;
     font-size: 2.5vw;
-    /* font-size: 40px; */
     font-weight: bold;
 }
 
@@ -329,19 +381,28 @@ main {
 }
 
 .div_valor {
-    width: 25%;
-    height: 50%;
+    width: 30%;
+    height: 60%;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
-    background-color: #ffffffa2;
-    border-radius: 30px;
-    color: #ffffff;
+    /* background-color: #ffffffa2;
+    border-radius: 10px; */
+    background-color: #ffffff;
+    border-radius: 20px;
+    transition: 0.4s;
+    color: #880094;
+    /* border-radius: 30px; */
     font-size: 1.5vw;
     font-weight: 600;
-    padding: 20px 30px;
+    /* padding: 20px 30px; */
 }
+
+.div_valor:hover, .div_valor_geral:hover {
+    translate: 0 -10px;
+}
+
 
 .div_valor span{
     text-transform: uppercase;
@@ -357,6 +418,10 @@ main {
     height: 100%;
 }
 
+.demandas_alinhamento {
+    padding-left: 20px;
+}
+
 .img_todas_maq {
     height: 100%;
     width: 90%;
@@ -369,6 +434,44 @@ main {
 .green {
     color: green;
 }
+
+#select_legPress {
+    /* Reset */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: 0;
+    outline: 0;
+    font: inherit;
+    /* Personalize */
+    width: 35%;
+    height: 100%;
+    padding: 0 4em 0 1em;
+    background: url(https://upload.wikimedia.org/wikipedia/commons/9/9d/Caret_down_font_awesome_whitevariation.svg) no-repeat right 0.8em center/1.4em, linear-gradient(to left, rgba(255, 255, 255, 0.3) 3em, rgba(255, 255, 255, 0.2) 3em);
+    color: white;
+    border-radius: 0.25em;
+    box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    /* <option> colors */
+    /* Remove focus outline */
+    /* Remove IE arrow */
+    font-size: 1vw;
+}
+
+#select_legPress option {
+    color: inherit;
+    background-color: #320a28;
+}
+
+#select_legPress:focus {
+    outline: none;
+}
+
+#select_legPress::-ms-expand {
+    display: none;
+}
+
+/* ALERTA */
 
 .popup {
     margin: 10px;
