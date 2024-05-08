@@ -3,9 +3,9 @@ function verificarDados() {
     //LEG PRESS
     if (totalUsos_100 >= demandaMedia && totalUsos_100 < demandaAlta) {
         demanda_100 = 'Média' // TROCA VARIAVEL DEMANDA CRIADA EM dadosMaq.js
-        total_usos_100.style.color = 'yellow' // MUDA A COR DO TEXTO TOTAL DE USO
-        span_demanda_100.style.color = 'yellow' // MUDA A COR DO TEXTO DEMANDA DA MÁQUINA
-        container_100.style.border = '5px solid yellow' // MUDA A COR DA BORDA DA MÁQUINA
+        total_usos_100.style.color = '#ff8c00' // MUDA A COR DO TEXTO TOTAL DE USO
+        span_demanda_100.style.color = '#ff8c00' // MUDA A COR DO TEXTO DEMANDA DA MÁQUINA
+        container_100.style.border = '5px solid #ff8c00' // MUDA A COR DA BORDA DA MÁQUINA
         span_demanda_100.innerHTML = demanda_100 // ATUALIZA O VALOR DA DEMANDA DA MÁQUINA
         leg_press_baixa.style.display = 'none' // OCULTA CARD COM BORDA VERDE NO CARROCEL
         leg_press_media.style.display = 'flex' // EXIBE CARD COM BORDA AMARELA NO CARROCEL
@@ -23,9 +23,9 @@ function verificarDados() {
     //SUPINO INCLINADO
     if (totalUsos_101 >= demandaMedia && totalUsos_101 < demandaAlta) {
         demanda_101 = 'Média' // TROCA VARIAVEL DEMANDA CRIADA EM dadosMaq.js
-        total_usos_101.style.color = 'yellow' // MUDA A COR DO TEXTO TOTAL DE USO
-        span_demanda_101.style.color = 'yellow' // MUDA A COR DO TEXTO DEMANDA DA MÁQUINA
-        container_101.style.border = '5px solid yellow' // MUDA A COR DA BORDA DA MÁQUINA
+        total_usos_101.style.color = '#ff8c00' // MUDA A COR DO TEXTO TOTAL DE USO
+        span_demanda_101.style.color = '#ff8c00' // MUDA A COR DO TEXTO DEMANDA DA MÁQUINA
+        container_101.style.border = '5px solid #ff8c00' // MUDA A COR DA BORDA DA MÁQUINA
         span_demanda_101.innerHTML = demanda_101 // ATUALIZA O VALOR DA DEMANDA DA MÁQUINA
         supino_inclinado_baixa.style.display = 'none' // OCULTA CARD COM BORDA VERDE NO CARROCEL
         supino_inclinado_media.style.display = 'flex' // EXIBE CARD COM BORDA AMARELA NO CARROCEL
@@ -43,9 +43,9 @@ function verificarDados() {
     // SMITH
     if (totalUsos_102 >= demandaMedia && totalUsos_102 < demandaAlta) {
         demanda_102 = 'Média' // TROCA VARIAVEL DEMANDA CRIADA EM dadosMaq.js
-        total_usos_102.style.color = 'yellow' // MUDA A COR DO TEXTO TOTAL DE USO
-        span_demanda_102.style.color = 'yellow' // MUDA A COR DO TEXTO DEMANDA DA MÁQUINA
-        container_102.style.border = '5px solid yellow' // MUDA A COR DA BORDA DA MÁQUINA
+        total_usos_102.style.color = '#ff8c00' // MUDA A COR DO TEXTO TOTAL DE USO
+        span_demanda_102.style.color = '#ff8c00' // MUDA A COR DO TEXTO DEMANDA DA MÁQUINA
+        container_102.style.border = '5px solid #ff8c00' // MUDA A COR DA BORDA DA MÁQUINA
         span_demanda_102.innerHTML = demanda_102 // ATUALIZA O VALOR DA DEMANDA DA MÁQUINA
         smith_baixa.style.display = 'none' // OCULTA CARD COM BORDA VERDE NO CARROCEL
         smith_media.style.display = 'flex' // EXIBE CARD COM BORDA AMARELA NO CARROCEL

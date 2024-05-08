@@ -6,8 +6,8 @@
 //         let totalUsos = 1
 
 //         if (totalUsos_102 > 200 && totalUsos_102 <= 500) {
-//             total_usos_102.style.color = 'yellow'
-//             container_102.style.border = '5px solid yellow'
+//             total_usos_102.style.color = '#ff8c00'
+//             container_102.style.border = '5px solid #ff8c00'
 //         }
 //         else if (totalUsos_102 > 500) {
 //             total_usos_102.style.color = 'red'
@@ -18,7 +18,7 @@
 //         }
 
 //         if (demanda_102 == 'Média') {
-//             span_demanda_102.style.color = 'yellow'
+//             span_demanda_102.style.color = '#ff8c00'
 //         }
 //         else if (demanda_102 == 'Alta') {
 //             span_demanda_102.style.color = 'red'
@@ -66,3 +66,5 @@ function atualizarDados() {
 
 
 setInterval(atualizarDados, 1500) // DEVE SER O MESMO TEMPO DO GRÁFICO 
+
+

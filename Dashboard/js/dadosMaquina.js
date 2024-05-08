@@ -102,8 +102,10 @@ header_main.innerHTML += `
                     <span id="tempo_inativo_${idMaq_100}">${tempoInativo_100}</span>
                 </div>
                 <div class="div_valor ">
-                    <span>Demanda da máquina:</span>
-                    <span id="span_demanda_${idMaq_100}" class="green">${demanda_100}</span>
+                    <div class="demandas_alinhamento"> 
+                        <span>Demanda da máquina:&nbsp; 
+                        <span id="span_demanda_${idMaq_100}" class="green">${demanda_100}</span></span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -186,8 +188,11 @@ header_main.innerHTML += `
                     <span id="tempo_inativo_${idMaq_101}">${tempoInativo_101}</span>
                 </div>
                 <div class="div_valor ">
-                    <span>Demanda da máquina:</span>
-                    <span id="span_demanda_${idMaq_101}" class="green">${demanda_101}</span>
+                    <div class="demandas_alinhamento"> 
+                        <span>Demanda da máquina:&nbsp;
+                        <span id="span_demanda_${idMaq_101}" class="green">${demanda_101}</span>
+                        </span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -270,8 +275,11 @@ header_main.innerHTML += `
                     <span id="tempo_inativo_${idMaq_102}">${tempoInativo_102}</span>
                 </div>
                 <div class="div_valor ">
-                    <span>Demanda da máquina:</span>
-                    <span id="span_demanda_${idMaq_102}" class="green">${demanda_102}</span>
+                    <div class="demandas_alinhamento"> 
+                        <span>Demanda da máquina:&nbsp; 
+                            <span id="span_demanda_${idMaq_102}" class="green">${demanda_102}</span>
+                        </span>
+                    </div>
                 </div>
             </div>
         </div>
