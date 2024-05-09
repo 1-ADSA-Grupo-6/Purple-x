@@ -17,7 +17,7 @@ function carregarGraficos() {
         let aleatorio_102 = Math.round(Math.random())
         let aleatorio_103 = Math.round(Math.random())
 
-        console.log(`${aleatorio_100} | ${aleatorio_101} | ${aleatorio_102} | ${aleatorio_103} | ${data_demandaMedia}`)
+        // console.log(`${aleatorio_100} | ${aleatorio_101} | ${aleatorio_102} | ${aleatorio_103} | ${data_demandaMedia}`)
 
         // SOMA COM OS NÚMEROS ANTERIORES, ADICIONAR UM PARA CADA MÁQUINA
         totalUsos_100 += aleatorio_100
@@ -88,11 +88,11 @@ function carregarGraficos() {
     // REPETIR A FUNÇÃO EM UM INTERVALO DE TEMPO
     setInterval(function () {
         gerarNumeroAleatorio()
-    }, 1500) // EM MILISSEGUNDOS
+    }, tempoSetInterval)
 
     // GRÁFICOS
-    // GRÁFICO GERAL
 
+    // GRÁFICO GERAL
     let graficoGeral = new Chart(grafico_linha, {
         type: 'line',
         data: {

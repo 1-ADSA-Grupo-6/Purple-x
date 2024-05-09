@@ -1,44 +1,66 @@
+let tempoSetInterval = 1500 // TEMPO PARA O setInterval EM MILISSEGUNDOS
 let idMaximo = 99 //VARIÁVEL LIMITADORA DO FOR
-let demandaMedia = 5
-let demandaAlta = 10
+let demandaMedia = 1 // VARIÁVEL PARA DEFINIR A DEMANDA MÉDIA
+let demandaAlta = 2 // VARIÁVEL PARA DEFINIR A DEMANDA ALTA
+let qtdMaqPeito = 0
+let qtdMaqCostas = 0
+let qtdMaqBraco = 0
+let qtdMaqPernas = 0
 
-let nomeMaq_99 = 'Todas Máquinas'
-
-// <!-- GRÁFICO GERAL -->
+// GRÁFICO GERAL
 header_main.innerHTML += `
-<main id="main_graficoGeral">
-    <div id="container_grafico_geral">
-        <div class="container_dois_grafico">
-            <div id="container_grafico_linha" class="div_grafico">
-                <canvas id="grafico_linha"></canvas>
+    <main id="main_graficoGeral">
+        <div id="container_grafico_geral">
+            <div id="container_info_maquinas">
+                <div class="container_alerta_geral">
+                    <span>NÚMERO DE MÁQUINAS EM ALERTA</span>
+                    <div class="div_valor_alerta_geral">
+                        <span>DEMANDA MÉDIA:</span>
+                        <span id="span_demanda_media" class="green"></span>
+                    </div>
+                    <div class="div_valor_alerta_geral">
+                        <span>DEMANDA ALTA:</span>
+                        <span id="span_demanda_alta" class="green"></span>
+                    </div>
+                </div>
+                <div id="container_dado_geral">
+                <span>TOTAL DE USOS POR CATEGORIA</span>
+                    <div class="container_categoria">
+                        <div class="div_categoria">
+                            <div class="div_valor_geral">
+                                <span>PEITO:</span>
+                                <span id="span_demanda_peito" class="green"></span>
+                            </div>
+                            <div class="div_valor_geral">
+                                <span>COSTAS:</span>
+                                <span id="span_demanda_costas" class="green"></span>
+                            </div>
+                        </div>
+                        <div class="div_categoria">
+                            <div class="div_valor_geral">
+                                <span>BRAÇO:</span>
+                                <span id="span_demanda_braco" class="green"></span>
+                            </div>
+                            <div class="div_valor_geral">
+                                <span>PERNAS:</span>
+                                <span id="span_demanda_pernas" class="green"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="div_grafico_geral">
+                <div id="container_grafico_linha" class="div_grafico">
+                    <canvas id="grafico_linha"></canvas>
+                </div>
             </div>
         </div>
-        <div id="container_dado_geral">
-                <div class="div_valor_geral">
-                    <span>PEITO:</span>
-                    <span id="span_demanda_" class="green">TESTE</span>
-                </div>
-                <div class="div_valor_geral">
-                    <span>COSTAS:</span>
-                    <span id="span_demanda_" class="green">TESTE</span>
-                </div>
-                <div class="div_valor_geral">
-                    <span>BRAÇO:</span>
-                    <span id="span_demanda_" class="green">TESTE</span>
-                </div>
-                <div class="div_valor_geral">
-                    <span>PERNAS:</span>
-                    <span id="span_demanda_" class="green">TESTE</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</main>`
+    </main>`
 
 // LEG PRESS
-
 // DADOS QUE VEM DO BANCO (FUTURAMENTE)
 idMaximo++ //VARIÁVEL LIMITADORA DO FOR
+qtdMaqPernas++
 let nomeMaq_legPress = 'Leg Press'
 let categoria_LegPress = 'Pernas'
 let qtdMaq_legPress = 2
@@ -55,6 +77,7 @@ let demanda_100 = 'Baixa'
 let corGrafico_100 = '#7000ff'
 
 idMaximo++
+qtdMaqPernas++
 let idMaq_103 = 103
 let ultimaManutencao_103 = '01/01/2024'
 let usosInicial_103 = 0
@@ -130,9 +153,9 @@ header_main.innerHTML += `
 </main>`
 
 // SUPINO INCLINADO
-
 // DADOS QUE VEM DO BANCO
 idMaximo++ //VARIÁVEL LIMITADORA DO FOR
+qtdMaqPeito++
 let nomeMaq_101 = 'Supino Inclinado'
 let categoria_101 = 'Peito'
 let qtdMaq_supinoInclinado = 1
@@ -214,9 +237,9 @@ header_main.innerHTML += `
 </main>`
 
 // SMITH
-
 // DADOS QUE VEM DO BANCO
 idMaximo++ //VARIÁVEL LIMITADORA DO FOR
+qtdMaqPernas++
 let nomeMaq_102 = 'Smith'
 let categoria_102 = 'Pernas'
 let qtdMaq_smith = 1
@@ -298,7 +321,22 @@ header_main.innerHTML += `
 </main>`
 
 // VARIÁVEIS PARA O GRÁFICO POR CATEGORIA
-let totalUsosPeito = totalUsos_101
+let totalUsosPeito = totalUsos_100 + totalUsos_102 + totalUsos_103
 let totalUsosBraco = ''
 let totalUsosCostas = ''
-let totalUsosPerna = totalUsos_100 + totalUsos_102 + totalUsos_103
+let totalUsosPernas = totalUsos_100 + totalUsos_102 + totalUsos_103
+let qtdDemandaMedia = 0
+let qtdDemandaAlta = 0
+
+// VARIAVEIS PARA LIMITAR A CONTAGEM DA DEMANDA DO GRÁFICO GERAL
+// LEG PRESS
+let validarContagemMedia_100 = true
+let validarContagemAlta_100 = true
+let validarContagemMedia_103 = true
+let validarContagemAlta_103 = true
+// SUPINO INCLINADO
+let validarContagemMedia_101 = true
+let validarContagemAlta_101 = true
+// SMITH
+let validarContagemMedia_102 = true
+let validarContagemAlta_102 = true

@@ -123,14 +123,14 @@ carrocel.innerHTML += `
     </div>`
 
 // CARDS DE TESTE
-for (c = 1; c <= 10; c++) {
-    carrocel.innerHTML += `
-        <div class="div_carrocel" onclick="">
-            <div class="titulo_carrocel">
-                <span>TESTE</span>
-            </div>
-        </div>`
-}
+// for (c = idMaximo + 1; c <= idMaximo + 7; c++) {
+//     carrocel.innerHTML += `
+//         <div class="div_carrocel" onclick="">
+//             <div class="titulo_carrocel">
+//                 <span>Máquina - ${c}</span>
+//             </div>
+//         </div>`
+// }
 
 // FUNÇÃO SCROLL CARROCEL
 let posicaoScroll = 0;
