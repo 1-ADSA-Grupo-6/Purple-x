@@ -472,37 +472,71 @@ aside:hover {
 }
 
 /* ALERTA */
-
 .popup {
     margin: 10px;
     box-shadow: 4px 4px 10px -10px rgba(0, 0, 0, 1);
-    width: 300px;
+    width: 400px;
     justify-content: space-around;
     align-items: center;
-    display: none;
     border-radius: 4px;
     padding: 5px 0;
     font-weight: 300;
-}
+    position: absolute;
+  }
 
-.close-icon {
+  .popup svg {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+  .popup-icon svg {
+    margin: 5px;
+    display: flex;
+    align-items: center;
+  }
+  .close-icon {
     margin-left: auto;
-}
-
-.alert-popup {
+  }
+  .close-svg {
+    cursor: pointer;
+  }
+  .close-path {
+    fill: grey;
+  }
+  
+  .alert-popup {
     background-color: #fefce8;
-    border: solid 1px #facc15;
-}
+    border: solid 1px #ff8c00;
+    top: 200px;
+    display: flex;
+  }
+  .alert-icon path {
+    fill: #ff8c00;
+  }
+  .alert-message {
+    color: #8a5e00;
+  }
 
-.alert-message {
-    color: #ca8a04;
-}
-
-.error-popup {
+  .error-popup {
     background-color: #fef2f2;
     border: solid 1px #f87171;
-}
-
-.error-message {
+    top: 100px;
+  }
+  .error-icon path {
+    fill: #f87171;
+  }
+  .error-message {
     color: #991b1b;
-}
+  }
+  
+  .info-popup {
+    background-color: #eff6ff;
+    border: solid 1px #1d4ed8;
+    top: 300px;
+  }
+  .info-icon path {
+    fill: #1d4ed8;
+  }
+  .info-message {
+    color: #1d4ed8;
+  }
+  

@@ -93,7 +93,7 @@ function carregarGraficos() {
                 // {
                 //     label: `Demanda média`,
                 //     data: data_demandaMedia,
-                //     borderColor: 'yellow',
+                //     borderColor: '#ff8c00',
                 //     tension: 0.1,
                 //     borderWidth: 1
                 // },
@@ -147,7 +147,7 @@ function carregarGraficos() {
                 label: `Demanda Média`,
                 data: demandaMedia,
                 borderWidth: 4,
-                borderColor: 'yellow'
+                borderColor: '#ff8c00'
             },
             {
                 type: 'bar',

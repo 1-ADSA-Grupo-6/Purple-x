@@ -91,11 +91,13 @@ header {
 #btn_cadastro a {
     text-decoration: none;
     color: #000000;
+    font-weight: 800;
 }
 
 #btn_login a {
     text-decoration: none;
     color: #000000;
+    font-weight: 800;
 }
 
 #btn_login:hover,
@@ -103,12 +105,12 @@ header {
     background-color: rgba(0, 0, 0, 0.153);
     border: 2px solid #ffffff;
     border-radius: 35px;
+    color: #ffffff;
 }
 
-#btn_login a:hover,
-#btn_cadastro a:hover {
+#btn_login:hover a,
+#btn_cadastro:hover a{
     color: #ffffff;
-
 }
 
 .logo {
