@@ -130,10 +130,10 @@ main {
     align-items: center;
 }
 
-aside:hover {
-    transform: translateX(100px); /* Move a aside para a direita */
-    background-color: #880094; /* Mantém a mesma cor de fundo ao expandir */
-}
+/* aside:hover {
+    transform: translateX(100px); 
+    background-color: #880094;
+} */
 
 .menu {
     width: 100%;
@@ -475,31 +475,70 @@ aside:hover {
 
 #alerta{
     width: 100%;
+    display: none;
+}
+
+#sino {
+    position: relative; 
+}
+
+#sino p {
+    position: absolute; 
+    top: -15%; 
+    left: 65%; 
+    transform: translate(-50%, -50%); 
+    color: white;
+    font-size: 30px; 
+    font-weight: bold; 
+}
+
+.close {
+    color: #000000;
+    float: right;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 .deixar_baixo {
     position: fixed; 
     right: 0; 
-    width: 100%;
+    width: 18%;
     display: flex;
     flex-direction: column;
     align-items: flex-end; 
     gap: 4px;
     margin-top: 8px;
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    height: 100%;
+    overflow: auto;
 }
 
 #container_alerta{
     background-color: white;
     color: black;
-    width: 15%;
+    width: 75%;
     border-radius: 20px;
     padding: 15px;
+    background-color: #ffffff;
 }
 
 #container_alerta img{
     width: 18%;
     padding-bottom: 2px;
     padding-top: 2px;
+}
+
+#alerta_texto {
+    margin-right: 28%;
+    color: #000000;
 }
 
 #div_mensagem span{

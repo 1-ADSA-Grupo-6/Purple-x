@@ -29,6 +29,12 @@
             <div id="remover_maq" class="menu">
                 <img src="./img/icon-minus.png" class="lateral_icon">
             </div>
+            <div id="sino" class="menu" onclick="abrirNotificações()">
+                <img src="./img/sino.png" class="lateral_icon">
+                <div id="divNotificacao">
+                    <p>●</p>
+                </div>
+            </div>
             <!-- <div id="help" class="menu">
                 <img src="./img/help.png" class="lateral_icon">
             </div> -->
@@ -47,6 +53,8 @@
         <!-- ALERTA -->
         <div id="alerta">
             <div class="deixar_baixo">
+                <span class="close" onclick="fecharNotificacoes()">&times;</span>
+                <p id="alerta_texto">Não há alertas</p>
                 <div id="container_alerta" class="aviso_vermelho aviso_vermelho_100">
                     <div class="centralizar_alertas">
                         <img src="./img/aviso_vermelho.png" alt="aviso_vermelho">
@@ -113,4 +121,4 @@
 
 <!-- EXECUTA FUNÇÔES DEPOIS DA <body> SER CARREGADA -->
 
-<body onload="carregarGraficos(), verificarDados(), mostrarTodasMaquinas(), atualizarDados(), popUp()">
+<body onload="carregarGraficos(), verificarDados(), mostrarTodasMaquinas(), atualizarDados()">
