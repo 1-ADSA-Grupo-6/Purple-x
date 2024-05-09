@@ -10,51 +10,107 @@
 
 <body>
 
-    <!-- CARROCEL -->
-    <header id="carrocel">
-    </header>
-
-    <div id="main_aside">
-        <!-- MENU LATERAL  -->
-        <aside id="menu_lateral">
-            <div id="help" class="menu">
-                <img src="./img/menu.png" class="lateral_icon">
+    <!-- MENU LATERAL  -->
+    <aside id="menu_lateral">
+        <div id="container_menu_lateral">
+            <div id="logo" class="menu">
+                <img src="./img/logo.png" class="logo">
             </div>
-            <!-- <input type="checkbox" id="chk_ocultar">
-            <label for="chk_ocultar" class="ocultar_menu"> -->
-            <div id="esconder_menu" class="fixo" onclick="esconderMenu()">
-                    <img src="./img/icon-eye.png" class="lateral_icon">
-                </div>
+            <div id="esconder_menu" class="menu" onclick="esconderMenu()">
+                <img src="./img/icon-closedEye.png" class="lateral_icon">
+            </div>
             <!-- </label> -->
-            <div id="trocar_academia" class="fixo">
+            <div id="trocar_academia" class="menu">
                 <img src="./img/icon-gym.png" class="lateral_icon">
             </div>
-            <div id="adicionar_maq" class="fixo">
+            <div id="adicionar_maq" class="menu">
                 <img src="./img/icon-plus.png" class="lateral_icon">
             </div>
-            <div id="remover_maq" class="fixo">
+            <div id="remover_maq" class="menu">
                 <img src="./img/icon-minus.png" class="lateral_icon">
             </div>
-            <div id="help" class="help">
+            <!-- <div id="help" class="menu">
                 <img src="./img/help.png" class="lateral_icon">
-            </div>
-            <div id="logout" class="logout">
+            </div> -->
+        </div>
+        <a href="../Login e Cadastro/login.html" class="menu">
+            <div id="logout">
                 <img src="./img/door.png" class="lateral_icon">
             </div>
-        </aside>
+        </a>
+    </aside>
+
+    <div id="header_main">
+        <!-- CARROCEL -->
+        <header id="carrocel"></header>
+        <!-- GRÁFICO OU MÁQUINAS NO dadosMaquina.js -->
+        <!-- ALERTA -->
+        <div id="alerta">
+            <div class="deixar_baixo">
+                <div id="container_alerta" class="aviso_vermelho aviso_vermelho_100">
+                    <div class="centralizar_alertas">
+                        <img src="./img/aviso_vermelho.png" alt="aviso_vermelho">
+                        <div id="div_mensagem">
+                            <p>As máquinas Leg Press estão com a demanda alta</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="container_alerta" class="aviso_vermelho aviso_vermelho_101">
+                    <div class="centralizar_alertas">
+                        <img src="./img/aviso_vermelho.png" alt="aviso_vermelho">
+                        <div id="div_mensagem">
+                            <p>A máquina Supino está com a demanda alta</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="container_alerta" class="aviso_vermelho aviso_vermelho_102">
+                    <div class="centralizar_alertas">
+                        <img src="./img/aviso_vermelho.png" alt="aviso_vermelho">
+                        <div id="div_mensagem">
+                            <p>A máquina Smith está com a demanda alta</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="container_alerta" class="aviso_laranja aviso_laranja_100">
+                    <div class="centralizar_alertas">
+                        <img src="./img/aviso_laranja.png" alt="aviso_laranja">
+                        <div id="div_mensagem">
+                            <p>As máquinas Leg Press estão com a demanda média</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="container_alerta" class="aviso_laranja aviso_laranja_101">
+                    <div class="centralizar_alertas">
+                        <img src="./img/aviso_laranja.png" alt="aviso_laranja">
+                        <div id="div_mensagem">
+                            <p>A máquina Supino está com a demanda média</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="container_alerta" class="aviso_laranja aviso_laranja_102">
+                    <div class="centralizar_alertas">
+                        <img src="./img/aviso_laranja.png" alt="aviso_laranja">
+                        <div id="div_mensagem">
+                            <p>A máquina Smith está com a demanda média</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 
 </html>
 
-<!-- <script src="./js/funcMenu.js"></script> -->
+<script src="./js/funcMenu.js"></script>
 <script src="./js/dadosMaquina.js"></script>
 <script src="./js/funcCarrocel.js"></script>
 <script src="./js/funcMaquina.js"></script>
 <script src="./js/funcGrafico.js"></script>
+<script src="./js/funcPopup.js"></script>
 <!-- USAR SOMENTE SE O BANCO NÃO ESTIVER CONECTADO 👇 -->
 <script src="./js/funcVerificarDados.js"></script>
 
 <!-- EXECUTA FUNÇÔES DEPOIS DA <body> SER CARREGADA -->
 
-<body onload="carregarGraficos(), verificarDados(), mostrarTodasMaquinas(), atualizarDados()">
+<body onload="carregarGraficos(), verificarDados(), mostrarTodasMaquinas(), atualizarDados(), popUp()">

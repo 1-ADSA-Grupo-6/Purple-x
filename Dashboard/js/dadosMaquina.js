@@ -1,17 +1,35 @@
-//VARIÁVEL LIMITADORA DO FOR
-let idMaximo = 99
+let idMaximo = 99 //VARIÁVEL LIMITADORA DO FOR
 let demandaMedia = 5
 let demandaAlta = 10
 
 let nomeMaq_99 = 'Todas Máquinas'
 
 // <!-- GRÁFICO GERAL -->
-main_aside.innerHTML += `
+header_main.innerHTML += `
 <main id="main_graficoGeral">
     <div id="container_grafico_geral">
-        <div id="container_graficos" class="container_dois_grafico">
+        <div class="container_dois_grafico">
             <div id="container_grafico_linha" class="div_grafico">
                 <canvas id="grafico_linha"></canvas>
+            </div>
+        </div>
+        <div id="container_dado_geral">
+                <div class="div_valor_geral">
+                    <span>PEITO:</span>
+                    <span id="span_demanda_" class="green">TESTE</span>
+                </div>
+                <div class="div_valor_geral">
+                    <span>COSTAS:</span>
+                    <span id="span_demanda_" class="green">TESTE</span>
+                </div>
+                <div class="div_valor_geral">
+                    <span>BRAÇO:</span>
+                    <span id="span_demanda_" class="green">TESTE</span>
+                </div>
+                <div class="div_valor_geral">
+                    <span>PERNAS:</span>
+                    <span id="span_demanda_" class="green">TESTE</span>
+                </div>
             </div>
         </div>
     </div>
@@ -46,7 +64,7 @@ let demanda_103 = 'Baixa'
 let corGrafico_103 = '#5A00CC'
 
 // ESTRUTURA PARA O HTML
-main_aside.innerHTML += `
+header_main.innerHTML += `
 <main id="main_legPress">
     <div id="container_${idMaq_100}" class="container_maq color2">
         <div class="info_maq">
@@ -96,7 +114,7 @@ main_aside.innerHTML += `
             <div class="container_valor">
                 <div class="div_valor ">
                     <span>Total de usos:</span>
-                    <span id="total_usos_${idMaq_100}">${totalUsos_100}</span>
+                    <span id="total_usos_${idMaq_100}" class="green">${totalUsos_100}</span>
                 </div>
                 <div class="div_valor ">
                     <span>Tempo inativo:</span>
@@ -104,7 +122,7 @@ main_aside.innerHTML += `
                 </div>
                 <div class="div_valor ">
                     <span>Demanda da máquina:</span>
-                    <span id="span_demanda_${idMaq_100}">${demanda_100}</span>
+                    <span id="span_demanda_${idMaq_100}" class="green">${demanda_100}</span>
                 </div>
             </div>
         </div>
@@ -131,7 +149,7 @@ let imgMaq_101 = './img/imgMaq/supinoInclinado.webp'
 let corGrafico_101 = '#ff9900'
 
 // ESTRUTURA PARA O HTML
-main_aside.innerHTML += `
+header_main.innerHTML += `
 <main id="main_supinoInclinado">
     <div id="container_${idMaq_101}" class="container_maq color2">
         <div class="info_maq">
@@ -180,7 +198,7 @@ main_aside.innerHTML += `
             <div class="container_valor">
                 <div class="div_valor ">
                     <span>Total de usos:</span>
-                    <span id="total_usos_${idMaq_101}">${totalUsos_101}</span>
+                    <span id="total_usos_${idMaq_101}" class="green">${totalUsos_101}</span>
                 </div>
                 <div class="div_valor ">
                     <span>Tempo inativo:</span>
@@ -188,7 +206,7 @@ main_aside.innerHTML += `
                 </div>
                 <div class="div_valor ">
                     <span>Demanda da máquina:</span>
-                    <span id="span_demanda_${idMaq_101}">${demanda_101}</span>
+                    <span id="span_demanda_${idMaq_101}" class="green">${demanda_101}</span>
                 </div>
             </div>
         </div>
@@ -215,7 +233,7 @@ let imgMaq_102 = './img/imgMaq/smith.png'
 let corGrafico_102 = 'green'
 
 // ESTRUTURA PARA O HTML
-main_aside.innerHTML += `
+header_main.innerHTML += `
 <main id="main_smith">
     <div id="container_${idMaq_102}" class="container_maq color2">
         <div class="info_maq">
@@ -264,7 +282,7 @@ main_aside.innerHTML += `
             <div class="container_valor">
                 <div class="div_valor ">
                     <span>Total de usos:</span>
-                    <span id="total_usos_${idMaq_102}">${totalUsos_102}</span>
+                    <span id="total_usos_${idMaq_102}" class="green">${totalUsos_102}</span>
                 </div>
                 <div class="div_valor ">
                     <span>Tempo inativo:</span>
@@ -272,9 +290,15 @@ main_aside.innerHTML += `
                 </div>
                 <div class="div_valor ">
                     <span>Demanda da máquina:</span>
-                    <span id="span_demanda_${idMaq_102}">${demanda_102}</span>
+                    <span id="span_demanda_${idMaq_102}" class="green">${demanda_102}</span>
                 </div>
             </div>
         </div>
     </div>
 </main>`
+
+// VARIÁVEIS PARA O GRÁFICO POR CATEGORIA
+let totalUsosPeito = totalUsos_101
+let totalUsosBraco = ''
+let totalUsosCostas = ''
+let totalUsosPerna = totalUsos_100 + totalUsos_102 + totalUsos_103

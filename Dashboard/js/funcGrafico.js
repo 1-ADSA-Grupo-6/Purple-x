@@ -17,7 +17,7 @@ function carregarGraficos() {
         let aleatorio_102 = Math.round(Math.random())
         let aleatorio_103 = Math.round(Math.random())
 
-        // console.log(`${aleatorio_100} | ${aleatorio_101} | ${aleatorio_102} | ${aleatorio_103}`)
+        console.log(`${aleatorio_100} | ${aleatorio_101} | ${aleatorio_102} | ${aleatorio_103} | ${data_demandaMedia}`)
 
         // SOMA COM OS NÚMEROS ANTERIORES, ADICIONAR UM PARA CADA MÁQUINA
         totalUsos_100 += aleatorio_100
@@ -25,8 +25,16 @@ function carregarGraficos() {
         totalUsos_102 += aleatorio_102
         totalUsos_103 += aleatorio_103
 
+        //// CAPTURA MOMENTO ATUAL E SEPARA 
+        // let horaAtual = new Date();
+        // let hora = horaAtual.getHours();
+        // let minuto = horaAtual.getMinutes();
+        // let segundo = horaAtual.getSeconds();
+        // let timeLabel = `${hora}:${minuto}:${segundo}`;
+
         // PEGA O MOMENTO DA CRIAÇÃO DO DADO
         labels.push(new Date().toLocaleTimeString())
+        // labels.push(hora)
 
         // FORMATA O DADO PARA ATUALIZAR NO GRÁFICO
         data_100.push(totalUsos_100)
@@ -82,44 +90,44 @@ function carregarGraficos() {
         data: {
             labels: labels,
             datasets: [
-            // {
-            //     label: `Demanda média`,
-            //     data: data_demandaMedia,
-            //     borderColor: 'yellow',
-            //     tension: 0.1,
-            //     borderWidth: 1
-            // },
-            // {
-            //     label: `Demanda Alta`,
-            //     data: data_demandaAlta,
-            //     borderColor: 'red',
-            //     tension: 0.1,
-            //     borderWidth: 1
-            // },
-            {
-                label: `${nomeMaq_legPress}-${idMaq_100}`,
-                data: data_100,
-                borderColor: corGrafico_100,
-                tension: 0.1
-            },
-            {
-                label: `${nomeMaq_101}-${idMaq_101}`,
-                data: data_101,
-                borderColor: corGrafico_101,
-                tension: 0.1
-            },
-            {
-                label: `${nomeMaq_102}-${idMaq_102}`,
-                data: data_102,
-                borderColor: corGrafico_102,
-                tension: 0.1
-            },
-            {
-                label: `${nomeMaq_legPress}-${idMaq_103}`,
-                data: data_103,
-                borderColor: corGrafico_103,
-                tension: 0.1
-            }]
+                // {
+                //     label: `Demanda média`,
+                //     data: data_demandaMedia,
+                //     borderColor: '#ff8c00',
+                //     tension: 0.1,
+                //     borderWidth: 1
+                // },
+                // {
+                //     label: `Demanda Alta`,
+                //     data: data_demandaAlta,
+                //     borderColor: 'red',
+                //     tension: 0.1,
+                //     borderWidth: 1
+                // },
+                {
+                    label: `${nomeMaq_legPress}-${idMaq_100}`,
+                    data: data_100,
+                    borderColor: corGrafico_100,
+                    tension: 0.1
+                },
+                {
+                    label: `${nomeMaq_101}-${idMaq_101}`,
+                    data: data_101,
+                    borderColor: corGrafico_101,
+                    tension: 0.1
+                },
+                {
+                    label: `${nomeMaq_102}-${idMaq_102}`,
+                    data: data_102,
+                    borderColor: corGrafico_102,
+                    tension: 0.1
+                },
+                {
+                    label: `${nomeMaq_legPress}-${idMaq_103}`,
+                    data: data_103,
+                    borderColor: corGrafico_103,
+                    tension: 0.1
+                }]
         },
         options: {
             scales: {
@@ -132,19 +140,27 @@ function carregarGraficos() {
 
     // LEG PRESS
     let graficoLegPress = new Chart(grafico_100, {
-        type: 'line',
         data: {
             labels: labels,
             datasets: [{
+                type: 'line',
+                label: `Demanda Média`,
+                data: demandaMedia,
+                borderWidth: 4,
+                borderColor: '#ff8c00'
+            },
+            {
+                type: 'bar',
                 label: `${nomeMaq_legPress}-${idMaq_100}`,
                 data: data_100,
-                borderWidth: 4,
+                borderWidth: 1,
                 borderColor: corGrafico_100
             },
             {
+                type: 'bar',
                 label: `${nomeMaq_legPress}-${idMaq_103}`,
                 data: data_103,
-                borderWidth: 4,
+                borderWidth: 1,
                 borderColor: corGrafico_103
             }
             ],
@@ -182,10 +198,3 @@ function carregarGraficos() {
         }
     })
 }
-
-//// CAPTURA MOMENTO ATUAL E SEPARA 
-//let horaAtual = new Date();
-//let hora = horaAtual.getHours();
-//let minuto = horaAtual.getMinutes();
-//let segundo = horaAtual.getSeconds();
-//let timeLabel = `${hora}:${minuto}:${segundo}`;
