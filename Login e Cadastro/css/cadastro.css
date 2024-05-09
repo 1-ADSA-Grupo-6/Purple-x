@@ -43,7 +43,7 @@ body {
     border: 1px solid #CCCCCC;
     background-color: #FFFFFF;
     width: 400px;
-    height: 800PX;
+    height: 950PX;
     justify-content: center;
     border-radius: 30px;
 }
@@ -61,6 +61,7 @@ body {
     flex-direction: column;
     margin-top: 20px;
     align-items: center;
+    
 }
 
 input {
@@ -229,7 +230,20 @@ a {
     margin-right: 172px;
 }
 
+#inputsText2{
+    font-size: 15px;
+    margin-bottom: 5px;
+    margin-left: -142px;
+}
+
 #textCnpj{
+    font-size: 15px;
+    margin-bottom: 5px;
+    margin-right: 258px;
+}
+
+
+#textCpf{
     font-size: 15px;
     margin-bottom: 5px;
     margin-right: 258px;
