@@ -5,61 +5,22 @@ drop user 'purplex'@'localhost';
 create user 'purplex'@'localhost' identified by 'purplex100';
 grant all privileges on *.* to 'purplex'@'localhost';
 
-create table sensor (
-idSensor int primary key auto_increment,
-nome varchar(45),
-descricao varchar(100)
+create table representante(
+idRepresentante int primary key auto_increment not null, 
+nome varchar(45) not null,
+cpf char(11) not null unique,
+email varchar(264) not null unique,
+senha varchar(100) not null
 );
-
-create table dados(
-idDados int auto_increment,
-medida char(1) not null,
-momento datetime not null,
-fkDados int,
-constraint fkDadosSen foreign key (fkDados) references sensor(idSensor),
-constraint pkCompostaDados primary key (idDados, fkDados)
-);
-
-INSERT INTO sensor VALUES (default, 'bloqueio', 'maquina de peito');
-INSERT INTO sensor VALUES (default, 'bloqueio', 'legPress');
-
-SELECT * FROM sensor;
-ALTER TABLE sensor ADD COLUMN fator DECIMAL(4,2);
-
-UPDATE sensor SET fator = 1.5 WHERE idSensor = 2;
-
-INSERT INTO dados VALUES (default, 1, current_timestamp(), 1);
-INSERT INTO dados VALUES (default, 1, current_timestamp(), 1);
-INSERT INTO dados VALUES (default, 1, current_timestamp(), 1);
-INSERT INTO dados VALUES (default, 1, current_timestamp(), 1);
-INSERT INTO dados VALUES (default, 1, current_timestamp(), 1);
-INSERT INTO dados VALUES (default, 1, current_timestamp(), 1);
-INSERT INTO dados VALUES (default, 1, current_timestamp(), 1);
-INSERT INTO dados VALUES (default, 1, current_timestamp(), 1);
-INSERT INTO dados VALUES (default, 1, current_timestamp(), 1);
-INSERT INTO dados VALUES (default, 1, '2024-05-03 16:07:05', 1);
-
-SELECT * FROM dados;
-SELECT s.descricao as maquina, SUM(d.medida*s.fator) as ocupação, HOUR(d.momento) as hora FROM dados AS d, sensor AS s GROUP BY s.descricao, HOUR(d.momento) ORDER BY s.descricao;
 
 create table empresa (
-cnpj char(14) primary key not null,
+idEmpresa int primary key not null auto_increment,
 nomeEmpresa varchar(100) not null,
 telefone char(11) not null,
-tamanhoEmpresa varchar(45),
-constraint chkTamanhoEmpresa check(tamanhoEmpresa in('Pequeno', 'Médio', 'Grande')),
-qtdFuncionario int
-);
- 
-create table aparelhos (
-idAparelhos int, 
-fkAparelhos char(14), 
-constraint pkCompostaAparelhos primary key (idAparelhos, fkAparelhos),
-nome varchar(45),
-descricao varchar(100),
-fkSensor int,
-constraint fkEmpresaApa foreign key (fkAparelhos) references empresa(cnpj),
-constraint fkSensorApa foreign key (fkSensor) references sensor(idSensor)
+qtdFranquias int,
+cnpj char(14) unique,
+fkRepresentante int,
+foreign key (fkRepresentante) references representante(idRepresentante)
 );
 
 create table endereco(
@@ -67,22 +28,49 @@ idEndereco int primary key not null auto_increment,
 cep char(9) not null,
 numero varchar(45) not null,
 complemento varchar(45), 
-fkEndereco char(14),
-constraint fkEnderecoEmpresa foreign key (fkEndereco) references empresa(cnpj)
+fkEndereco int,
+foreign key (fkEndereco) references empresa(idEmpresa)
 );
 
-create table funcionario (
-idFuncionario int not null auto_increment,
-cpf char(11) not null,
+create table usuario(
+idUsuario int not null auto_increment,
 nomeCompleto varchar(100) not null,
-genero varchar(45) not null,
-constraint chkGenero check(genero in('Feminino', 'Masculino', 'Outro', 'Prefiro não informar')),
 dataNascimento date not null,
+cpf char(11) unique,
 telefone char(8),
-nomeEmpresa varchar(100) not null,
-fkCnpj char(14),
-constraint pkCompostaFunc primary key (idFuncionario, fkCnpj),
-constraint fkCnpjFunc foreign key (fkCnpj) references empresa(cnpj)
+email varchar(264) not null unique,
+senha varchar(100),
+fkEmpresa int,
+primary key (idUsuario, fkEmpresa),
+foreign key (fkEmpresa) references empresa(idEmpresa)
+);
+
+create table parametro(
+idParametro int primary key not null,
+qtdMax int,
+qtdMin int
+);
+
+create table aparelhos(
+idAparelhos int not null, 
+fkAparelhos int, 
+nome varchar(45),
+descricao varchar(100) not null,
+idSensor int,
+fkParametro int,
+primary key (idAparelhos, fkAparelhos, idSensor),
+foreign key (fkAparelhos) references empresa(idEmpresa),
+foreign key (idSensor) references aparelhos(idAparelhos),
+foreign key (fkParametro) references parametro(idParametro)
+);
+
+create table dados(
+idDados int auto_increment,
+medida char(1) not null,
+momento datetime not null,
+fkDados int,
+primary key (idDados, fkDados),
+foreign key (fkDados) references aparelhos(idAparelhos)
 );
 
 create table contato(
@@ -93,34 +81,38 @@ assunto varchar(100),
 descreva varchar(1000)
 );
 
-insert into empresa (cnpj, nomeEmpresa, telefone, tamanhoEmpresa, qtdFuncionario) values
-('01234567890123', 'Checkfit', '11912345678', 'Médio', 53),
-('12345678901234', 'Xyz', '21987654321', 'Pequeno', 20),
-('23456789012345', 'Fitness Body', '21987384321', 'Médio', 49),
-('34567890123456', 'Academia Fortaleza', '31998765432', 'Pequeno', 38),
-('45678901234567', 'PowerBoom', '31998778432', 'Grande', 300),
-('56789012345678', 'Academia Forma Nova', '11919645678', 'Médio', 62);
+insert into representante values
+(default, 'Lorenzo Do Nascimento', '21436587946', 'lorenzo@yahoo.com', 'LO123456'),
+(default, 'Luiza Chianezzi', '68356912365', 'luiza@yahoo.com', 'LU98765'),
+(default, 'Vinícius Lima', '65896321654', 'vinicius@yahoo.com', 'VI67678'),
+(default, 'Cassandra Dante', '91253856345', 'cassandra@yahoo.com', 'CA341245'),
+(default, 'Marcos Ribeiro', '54567898798', 'marcos@yahoo.com', 'MA847651');
+
+insert into empresa (nomeEmpresa, telefone, qtdFranquias, cnpj, fkRepresentante) values
+('Checkfit', '11912345678', '3', '01234567890123', 1),
+('Xyz', '21987654321', 20, '12345678901234', 1),
+('Fitness Body', '21987384321', 49, '23456789012345', 2),
+('Academia Fortaleza', '31998765432', 38, '34567890123456', 3),
+('PowerBoom', '31998778432', 300, '45678901234567', 4),
+('Academia Forma Nova', '11919645678', 62, '56789012345678', 5);
 
 insert into endereco (cep, numero, complemento, fkEndereco) values
-('01234-567', '2Check', null, '01234567890123'),
-('04567-890', '354', '11º andar', '12345678901234'),
-('06789-012', '496', null, '23456789012345'),
-('02345-678', '69', 'Dentro do condomínio Fortaleza', '34567890123456'),
-('05678-901', '9B0', 'Em frente à padaria rosa', '45678901234567'),
-('03456-789', '1A', 'Próximo da floricultura', '56789012345678');
+('01234-567', '2Check', null, '1'),
+('04567-890', '354', '11º andar', '2'),
+('06789-012', '496', null, '3'),
+('02345-678', '69', 'Dentro do condomínio Fortaleza', '4'),
+('05678-901', '9B0', 'Em frente à padaria rosa', '5'),
+('03456-789', '1A', 'Próximo da floricultura', '6');
 
-insert into funcionario (cpf, nomeCompleto, genero, dataNascimento, telefone, nomeEmpresa, fkCnpj) values 
- ('12345648901', 'Maria da Silva', 'Feminino', '1990-05-15', '12345678', 'Academia Checkfit', '01234567890123'),
- ('23452389012', 'João Santos', 'Masculino', '1985-10-20', '23456789', 'Academia Checkfit', '01234567890123'),
- ('34527890123', 'Ana Oliveira', 'Prefiro não informar', '1995-02-28', '34567890', 'Academia Checkfit', '01234567890123'),
- ('45678245567', 'Pedro Souza', 'Prefiro não informar', '1988-08-10', '45678901', 'Academia Fortaleza', '34567890123456'),
- ('46789012345', 'Juliana Pereira', 'Outro', '1993-04-25', '56789012', 'Academia Fortaleza', '34567890123456'),
- ('56789013456', 'Lucas Lima', 'Masculino', '1990-12-03', '67890123', 'Academia Forma Nova', '56789012345678'),
- ('78900234567', 'Carla Costa', 'Feminino', '1987-07-18', '78901234', 'Academia PowerBoom', '45678901234567'),
- ('89012345878', 'Rafael Oliveira', 'Masculino', '1991-09-30', '89012345', 'Academia PowerBoom', '45678901234567'),
- ('90123256789', 'Fernanda Santos', 'Feminino', '1983-03-08', '90123456', 'Academia Fitness Body', '23456789012345'),
- ('01234567890', 'Gustavo Silva', 'Prefiro não informar', '1986-11-22', '01234567', 'Academia Fitness Body', '23456789012345'),
- ('89012345678', 'Gabriel Silva', 'Outro', '1990-10-07', '89012345', 'Academia XYZ', '12345678901234');
+insert into usuario (nomeCompleto, dataNascimento, cpf, telefone, email, fkEmpresa) values 
+ ('Maria da Silva', '1990-05-15','12345648901', '12345678', 'maria@gmail.com', '1'),
+ ('João Santos', '1985-10-20', '23452389012', '23456789', 'joao@gmail.com', '1'),
+ ('Ana Oliveira', '1995-02-28', '34527890123', '34567890', 'ana@gmail.com', '2'),
+ ('Pedro Souza', '1988-08-10', '45678245567', '45678901', 'pedro@gmail', '3'),
+ ('Juliana Pereira', '1993-04-25', '46789012345', '56789012', 'juliana@gmal.com', '3'),
+ ('Lucas Lima', '1990-12-03', '56789013456', '67890123', 'lucas@gmail.como', '4'),
+ ('Carla Costa', '1987-07-18', '78900234567', '78901234', 'carla@gmail.com', '5'),
+ ('Rafael Oliveira', '1991-09-30', '89012345878', '89012345', 'rafa@gmail.com', '6');
  
  insert into contato (nome, email, assunto, descreva) values
 ('Academia ABC', 'contato@academiaabc.com', 'Consulta sobre soluções de gerenciamento', 'Gostaríamos de saber mais sobre as soluções de gerenciamento que sua empresa oferece para academias.'),
@@ -132,78 +124,25 @@ insert into funcionario (cpf, nomeCompleto, genero, dataNascimento, telefone, no
 ('Academia Saúde & Bem-Estar', 'contato@academiasaudebemestar.com', 'Solicitação de informações sobre treinamento para funcionários', 'Estamos interessados em treinamentos para nossa equipe visando melhorar a qualidade de nossos serviços.'),
 ('Academia Quality Life', 'contato@academiaqualitylife.com', 'Consulta sobre suporte técnico', 'Gostaríamos de saber mais sobre o suporte técnico oferecido após a implementação de suas soluções.');
 
+-- insert into aparelhos (fkAparelhos, nome, descricao) values
+-- ('Leg Press', 'perna'),
+-- ('Smith', 'perna'),
+-- ('Supino Inclinado', 'peito');
+
+-- insert into parametros (qtdMax, qtdMin) values
+
+select * from representante;
 select * from empresa;
 select * from endereco;
-select * from funcionario;
+select * from usuario;
+select * from aparelhos;
+select * from parametro;
 
-select * from funcionario 
+select * from usuario 
 where nomeCompleto like '%_a';
 
-select * from funcionario 
-where nomeCompleto like 'Gabriel%';
-
-select * from funcionario 
-where genero like 'feminino';
-
-select * from funcionario 
-where genero like 'outro';
-
-select * from funcionario 
-where nomeEmpresa like '%check%';
-
-select funcionario.nomeCompleto as 'Nome do Funcionario',
-funcionario.cpf as 'CPF do Funcionario',
-empresa.nomeEmpresa as 'Nome da Empresa',
-empresa.cnpj as 'CNPJ da Empresa'
-from funcionario join empresa on funcionario.fkCnpj = empresa.cnpj;
-
-select empresa.nomeEmpresa as 'Nome da Empresa',
-empresa.cnpj as 'CNPJ da Empresa',
-endereco.cep as 'CEP da Empresa',
-endereco.complemento as 'Complemento da Empresa',
-endereco.numero as 'Numero da Empresa'
-from empresa join endereco on endereco.fkEndereco = empresa.cnpj;
-
-select funcionario.nomeCompleto as 'Nome do Funcionario',
-funcionario.cpf as 'CPF do Funcionario',
-funcionario.genero as 'Gênero do Funcionario',
-funcionario.dataNascimento as 'Data de Nascimento do Funcionario', 
-funcionario.telefone as 'Telefone do  Funcionario',
-empresa.nomeEmpresa as 'Nome da Empresa',
-empresa.cnpj as 'CNPJ da Empresa',
-endereco.cep as 'CEP da Empresa',
-endereco.complemento as 'Complemento da Empresa',
-endereco.numero as 'Numero da Empresa'
-from funcionario join empresa on funcionario.fkCnpj = empresa.cnpj
-join endereco on endereco.fkEndereco = empresa.cnpj;
-
-select funcionario.nomeCompleto as 'Nome do Funcionario',
-funcionario.cpf as 'CPF do Funcionario',
-funcionario.genero as 'Gênero do Funcionario',
-funcionario.dataNascimento as 'Data de Nascimento do Funcionario', 
-funcionario.telefone as 'Telefone do  Funcionario',
-empresa.nomeEmpresa as 'Nome da Empresa',
-empresa.cnpj as 'CNPJ da Empresa',
-endereco.cep as 'CEP da Empresa',
-endereco.complemento as 'Complemento da Empresa',
-endereco.numero as 'Numero da Empresa'
-from funcionario join empresa on funcionario.fkCnpj = empresa.cnpj
-join endereco on endereco.fkEndereco = empresa.cnpj 
-where cnpj = '23456789012345';
-
-select funcionario.nomeCompleto as 'Nome do Funcionario',
-funcionario.cpf as 'CPF do Funcionario',
-funcionario.genero as 'Gênero do Funcionario',
-funcionario.dataNascimento as 'Data de Nascimento do Funcionario', 
-funcionario.telefone as 'Telefone do  Funcionario',
-empresa.nomeEmpresa as 'Nome da Empresa',
-empresa.cnpj as 'CNPJ da Empresa',
-endereco.cep as 'CEP da Empresa',
-endereco.complemento as 'Complemento da Empresa',
-endereco.numero as 'Numero da Empresa'
-from funcionario join empresa on funcionario.fkCnpj = empresa.cnpj 
-join endereco on endereco.fkEndereco = empresa.cnpj 
-where nomeCompleto = 'Juliana Pereira';
+select * from usuario 
+where nomeCompleto like 'Rafael%';
 
 select * from contato;
 
@@ -217,4 +156,17 @@ select assunto as Assunto,
 descreva as Decrição from contato 
 where assunto like '%Suporte%';
 
-SELECT * FROM dados;
+select * from dados;
+
+select empresa.nomeEmpresa as 'Nome Empresa',
+empresa.telefone,
+empresa.cnpj,
+empresa.qtdFranquias,
+endereco.cep,
+endereco.numero,
+endereco.complemento,
+representante.nome as 'Nome Represetante',
+representante.cpf,
+representante.email
+from empresa join endereco on fkendereco = idEmpresa 
+join representante on fkRepresentante = idRepresentante;
