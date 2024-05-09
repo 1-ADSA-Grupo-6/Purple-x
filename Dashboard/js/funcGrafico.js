@@ -75,6 +75,14 @@ function carregarGraficos() {
         graficoSmith.data.labels = labels
         graficoSmith.data.datasets[0].data = data_102
         graficoSmith.update()
+
+        let notificacao = document.getElementById('divNotificacao');
+        console.log(demanda_100, demanda_101, demanda_102);
+        if (demanda_100 == "Baixa" && demanda_101 == "Baixa" && demanda_102 == "Baixa") {
+            notificacao.style.display = 'none';
+        } else {
+            notificacao.style.display = 'block';
+        }
     }
 
     // REPETIR A FUNÇÃO EM UM INTERVALO DE TEMPO

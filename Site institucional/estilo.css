@@ -347,29 +347,29 @@ main {
     width: 250px;
     height: 200px;
     perspective: 1000px;
-  }
-  
-  .card-inner {
+}
+
+.card-inner {
     width: 100%;
     height: 100%;
     position: relative;
     transform-style: preserve-3d;
     transition: transform 0.999s;
-  }
-  
-  .card:hover .card-inner {
+}
+
+.card:hover .card-inner {
     transform: rotateY(180deg);
-  }
-  
-  .card-front,
-  .card-back {
+}
+
+.card-front,
+.card-back {
     position: absolute;
     width: 100%;
     height: 100%;
     backface-visibility: hidden;
-  }
-  
-  .card-front {
+}
+
+.card-front {
     background-color: #6A2C70;
     color: #fff;
     display: flex;
@@ -380,9 +380,9 @@ main {
     font-size: 20px;
     font-weight: bolder;
     transform: rotateY(0deg);
-  }
-  
-  .card-back {
+}
+
+.card-back {
     background-color: #111;
     color: #fff;
     display: flex;
@@ -392,7 +392,7 @@ main {
     justify-content: center;
     font-size: 15px;
     transform: rotateY(180deg);
-  }
+}
 
 
 /* .beneficio h3 {
@@ -652,7 +652,7 @@ button {
     flex-direction: column;
     align-items: center;
     gap: 4px;
-    
+
 }
 
 .direito h2 {
@@ -683,18 +683,18 @@ button {
     border: none;
     line-height: 1.15;
     box-shadow: 0px 10px 20px -18px;
-  }
-  
-  .input_contato:focus {
+}
+
+.input_contato:focus {
     border-bottom: 2px solid #5b5fc7;
     border-radius: 4px 4px 2px 2px;
-  }
-  
-  .input_contato:hover {
-    outline: 1px solid lightgrey;
-  }
+}
 
-  .input_contato_descreva {
+.input_contato:hover {
+    outline: 1px solid lightgrey;
+}
+
+.input_contato_descreva {
     background-color: #f0efef;
     padding: 175px 20px;
     border-radius: 10px;
@@ -708,16 +708,18 @@ button {
     box-shadow: 0px 10px 20px -18px;
     resize: vertical;
     padding-top: 10px;
-  }
-  
-  .input_contato_descreva:focus {
+    font-family: "Inter", sans-serif;
+    resize: none;   
+}
+
+.input_contato_descreva:focus {
     border-bottom: 2px solid #5b5fc7;
     border-radius: 4px 4px 2px 2px;
-  }
-  
-  .input_contato_descreva:hover {
+}
+
+.input_contato_descreva:hover {
     outline: 1px solid lightgrey;
-  }
+}
 
 
 #btn_contato {

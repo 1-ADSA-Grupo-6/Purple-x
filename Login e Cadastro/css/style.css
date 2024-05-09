@@ -59,6 +59,7 @@ body {
 
 #fraseClicavel:hover {
     text-decoration: underline; /* Adiciona um sublinhado quando o mouse passa por cima */
+    cursor: pointer;
 }
 
 
