@@ -53,15 +53,10 @@
                         clip-rule="evenodd"></path>
                 </svg>
             </div>
-            <div class="alert-message">lorem ipsum dolor sit amet</div>
-            <div class="popup-icon close-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" class="close-svg">
-                    <path
-                        d="m15.8333 5.34166-1.175-1.175-4.6583 4.65834-4.65833-4.65834-1.175 1.175 4.65833 4.65834-4.65833 4.6583 1.175 1.175 4.65833-4.6583 4.6583 4.6583 1.175-1.175-4.6583-4.6583z"
-                        class="close-path"></path>
-                </svg>
-            </div>
+            <div class="alert-message">Atenção: Aparelhos que já foram usados mais de 50%</div>
+            <button>X</button>
         </div>
+
         <div class="popup error-popup">
             <div class="popup-icon error-icon">
                 <svg class="error-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" aria-hidden="true">
@@ -70,15 +65,10 @@
                         clip-rule="evenodd"></path>
                 </svg>
             </div>
-            <div class="error-message">lorem ipsum dolor sit amet</div>
-            <div class="popup-icon close-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" class="close-svg">
-                    <path
-                        d="m15.8333 5.34166-1.175-1.175-4.6583 4.65834-4.65833-4.65834-1.175 1.175 4.65833 4.65834-4.65833 4.6583 1.175 1.175 4.65833-4.6583 4.6583 4.6583 1.175-1.175-4.6583-4.6583z"
-                        class="close-path"></path>
-                </svg>
-            </div>
+            <div class="error-message">Atenção: Aparelhos muito usado em estado critico</div>
+            <button>X</button>
         </div>
+
         <div class="popup info-popup">
             <div class="popup-icon info-icon">
                 <svg aria-hidden="true" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" class="info-svg">
@@ -87,14 +77,8 @@
                         fill-rule="evenodd"></path>
                 </svg>
             </div>
-            <div class="info-message">lorem ipsum dolor sit amet</div>
-            <div class="popup-icon close-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" class="close-svg">
-                    <path
-                        d="m15.8333 5.34166-1.175-1.175-4.6583 4.65834-4.65833-4.65834-1.175 1.175 4.65833 4.65834-4.65833 4.6583 1.175 1.175 4.65833-4.6583 4.6583 4.6583 1.175-1.175-4.6583-4.6583z"
-                        class="close-path"></path>
-                </svg>
-            </div>
+            <div class="info-message">Atenção: Aparelhos inativos</div>
+            <button>X</button>
         </div>
     </div>
 
@@ -114,4 +98,4 @@
 
 <!-- EXECUTA FUNÇÔES DEPOIS DA <body> SER CARREGADA -->
 
-<body onload="carregarGraficos(), verificarDados(), mostrarTodasMaquinas(), atualizarDados()">
+<body onload="carregarGraficos(), verificarDados(), mostrarTodasMaquinas(), atualizarDados(), popUp()">
