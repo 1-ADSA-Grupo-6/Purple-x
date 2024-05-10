@@ -287,7 +287,7 @@ aside:hover > .menu_logout > a > .menu_func {
 }
 
 .color2 {
-    background-color: #7000ff;
+    background-color: #c16dc9;
 }
 
 /* GRÁFICO GERAL */
@@ -295,7 +295,7 @@ aside:hover > .menu_logout > a > .menu_func {
 #container_grafico_geral {
     width: 99%;
     height: 99%;
-    background-color: #7000ff;
+    background-color: #c16dc9;
     /* background-color: #880094; */
     border-radius: 50px;
     display: flex;
