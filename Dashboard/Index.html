@@ -22,7 +22,7 @@
                 </div>
             </div>
             <div class="menu" onclick="esconderMenu()">
-                <div id="esconder_menu" class="menu_icon" >
+                <div id="esconder_menu" class="menu_icon">
                     <img src="./img/icon-closedEye.png" class="lateral_icon">
                 </div>
                 <div class="menu_func">
@@ -57,7 +57,10 @@
                 <div id="sino" class="menu_icon">
                     <img src="./img/sino.png" class="lateral_icon">
                     <div id="divNotificacao">
-                        <p>●</p>
+                        <!-- <p>●</p> -->
+                        <div id="div_circulo">
+                            <div id="circulo_alerta"></div>
+                        </div>
                     </div>
                 </div>
                 <div class="menu_func">
@@ -86,18 +89,106 @@
             <div class="deixar_baixo">
                 <span class="close" onclick="fecharNotificacoes()">&times;</span>
                 <p id="alerta_texto">Não há alertas</p>
+                <!-- AVISO VERMELHO -->
                 <div id="container_alerta" class="aviso_vermelho aviso_vermelho_100">
                     <div class="centralizar_alertas">
                         <img src="./img/aviso_vermelho.png" alt="aviso_vermelho">
+                        <div id="div_mensagem">
+                            <p>A máquina Leg Press está com a demanda alta</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="container_alerta" class="aviso_vermelho aviso_vermelho_101">
+                    <div class="centralizar_alertas">
+                        <img src="./img/aviso_vermelho.png" alt="aviso_vermelho">
+                        <div id="div_mensagem">
+                            <p>A máquina Supino Inclinado está com a demanda alta</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="container_alerta" class="aviso_vermelho aviso_vermelho_102">
+                    <div class="centralizar_alertas">
+                        <img src="./img/aviso_vermelho.png" alt="aviso_vermelho">
+                        <div id="div_mensagem">
+                            <p>A máquina Smith está com a demanda alta</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="container_alerta" class="aviso_vermelho aviso_vermelho_104">
+                    <div class="centralizar_alertas">
+                        <img src="./img/aviso_vermelho.png" alt="aviso_vermelho">
+                        <div id="div_mensagem">
+                            <p>A máquina Remada Convergente está com a demanda alta</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="container_alerta" class="aviso_vermelho aviso_vermelho_105">
+                    <div class="centralizar_alertas">
+                        <img src="./img/aviso_vermelho.png" alt="aviso_vermelho">
+                        <div id="div_mensagem">
+                            <p>A máquina Biceps Convergente está com a demanda alta</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="container_alerta" class="aviso_vermelho aviso_vermelho_106">
+                    <div class="centralizar_alertas">
+                        <img src="./img/aviso_vermelho.png" alt="aviso_vermelho">
+                        <div id="div_mensagem">
+                            <p>A máquina Shoulder Press está com a demanda alta</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- AVISO LARANJA -->
+                <div id="container_alerta" class="aviso_laranja aviso_laranja_100">
+                    <div class="centralizar_alertas">
+                        <img src="./img/aviso_laranja.png" alt="aviso_laranja">
+                        <div id="div_mensagem">
+                            <p>A máquinas Leg Press está com a demanda média</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="container_alerta" class="aviso_laranja aviso_laranja_101">
+                    <div class="centralizar_alertas">
+                        <img src="./img/aviso_laranja.png" alt="aviso_laranja">
+                        <div id="div_mensagem">
+                            <p>A máquina Supino Inclinado está com a demanda média</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="container_alerta" class="aviso_laranja aviso_laranja_102">
+                    <div class="centralizar_alertas">
+                        <img src="./img/aviso_laranja.png" alt="aviso_laranja">
                         <div id="div_mensagem">
                             <p>A máquina Smith está com a demanda média</p>
                         </div>
                     </div>
                 </div>
+                <div id="container_alerta" class="aviso_laranja aviso_laranja_104">
+                    <div class="centralizar_alertas">
+                        <img src="./img/aviso_laranja.png" alt="aviso_laranja aviso_laranja_104">
+                        <div id="div_mensagem">
+                            <p>A máquina Remada Convergente está com a demanda média</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="container_alerta" class="aviso_laranja aviso_laranja_105">
+                    <div class="centralizar_alertas">
+                        <img src="./img/aviso_laranja.png" alt="aviso_laranja aviso_laranja_105">
+                        <div id="div_mensagem">
+                            <p>A máquina Biceps Convergente está com a demanda média</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="container_alerta" class="aviso_laranja aviso_laranja_106">
+                    <div class="centralizar_alertas">
+                        <img src="./img/aviso_laranja.png" alt="aviso_laranja aviso_laranja_106">
+                        <div id="div_mensagem">
+                            <p>A máquina Shoulder Press está com a demanda média</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-    </div>
 </body>
 
 </html>
@@ -113,4 +204,4 @@
 
 <!-- EXECUTA FUNÇÔES DEPOIS DA <body> SER CARREGADA -->
 
-<body onload="carregarGraficos(), verificarDados(), mostrarTodasMaquinas(), atualizarDados()">
+<body onload="carregarGraficos(), verificarDados(), mostrarTodasMaquinas(), atualizarDados(), mudarMaquinaExibida()">
