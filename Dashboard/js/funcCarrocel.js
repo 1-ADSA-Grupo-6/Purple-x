@@ -45,18 +45,18 @@ carrocel.innerHTML += `
 // MAQUINAS COM DEMANDA ALTA
 
 // LEG PRESS
-carrocel.innerHTML +=`
+carrocel.innerHTML += `
     <div id="leg_press_alta" class="div_carrocel oculto alta" onclick="mostrarLegPress()">
         <div class="titulo_carrocel">
             <span>Leg Press</span>
         </div>
     </div>`
 
-    // SUPINO INCLINADO
+// SUPINO INCLINADO
 carrocel.innerHTML += `
 <div id="supino_inclinado_alta" class="div_carrocel oculto alta" onclick="mostrarSupinoInclinado()">
     <div class="titulo_carrocel">
-        <span>Supino Inclinado</span>
+        <span>Supino<br>Inclinado</span>
     </div>
 </div>`
 
@@ -68,11 +68,34 @@ carrocel.innerHTML += `
         </div>
     </div>`
 
+// REMADA CONVERGENTE
+carrocel.innerHTML += `
+    <div id="remada_convergente_alta" class="div_carrocel oculto alta" onclick="mostrarRemadaConvergente()">
+        <div class="titulo_carrocel">
+            <span>Remada<br>Convergente</span>
+        </div>
+    </div>`
+
+// BICEPS CONVERGENTE
+carrocel.innerHTML += `
+<div id="biceps_convergente_alta" class="div_carrocel oculto alta" onclick="mostrarBicepsConvergente()">
+    <div class="titulo_carrocel">
+        <span>Bíceps<br>Convergente</span>
+    </div>
+</div>`
+
+// SHOULDER PRESS
+carrocel.innerHTML += `
+<div id="shoulder_press_alta" class="div_carrocel oculto alta" onclick="mostrarShoulderPress()">
+    <div class="titulo_carrocel">
+        <span>Shoulder Press</span>
+    </div>
+</div>`
 
 // MAQUINAS COM DEMANDA MEDIA
 
 // LEG PRESS
-carrocel.innerHTML +=`
+carrocel.innerHTML += `
 <div id="leg_press_media" class="div_carrocel oculto media" onclick="mostrarLegPress()">
     <div class="titulo_carrocel">
         <span>Leg Press</span>
@@ -83,7 +106,7 @@ carrocel.innerHTML +=`
 carrocel.innerHTML += `
     <div id="supino_inclinado_media" class="div_carrocel oculto media" onclick="mostrarSupinoInclinado()">
         <div class="titulo_carrocel">
-            <span>Supino Inclinado</span>
+            <span>Supino<br>Inclinado</span>
         </div>
     </div>`
 
@@ -95,11 +118,35 @@ carrocel.innerHTML += `
         </div>
     </div>`
 
+// REMADA CONVERGENTE
+carrocel.innerHTML += `
+<div id="remada_convergente_media" class="div_carrocel oculto media" onclick="mostrarRemadaConvergente()">
+    <div class="titulo_carrocel">
+        <span>Remada<br>Convergente</span>
+    </div>
+</div>`
+
+// BICEPS CONVERGENTE
+carrocel.innerHTML += `
+<div id="biceps_convergente_media" class="div_carrocel oculto media" onclick="mostrarBicepsConvergente()">
+<div class="titulo_carrocel">
+    <span>Bíceps<br>Convergente</span>
+</div>
+</div>`
+
+// SHOULDER PRESS
+carrocel.innerHTML += `
+<div id="shoulder_press_media" class="div_carrocel oculto media" onclick="mostrarShoulderPress()">
+<div class="titulo_carrocel">
+    <span>Shoulder Press</span>
+</div>
+</div>`
+
 
 // MAQUINAS COM DEMANDA BAIXA
 
 // LEG PRESS
-carrocel.innerHTML +=`
+carrocel.innerHTML += `
     <div id="leg_press_baixa" class="div_carrocel baixa" onclick="mostrarLegPress()">
         <div class="titulo_carrocel">
             <span>Leg Press</span>
@@ -110,7 +157,7 @@ carrocel.innerHTML +=`
 carrocel.innerHTML += `
     <div id="supino_inclinado_baixa" class="div_carrocel baixa" onclick="mostrarSupinoInclinado()">
         <div class="titulo_carrocel">
-            <span>Supino Inclinado</span>
+            <span>Supino<br>Inclinado</span>
         </div>
     </div>`
 
@@ -122,15 +169,39 @@ carrocel.innerHTML += `
         </div>
     </div>`
 
+// REMADA CONVERGENTE
+carrocel.innerHTML += `
+<div id="remada_convergente_baixa" class="div_carrocel baixa" onclick="mostrarRemadaConvergente()">
+    <div class="titulo_carrocel">
+        <span>Remada<br>Convergente</span>
+    </div>
+</div>`
+
+// BICEPS CONVERGENTE
+carrocel.innerHTML += `
+<div id="biceps_convergente_baixa" class="div_carrocel baixa" onclick="mostrarBicepsConvergente()">
+<div class="titulo_carrocel">
+    <span>Bíceps<br>Convergente</span>
+</div>
+</div>`
+
+// SHOULDER PRESS
+carrocel.innerHTML += `
+<div id="shoulder_press_baixa" class="div_carrocel baixa" onclick="mostrarShoulderPress()">
+<div class="titulo_carrocel">
+    <span>Shoulder Press</span>
+</div>
+</div>`
+
 // CARDS DE TESTE
-// for (c = idMaximo + 1; c <= idMaximo + 7; c++) {
-//     carrocel.innerHTML += `
-//         <div class="div_carrocel" onclick="">
-//             <div class="titulo_carrocel">
-//                 <span>Máquina - ${c}</span>
-//             </div>
-//         </div>`
-// }
+for (c = idMaximo + 1; c <= idMaximo + 5; c++) {
+    carrocel.innerHTML += `
+        <div class="div_carrocel" onclick="">
+            <div class="titulo_carrocel">
+                <span>Máquina - ${c}</span>
+            </div>
+        </div>`
+}
 
 // FUNÇÃO SCROLL CARROCEL
 let posicaoScroll = 0;
@@ -140,7 +211,7 @@ function scrollCarrocel(direction) {
 
     if (direction === 'left' && posicaoScroll > 0) {
         posicaoScroll -= 200;
-    } 
+    }
     else if (direction === 'right' && posicaoScroll < tamanhoScroll) {
         posicaoScroll += 200;
     }
