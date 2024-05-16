@@ -8,7 +8,7 @@ let qtdMaqBraco = 0
 let qtdMaqPernas = 0
 
 // GRÁFICO GERAL
-header_main.innerHTML += `
+main_alert.innerHTML += `
     <main id="main_graficoGeral">
         <div id="container_grafico_geral">
             <div id="container_info_maquinas">
@@ -87,7 +87,7 @@ let demanda_103 = 'Baixa'
 let corGrafico_103 = '#59D986'
 
 // ESTRUTURA PARA O HTML
-header_main.innerHTML += `
+main_alert.innerHTML += `
 <main id="main_legPress">
     <div id="container_${idMaq_100}" class="container_maq color2">
         <div class="info_maq">
@@ -160,7 +160,7 @@ let imgMaq_101 = './img/imgMaq/supinoInclinado.webp'
 let corGrafico_101 = '#F20574'
 
 // ESTRUTURA PARA O HTML
-header_main.innerHTML += `
+main_alert.innerHTML += `
 <main id="main_supinoInclinado">
     <div id="container_${idMaq_101}" class="container_maq color2">
         <div class="info_maq">
@@ -231,7 +231,7 @@ let imgMaq_102 = './img/imgMaq/smith.png'
 let corGrafico_102 = '#84B130'
 
 // ESTRUTURA PARA O HTML
-header_main.innerHTML += `
+main_alert.innerHTML += `
 <main id="main_smith">
     <div id="container_${idMaq_102}" class="container_maq color2">
         <div class="info_maq">
@@ -313,7 +313,7 @@ let imgMaq_107 = './img/imgMaq/remadaConvergente.png'
 let corGrafico_107 = '#3F8A40'
 
 // ESTRUTURA PARA O HTML
-header_main.innerHTML += `
+main_alert.innerHTML += `
 <main id="main_remada_convergente">
     <div id="container_${idMaq_104}" class="container_maq color2">
         <div class="info_maq">
@@ -386,7 +386,7 @@ let imgMaq_105 = './img/imgMaq/bicepsConvergente.png'
 let corGrafico_105 = '#04D9D9'
 
 // ESTRUTURA PARA O HTML
-header_main.innerHTML += `
+main_alert.innerHTML += `
 <main id="main_biceps_convergente">
     <div id="container_${idMaq_105}" class="container_maq color2">
         <div class="info_maq">
@@ -457,7 +457,7 @@ let imgMaq_106 = './img/imgMaq/shoulderPress.png'
 let corGrafico_106 = '#F20574'
 
 // ESTRUTURA PARA O HTML
-header_main.innerHTML += `
+main_alert.innerHTML += `
 <main id="main_shoulder_press">
     <div id="container_${idMaq_106}" class="container_maq color2">
         <div class="info_maq">
