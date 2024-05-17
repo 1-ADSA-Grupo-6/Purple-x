@@ -1,7 +1,6 @@
 
 function abrirNotificações() {
-    let divAlerta = document.getElementById('alerta');
-    divAlerta.style.display = 'block';
+    alerta.style.display = 'flex';
     popUp();
 }
 

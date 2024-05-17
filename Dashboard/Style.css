@@ -47,8 +47,15 @@ header {
     flex-flow: row nowrap;
 }
 
-main {
+#main_alert {
+    width: 100%;
     height: 90%;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+main {
+    height: 100%;
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -637,9 +644,17 @@ aside:hover>.menu_logout>a>.menu_func {
 
 /* ALERTA */
 #alerta {
-    width: 30%;
-    display: none;
+    width: 25%;
     height: 100%;
+    display: none;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 1%;
+    margin-top: 0.2%;
+    background-color: #ffffffc2;
+    border-radius: 5px;
+    height: 99%;
+    overflow: auto;
 }
 
 #alerta > ::-webkit-scrollbar-thumb {
@@ -650,17 +665,6 @@ aside:hover>.menu_logout>a>.menu_func {
 #sino {
     position: relative;
 }
-
-/* #sino p {
-    display: flex;
-    position: absolute; 
-    top: -20%; 
-    left: 65%; 
-    transform: translate(-50%, -50%); 
-    color: white;
-    font-size: 30px; 
-    font-weight: bold; 
-} */
 
 #div_circulo {
     display: none;
@@ -697,21 +701,6 @@ aside:hover>.menu_logout>a>.menu_func {
     color: black;
     text-decoration: none;
     cursor: pointer;
-}
-
-.deixar_baixo {
-
-    right: 0;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 4px;
-    margin-top: 8px;
-    background-color: #ffffffc2;
-    border-radius: 5px;
-    height: 88%;
-    overflow: auto;
 }
 
 #container_alerta {
@@ -761,12 +750,4 @@ aside:hover>.menu_logout>a>.menu_func {
 
 .oculto {
     display: none;
-}
-
-#main_alert {
-width: 100%;
-height: 100%;
-display: flex;
-flex-direction: row-reverse;
-
 }

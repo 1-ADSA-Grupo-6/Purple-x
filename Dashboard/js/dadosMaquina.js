@@ -1,7 +1,7 @@
 let tempoSetInterval = 1500 // TEMPO PARA O setInterval EM MILISSEGUNDOS
 let idMaximo = 99 //VARIÁVEL LIMITADORA DO FOR
-let demandaMedia = 13 // VARIÁVEL PARA DEFINIR A DEMANDA MÉDIA
-let demandaAlta = 20// VARIÁVEL PARA DEFINIR A DEMANDA ALTA
+let demandaMedia = 1 // VARIÁVEL PARA DEFINIR A DEMANDA MÉDIA
+let demandaAlta = 2// VARIÁVEL PARA DEFINIR A DEMANDA ALTA
 let qtdMaqPeito = 0
 let qtdMaqCostas = 0
 let qtdMaqBraco = 0
