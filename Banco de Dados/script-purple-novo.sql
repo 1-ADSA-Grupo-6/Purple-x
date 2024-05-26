@@ -57,6 +57,34 @@ ALTER TABLE aparelho ADD CONSTRAINT fkSensorAparelho FOREIGN KEY (fkSensor) REFE
 ALTER TABLE aparelho ADD CONSTRAINT fkParemetroAparelho FOREIGN KEY (fkParametro) REFERENCES parametro(idParametro); 
 
 
+CREATE TABLE endereco (
+	idEndereco INT,
+    fkAcademia INT,
+    cep CHAR(9),
+    numero VARCHAR(45),
+    complemento VARCHAR(45)
+);
+
+ALTER TABLE endereco ADD CONSTRAINT chavesPrimariasEndereco PRIMARY KEY (idEndereco, fkAcademia);
+ALTER TABLE endereco MODIFY COLUMN idEndereco INT AUTO_INCREMENT;
+ALTER TABLE endereco ADD CONSTRAINT fkAcademia FOREIGN KEY (fkAcademia) REFERENCES academia(idAcademia);
+
+CREATE TABLE usuario (
+	idUsuario INT,
+    fkAcademia INT,
+    nomeCompleto VARCHAR(45),
+    cargo VARCHAR(45),
+    telefone CHAR(9),
+	email VARCHAR(100),
+    senha VARCHAR(50)
+);
+
+ALTER TABLE usuario ADD CONSTRAINT chavesPrimariasUsuario PRIMARY KEY (idUsuario, fkAcademia);
+ALTER TABLE usuario MODIFY COLUMN idUsuario INT AUTO_INCREMENT;
+ALTER TABLE usuario ADD CONSTRAINT fkAcademiaUsuario FOREIGN KEY (fkAcademia) REFERENCES academia(idAcademia);
+ALTER TABLE usuario ADD CONSTRAINT chkCargoUsuario CHECK(cargo IN('Representante', 'Funcionário'));
+
+	
 INSERT INTO contato (nome, email, assunto, momentoContato) VALUES
 ('João Silva', 'joao.silva@gmail.com', 'Informações sobre planos', '2024-05-25 10:30:00'),
 ('Maria Souza', 'maria.souza@yahoo.com', 'Horários de funcionamento', '2024-05-24 15:20:00'),
@@ -109,6 +137,8 @@ SELECT * FROM parametro;
 SELECT * FROM registro;
 SELECT * FROM academia;
 SELECT * FROM aparelho;
+SELECT * FROM endereco;
+SELECT * FROM usuario;
 
 -- SELECIONANDO OS APARELHOS E A DEMANDA ALTA E BAIXA DE CADA
 SELECT ap.nome AS 'Nome do aparelho', pa.demandaAlta AS 'Valor de demanda alta', 
@@ -120,7 +150,3 @@ SELECT ap.nome AS 'Nome do aparelho', COUNT(*) AS 'Quantidade de resgitros 0' FR
 JOIN aparelho AS ap ON re.fkSensor = ap.fkSensor
 WHERE ap.idAparelho = 1 AND re.registro = 0
 GROUP BY ap.nome;
-
-
-
-
