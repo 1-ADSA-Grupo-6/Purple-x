@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/login.css">
+    <link rel="icon" href="../assets/SiteInstitucional/icon.png" type="image/x-icon">
+    <title>Direcionador para Login e Cadastro</title>
+</head>
+
+<body>
+
+    <div class="box">
+        <div class="conteudo">
+            <div class="header">
+                <img id="logo3" src="../assets/loginCadastro/logo3.png">
+                <h1>ENTRE JÁ EM <br> SUA CONTA</h1>
+                <br> <button onclick="entrar()"><b>ENTRAR</b></button>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="conteudo2">
+            <h2>REGISTRE JÁ <br> SUA EMPRESA</h2> <br>
+            <img id="login2" src="../assets/loginCadastro/login2.png">
+            <br><br> <button onclick="cadastro()" id="botaologin"><b> IR PARA O CADASTRO</b></button>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    function entrar() {
+        window.location.href = 'login.html'
+    }
+    function cadastro() {
+        window.location.href = 'cadastro.html'
+    }
+
+</script>
