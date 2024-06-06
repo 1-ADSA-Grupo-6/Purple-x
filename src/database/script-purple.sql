@@ -2,7 +2,7 @@ CREATE DATABASE purplex;
 USE purplex;
 
 create user 'API'@'localhost' identified by 'webDataViz0API';
-grant insert, select, update on dreamTeam.* to 'API'@'localhost';
+grant insert, select, update, delete on purplex.* to 'API'@'localhost';
 show grants for 'API'@'localhost';
 
 CREATE TABLE contato (
