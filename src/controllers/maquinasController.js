@@ -7,7 +7,7 @@ function obterMaquinas(req, res) {
                 if (resultado.length > 0) {
                     res.json(resultado);
                 } else {
-                    res.status(404).send("Nenhum jogador encontrado!");
+                    res.status(404).send("Nenhuma máquina encontrada!");
                 }
             }
         ).catch(

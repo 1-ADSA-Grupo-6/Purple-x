@@ -20,7 +20,7 @@ function autenticar(req, res) {
                         res.json({
                             id: resultadoAutenticar[0].idUsuario,
                             email: resultadoAutenticar[0].email,
-                            nome: resultadoAutenticar[0].nomeTime,
+                            nome: resultadoAutenticar[0].nomeCompleto,
                             senha: resultadoAutenticar[0].senha
                         });
                     } else if (resultadoAutenticar.length == 0) {
@@ -44,6 +44,8 @@ function cadastrar(req, res) {
     var nome = req.body.nomeServer;
     var email = req.body.emailServer;
     var senha = req.body.senhaServer;
+    var telefone = req.body.telefoneServer;
+    var academia = req.body.academiaServer;
 
     // Faça as validações dos valores
     if (nome == undefined) {
@@ -55,7 +57,7 @@ function cadastrar(req, res) {
     } else {
 
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-        usuarioModel.cadastrar(nome, email, senha)
+        usuarioModel.cadastrar(nome, email, senha, telefone, academia)
             .then(
                 function (resultado) {
                     res.json(resultado);

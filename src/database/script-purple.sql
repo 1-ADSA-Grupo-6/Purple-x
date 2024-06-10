@@ -38,7 +38,7 @@ CREATE TABLE academia (
 	idAcademia INT,
     fkMatriz INT,
     nome VARCHAR(100),
-    cnpj CHAR(14)
+    token CHAR(6)
 );
 
 ALTER TABLE academia ADD CONSTRAINT chavesPrimariasAcademia PRIMARY KEY (idAcademia, fkMatriz);
@@ -78,7 +78,7 @@ CREATE TABLE usuario (
     fkAcademia INT,
     nomeCompleto VARCHAR(45),
     cargo VARCHAR(45),
-    telefone CHAR(9),
+    telefone CHAR(11),
 	email VARCHAR(100),
     senha VARCHAR(50)
 );
@@ -132,10 +132,10 @@ INSERT INTO registro (fkSensor, registro, momento) VALUES
 (3, '0', '2024-05-25 10:48:00');
 
 
-INSERT INTO academia (fkMatriz, nome, cnpj) VALUES
-(1, 'Smart Fit', '12345678000195'),
-(1, 'Smart Fit - Unidade 1', '12345678000275'),
-(1, 'Smart Fit - Unidade 2', '12345678000355');
+INSERT INTO academia (fkMatriz, nome, token) VALUES
+(1, 'Smart Fit', 'ABC123'),
+(1, 'Smart Fit - Unidade 1', 'AAA111'),
+(1, 'Smart Fit - Unidade 2', 'BBB222');
 
 INSERT INTO aparelho (fkAcademia, fkSensor, fkParametro, nome, categoria) VALUES
 (1, 1, 1, 'Leg Press', 'Perna'),

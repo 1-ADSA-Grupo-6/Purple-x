@@ -25,15 +25,15 @@
             <br>
             <h2>ENTRE JÁ COM<br>SUA CONTA</h2> <br> <br> <br>
             <span id="textCnpj">Email</span>
-            <input type="text" placeholder="seuEmail@gmail.com" id="emailInput"><br> <br>
+            <input type="text" placeholder="seu@email.com" id="emailInput"><br> <br>
             <span id="textSenha">Senha</span>
             <div class="senha">
                 <input name="senhaInput" id="senhaInput" class="input" type="password" placeholder="●●●●●●">
                 <img src="../assets/loginCadastro/olho-fechado.png" class="lnr lnr-eye" alt="">
             </div>
-            <br> <br> <br><br> <button id="botaologin" value="."><b> ENTRAR</b></button><br>
-            <p id="fraseClicavel" style="color:#880094;font-family:sans-serif;font-size:x-small;"><b>ESQUECEU SUA
-                    SENHA?</b></p>
+            <div id="div_erro_login"></div>
+            <br> <br> <button id="botaologin" value="." onclick="login()"><b> ENTRAR</b></button><br>
+            <!-- <p id="fraseClicavel" style="color:#880094;font-family:sans-serif;font-size:x-small;"><b>ESQUECEU SUASENHA?</b></p> -->
         </div>
     </div>
 
@@ -73,6 +73,8 @@
 </html>
 
 <script src="../js/loginCadastro/mostrarSenha.js"></script>
-<script src="../js/loginCadastro/formatacaoCampos.js"></script>
+<!-- <script src="../js/loginCadastro/formatacaoCampos.js"></script> -->
 <script src="../js/loginCadastro/login.js"></script>
 <script src="../js/loginCadastro/direcionador.js"></script>
+
+<body onload="obterEmpresas()">

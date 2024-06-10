@@ -278,3 +278,15 @@ a {
     margin-bottom: 5px;
     margin-right: 180px;
 }
+
+#div_erro_cadastro {
+    width: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    word-break: break-all;
+    color: #ff2525;
+    font-family: "Kumbh Sans", sans-serif;
+    font-size: 1.1vw;
+    font-weight: 200;
+}

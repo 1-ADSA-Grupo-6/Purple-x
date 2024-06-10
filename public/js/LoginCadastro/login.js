@@ -1,6 +1,31 @@
+let empresas = []
+function obterEmpresas() {
+    fetch("/empresas/obterEmpresas", {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json"
+        }
+    }).then(function (resposta) {
+        if (resposta.ok) {
+            resposta.json().then(json => {
+                empresas = json
+                console.log("Empresas:", empresas);
+            });
+        } else {
+            console.log("Houve um erro ao tentar obter as empresas!");
+
+            resposta.text().then(texto => {
+                console.error(texto);
+            });
+        }
+    }).catch(function (erro) {
+        console.log("Erro na requisição:", erro);
+    });
+}
+
 function login() {
-    const emailVar = input_login_email.value;
-    const senhaVar = input_login_senha.value;
+    const emailVar = emailInput.value;
+    const senhaVar = senhaInput.value;
 
     if (emailVar == "" || senhaVar == "") {
         div_erro_login.innerHTML = `
@@ -23,8 +48,12 @@ function login() {
             resposta.json().then(json => {
                 console.log('Usuario:', json);
                 sessionStorage.EMAIL_USUARIO = json.email;
-                sessionStorage.NOME_USUARIO = json.nome;
-                sessionStorage.ID_USUARIO = json.id;
+                sessionStorage.NOME_USUARIO = json.nomeCompleto;
+                sessionStorage.ID_USUARIO = json.idUsuario;
+                div_erro_login.innerHTML = `<span style="color: #007A33;">Login realizado com sucesso!</span>`
+                setTimeout(() => {
+                    window.location = "dashboard.html";
+                }, "600");
             });
 
         } else {

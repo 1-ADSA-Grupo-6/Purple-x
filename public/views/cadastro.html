@@ -18,29 +18,28 @@
         <div class="conteudo">
             <div class="quadro-empresa texto" id="quadroEmpresaDiv">
                 <div class="titulo">
-                    <span id="spanTitulo">Agora, vamos cadastrar<br> sua empresa no purpleX:</span>
+                    <span id="spanTitulo">Agora, vamos cadastrar<br> no purpleX:</span>
                 </div>
                 <div class="form">
-                    <span id="inputsText">Nome da empresa</span>
-                    <input type="text" placeholder="Purple-x" id="nomeEmpresaInput">
+                    <span id="inputsText">Nome completo</span>
+                    <input type="text" placeholder="Purple-x" id="nomeInput">
                     <br>
-                    <span id="textCnpj">CNPJ</span>
-                    <input type="text" placeholder="00.000.000/0000-00" id="cnpjInput" maxlength="18">
+                    <span id="textCnpj">Token</span>
+                    <input type="text" placeholder="ABC123" id="tokenInput" maxlength="6">
                     <br>
-                    <span id="inputsText2">Nome do representante</span>
-                    <input type="text" placeholder="Representante da Empresa" id="inputrepresentante">
-                    <br>
-                    <span id="textCpf">CPF</span>
+                    <!-- <span id="inputsText2">Cargo</span>
+                    <select>
+                        <option value="Gerente">Gerente</option>
+                    </select>
+                    <br> -->
+                    <!-- <span id="textCpf">CPF</span>
                     <input type="text" placeholder="000.000.000-00" id="cpfInput" maxlength="11">
-                    <br>
-                    <span id="inputsText2">Nome do representante</span>
-                    <input type="text" placeholder="Representante da Empresa" id="inputrepresentante">
-                    <br>
+                    <br> -->
                     <span id="textTelefone">Telefone</span>
-                    <input type="text" placeholder="(00) 00000-0000" id="telefoneEmpresaInput" maxlength="15">
+                    <input type="text" placeholder="(00) 00000-0000" id="telefoneInput" maxlength="15">
                     <br>
-                    <span id="selectText">Número de franquias</span>
-                    <input type="number" id="inputfranquia" placeholder="0">
+                    <!-- <span id="selectText">Número de franquias</span>
+                    <input type="number" id="inputfranquia" placeholder="0"> -->
                     <!-- <div class="custom-select">
                         <ul>
                             <li onclick="selectOption('pequeno', this)">Pequeno</li>
@@ -55,7 +54,7 @@
                     </div> -->
                     <br>
                     <span id="textEmail">Email</span>
-                    <input type="text" placeholder="seu.email@gmail.com" id="emailInput">
+                    <input type="text" placeholder="seu@email.com" id="emailInput">
                     <br>
                     <span id="textSenha">Senha</span>
                     <div class="senha">
@@ -69,9 +68,10 @@
                             placeholder="●●●●●●" required>
                         <img src="../assets/loginCadastro/olho-fechado.png" id="eye-confirm" class="lnr lnr-eye" alt="">
                     </div>
+                    <div id="div_erro_cadastro"></div>
                     <br>
                     <button onclick="cadastrar()" class="botaoRoxo" id="openModal">Cadastrar</button>
-                    <a class="voltar" href="./index.html">Voltar</a>
+                    <a class="voltar" href="../index.html">Voltar</a>
                 </div>
             </div>
         </div>
@@ -99,3 +99,5 @@
 <script src="../js/LoginCadastro/mostrarSenha.js"></script>
 <script src="../js/LoginCadastro/formatacaoCampos.js"></script>
 <script src="../js/LoginCadastro/opcoesSelect.js"></script>
+
+<body onload="obterEmpresas()">

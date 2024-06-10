@@ -14,11 +14,11 @@ btns.forEach(function (btn) {
         // AQUI VERIFICA SE O INPUT FOI CLICADO E SE O TIPO É PASSWORD SE FOR ALTERA PARA TEXTO E TROCA A IMAGEM DO OLHO
         if (input && input.type === 'password') {
             input.type = 'text';
-            btn.src = 'imgs/olho.svg';
+            btn.src = '../assets/loginCadastro/olho.svg';
         } else if (input) // ESSE SÓ VERIFICA SE ELE FOI CLICADO NOVAMENTE PARA VOLTAR PARA PASSWORD E TROCAR O OLHO DNV
         {
             input.type = 'password';
-            btn.src = 'imgs/olho-fechado.png';
+            btn.src = '../assets/loginCadastro/olho-fechado.png';
         }
     });
 });

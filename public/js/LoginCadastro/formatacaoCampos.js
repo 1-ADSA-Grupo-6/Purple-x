@@ -1,21 +1,21 @@
 // Função para formatar CNPJ
-function formatarCNPJ(cnpj) {
-    cnpj = cnpj.replace(/\D/g, ''); // Remove todos os caracteres não numéricos
-    cnpj = cnpj.replace(/^(\d{2})(\d)/, '$1.$2');
-    cnpj = cnpj.replace(/^(\d{2})\.(\d{3})(\d)/, '$1.$2.$3');
-    cnpj = cnpj.replace(/\.(\d{3})(\d)/, '.$1/$2');
-    cnpj = cnpj.replace(/(\d{4})(\d)/, '$1-$2');
+// function formatarCNPJ(cnpj) {
+//     cnpj = cnpj.replace(/\D/g, ''); // Remove todos os caracteres não numéricos
+//     cnpj = cnpj.replace(/^(\d{2})(\d)/, '$1.$2');
+//     cnpj = cnpj.replace(/^(\d{2})\.(\d{3})(\d)/, '$1.$2.$3');
+//     cnpj = cnpj.replace(/\.(\d{3})(\d)/, '.$1/$2');
+//     cnpj = cnpj.replace(/(\d{4})(\d)/, '$1-$2');
 
-    // Corrige a posição do cursor após a formatação
-    let posicao = cnpj.length;
-    if (posicao === 15 || posicao === 16) {
-        posicao += 1;
-    } else if (posicao === 17) {
-        posicao += 2;
-    }
+//     // Corrige a posição do cursor após a formatação
+//     let posicao = cnpj.length;
+//     if (posicao === 15 || posicao === 16) {
+//         posicao += 1;
+//     } else if (posicao === 17) {
+//         posicao += 2;
+//     }
 
-    return [cnpj, posicao];
-}
+//     return [cnpj, posicao];
+// }
 
 // Função para formatar telefone fixo e celular
 function formatarTelefone(numero) {
@@ -34,19 +34,19 @@ function formatarTelefone(numero) {
 }
 
 // Função para aplicar a formatação enquanto o usuário digita
-function formatarCampo(input, formatter) {
-    input.addEventListener('input', function() {
-        let start = input.selectionStart;
-        let end = input.selectionEnd;
+// function formatarCampo(input, formatter) {
+//     input.addEventListener('input', function() {
+//         let start = input.selectionStart;
+//         let end = input.selectionEnd;
 
-        // Chamando a função de formatação
-        let [valorFormatado, novaPosicao] = formatter(input.value);
-        input.value = valorFormatado;
+//         // Chamando a função de formatação
+//         let [valorFormatado, novaPosicao] = formatter(input.value);
+//         input.value = valorFormatado;
 
-        // Ajustando a posição do cursor
-        input.setSelectionRange(novaPosicao, novaPosicao);
-    });
-}
+//         // Ajustando a posição do cursor
+//         input.setSelectionRange(novaPosicao, novaPosicao);
+//     });
+// }
 
 // Função para aplicar a formatação enquanto o usuário digita
 function formatarCampoTelefone(input) {
@@ -65,11 +65,11 @@ function formatarCampoTelefone(input) {
 
 
 // Selecionando os campos que iremos formatar
-let cnpj = document.getElementById('cnpjInput');
-let telefone = document.getElementById('telefoneEmpresaInput');
+// let cnpj = document.getElementById('cnpjInput');
+let telefone = document.getElementById('telefoneInput');
 
 // Chamando a função enquanto o usuario digita
-formatarCampo(cnpj, formatarCNPJ);
+// formatarCampo(cnpj, formatarCNPJ);
 formatarCampoTelefone(telefone);
 
 

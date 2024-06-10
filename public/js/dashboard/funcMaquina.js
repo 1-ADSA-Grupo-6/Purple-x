@@ -128,7 +128,6 @@ function obterMaquinas() {
 }
 
 function obterCapturas() {
-    console.log('teste')
     fetch("/maquinas/obterCapturas", {
         method: "GET",
         headers: {

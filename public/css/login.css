@@ -222,3 +222,15 @@ button:hover{
 #desbloqueio:hover{
     background-color: rgb(71, 19, 66);
 }
+
+#div_erro_login {
+    width: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    word-break: break-all;
+    color: #ff2525;
+    font-family: "Kumbh Sans", sans-serif;
+    font-size: 1.1vw;
+    font-weight: 200;
+}
