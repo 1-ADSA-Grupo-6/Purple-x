@@ -1,3 +1,5 @@
+let maquinas = []
+let capturas = []
 function mostrarTodasMaquinas() {
     main_graficoGeral.style.display = 'flex'
     main_legPress.style.display = 'none'
@@ -100,8 +102,52 @@ setInterval(function () {
     atualizarDados()
 }, tempoSetInterval)
 
-function mudarMaquinaExibida(){
-    if (select_legPress == '100') {
-        
-    }
+function obterMaquinas() {
+    fetch("/maquinas/obter", {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json"
+        }
+    }).then(function (resposta) {
+        if (resposta.ok) {
+            resposta.json().then(json => {
+                maquinas = json
+                obterCapturas()
+                console.log("máquinas:", maquinas);
+            });
+        } else {
+            console.log("Houve um erro ao tentar obter as máquinas!");
+
+            resposta.text().then(texto => {
+                console.error(texto);
+            });
+        }
+    }).catch(function (erro) {
+        console.log("Erro na requisição:", erro);
+    });
+}
+
+function obterCapturas() {
+    console.log('teste')
+    fetch("/maquinas/obterCapturas", {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json"
+        }
+    }).then(function (resposta) {
+        if (resposta.ok) {
+            resposta.json().then(json => {
+                capturas = json
+                console.log("Captura:", capturas);
+            });
+        } else {
+            console.log("Houve um erro ao tentar obter as capturas!");
+
+            resposta.text().then(texto => {
+                console.error(texto);
+            });
+        }
+    }).catch(function (erro) {
+        console.log("Erro na requisição:", erro);
+    });
 }

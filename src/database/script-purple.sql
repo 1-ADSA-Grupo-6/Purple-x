@@ -59,7 +59,7 @@ ALTER TABLE aparelho MODIFY COLUMN idAparelho INT AUTO_INCREMENT;
 ALTER TABLE aparelho ADD CONSTRAINT fkAcademiaAparelho FOREIGN KEY (fkAcademia) REFERENCES academia(idAcademia);
 ALTER TABLE aparelho ADD CONSTRAINT fkSensorAparelho FOREIGN KEY (fkSensor) REFERENCES sensor(idSensor);
 ALTER TABLE aparelho ADD CONSTRAINT fkParemetroAparelho FOREIGN KEY (fkParametro) REFERENCES parametro(idParametro); 
-
+ALTER TABLE aparelho ADD CONSTRAINT chkAparelho CHECK (categoria in ('Peito', 'Costas', 'Braço', 'Perna'));
 
 CREATE TABLE endereco (
 	idEndereco INT,
@@ -90,12 +90,20 @@ ALTER TABLE usuario ADD CONSTRAINT chkCargoUsuario CHECK(cargo IN('Representante
 
 	
 INSERT INTO contato (nome, email, assunto, momentoContato) VALUES
-('João Silva', 'joao.silva@gmail.com', 'Informações sobre planos', '2024-05-25 10:30:00'),
+('João Silva', 'joao.silva@gmail.com', 'Informações sobre serviços', '2024-05-25 10:30:00'),
 ('Maria Souza', 'maria.souza@yahoo.com', 'Horários de funcionamento', '2024-05-24 15:20:00'),
 ('Carlos Pereira', 'carlos.pereira@hotmail.com', 'Descontos e promoções', '2024-05-23 09:15:00');
 
 -- PARA INSERIR 3 IDS NA TABELA DOS SENSOR
-INSERT INTO sensor () VALUES (), (), ();
+INSERT INTO sensor VALUES
+(default),
+(default),
+(default),
+(default),
+(default),
+(default),
+(default),
+(default);
 
 INSERT INTO parametro (demandaAlta, demandaBaixa) VALUES
 (80, 20),
@@ -130,9 +138,14 @@ INSERT INTO academia (fkMatriz, nome, cnpj) VALUES
 (1, 'Smart Fit - Unidade 2', '12345678000355');
 
 INSERT INTO aparelho (fkAcademia, fkSensor, fkParametro, nome, categoria) VALUES
-(1, 1, 1, 'Esteira', 'Cardio'),
-(2, 2, 2, 'Bicicleta', 'Cardio'),
-(3, 3, 3, 'Leg Press', 'Musculação');
+(1, 1, 1, 'Leg Press', 'Perna'),
+(1, 2, 1, 'Supino Inclinado', 'Peito'),
+(1, 3, 1, 'Smith', 'Perna'),
+(1, 4, 1, 'Remada Convergente', 'Costas'),
+(1, 5, 1, 'Bíceps Convergente', 'Braço'),
+(1, 6, 1, 'Shoulder Press', 'Braço'),
+(1, 7, 1, 'Leg Press', 'Perna'),
+(1, 8, 1, 'Remada Convergente', 'Costas');
 
 
 SELECT * FROM contato;
@@ -154,3 +167,6 @@ SELECT ap.nome AS 'Nome do aparelho', COUNT(*) AS 'Quantidade de resgitros 0' FR
 JOIN aparelho AS ap ON re.fkSensor = ap.fkSensor
 WHERE ap.idAparelho = 1 AND re.registro = 0
 GROUP BY ap.nome;
+
+-- DROP DATABASE purplex --
+-- DROP USER 'API'@'localhost' --

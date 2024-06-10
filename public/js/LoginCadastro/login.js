@@ -1,3 +1,49 @@
+function login() {
+    const emailVar = input_login_email.value;
+    const senhaVar = input_login_senha.value;
+
+    if (emailVar == "" || senhaVar == "") {
+        div_erro_login.innerHTML = `
+        Preencha todos os campos para realizar o login!`
+        return false;
+    }
+    fetch("/usuarios/autenticar", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            emailServer: emailVar,
+            senhaServer: senhaVar,
+        })
+    }).then(function (resposta) {
+        if (resposta.ok) {
+            console.log(resposta);
+
+            resposta.json().then(json => {
+                console.log('Usuario:', json);
+                sessionStorage.EMAIL_USUARIO = json.email;
+                sessionStorage.NOME_USUARIO = json.nome;
+                sessionStorage.ID_USUARIO = json.id;
+            });
+
+        } else {
+
+            div_erro_login.innerHTML = `
+            As credenciais estão incorretas, tente novamente!`
+
+            resposta.text().then(texto => {
+                console.error(texto);
+            });
+        }
+
+    }).catch(function (erro) {
+        console.log(erro);
+    })
+
+    return false;
+}
+
 // A FUNÇÃO ONLOAD FAZ COM QUE ESSE CÓDIGO SEJA CARREGADO PRIMEIRO NA PAGINA -- EVITA TER QUE CLICAR MULTIPLAS VEZES NO BOTAO 
 window.onload = function() {
     const botao = document.getElementById("botaologin");
