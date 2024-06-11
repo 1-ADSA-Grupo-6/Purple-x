@@ -1,0 +1,89 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header img {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.titulo {
+    flex: 1;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #9b59b6;
+    margin: 0;
+}
+
+.div_lista {
+    width: 80%;
+    margin: 20px auto;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.container_legenda, .container_item {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    padding: 30px;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+}
+
+.container_legenda {
+    background-color: #9b59b6;
+    color: #fff;
+}
+
+.container_legenda span {
+    font-weight: bold;
+}
+
+.container_item:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.container_item:nth-child(odd) {
+    background-color: #fff;
+}
+
+.div_info_maquina,
+.div_estatistica_maquina,
+.div_acao_maquina {
+    text-align: center;
+}
+
+.container_item input[type="checkbox"] {
+    margin: 0 auto;
+    display: block;
+}
+
+.container_item button {
+    background-color: #9b59b6;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.container_item button:hover {
+    background-color: #8e44ad;
+}

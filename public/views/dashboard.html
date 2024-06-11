@@ -37,7 +37,7 @@
                     <span>Mudar Academia</span>
                 </div>
             </div>
-            <div class="menu">
+            <div class="menu" onclick="abrirperk1Modal()">
                 <div id="adicionar_maq" class="menu_icon">
                     <img src="../assets/dashboard/icon-plus.png" class="lateral_icon">
                 </div>
@@ -45,7 +45,7 @@
                     <span>Adicionar Máquina</span>
                 </div>
             </div>
-            <div class="menu">
+            <div class="menu" onclick="removerMaquina()">
                 <div id="remover_maq" class="menu_icon">
                     <img src="../assets/dashboard/icon-minus.png" class="lateral_icon">
                 </div>
@@ -78,6 +78,7 @@
             </a>
         </div>
     </aside>
+
 
     <div id="header_main">
         <!-- CARROCEL -->
@@ -189,6 +190,25 @@
             </div>
         </div>
     </div>
+
+    <div id="perk1" class="meu-modal">
+        <div class="modal-conteudo">
+            <span class="fechar" onclick="fecharperk1Modal()">&times;</span>
+            <p id="texto-explicativo">Vamos cadastrar sua máquina nova?</p>
+
+            <label for="input_idAparelho">Número de identificador do aparelho:</label>
+            <input type="text" id="input_idAparelho">
+
+            <label for="input_nomeAparelho">Nome do Aparelho:</label>
+            <input type="text" id="input_nomeAparelho">
+
+            <label for="input_categoria">Categoria:</label>
+            <input type="text" id="input_categoria">
+
+            <button onclick="cadastrarAparelho()">Cadastrar Aparelho</button>
+        </div>
+    </div>
+
 </body>
 
 </html>
@@ -205,3 +225,25 @@
 <!-- EXECUTA FUNÇÔES DEPOIS DA <body> SER CARREGADA -->
 
 <body onload="carregarGraficos(), verificarDados(), mostrarTodasMaquinas(), atualizarDados(), obterMaquinas()">
+
+    <script>
+        function removerMaquina() {
+            window.location.href = 'removerMaquina.html';
+        }
+
+        function abrirperk1Modal() {
+            var modal = document.getElementById("perk1");
+            modal.style.display = "block";
+        }
+
+        function fecharperk1Modal() {
+            var modal = document.getElementById("perk1");
+            modal.style.display = "none";
+        }
+
+        function cadastrarAparelho(){
+            
+        }
+
+
+    </script>
