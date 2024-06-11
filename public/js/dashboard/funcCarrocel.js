@@ -1,39 +1,4 @@
-// let cMax = 112
-// let func_99 = 'mostrarTodasMaquinas()'
-// let func_100 = 'mostrarLegPress()'
-// let func_101 = 'mostrarSupinoInclinado()'
-// let func_102 = 'mostrarSmith()'
-
-
-// for (c = 99; c <= cMax; c++) {
-
-//     if (c <= 102) {
-//         carrocel.innerHTML += `
-// <div class="div_carrocel" onclick="${func_${c}}">
-//         <div class="img_carrocel">
-//             <img src="" alt="">
-//         </div>
-//         <div class="titulo_carrocel">
-//             <span>${`nomeMaq_${c}`}</span>
-//         </div>
-//     </div>`
-//     }
-//     else {
-//         carrocel.innerHTML += `
-//         <div class="div_carrocel">
-//                 <div class="img_carrocel">
-//                     <img src="" alt="">
-//                 </div>
-//                 <div class="titulo_carrocel">
-//                     <span>TESTE</span>
-//                 </div>
-//             </div>`
-//     }
-// }
-
-
-// CARREGA CARDS DAS MÁQUINAS
-// GRÁFICO GERAL
+function carregarCarrocel() {
 carrocel.innerHTML += `
     <div id="card_todas_maq" class="div_carrocel" onclick="mostrarTodasMaquinas()">
         <div class="titulo_carrocel">
@@ -41,6 +6,7 @@ carrocel.innerHTML += `
         </div>
     </div>`
 
+<<<<<<< HEAD
 // funcVerificarDados.js FAZ A TROCA DE POSIÇÃO DE CARDS
 // MAQUINAS COM DEMANDA ALTA
 
@@ -234,6 +200,18 @@ carrocel.innerHTML += `
 //             </div>
 //         </div>`
 // }
+=======
+    for (let index = 0; index < maquinas.length; index++) {
+        carrocel.innerHTML += `
+        <div id="card_${maquinas[index].idAparelho}" class="div_carrocel" onclick="selecionarMaquinas()">
+            <div class="titulo_carrocel">
+                <span>${maquinas[index].nome}</span>
+            </div>
+        </div>`
+        
+    }
+}
+>>>>>>> d2ea1b17e26aa100ddd9b561077cf5122aea4f78
 
 // FUNÇÃO SCROLL CARROCEL
 let posicaoScroll = 0;
