@@ -193,15 +193,47 @@ carrocel.innerHTML += `
 </div>
 </div>`
 
+//Hack Squat Machine
+carrocel.innerHTML += `
+<div id="hack_squat_machine_baixa" class="div_carrocel baixa" onclick="mostrarHackSquatMachine()">
+<div class="titulo_carrocel">
+    <span>Hack Squat Machine</span>
+</div>
+</div>`
+
+//Abdominal Machine
+carrocel.innerHTML += `
+<div id="abdominal_machine_baixa" class="div_carrocel baixa" onclick="mostrarAbdominalMachine()">
+<div class="titulo_carrocel">
+    <span>Abdominal Machine</span>
+</div>
+</div>`
+
+//Elíptico
+carrocel.innerHTML += `
+<div id="eliptico_baixa" class="div_carrocel baixa" onclick="mostrarEliptico()">
+<div class="titulo_carrocel">
+    <span>Elíptico</span>
+</div>
+</div>`
+
+//Remo
+carrocel.innerHTML += `
+<div id="remo_baixa" class="div_carrocel baixa" onclick="mostrarRemo()">
+<div class="titulo_carrocel">
+    <span>Remo</span>
+</div>
+</div>`
+
 // CARDS DE TESTE
-for (c = idMaximo + 1; c <= idMaximo + 5; c++) {
-    carrocel.innerHTML += `
-        <div class="div_carrocel" onclick="">
-            <div class="titulo_carrocel">
-                <span>Máquina - ${c}</span>
-            </div>
-        </div>`
-}
+// for (c = idMaximo + 1; c <= idMaximo + 5; c++) {
+//     carrocel.innerHTML += `
+//         <div class="div_carrocel" onclick="">
+//             <div class="titulo_carrocel">
+//                 <span>Máquina - ${c}</span>
+//             </div>
+//         </div>`
+// }
 
 // FUNÇÃO SCROLL CARROCEL
 let posicaoScroll = 0;

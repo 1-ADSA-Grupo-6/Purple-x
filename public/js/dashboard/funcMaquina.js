@@ -70,6 +70,47 @@ function mostrarShoulderPress() {
     main_shoulder_press.style.display = 'flex'
 }
 
+function mostrarHackSquatMachine() {
+    main_graficoGeral.style.display = 'none'
+    main_legPress.style.display = 'none'
+    main_supinoInclinado.style.display = 'none'
+    main_smith.style.display = 'none'
+    main_remada_convergente.style.display = 'none'
+    main_biceps_convergente.style.display = 'none'
+    main_shoulder_press.style.display = 'flex'
+}
+
+
+function mostrarAbdominalMachine() {
+    main_graficoGeral.style.display = 'none'
+    main_legPress.style.display = 'none'
+    main_supinoInclinado.style.display = 'none'
+    main_smith.style.display = 'none'
+    main_remada_convergente.style.display = 'none'
+    main_biceps_convergente.style.display = 'none'
+    main_shoulder_press.style.display = 'flex'
+}
+
+function mostrarEliptico() {
+    main_graficoGeral.style.display = 'none'
+    main_legPress.style.display = 'none'
+    main_supinoInclinado.style.display = 'none'
+    main_smith.style.display = 'none'
+    main_remada_convergente.style.display = 'none'
+    main_biceps_convergente.style.display = 'none'
+    main_shoulder_press.style.display = 'flex'
+}
+
+function mostrarRemo() {
+    main_graficoGeral.style.display = 'none'
+    main_legPress.style.display = 'none'
+    main_supinoInclinado.style.display = 'none'
+    main_smith.style.display = 'none'
+    main_remada_convergente.style.display = 'none'
+    main_biceps_convergente.style.display = 'none'
+    main_shoulder_press.style.display = 'flex'
+}
+
 // ATUALIZAR DADOS CONSTANTEMENTE
 function atualizarDados() {
     // VARIÁVEIS
