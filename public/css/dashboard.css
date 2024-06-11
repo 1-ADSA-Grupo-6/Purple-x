@@ -117,6 +117,8 @@ a {
     color: #ffffff;
     font-size: 1vw;
     font-weight: 600;
+    word-break: break-all;
+    text-align: center;
 }
 
 .baixa {
