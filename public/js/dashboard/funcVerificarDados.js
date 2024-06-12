@@ -247,6 +247,6 @@ function verificarDados() {
 }
 
 // REPETIR A FUNÇÃO EM UM INTERVALO DE TEMPO
-setInterval(function () {
-    verificarDados()
-}, tempoSetInterval)
+// setInterval(function () {
+//     verificarDados()
+// }, tempoSetInterval)

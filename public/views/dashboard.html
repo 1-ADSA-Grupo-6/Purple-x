@@ -37,12 +37,20 @@
                     <span>Mudar Academia</span>
                 </div>
             </div>
+            <div class="menu" onclick="abrirperk1Modal()">
+                <div id="adicionar_maq" class="menu_icon">
+                    <img src="../assets/dashboard/icon-plus.png" class="lateral_icon">
+                </div>
+                <div class="menu_func">
+                    <span>Adicionar Máquina</span>
+                </div>
+            </div>
             <div class="menu" onclick="removerMaquina()">
                 <div id="remover_maq" class="menu_icon">
                     <img src="../assets/dashboard/icon-minus.png" class="lateral_icon">
                 </div>
                 <div class="menu_func">
-                    <span>Manutenção dos Aparelhos</span>
+                    <span>Remover Máquina</span>
                 </div>
             </div>
             <div class="menu" onclick="abrirNotificações()">
@@ -206,7 +214,6 @@
 </html>
 
 <script src="../js/dashboard/funcMenu.js"></script>
-<script src="../js/dashboard/dadosMaquina.js"></script>
 <script src="../js/dashboard/funcCarrocel.js"></script>
 <script src="../js/dashboard/funcMaquina.js"></script>
 <script src="../js/dashboard/funcGrafico.js"></script>
@@ -216,7 +223,7 @@
 
 <!-- EXECUTA FUNÇÔES DEPOIS DA <body> SER CARREGADA -->
 
-<body onload="carregarGraficos(), verificarDados(), mostrarTodasMaquinas(), atualizarDados(), obterMaquinas()">
+<body onload="obterMaquinas()">
 
     <script>
         function removerMaquina() {
@@ -233,8 +240,8 @@
             modal.style.display = "none";
         }
 
-        function cadastrarAparelho(){
-            
+        function cadastrarAparelho() {
+
         }
 
 

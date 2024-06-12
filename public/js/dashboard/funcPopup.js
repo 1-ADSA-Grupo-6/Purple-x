@@ -127,9 +127,9 @@ function popUp() {
     }
 }
 
-setInterval(function () {
-    popUp();
-}, tempoSetInterval);
+// setInterval(function () {
+//     popUp();
+// }, tempoSetInterval);
 
 
 function hideElements(elements) {

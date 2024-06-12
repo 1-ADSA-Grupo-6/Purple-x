@@ -2,7 +2,7 @@ var database = require("../database/config");
 
 function obterMaquinas() {
     var instrucaoSql = `
-    SELECT idAparelho, nome, categoria FROM aparelho WHERE fkAcademia = 1;
+    SELECT idAparelho, nome, categoria, urlImg FROM aparelho WHERE fkAcademia = 1;
     `;
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);

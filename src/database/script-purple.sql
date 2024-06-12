@@ -51,7 +51,8 @@ CREATE TABLE aparelho (
     fkSensor INT,
     fkParametro INT,
     nome VARCHAR(45),
-    categoria VARCHAR(45)
+    categoria VARCHAR(45),
+    urlImg VARCHAR(150)
 );
 
 ALTER TABLE aparelho ADD CONSTRAINT chavesPrimariasAparelho PRIMARY KEY (idAparelho, fkAcademia, fkSensor, fkParametro);
@@ -138,14 +139,14 @@ INSERT INTO academia (fkMatriz, nome, token) VALUES
 (1, 'Smart Fit - Unidade 2', 'BBB222');
 
 INSERT INTO aparelho (fkAcademia, fkSensor, fkParametro, nome, categoria) VALUES
-(1, 1, 1, 'Leg Press', 'Perna'),
-(1, 2, 1, 'Supino Inclinado', 'Peito'),
-(1, 3, 1, 'Smith', 'Perna'),
-(1, 4, 1, 'Remada Convergente', 'Costas'),
-(1, 5, 1, 'Bíceps Convergente', 'Braço'),
-(1, 6, 1, 'Shoulder Press', 'Braço'),
-(1, 7, 1, 'Leg Press', 'Perna'),
-(1, 8, 1, 'Remada Convergente', 'Costas');
+(1, 1, 1, 'Leg Press', 'Perna', '../assets/dashboard/imgMaq/legPress.png'),
+(1, 2, 1, 'Supino Inclinado', 'Peito', '../assets/dashboard/imgMaq/supinoInclinado.webp'),
+(1, 3, 1, 'Smith', 'Perna', '../assets/dashboard/imgMaq/smith.png'),
+(1, 4, 1, 'Remada Convergente', 'Costas', '../assets/dashboard/imgMaq/remadaConvergente.png'),
+(1, 5, 1, 'Bíceps Convergente', 'Braço', '../assets/dashboard/imgMaq/bicepsConvergente.png'),
+(1, 6, 1, 'Shoulder Press', 'Braço', '../assets/dashboard/imgMaq/shoulderPress.png'),
+(1, 7, 1, 'Leg Press', 'Perna', '../assets/dashboard/imgMaq/legPress.png'),
+(1, 8, 1, 'Remada Convergente', 'Costas', '../assets/dashboard/imgMaq/remadaConvergente.png');
 
 
 SELECT * FROM contato;
