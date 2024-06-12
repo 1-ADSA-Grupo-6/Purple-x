@@ -19,7 +19,6 @@ var indexRouter = require("./src/routes/index");
 var empresaRouter = require("./src/routes/empresas");
 var usuarioRouter = require("./src/routes/usuarios");
 var maquinasRouter = require("./src/routes/maquinas");
-var dadosGraficoRouter = require("./src/routes/dadosGrafico");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -31,7 +30,6 @@ app.use("/", indexRouter);
 app.use("/empresas", empresaRouter);
 app.use("/usuarios", usuarioRouter);
 app.use("/maquinas", maquinasRouter);
-app.use("/dadosGrafico", dadosGraficoRouter);
 
 app.listen(PORTA_APP, function () {
     console.log(`

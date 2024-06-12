@@ -1,3 +1,4 @@
+
 var database = require("../database/config");
 
 function obterMaquinas() {

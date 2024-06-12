@@ -191,6 +191,7 @@ function carregarMaquinas() {
             </div>
         </main>`
     }
+    carregarGraficos()
 }
 
 function mostrarMaquinas() {
