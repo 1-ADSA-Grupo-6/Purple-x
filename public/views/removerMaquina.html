@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remover Máquina</title>
+    <link rel="stylesheet" href="../css/removerMaquina.css">
+</head>
+<body>
+
+<div class="header">
+    <a href="./dashboard.html">
+        <img src="../assets/addMaquina/voltar.png" alt="Voltar">
+    </a>
+    <div class="titulo">Remover Máquinas da Dashboard</div>
+</div>
+
+<div id="div_lista_maquinas" class="div_lista">
+    <div class="container_legenda">
+        <div class="div_info_maquina">
+            <span>Máquina</span>
+        </div>
+        <div class="div_estatistica_maquina">
+            <span>Nome do Aparelho</span>
+        </div>
+        <div class="div_estatistica_maquina">
+            <span>Categoria</span>
+        </div>
+        <div class="div_estatistica_maquina">
+            <span>Selecione</span>
+        </div>
+        <div class="div_acao_maquina">
+            <span>Remover</span>
+        </div>
+    </div>
+
+    <!-- Exemplos de itens na lista -->
+    <div class="container_item">
+        <div class="div_info_maquina">
+            <span>Máquina 1</span>
+        </div>
+        <div class="div_estatistica_maquina">
+            <span>Nome 1</span>
+        </div>
+        <div class="div_estatistica_maquina">
+            <span>Categoria 1</span>
+        </div>
+        <div class="div_estatistica_maquina">
+            <input type="checkbox">
+        </div>
+        <div class="div_acao_maquina">
+            <button onclick="removerMaquina('Máquina 1')">Remover</button>
+        </div>
+    </div>
+
+    <div class="container_item">
+        <div class="div_info_maquina">
+            <span>Máquina 2</span>
+        </div>
+        <div class="div_estatistica_maquina">
+            <span>Nome 2</span>
+        </div>
+        <div class="div_estatistica_maquina">
+            <span>Categoria 2</span>
+        </div>
+        <div class="div_estatistica_maquina">
+            <input type="checkbox">
+        </div>
+        <div class="div_acao_maquina">
+            <button onclick="removerMaquina('Máquina 2')">Remover</button>
+        </div>
+    </div>
+
+    <div class="container_item">
+        <div class="div_info_maquina">
+            <span>Máquina 3</span>
+        </div>
+        <div class="div_estatistica_maquina">
+            <span>Nome 3</span>
+        </div>
+        <div class="div_estatistica_maquina">
+            <span>Categoria 3</span>
+        </div>
+        <div class="div_estatistica_maquina">
+            <input type="checkbox">
+        </div>
+        <div class="div_acao_maquina">
+            <button onclick="removerMaquina('Máquina 3')">Remover</button>
+        </div>
+    </div>
+
+    <div class="container_item">
+        <div class="div_info_maquina">
+            <span>Máquina 4</span>
+        </div>
+        <div class="div_estatistica_maquina">
+            <span>Nome 4</span>
+        </div>
+        <div class="div_estatistica_maquina">
+            <span>Categoria 4</span>
+        </div>
+        <div class="div_estatistica_maquina">
+            <input type="checkbox">
+        </div>
+        <div class="div_acao_maquina">
+            <button onclick="removerMaquina('Máquina 4')">Remover</button>
+        </div>
+    </div>
+
+    <div class="container_item">
+        <div class="div_info_maquina">
+            <span>Máquina 5</span>
+        </div>
+        <div class="div_estatistica_maquina">
+            <span>Nome 5</span>
+        </div>
+        <div class="div_estatistica_maquina">
+            <span>Categoria 5</span>
+        </div>
+        <div class="div_estatistica_maquina">
+            <input type="checkbox">
+        </div>
+        <div class="div_acao_maquina">
+            <button onclick="removerMaquina('Máquina 5')">Remover</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    function removerMaquina(maquina) {
+        alert(`${maquina} removida!`);
+    }
+</script>
+
+</body>
+</html>

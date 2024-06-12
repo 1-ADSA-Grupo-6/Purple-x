@@ -1,0 +1,292 @@
+@import url('https://fonts.googleapis.com/css2?family=Dongle&family=Inter:wght@100..900&display=swap');
+
+@font-face {
+    font-family: 'Kumbh Sans';
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/kumbhsans/v22/c4mw1n92AsfhuCq6tVsaoIx1LQICk0boNoq0ShMzVo0iPw.woff2) format('woff2');
+    unicode-range: U+0302-0303, U+0305, U+0307-0308, U+0330, U+0391-03A1, U+03A3-03A9, U+03B1-03C9, U+03D1, U+03D5-03D6, U+03F0-03F1, U+03F4-03F5, U+2034-2037, U+2057, U+20D0-20DC, U+20E1, U+20E5-20EF, U+2102, U+210A-210E, U+2110-2112, U+2115, U+2119-211D, U+2124, U+2128, U+212C-212D, U+212F-2131, U+2133-2138, U+213C-2140, U+2145-2149, U+2190, U+2192, U+2194-21AE, U+21B0-21E5, U+21F1-21F2, U+21F4-2211, U+2213-2214, U+2216-22FF, U+2308-230B, U+2310, U+2319, U+231C-2321, U+2336-237A, U+237C, U+2395, U+239B-23B6, U+23D0, U+23DC-23E1, U+2474-2475, U+25AF, U+25B3, U+25B7, U+25BD, U+25C1, U+25CA, U+25CC, U+25FB, U+266D-266F, U+27C0-27FF, U+2900-2AFF, U+2B0E-2B11, U+2B30-2B4C, U+2BFE, U+FF5B, U+FF5D, U+1D400-1D7FF, U+1EE00-1EEFF;
+}
+
+body {
+    background-image: url(../assets/loginCadastro/fundoCadastro.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #000000;
+    user-select: none;
+    font-family: "Kumbh Sans", sans-serif;
+}
+
+.container {
+    display: flex;
+}
+
+#logo {
+    width: 200px;
+    height: auto;
+    justify-content: flex-end;
+    margin-left: 80%;
+}
+
+.conteudo {
+    display: flex;
+    justify-content: start;
+    margin-left: 150px;
+}
+
+.quadro-empresa {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border: 1px solid #CCCCCC;
+    background-color: #FFFFFF;
+    width: 400px;
+    height: 950PX;
+    justify-content: center;
+    border-radius: 30px;
+}
+
+#spanTitulo {
+    font-weight: 600;
+    text-align: center;
+    color: #880094;
+    text-transform: uppercase;
+}
+
+.form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 20px;
+    align-items: center;
+    
+}
+
+input {
+    padding: 8px;
+    border: 1px solid #CCCCCC;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+    background-color: #F0F0F0;
+    width: 280px;
+    font-size: 15px;
+}
+
+input[type="time"] {
+    margin-top: 15px;
+}
+
+p {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+button {
+    width: 200px;
+    height: 35px;
+    border-radius: 35px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: #880094;
+    color: #FFFFFF;
+}
+
+button:hover {
+    background-color: rgb(85, 24, 79);
+    color: #FFFFFF;
+}
+
+.voltar {
+    background: none;
+    border: none;
+    color: #880094;
+    text-decoration: underline;
+    cursor: pointer;
+    padding: 0;
+    font: inherit;
+    margin-top: 10px;
+}
+
+.voltar a {
+    color: #880094;
+}
+
+a {
+    text-decoration: none;
+    color: #FFFFFF;
+    margin-bottom: 30px;
+}
+
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #FEFEFE;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888888;
+    width: 40%;
+    border-radius: 20px;
+    height: 30%;
+}
+
+.close {
+    color: #AAAAAA;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.conteudo-modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 25px;
+}
+
+.conteudo-modal p {
+    font-weight: 600;
+    text-align: center;
+    color: #880094;
+    text-transform: uppercase;
+}
+
+.senha {
+    position: relative;
+}
+
+.lnr-eye {
+    position: absolute;
+    right: 12px;
+    top: 9px;
+    width: 18px;
+    cursor: pointer;
+}
+
+/* Estilos para o select personalizado */
+.custom-select {
+    position: relative;
+    display: inline-block;
+}
+
+.custom-select select {
+    display: none;
+    /* Escondendo o elemento select padrão */
+}
+
+.custom-select ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    border: 1px solid #CCCCCC;
+    cursor: pointer;
+    display: inline-flex;
+    background-color: #F0F0F0;
+    /* Exibir os itens em linha */
+}
+
+.custom-select li {
+    padding: 5px 24px;
+    font-size: 15px;
+    /* Menor espaçamento interno */
+}
+
+.custom-select li:hover {
+    background-color: #880094;
+    color: #FFFFFF;
+}
+
+.selected {
+    background-color: #880094;
+    color: #FFFFFF;
+    /* Cor de fundo quando selecionado */
+}
+
+#inputsText{
+    font-size: 15px;
+    margin-bottom: 5px;
+    margin-right: 172px;
+}
+
+#inputsText2{
+    font-size: 15px;
+    margin-bottom: 5px;
+    margin-left: -142px;
+}
+
+#textCnpj{
+    font-size: 15px;
+    margin-bottom: 5px;
+    margin-right: 258px;
+}
+
+
+#textCpf{
+    font-size: 15px;
+    margin-bottom: 5px;
+    margin-right: 258px;
+}
+
+#textTelefone{
+    font-size: 15px;
+    margin-bottom: 5px;
+    margin-right: 245px;
+}
+
+#selectText{
+    font-size: 15px;
+    margin-bottom: 5px;
+    margin-right: 155px;
+}
+
+#textEmail {
+    font-size: 15px;
+    margin-bottom: 5px;
+    margin-right: 260px;
+}
+
+#textSenha{
+    font-size: 15px;
+    margin-bottom: 5px;
+    margin-right: 255px;
+}
+
+#textConfirmSenha{
+    font-size: 15px;
+    margin-bottom: 5px;
+    margin-right: 180px;
+}
+
+#div_erro_cadastro {
+    width: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    word-break: break-all;
+    color: #ff2525;
+    font-family: "Kumbh Sans", sans-serif;
+    font-size: 1.1vw;
+    font-weight: 200;
+}
