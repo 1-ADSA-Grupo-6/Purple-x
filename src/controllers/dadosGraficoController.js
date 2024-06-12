@@ -1,7 +1,7 @@
 var dadosGraficoModel = require("../models/dadosGraficoModel");
 function obter(req, res) {
 
-    const limite_linhas = 7;
+    const limite_linhas = 15;
 
     console.log(`Recuperando as ultimas ${limite_linhas} dadosGrafico`);
 
