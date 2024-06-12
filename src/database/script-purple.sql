@@ -1,7 +1,7 @@
 CREATE DATABASE purplex;
 USE purplex;
 
-create user 'API'@'localhost' identified by 'webDataViz0API';
+create user 'API'@'localhost' identified by 'webDataViz0API@';
 grant insert, select, update, delete on purplex.* to 'API'@'localhost';
 show grants for 'API'@'localhost';
 
