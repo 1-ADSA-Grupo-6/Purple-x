@@ -244,21 +244,23 @@
                 <div class="container_contato">
                     <div class="esquerdo">
                         <h2>Nome:</h2>
-                        <input class="input_contato" type="search"><br>
+                        <input class="input_contato" id="nome_input" type="search"><br>
                         <h2>Email:</h2>
-                        <input class="input_contato" type="search"><br>
+                        <input class="input_contato" id="email_input"  type="search"><br>
                         <h2>Assunto:</h2>
-                        <input class="input_contato" type="search"><br>
+                        <input class="input_contato" id="assunto_input" type="search"><br>
                     </div>
                     <div class="direito">
                         <h2>Descreva:</h2>
-                        <textarea class="input_contato_descreva"></textarea><br>
+                        <textarea class="input_contato_descreva" id="descricao_input"></textarea><br>
                     </div>
                 </div>
-                <button id="btn_contato">Entrar em Contato</button><br>
+                <button id="btn_contato" onclick="entrarContato()">Entrar em Contato</button><br>
+                <div id="mostrar"></div>
             </div>
         </div>
     </main>
+    
     <footer>
         <div class="rodape_conteudo">
             <img class="logo_rodape" src="./assets/SiteInstitucional/logo.png">
@@ -300,10 +302,73 @@
             </div>
         </div>
     </footer>
+    <div id="myModal" style="width: 100px;" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="exibir"></div>
+        </div>
+    </div>
+
 
 
 </body>
-
 </html>
+<script>
+    function entrarContato() {
+        var nomeVar = nome_input.value;
+        var emailVar = email_input.value.toLowerCase();
+        var descricaoVar = descricao_input.value;
+        var assuntoVar = assunto_input.value;
+        var modal = document.getElementById("myModal");
+        var btnFecharModal = document.getElementsByClassName("close")[0];
+        
+        var textosAleatorios = [
+            "Obrigado por entrar em contato!",
+            "Recebemos sua mensagem. Entraremos em contato em breve.",
+            "Sua solicitação foi enviada com sucesso!",
+            "Agradecemos seu contato. Nossa equipe responderá em breve.",
+            "Mensagem recebida. Muito obrigado!"
+        ];
+
+        var textoAleatorio = textosAleatorios[Math.floor(Math.random() * textosAleatorios.length)];
+        
+        var exibirDiv = document.getElementById("exibir");
+        exibirDiv.innerHTML = `<p>${textoAleatorio}</p>`;
+
+        fetch("/contato/registrarContato", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                nomeServer: nomeVar,
+                emailServer: emailVar,
+                assuntoServer: assuntoVar,
+                descricaoServer: descricaoVar,
+            }),
+        })
+        .then(function (resposta) {
+            console.log("resposta: ", resposta);
+        })
+        .catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+
+        modal.style.display = "block";
+
+        btnFecharModal.onclick = function () {
+            modal.style.display = "none";
+        };
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        };
+
+        return false;
+    }
+</script>
+
 
 <script src="./js/SiteInstitucional/calculadora.js"></script>
