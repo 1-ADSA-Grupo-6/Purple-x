@@ -9,6 +9,7 @@ body {
 .header {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     padding: 10px 20px;
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -21,12 +22,37 @@ body {
 }
 
 .titulo {
-    flex: 1;
     text-align: center;
     font-size: 24px;
     font-weight: bold;
     color: #9b59b6;
     margin: 0;
+    flex: 1;
+}
+
+.adicionar-maquina {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.adicionar-maquina span {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.adicionar-maquina button {
+    background-color: #9b59b6;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.adicionar-maquina button:hover {
+    background-color: #8e44ad;
 }
 
 .div_lista {
@@ -41,7 +67,7 @@ body {
 .container_legenda, .container_item {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    padding: 30px;
+    padding: 10px 20px;
     align-items: center;
     border-bottom: 1px solid #ccc;
 }
@@ -65,25 +91,130 @@ body {
 
 .div_info_maquina,
 .div_estatistica_maquina,
-.div_acao_maquina {
+.div_acao_maquina{
+    display: flex;
     text-align: center;
-}
-
-.container_item input[type="checkbox"] {
-    margin: 0 auto;
-    display: block;
+    justify-content: center;
+    align-items: center;
 }
 
 .container_item button {
     background-color: #9b59b6;
     color: #fff;
     border: none;
-    padding: 5px 10px;
+    width: 65%;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
+    margin-top: 5px;
 }
 
 .container_item button:hover {
     background-color: #8e44ad;
+}
+
+.meu-modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-conteudo {
+    background-color: #ffffff;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 45%;
+    color: #000000;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    animation: slideIn 0.5s ease-out;
+}
+
+.fechar {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.fechar:hover,
+.fechar:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    font-size: 16px;
+    color: #333;
+}
+
+input[type="text"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-top: 5px;
+    border: 2px solid #9b59b6;
+    border-radius: 5px;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus {
+    border-color: #8e44ad;
+    outline: none;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    margin-top: 20px;
+    background-color: #9b59b6;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #8e44ad;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+select {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-top: 5px;
+    border: 2px solid #9b59b6;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-color: #fff;
+    color: #333;
+    transition: border-color 0.3s, background-color 0.3s;
+}
+
+select:focus {
+    border-color: #8e44ad;
+    outline: none;
+    background-color: #f0f0f0;
 }

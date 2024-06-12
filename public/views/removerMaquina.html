@@ -1,136 +1,203 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Remover Máquina</title>
     <link rel="stylesheet" href="../css/removerMaquina.css">
 </head>
+
 <body>
 
-<div class="header">
-    <a href="./dashboard.html">
-        <img src="../assets/addMaquina/voltar.png" alt="Voltar">
-    </a>
-    <div class="titulo">Remover Máquinas da Dashboard</div>
-</div>
-
-<div id="div_lista_maquinas" class="div_lista">
-    <div class="container_legenda">
-        <div class="div_info_maquina">
-            <span>Máquina</span>
-        </div>
-        <div class="div_estatistica_maquina">
-            <span>Nome do Aparelho</span>
-        </div>
-        <div class="div_estatistica_maquina">
-            <span>Categoria</span>
-        </div>
-        <div class="div_estatistica_maquina">
-            <span>Selecione</span>
-        </div>
-        <div class="div_acao_maquina">
-            <span>Remover</span>
+    <div class="header">
+        <a href="./dashboard.html">
+            <img src="../assets/addMaquina/voltar.png" alt="Voltar">
+        </a>
+        <div class="titulo">Remover Máquinas da Dashboard</div>
+        <div class="adicionar-maquina">
+            <span>Adicionar Máquina</span>
+            <button onclick="abrirperk1Modal()">+</button>
         </div>
     </div>
 
-    <!-- Exemplos de itens na lista -->
-    <div class="container_item">
-        <div class="div_info_maquina">
-            <span>Máquina 1</span>
+    <div id="div_lista_maquinas" class="div_lista">
+        <div class="container_legenda">
+            <div class="div_info_maquina">
+                <span>Máquina</span>
+            </div>
+            <div class="div_estatistica_maquina">
+                <span>Nome do Aparelho</span>
+            </div>
+            <div class="div_estatistica_maquina">
+                <span>Categoria</span>
+            </div>
+            <div class="div_estatistica_maquina">
+                <span>Modificar nome</span>
+            </div>
+            <div class="div_acao_maquina">
+                <span>Remover</span>
+            </div>
         </div>
-        <div class="div_estatistica_maquina">
-            <span>Nome 1</span>
+
+        <!-- Exemplos de itens na lista -->
+        <div class="container_item">
+            <div class="div_info_maquina">
+                <span>Máquina 1</span>
+            </div>
+            <div class="div_estatistica_maquina">
+                <span>Nome 1</span>
+            </div>
+            <div class="div_estatistica_maquina">
+                <span>Categoria 1</span>
+            </div>
+            <div class="div_estatistica_maquina">
+                <button onclick="abrirRenomearModal('Máquina 1')">Renomear</button>
+            </div>
+            <div class="div_acao_maquina">
+                <button onclick="removerMaquina('Máquina 1')">Remover</button>
+            </div>
         </div>
-        <div class="div_estatistica_maquina">
-            <span>Categoria 1</span>
+
+        <div class="container_item">
+            <div class="div_info_maquina">
+                <span>Máquina 2</span>
+            </div>
+            <div class="div_estatistica_maquina">
+                <span>Nome 2</span>
+            </div>
+            <div class="div_estatistica_maquina">
+                <span>Categoria 2</span>
+            </div>
+            <div class="div_estatistica_maquina">
+                <button onclick="abrirRenomearModal('Máquina 2')">Renomear</button>
+            </div>
+            <div class="div_acao_maquina">
+                <button onclick="removerMaquina('Máquina 2')">Remover</button>
+            </div>
         </div>
-        <div class="div_estatistica_maquina">
-            <input type="checkbox">
+
+        <div class="container_item">
+            <div class="div_info_maquina">
+                <span>Máquina 3</span>
+            </div>
+            <div class="div_estatistica_maquina">
+                <span>Nome 3</span>
+            </div>
+            <div class="div_estatistica_maquina">
+                <span>Categoria 3</span>
+            </div>
+            <div class="div_estatistica_maquina">
+                <button onclick="abrirRenomearModal('Máquina 3')">Renomear</button>
+            </div>
+            <div class="div_acao_maquina">
+                <button onclick="removerMaquina('Máquina 3')">Remover</button>
+            </div>
         </div>
-        <div class="div_acao_maquina">
-            <button onclick="removerMaquina('Máquina 1')">Remover</button>
+
+        <div class="container_item">
+            <div class="div_info_maquina">
+                <span>Máquina 4</span>
+            </div>
+            <div class="div_estatistica_maquina">
+                <span>Nome 4</span>
+            </div>
+            <div class="div_estatistica_maquina">
+                <span>Categoria 4</span>
+            </div>
+            <div class="div_estatistica_maquina">
+                <button onclick="abrirRenomearModal('Máquina 4')">Renomear</button>
+            </div>
+            <div class="div_acao_maquina">
+                <button onclick="removerMaquina('Máquina 4')">Remover</button>
+            </div>
+        </div>
+
+        <div class="container_item">
+            <div class="div_info_maquina">
+                <span>Máquina 5</span>
+            </div>
+            <div class="div_estatistica_maquina">
+                <span>Nome 5</span>
+            </div>
+            <div class="div_estatistica_maquina">
+                <span>Categoria 5</span>
+            </div>
+            <div class="div_estatistica_maquina">
+                <button onclick="abrirRenomearModal('Máquina 5')">Renomear</button>
+            </div>
+            <div class="div_acao_maquina">
+                <button onclick="removerMaquina('Máquina 5')">Remover</button>
+            </div>
         </div>
     </div>
 
-    <div class="container_item">
-        <div class="div_info_maquina">
-            <span>Máquina 2</span>
-        </div>
-        <div class="div_estatistica_maquina">
-            <span>Nome 2</span>
-        </div>
-        <div class="div_estatistica_maquina">
-            <span>Categoria 2</span>
-        </div>
-        <div class="div_estatistica_maquina">
-            <input type="checkbox">
-        </div>
-        <div class="div_acao_maquina">
-            <button onclick="removerMaquina('Máquina 2')">Remover</button>
+    <!-- Modal Renomear -->
+    <div id="renomearModal" class="meu-modal">
+        <div class="modal-conteudo">
+            <span class="fechar" onclick="fecharRenomearModal()">&times;</span>
+            <p>Renomear Máquina</p>
+            <input type="text" id="novoNomeMaquina" placeholder="Novo nome da máquina">
+            <button onclick="renomearMaquina()">Renomear</button>
         </div>
     </div>
 
-    <div class="container_item">
-        <div class="div_info_maquina">
-            <span>Máquina 3</span>
-        </div>
-        <div class="div_estatistica_maquina">
-            <span>Nome 3</span>
-        </div>
-        <div class="div_estatistica_maquina">
-            <span>Categoria 3</span>
-        </div>
-        <div class="div_estatistica_maquina">
-            <input type="checkbox">
-        </div>
-        <div class="div_acao_maquina">
-            <button onclick="removerMaquina('Máquina 3')">Remover</button>
+    <!-- Modal Adicionar Máquina -->
+    <div id="perk1" class="meu-modal">
+        <div class="modal-conteudo">
+            <span class="fechar" onclick="fecharperk1Modal()">&times;</span>
+            <p id="texto-explicativo">Vamos cadastrar sua máquina nova?</p>
+
+            <label for="input_idAparelho">Nome do Aperelho</label>
+            <input type="text" id="input_idAparelho">
+
+            <label for="input_nomeAparelho">URL da imagem da máquina:</label>
+            <input type="text" id="input_nomeAparelho">
+
+            <label for="input_categoria">Categoria:</label>
+            <select id="input_categoria">
+                <option value="peito">Peito</option>
+                <option value="braco">Braço</option>
+                <option value="costas">Costas</option>
+                <option value="pernas">Pernas</option>
+            </select>
+
+            <button onclick="cadastrarAparelho()">Cadastrar Aparelho</button>
         </div>
     </div>
 
-    <div class="container_item">
-        <div class="div_info_maquina">
-            <span>Máquina 4</span>
-        </div>
-        <div class="div_estatistica_maquina">
-            <span>Nome 4</span>
-        </div>
-        <div class="div_estatistica_maquina">
-            <span>Categoria 4</span>
-        </div>
-        <div class="div_estatistica_maquina">
-            <input type="checkbox">
-        </div>
-        <div class="div_acao_maquina">
-            <button onclick="removerMaquina('Máquina 4')">Remover</button>
-        </div>
-    </div>
+    <script>
+        function removerMaquina(maquina) {
+            alert(`${maquina} removida!`);
+        }
 
-    <div class="container_item">
-        <div class="div_info_maquina">
-            <span>Máquina 5</span>
-        </div>
-        <div class="div_estatistica_maquina">
-            <span>Nome 5</span>
-        </div>
-        <div class="div_estatistica_maquina">
-            <span>Categoria 5</span>
-        </div>
-        <div class="div_estatistica_maquina">
-            <input type="checkbox">
-        </div>
-        <div class="div_acao_maquina">
-            <button onclick="removerMaquina('Máquina 5')">Remover</button>
-        </div>
-    </div>
-</div>
+        function abrirRenomearModal(maquina) {
+            document.getElementById('renomearModal').style.display = 'block';
+            document.getElementById('novoNomeMaquina').dataset.maquina = maquina;
+        }
 
-<script>
-    function removerMaquina(maquina) {
-        alert(`${maquina} removida!`);
-    }
-</script>
+        function fecharRenomearModal() {
+            document.getElementById('renomearModal').style.display = 'none';
+        }
+
+        function renomearMaquina() {
+            const maquina = document.getElementById('novoNomeMaquina').dataset.maquina;
+            const novoNome = document.getElementById('novoNomeMaquina').value;
+            alert(`Máquina ${maquina} renomeada para ${novoNome} com sucesso!`);
+            fecharRenomearModal();
+        }
+
+        function abrirperk1Modal() {
+            var modal = document.getElementById("perk1");
+            modal.style.display = "block";
+        }
+
+        function fecharperk1Modal() {
+            var modal = document.getElementById("perk1");
+            modal.style.display = "none";
+        }
+    </script>
 
 </body>
+
 </html>
