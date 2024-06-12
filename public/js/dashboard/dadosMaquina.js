@@ -13,42 +13,35 @@ main_alert.innerHTML += `
         <div id="container_grafico_geral">
             <div id="container_info_maquinas">
                 <div class="container_alerta_geral">
-                    <span>NÚMERO DE MÁQUINAS EM ALERTA</span>
+                    <span>NÚMERO DE MÁQUINAS <br> EM ALERTA</span>
                     <div class="div_valor_alerta_geral">
                         <span>DEMANDA MÉDIA:</span>
                         <span id="span_demanda_media" class="green"></span>
                     </div>
                     <div class="div_valor_alerta_geral">
-                        <span>DEMANDA ALTA:</span>
+                        <span id="Id_Alta_Demanda">DEMANDA ALTA:</span>
                         <span id="span_demanda_alta" class="green"></span>
                     </div>
                 </div>
                 <div id="container_dado_geral">
-                <span>MÉDIA DE USOS POR CATEGORIA</span>
+                <div class="txt_dash">
+                <span>TEMPO DE USO <br> POR CATEGORIA</span>
+                </div>
                     <div class="container_categoria">
                         <div class="div_categoria">
                             <div class="div_valor_geral">
-                                <span>PEITO:</span>
+                                <span>MÁQUINA MAIS <br> USADA:</span>
                                 <span id="span_demanda_peito" class="green"></span>
                             </div>
-                            <div class="div_valor_geral">
-                                <span>COSTAS:</span>
+                            <div style="margin-top:10px" class="div_valor_geral">
+                                <span>MÁQUINA MENOS <br> USADA:</span>
                                 <span id="span_demanda_costas" class="green"></span>
                             </div>
                         </div>
-                        <div class="div_categoria">
-                            <div class="div_valor_geral">
-                                <span>BRAÇO:</span>
-                                <span id="span_demanda_braco" class="green"></span>
-                            </div>
-                            <div class="div_valor_geral">
-                                <span>PERNAS:</span>
-                                <span id="span_demanda_pernas" class="green"></span>
-                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            
             <div class="div_grafico_geral">
                 <div id="container_grafico_linha" class="div_grafico">
                     <canvas id="grafico_linha"></canvas>

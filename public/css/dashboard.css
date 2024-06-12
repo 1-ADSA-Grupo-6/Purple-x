@@ -359,30 +359,42 @@ aside:hover>#container_menu_lateral>.menu>.menu_func, aside:hover>#container_men
     /* padding: 20px 30px; */
 }
 
-.container_categoria {
-    width: 100%;
-    height: 90%;
-    display: flex;
-    flex-direction: row;
-}
 
 .div_categoria {
-    width: 50%;
+    width: 100%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+
+.container_categoria {
+    width: 55%;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    justify-content: space-evenly;
     flex-direction: column;
+   
 }
 
+.txt_dash{
+    display: flex;
+    justify-content: center;
+}
+
+
 .div_valor_geral {
-    width: 80%;
-    height: 30%;
+    width: 160%;
+    height: 50%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items:center;
+    text-align: center;
+    
     /* background-color: #ffffffa2;
     border-radius: 10px; */
     background-color: #ffffff;
@@ -540,7 +552,6 @@ aside:hover>#container_menu_lateral>.menu>.menu_func, aside:hover>#container_men
     /* border-radius: 30px; */
     font-size: 1.2vw;
     font-weight: 600;
-    word-break: break-all;
     text-align: center;
     /* padding: 20px 30px; */
 }
