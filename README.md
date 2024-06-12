@@ -1,2 +1,2 @@
-# purpleXvariation
-Código alternativo para o site purpleX
+# Purple-x
+Projeto da empresa Purple-x
