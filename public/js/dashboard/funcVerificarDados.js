@@ -1,3 +1,22 @@
+const tempoAtivo = []
+const tempoInativo = []
+function calcularSegundos() {
+    for (let index = 0; index < capturas.length; index++) {
+        const idMaquina = capturas[index].idAparelho
+        const capura = Number(capturas[index].registro)
+        if (capura == 1) {
+            const tempoAntigo = tempoAtivo[idMaquina - 1].tempo
+            const tempoAtualizado = tempoAntigo + 1
+            tempoAtivo[idMaquina - 1].tempo = tempoAtualizado
+        }
+        else {
+            const tempoAntigo = tempoInativo[idMaquina - 1].tempo
+            const tempoAtualizado = tempoAntigo + 1
+            tempoInativo[idMaquina - 1].tempo = tempoAtualizado
+        }
+    }
+}
+
 //USAR SOMENTE SE O BANCO NÃO ESTIVER CONECTADO
 function verificarDados() {
     // VERIFICAR MAQUINAS USO DE MAQUINAS

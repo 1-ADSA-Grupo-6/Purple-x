@@ -1,6 +1,8 @@
 let maquinas = []
 let capturas = []
-let tempoSetInterval = 1500 // TEMPO PARA O setInterval EM MILISSEGUNDOS
+const demandaMedia = 1 // VARIÁVEL PARA DEFINIR A DEMANDA MÉDIA
+const demandaAlta = 2// VARIÁVEL PARA DEFINIR A DEMANDA ALTA
+const tempoSetInterval = 1500 // TEMPO PARA O setInterval EM MILISSEGUNDOS
 
 // ATUALIZAR DADOS CONSTANTEMENTE
 function atualizarDados() {
@@ -44,8 +46,9 @@ function obterMaquinas() {
         if (resposta.ok) {
             resposta.json().then(json => {
                 maquinas = json
-                obterCapturas()
                 console.log("máquinas:", maquinas);
+                obterCapturas()
+                carregarCarrocel()
             });
         } else {
             console.log("Houve um erro ao tentar obter as máquinas!");
@@ -70,6 +73,19 @@ function obterCapturas() {
             resposta.json().then(json => {
                 capturas = json
                 console.log("Captura:", capturas);
+
+                for (let index = 0; index < maquinas.length; index++) {
+                    const idMaquina = maquinas[index].idAparelho
+                    tempoAtivo[index] = {
+                        idMaquina: idMaquina,
+                        tempo: 0
+                    }
+                    tempoInativo[index] = {
+                        idMaquina: idMaquina,
+                        tempo: 0
+                    }
+                }
+                calcularSegundos()
             });
         } else {
             console.log("Houve um erro ao tentar obter as capturas!");
@@ -81,7 +97,6 @@ function obterCapturas() {
     }).catch(function (erro) {
         console.log("Erro na requisição:", erro);
     });
-    carregarCarrocel()
 }
 
 function carregarMaquinas() {
@@ -101,26 +116,18 @@ function carregarMaquinas() {
                     </div>
                 </div>
                 <div id="container_dado_geral">
-                <span>MÉDIA DE USOS POR CATEGORIA</span>
+                <div class="txt_dash">
+                <span>TEMPO DE USO <br> POR CATEGORIA</span>
+                </div>
                     <div class="container_categoria">
                         <div class="div_categoria">
                             <div class="div_valor_geral">
-                                <span>PEITO:</span>
+                                <span>MÁQUINA MAIS <br> USADA:</span>
                                 <span id="span_demanda_peito" class="green"></span>
                             </div>
-                            <div class="div_valor_geral">
-                                <span>COSTAS:</span>
+                            <div style="margin-top:10px" class="div_valor_geral">
+                                <span>MÁQUINA MENOS <br> USADA:</span>
                                 <span id="span_demanda_costas" class="green"></span>
-                            </div>
-                        </div>
-                        <div class="div_categoria">
-                            <div class="div_valor_geral">
-                                <span>BRAÇO:</span>
-                                <span id="span_demanda_braco" class="green"></span>
-                            </div>
-                            <div class="div_valor_geral">
-                                <span>PERNAS:</span>
-                                <span id="span_demanda_pernas" class="green"></span>
                             </div>
                         </div>
                     </div>
