@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lilac-X</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../css/styleIa.css">
 </head>
 
 <body>
@@ -19,7 +19,7 @@
                 <br>
                 <button onclick="gerarResposta()">Gerar Resposta</button><br>
                 <h3 id="titulo_resposta"></h3>
-                <div id="resposta"></div>
+                <div id="respostaContainer"></div>
             </div>
         </div>
     </div>
@@ -29,23 +29,26 @@
         async function gerarResposta() {
             const pergunta = document.getElementById('pergunta').value;
 
-            
-            const response = await fetch('/perguntar', {
+
+            fetch('/ia/perguntar', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({ pergunta })
+            }).then(async function (resposta) {
+                const data = await resposta.json()
+
+                respostaContainer.style.display = 'block';
+                document.getElementById('respostaContainer').innerHTML = data.resultado;
+
+
+                titulo_resposta.style.display = 'block';
+                titulo_resposta.innerHTML = `Resposta da IA:`;
+
+
             });
 
-            const data = await response.json();
-
-            resposta.style.display = 'block';
-            document.getElementById('resposta').innerText = data.resultado;
-
-            
-            titulo_resposta.style.display = 'block';
-            titulo_resposta.innerHTML = `Resposta da IA:`;
         }
 
     </script>
