@@ -1,10 +1,6 @@
 CREATE DATABASE purplex;
 USE purplex;
 
-create user 'API'@'localhost' identified by 'webDataViz0API@';
-grant insert, select, update, delete on purplex.* to 'API'@'localhost';
-show grants for 'API'@'localhost';
-
 CREATE TABLE contato (
 	idContato INT PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR(45),
@@ -26,7 +22,7 @@ CREATE TABLE parametro (
 CREATE TABLE registro (
 	idRegistro INT,
     fkSensor INT,
-    registro CHAR(1),
+    registro char(1),
     momento DATETIME
 );
 
