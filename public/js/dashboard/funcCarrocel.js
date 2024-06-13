@@ -1,5 +1,4 @@
 function carregarCarrocel() {
-
     carrocel.innerHTML += `
     <div id="0" class="div_carrocel" onclick="mostrarMaquinas()">
         <div class="titulo_carrocel">

@@ -1,0 +1,3 @@
+-Arrumar KPIs
+-Arrumar Alertas
+-Grafico Atualizar

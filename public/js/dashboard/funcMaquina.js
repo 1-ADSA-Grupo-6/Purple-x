@@ -1,40 +1,9 @@
 let maquinas = []
 let capturas = []
+let ultimasCapturas = []
 const demandaMedia = 1 // VARIÁVEL PARA DEFINIR A DEMANDA MÉDIA
 const demandaAlta = 2// VARIÁVEL PARA DEFINIR A DEMANDA ALTA
-const tempoSetInterval = 1500 // TEMPO PARA O setInterval EM MILISSEGUNDOS
-
-// ATUALIZAR DADOS CONSTANTEMENTE
-function atualizarDados() {
-    // VARIÁVEIS
-    totalUsosPeito = totalUsos_101
-    totalUsosBraco = totalUsos_105 + totalUsos_106
-    totalUsosCostas = totalUsos_104
-    totalUsosPernas = totalUsos_100 + totalUsos_102 + totalUsos_103
-    // GRÁFICO GERAL
-    if (qtdDemandaMedia < 0) {
-        qtdDemandaMedia = 0
-    }
-    span_demanda_media.innerHTML = qtdDemandaMedia
-    span_demanda_alta.innerHTML = qtdDemandaAlta
-    span_demanda_peito.innerHTML = (totalUsosPeito / qtdMaqPeito).toFixed()
-    span_demanda_costas.innerHTML = (totalUsosCostas / qtdMaqCostas).toFixed()
-    span_demanda_braco.innerHTML = (totalUsosBraco / qtdMaqBraco).toFixed()
-    span_demanda_pernas.innerHTML = (totalUsosPernas / qtdMaqPernas).toFixed()
-    // MAQUINAS
-    total_usos_100.innerHTML = totalUsos_100
-    total_usos_101.innerHTML = totalUsos_101
-    total_usos_102.innerHTML = totalUsos_102
-    total_usos_104.innerHTML = totalUsos_104
-    total_usos_105.innerHTML = totalUsos_105
-    total_usos_106.innerHTML = totalUsos_106
-
-}
-
-// REPETIR A FUNÇÃO EM UM INTERVALO DE TEMPO
-// setInterval(function () {
-//     atualizarDados()
-// }, tempoSetInterval)
+const tempoSetInterval = 5000 // TEMPO PARA O setInterval EM MILISSEGUNDOS
 
 function obterMaquinas() {
     fetch("/maquinas/obter", {
@@ -72,8 +41,7 @@ function obterCapturas() {
         if (resposta.ok) {
             resposta.json().then(json => {
                 capturas = json
-                console.log("Captura:", capturas);
-
+                console.log("Capturas:", capturas);
                 for (let index = 0; index < maquinas.length; index++) {
                     const idMaquina = maquinas[index].idAparelho
                     tempoAtivo[index] = {
@@ -85,7 +53,7 @@ function obterCapturas() {
                         tempo: 0
                     }
                 }
-                calcularSegundos()
+                calcularTempo()
             });
         } else {
             console.log("Houve um erro ao tentar obter as capturas!");
@@ -135,7 +103,7 @@ function carregarMaquinas() {
             </div>
             <div class="div_grafico_geral">
                 <div id="container_grafico_linha" class="div_grafico">
-                    <canvas id="grafico_linha"></canvas>
+                    <canvas id="grafico_geral"></canvas>
                 </div>
             </div>
         </div>
@@ -191,7 +159,6 @@ function carregarMaquinas() {
             </div>
         </main>`
     }
-    carregarGraficos()
 }
 
 function mostrarMaquinas() {
@@ -208,4 +175,29 @@ function mostrarMaquinas() {
             divMaquina.classList.add('oculto');
         }
     }
+}
+
+function obterUltimasCapturas() {
+    fetch("/maquinas/obterUltimasCapturas", {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json"
+        }
+    }).then(function (resposta) {
+        if (resposta.ok) {
+            resposta.json().then(json => {
+                ultimasCapturas = json
+                console.log("Últimas Capturas:", ultimasCapturas);
+                atualizarTempo()
+            });
+        } else {
+            console.log("Houve um erro ao tentar obter as capturas!");
+
+            resposta.text().then(texto => {
+                console.error(texto);
+            });
+        }
+    }).catch(function (erro) {
+        console.log("Erro na requisição:", erro);
+    });
 }

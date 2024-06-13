@@ -11,4 +11,8 @@ router.get("/obterCapturas", function (req, res) {
     maquinasController.obterCapturas(req, res);
 });
 
+router.get("/obterUltimasCapturas", function (req, res) {
+    maquinasController.obterUltimasCapturas(req, res);
+});
+
 module.exports = router;

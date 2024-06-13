@@ -464,8 +464,8 @@ aside:hover>#container_menu_lateral>.menu>.menu_func, aside:hover>#container_men
     text-align: center;
 }
 
-.img_maquina {
-    height: 40%;
+.ajustar_img_maquina {
+    height: 100%;
     width: 100%;
 }
 

@@ -11,7 +11,15 @@ function obterMaquinas() {
 
 function obterCapturas() {
     var instrucaoSql = `
-    SELECT idAparelho, nome, registro, momento FROM registro JOIN sensor ON registro.fkSensor = idSensor JOIN aparelho ON aparelho.fkSensor = idSensor WHERE fkAcademia = 1;
+    SELECT idAparelho, nome, registro, momento FROM registro JOIN sensor ON registro.fkSensor = idSensor JOIN aparelho ON aparelho.fkSensor = idSensor WHERE fkAcademia = 1 ORDER BY momento;
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
+function obterUltimasCapturas() {
+    var instrucaoSql = `
+    SELECT idAparelho, nome, registro, momento FROM registro JOIN sensor ON registro.fkSensor = idSensor JOIN aparelho ON aparelho.fkSensor = idSensor WHERE fkAcademia = 1 AND momento = (SELECT MAX(momento) FROM registro) ORDER BY momento;
     `;
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
@@ -19,5 +27,6 @@ function obterCapturas() {
 
 module.exports = {
     obterMaquinas,
-    obterCapturas
+    obterCapturas,
+    obterUltimasCapturas
 };

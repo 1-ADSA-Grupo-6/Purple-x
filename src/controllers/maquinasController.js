@@ -36,7 +36,26 @@ function obterCapturas(req, res) {
         );
 }
 
+function obterUltimasCapturas(req, res) {
+    maquinasModel.obterUltimasCapturas()
+        .then(
+            function (resultado) {
+                if (resultado.length > 0) {
+                    res.json(resultado);
+                } else {
+                    res.status(404).send("Nenhuma captura encontrado!");
+                }
+            }
+        ).catch(
+            function (erro) {
+                console.log(erro);
+                res.status(500).json(erro.sqlMessage);
+            }
+        );
+}
+
 module.exports = {
     obterMaquinas,
-    obterCapturas
+    obterCapturas,
+    obterUltimasCapturas
 };
