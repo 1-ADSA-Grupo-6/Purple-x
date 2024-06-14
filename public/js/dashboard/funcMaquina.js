@@ -2,8 +2,6 @@ let demanda = []
 let maquinas = []
 let capturas = []
 let ultimasCapturas = []
-const demandaMedia = 1 // VARIÁVEL PARA DEFINIR A DEMANDA MÉDIA
-const demandaAlta = 2// VARIÁVEL PARA DEFINIR A DEMANDA ALTA
 const tempoSetInterval = 5000 // TEMPO PARA O setInterval EM MILISSEGUNDOS
 
 function obterDemanda() {
@@ -102,6 +100,35 @@ function obterCapturas() {
 }
 
 function carregarMaquinas() {
+    const demandaMedia = demanda[0].demandaMedia
+    const demandaAlta = demanda[0].demandaAlta
+
+    let horasMedia = Math.floor(demandaMedia / 3600)
+    let minutosMedia = Math.floor((demandaMedia % 3600) / 60)
+    let segundosMedia = demandaMedia % 60
+    let horasAlta = Math.floor(demandaAlta / 3600)
+    let minutosAlta = Math.floor((demandaAlta % 3600) / 60)
+    let segundosAlta = demandaAlta % 60
+
+    if (horasMedia < 10) {
+        horasMedia = `0${horasMedia}`
+    }
+    if (minutosMedia < 10) {
+        minutosMedia = `0${minutosMedia}`
+    }
+    if (segundosMedia < 10) {
+        segundosMedia = `0${segundosMedia}`
+    }
+    if (horasAlta < 10) {
+        horasAlta = `0${horasAlta}`
+    }
+    if (minutosAlta < 10) {
+        minutosAlta = `0${minutosAlta}`
+    }
+    if (segundosAlta < 10) {
+        segundosAlta = `0${segundosAlta}`
+    }
+
     main_alert.innerHTML += `
     <main id="main_0">
         <div id="container_grafico_geral">
@@ -139,6 +166,14 @@ function carregarMaquinas() {
                 </div>
             </div>
             <div class="div_grafico_geral">
+                <div class="container_legenda">
+                    <div class="div_legenda">
+                        <span>Demanda Média = </span><span style="color:#ff8c00">${horasMedia}:${minutosMedia}:${segundosMedia}</span>
+                    </div>
+                    <div class="div_legenda">
+                        <span>Demanda Alta = </span><span style="color:red">${horasAlta}:${minutosAlta}:${segundosAlta}</span>
+                    </div>
+                </div>
                 <div id="container_grafico_linha" class="div_grafico">
                     <canvas id="grafico_geral"></canvas>
                 </div>

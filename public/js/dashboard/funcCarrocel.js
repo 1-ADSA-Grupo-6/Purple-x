@@ -9,16 +9,11 @@ function carregarCarrocel() {
     for (let index = 0; index < maquinas.length; index++) {
         const nomeMaquina = maquinas[index].nome
         const idMaquina = maquinas[index].idAparelho
-        let NomeMaquinaFormatado = nomeMaquina
-
-        if (nomeMaquina.length > 15) {
-            NomeMaquinaFormatado = `${nomeMaquina.split(' ')[0]} <br>${nomeMaquina.split(' ')[1]}`
-        }
 
         carrocel.innerHTML += `
         <div id="${idMaquina}" class="div_carrocel" onclick="mostrarMaquinas()">
             <div class="titulo_carrocel">
-                <span>${NomeMaquinaFormatado}</span>
+                <span>${nomeMaquina}</span>
             </div>
         </div>`
     }

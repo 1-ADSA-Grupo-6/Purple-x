@@ -105,6 +105,7 @@ INSERT INTO sensor VALUES
 (default),
 (default),
 (default),
+(default),
 (default);
 
 INSERT INTO parametro (demandaAlta, demandaMedia) VALUES
@@ -112,38 +113,38 @@ INSERT INTO parametro (demandaAlta, demandaMedia) VALUES
 
 -- Inserir dados na tabela registro para todos os sensores com números mais aleatórios
 INSERT INTO registro (fkSensor, registro, momento) VALUES
-(1, '1', '2024-06-14 14:00:00'),
-(2, '0', '2024-06-14 14:00:00'),
-(3, '1', '2024-06-14 14:00:00'),
-(1, '0', '2024-06-14 14:00:01'),
-(2, '1', '2024-06-14 14:00:01'),
-(3, '0', '2024-06-14 14:00:01'),
-(1, '0', '2024-06-14 14:00:02'),
-(2, '1', '2024-06-14 14:00:02'),
-(3, '0', '2024-06-14 14:00:02'),
-(1, '1', '2024-06-14 14:00:03'),
-(2, '0', '2024-06-14 14:00:03'),
-(3, '1', '2024-06-14 14:00:03'),
-(1, '1', '2024-06-14 14:00:04'),
-(2, '0', '2024-06-14 14:00:04'),
-(3, '1', '2024-06-14 14:00:04'),
-(1, '0', '2024-06-14 14:00:05'),
+(1, '1', '2024-06-14 14:00:05'),
 (2, '1', '2024-06-14 14:00:05'),
-(3, '0', '2024-06-14 14:00:05');
+(3, '1', '2024-06-14 14:00:05'),
+(4, '1', '2024-06-14 14:00:05'),
+(5, '1', '2024-06-14 14:00:05'),
+(6, '1', '2024-06-14 14:00:05'),
+(7, '1', '2024-06-14 14:00:05'),
+(8, '1', '2024-06-14 14:00:05'),
+(1, '1', '2024-06-14 14:00:10'),
+(2, '0', '2024-06-14 14:00:10'),
+(3, '0', '2024-06-14 14:00:10'),
+(4, '0', '2024-06-14 14:00:10'),
+(5, '0', '2024-06-14 14:00:10'),
+(6, '0', '2024-06-14 14:00:10'),
+(7, '0', '2024-06-14 14:00:10'),
+(8, '0', '2024-06-14 14:00:10');
 
 INSERT INTO academia (fkMatriz, nome, token) VALUES
-(1, 'Smart Fit', 'ABC123'),
-(1, 'Smart Fit - Unidade 1', 'AAA111'),
-(1, 'Smart Fit - Unidade 2', 'BBB222');
+(1, 'Purple X', 'PLX100');
+
+INSERT INTO endereco (fkAcademia, cep, numero, complemento) VALUES
+(1, '06020-010', 1400, 'Dentro do shopping União');
 
 INSERT INTO aparelho (fkAcademia, fkSensor, fkParametro, nome, categoria, urlImg, mapeamento) VALUES
 (1, 1, 1, 'Leg Press', 'Perna', '../assets/dashboard/imgMaq/legPress.png','Máquina localizada na área de pernas, ao lado direito da máquina Smith'),
-(1, 2, 1, 'Supino Inclinado', 'Peito', '../assets/dashboard/imgMaq/supinoInclinado.webp', 'Única máquina da área de peito, próximo à máquina Remada Convergente'),
+(1, 2, 1, 'Supino Inclinado', 'Peito', '../assets/dashboard/imgMaq/supinoInclinado.webp', 'Máquina Localizada na área de peito, próximo à máquina Remada Convergente'),
 (1, 3, 1, 'Smith', 'Perna', '../assets/dashboard/imgMaq/smith.png', 'Máquina localizada na área de pernas, ao lado direito da máquina Leg Press'),
-(1, 4, 1, 'Remada Convergente', 'Costas', '../assets/dashboard/imgMaq/remadaConvergente.png', 'Única máquina da área de costas, próximo à máquina Supino Inclinado'),
+(1, 4, 1, 'Remada Convergente', 'Costas', '../assets/dashboard/imgMaq/remadaConvergente.png', 'Máquina Localizada na área de costas, próximo à máquina Supino Inclinado'),
 (1, 5, 1, 'Bíceps Convergente', 'Braço', '../assets/dashboard/imgMaq/bicepsConvergente.png', 'Máquina localizada na área de braço, ao lado direito da máquina Shoulder Press'),
 (1, 6, 1, 'Shoulder Press', 'Braço', '../assets/dashboard/imgMaq/shoulderPress.png', 'Máquina localizada na área de braço, ao lado direito da máquina Bíceps Convergente'),
-(1, 7, 1, 'Leg Press2', 'Perna', '../assets/dashboard/imgMaq/legPress.png', 'Máquina localizada na divisão da área de pernas e costas, ao lado esquerdo da máquina Remada Convergente');
+(1, 7, 1, 'Fly', 'Peito', '../assets/dashboard/imgMaq/fly.png', 'Máquina Localizada da área de peito, próximo à máquina Supino Inclinado'),
+(1, 7, 1, 'Puxada Alta', 'Costas', '../assets/dashboard/imgMaq/puxadaAlta.png', 'Máquina Localizada na área de costas, próximo à máquina Remada Convergente');
 
 SELECT * FROM contato;
 SELECT * FROM sensor;

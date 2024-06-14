@@ -77,7 +77,7 @@ a {
 /* CARROCEL */
 
 .div_carrocel {
-    width: 8%;
+    width: 12%;
     height: 90%;
     /* background-color: #7000ff; */
     background-color: #880094;
@@ -87,6 +87,9 @@ a {
     align-items: center;
     flex-shrink: 0;
     cursor: pointer;
+    word-break: normal;
+    white-space: normal;
+    overflow-wrap: break-word;
 }
 
 .div_carrocel:hover {
@@ -310,15 +313,40 @@ aside:hover>#container_menu_lateral>.menu>.menu_func, aside:hover>#container_men
     width: 75%;
     height: 100%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     justify-content: space-evenly;
 }
 
+.container_legenda {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    font-size: 1.2vw;
+    font-weight: 600;
+    gap: 5%;
+}
+
+.div_legenda {
+    width: 30%;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 20px;
+    transition: 0.4s;
+    color: #550B5B;
+    gap: 1%;
+}
+
 .div_grafico {
     width: 95%;
-    height: 90%;
+    height: 80%;
     background-color: #ffffff;
     border-radius: 10px;
     display: flex;
@@ -522,13 +550,17 @@ aside:hover>#container_menu_lateral>.menu>.menu_func, aside:hover>#container_men
     height: 10%;
     margin-left: 5%;
     text-align: left;
-    word-break: break-all;
+    word-break: normal;
+    white-space: normal;
+    overflow-wrap: break-word;
 }
 
 .div_dados_maq {
     width: 95%;
     margin-left: 5%;
-    word-break: break-all;
+    word-break: normal;
+    white-space: normal;
+    overflow-wrap: break-word;
 }
 
 /* PARTE DA DIREITA, GRÁFICO E DADOS DA MÁQUINA */
@@ -600,7 +632,8 @@ aside:hover>#container_menu_lateral>.menu>.menu_func, aside:hover>#container_men
 .div_valor:hover,
 .div_valor_geral:hover,
 .div_valor_alerta_geral:hover,
-.div_kpi_geral:hover {
+.div_kpi_geral:hover,
+.div_legenda:hover {
     transform: scale(1.1);
 }
 

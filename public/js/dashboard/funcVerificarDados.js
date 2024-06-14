@@ -149,7 +149,7 @@ function atualizarDados() {
     let idMaquinaMaisUsada = ''
     let tempoMaquinaMaisUsada = 0
     let idMaquinaMenosUsada = ''
-    let tempoMaquinaMenosUsada = 0
+    let tempoMaquinaMenosUsada = 1000000000000000000000000
 
     for (let index = 0; index < maquinas.length; index++) {
         const idMaquina = maquinas[index].idAparelho
@@ -201,10 +201,12 @@ function atualizarDados() {
         spanTempoAtivo.innerHTML = `${horasAtivo}:${minutosAtivo}:${segundosAtivo}`
         spanTempoInativo.innerHTML = `${horasInativo}:${minutosInativo}:${segundosInativo}`
     }
+    const nomeMaquinaMaisUsada = maquinas[idMaquinaMaisUsada - 1].nome
+    const nomeMaquinaMenosUsada = maquinas[idMaquinaMenosUsada - 1].nome
 
-    span_nome_mais_usada.innerHTML = maquinas[idMaquinaMaisUsada - 1].nome
+    span_nome_mais_usada.innerHTML = nomeMaquinaMaisUsada
     span_tempo_mais_usada.innerHTML = tempos[idMaquinaMaisUsada - 1].tempoAtivo
-    span_nome_menos_usada.innerHTML = maquinas[idMaquinaMenosUsada - 1].nome
+    span_nome_menos_usada.innerHTML = nomeMaquinaMenosUsada
     span_tempo_menos_usada.innerHTML = tempos[idMaquinaMenosUsada - 1].tempoAtivo
 
     atualizarGraficos()
