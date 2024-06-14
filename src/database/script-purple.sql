@@ -1,6 +1,10 @@
 CREATE DATABASE purplex;
 USE purplex;
 
+create user 'API'@'localhost' identified by 'webDataViz0API@';
+grant insert, select, update, delete on purplex.* to 'API'@'localhost';
+show grants for 'API'@'localhost';
+
 CREATE TABLE contato (
 	idContato INT PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR(45),
@@ -22,7 +26,7 @@ CREATE TABLE parametro (
 CREATE TABLE registro (
 	idRegistro INT,
     fkSensor INT,
-    registro char(1),
+    registro CHAR(1),
     momento DATETIME
 );
 
@@ -110,23 +114,25 @@ INSERT INTO parametro (demandaAlta, demandaBaixa) VALUES
 -- Inserir dados na tabela registro para todos os sensores com números mais aleatórios
 INSERT INTO registro (fkSensor, registro, momento) VALUES
 (1, '1', '2024-06-14 14:00:00'),
-(2, '0', '2024-06-14 14:00:00'),
+(2, '1', '2024-06-14 14:00:00'),
 (3, '1', '2024-06-14 14:00:00'),
-(1, '0', '2024-06-14 14:00:01'),
+(1, '1', '2024-06-14 14:00:01'),
 (2, '1', '2024-06-14 14:00:01'),
-(3, '0', '2024-06-14 14:00:01'),
+(3, '1', '2024-06-14 14:00:01'),
 (1, '0', '2024-06-14 14:00:02'),
 (2, '1', '2024-06-14 14:00:02'),
 (3, '0', '2024-06-14 14:00:02'),
 (1, '1', '2024-06-14 14:00:03'),
-(2, '0', '2024-06-14 14:00:03'),
+(2, '1', '2024-06-14 14:00:03'),
 (3, '1', '2024-06-14 14:00:03'),
-(1, '1', '2024-06-14 14:00:04'),
-(2, '0', '2024-06-14 14:00:04'),
-(3, '1', '2024-06-14 14:00:04'),
-(1, '0', '2024-06-14 14:00:05'),
+(1, '0', '2024-06-14 14:00:04'),
+(2, '1', '2024-06-14 14:00:04'),
+(3, '0', '2024-06-14 14:00:04'),
+(1, '1', '2024-06-14 14:00:05'),
 (2, '1', '2024-06-14 14:00:05'),
-(3, '0', '2024-06-14 14:00:05');
+(3, '1', '2024-06-14 14:00:05'),
+(2, '1', '2024-06-14 14:00:06'),
+(2, '1', '2024-06-14 14:00:07');
 
 INSERT INTO academia (fkMatriz, nome, token) VALUES
 (1, 'Smart Fit', 'ABC123'),
@@ -153,6 +159,8 @@ SELECT * FROM aparelho;
 SELECT * FROM endereco;
 SELECT * FROM usuario;
 
+
+
 -- SELECIONANDO OS APARELHOS E A DEMANDA ALTA E BAIXA DE CADA
 SELECT ap.nome AS 'Nome do aparelho', pa.demandaAlta AS 'Valor de demanda alta', 
 pa.demandaBaixa AS 'Valor da demanda baixa' FROM aparelho AS ap
@@ -163,6 +171,97 @@ SELECT ap.nome AS 'Nome do aparelho', COUNT(*) AS 'Quantidade de resgitros 0' FR
 JOIN aparelho AS ap ON re.fkSensor = ap.fkSensor
 WHERE ap.idAparelho = 1 AND re.registro = 0
 GROUP BY ap.nome;
+
+-- SELECIONANDO OS HORARIOS DA MAQUINA COM MAIS REGISTRO
+SELECT a.nome, r.momento
+FROM registro r
+JOIN aparelho a ON r.fkSensor = a.fkSensor
+WHERE r.fkSensor = (
+    SELECT fkSensor
+    FROM registro
+    GROUP BY fkSensor
+    ORDER BY COUNT(*) DESC
+    LIMIT 1
+);
+
+
+
+-- SELECIONANDO OS HORARIOS DA MAQUINA COM MENOS REGISTROS7
+SELECT a.nome, r.momento
+FROM registro r
+JOIN aparelho a ON r.fkSensor = a.fkSensor
+WHERE r.fkSensor = (
+    SELECT fkSensor
+    FROM registro
+    GROUP BY fkSensor
+    ORDER BY COUNT(*) ASC
+    LIMIT 1
+);
+
+-- SELECIONANDO O TEMPO INATIVO DA MAQUINA E O ATIVO COM SQL 
+-- WITH É UMA CLÁUSULA ONDE SE TORNA POSSIVÉL CRIAR TABELAS TEMPORARIAS QUE SÃO SEMELHANTES A SUB CONSULTAS
+-- AQUI EU USEI PARA PODER JÁ PUXAR O BANCO A DIFERENÇA DE MINUTOS E SEGUNDOS DE CADA MAQUINA DE FORMA INDIVIDUAL
+-- ELE PUXA O REGISTRO DE ACORDO COM O FKSENSOR PASSADO NA LINHA 217
+-- AI ELE FAZ OS OUTROS SELECTS PARA PUXAR OS REGISTROS
+-- AS CONTAS PARA PEGAR SOMENTE OS MINUTOS E SEGUNDOS E MOSTRA CERTINHO
+WITH registros_com_lag AS (
+    SELECT
+        r.fkSensor,
+        a.nome,
+        r.registro,
+        r.momento,
+        LAG(r.momento) OVER (PARTITION BY r.fkSensor ORDER BY r.momento) AS momento_anterior
+    FROM
+        registro r
+    JOIN
+        aparelho a ON r.fkSensor = a.fkSensor
+    WHERE
+        r.fkSensor = 4 -- ID da máquina desejada
+),
+tempos_calculados AS (
+    SELECT
+        fkSensor,
+        nome,
+        registro,
+        momento,
+        momento_anterior,
+        TIMESTAMPDIFF(SECOND, momento_anterior, momento) AS diferenca_segundos
+    FROM
+        registros_com_lag
+    WHERE
+        momento_anterior IS NOT NULL
+),
+tempos_agrupados AS (
+    SELECT
+        fkSensor,
+        nome,
+        IFNULL(SUM(CASE WHEN registro = '1' THEN diferenca_segundos ELSE 0 END), 0) AS tempo_ativo_segundos,
+        IFNULL(SUM(CASE WHEN registro = '0' THEN diferenca_segundos ELSE 0 END), 0) AS tempo_inativo_segundos
+    FROM
+        tempos_calculados
+    GROUP BY
+        fkSensor, nome
+)
+SELECT
+    fkSensor,
+    nome,
+    FLOOR(tempo_ativo_segundos / 60) AS tempo_ativo_minutos,
+    tempo_ativo_segundos % 60 AS tempo_ativo_segundos_restantes,
+    FLOOR(tempo_inativo_segundos / 60) AS tempo_inativo_minutos,
+    tempo_inativo_segundos % 60 AS tempo_inativo_segundos_restantes
+FROM
+    tempos_agrupados;
+    
+
+-- PARA SELECIONAR A MÉDIA NUM DIA ESPECIFICO DA SEMANA
+SELECT ROUND(AVG(total_usos)) AS media_usos
+FROM (
+    SELECT COUNT(*) AS total_usos
+    FROM registro
+    WHERE fkSensor = 1
+      AND DATE(momento) = '2024-06-14'
+      AND registro = '1'
+) AS subquery;
 
 -- DROP DATABASE purplex --
 -- DROP USER 'API'@'localhost' --

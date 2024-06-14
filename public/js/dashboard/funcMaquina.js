@@ -90,11 +90,11 @@ function carregarMaquinas() {
                     <div class="container_categoria">
                         <div class="div_categoria">
                             <div class="div_valor_geral">
-                                <span>MÁQUINA MAIS <br> USADA:</span>
+                                <span id="span_maior_demanda">MÁQUINA MAIS USADA: <br></span>
                                 <span id="span_demanda_peito" class="green"></span>
                             </div>
                             <div style="margin-top:10px" class="div_valor_geral">
-                                <span>MÁQUINA MENOS <br> USADA:</span>
+                                <span id="span_menos_demanda">MÁQUINA MENOS USADA: <br></span>
                                 <span id="span_demanda_costas" class="green"></span>
                             </div>
                         </div>
@@ -135,7 +135,7 @@ function carregarMaquinas() {
                         </div>
                         <div class="div_dados_maq ">
                             <span>Média de uso na sexta-feira:</span>
-                            <span>0</span>
+                            <span id="span_media_${idMaquina}"></span>
                         </div>
                     </div>
                 </div>
@@ -147,18 +147,19 @@ function carregarMaquinas() {
                     </div>
                     <div class="container_valor">
                         <div class="div_valor ">
-                            <span>Total de usos:</span>
-                            <span id="total_usos_${idMaquina}" class="green">10</span>
+                            <span>Tempo ativo:</span>
+                            <span id="total_usos_${idMaquina}" class="green">Sem registro</span>
                         </div>
                         <div class="div_valor ">
-                            <span>Demanda da máquina:</span>
-                            <span id="span_demanda_${idMaquina}" class="green">nada</span>
+                            <span>Tempo inativo:</span>
+                            <span id="span_demanda_${idMaquina}" class="green">Sem registro</span>
                         </div>
                     </div>
                 </div>
             </div>
         </main>`
     }
+
 }
 
 function mostrarMaquinas() {
@@ -171,6 +172,8 @@ function mostrarMaquinas() {
 
         if (idMaquina == idMaquinaExibir) {
             divMaquina.classList.remove('oculto');
+            obterInatividade(idMaquina);
+            obterMediaDia(idMaquina);
         } else {
             divMaquina.classList.add('oculto');
         }
@@ -194,6 +197,62 @@ function obterUltimasCapturas() {
             console.log("Houve um erro ao tentar obter as capturas!");
 
             resposta.text().then(texto => {
+                console.error(texto);
+            });
+        }
+    }).catch(function (erro) {
+        console.log("Erro na requisição:", erro);
+    });
+}
+
+function obterInatividade(id) {
+    fetch(`/informacoesDash/obterInatividade/${id}`, {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json"
+        }
+    }).then(function (resposta) {
+        if (resposta.status === 404) {
+            console.log("Máquina não encontrada (404)");
+        } else if (resposta.ok) {
+            resposta.json().then(function(resultado) {
+                const tempoAtivoElement = document.getElementById(`span_demanda_${id}`);
+                const totalUsosElement = document.getElementById(`total_usos_${id}`);
+                
+                tempoAtivoElement.textContent = `${resultado[0].tempo_ativo_minutos} minutos e ${resultado[0].tempo_ativo_segundos_restantes} segundos`;
+                totalUsosElement.textContent = `${resultado[0].tempo_inativo_minutos} minutos e ${resultado[0].tempo_inativo_segundos_restantes} segundos`;
+            });
+        } else {
+            console.log("Houve um erro ao tentar obter as capturas!");
+
+            resposta.text().then(function(texto) {
+                console.error(texto);
+            });
+        }
+    }).catch(function (erro) {
+        console.log("Erro na requisição:", erro);
+    });
+}
+
+function obterMediaDia(id) {
+    fetch(`/informacoesDash/obterMediaDia/${id}`, {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json"
+        }
+    }).then(function (resposta) {
+        if (resposta.status === 404) {
+            console.log("Máquina não encontrada (404)");
+        } else if (resposta.ok) {
+            resposta.json().then(function(resultado) {
+                const span = document.getElementById(`span_media_${id}`);
+                span.innerHTML = resultado[0].media_usos;
+                console.log(resultado[0].media_usos);
+            });
+        } else {
+            console.log("Houve um erro ao tentar obter as capturas!");
+
+            resposta.text().then(function(texto) {
                 console.error(texto);
             });
         }
