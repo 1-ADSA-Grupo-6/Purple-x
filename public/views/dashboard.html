@@ -23,34 +23,18 @@
             </div>
             <div class="menu" onclick="esconderMenu()">
                 <div id="esconder_menu" class="menu_icon">
-                    <img src="../assets/dashboard/icon-closedEye.png" class="lateral_icon">
+                    <img src="../assets/dashboard/icon_ocultar.png" class="lateral_icon">
                 </div>
                 <div class="menu_func">
                     <span>Ocultar menu lateral</span>
                 </div>
             </div>
-            <div class="menu">
-                <div id="trocar_academia" class="menu_icon">
+            <div class="menu" onclick="removerMaquina()">
+                <div id="remover_maq" class="menu_icon">
                     <img src="../assets/dashboard/icon-gym.png" class="lateral_icon">
                 </div>
                 <div class="menu_func">
-                    <span>Mudar Academia</span>
-                </div>
-            </div>
-            <div class="menu" onclick="abrirperk1Modal()">
-                <div id="adicionar_maq" class="menu_icon">
-                    <img src="../assets/dashboard/icon-plus.png" class="lateral_icon">
-                </div>
-                <div class="menu_func">
-                    <span>Adicionar Máquina</span>
-                </div>
-            </div>
-            <div class="menu" onclick="removerMaquina()">
-                <div id="remover_maq" class="menu_icon">
-                    <img src="../assets/dashboard/icon-minus.png" class="lateral_icon">
-                </div>
-                <div class="menu_func">
-                    <span>Remover Máquina</span>
+                    <span>Gerenciar Máquinas</span>
                 </div>
             </div>
             <div class="menu" onclick="abrirNotificações()">
@@ -79,7 +63,6 @@
         </div>
     </aside>
 
-
     <div id="header_main">
         <!-- CARROCEL -->
         <header id="carrocel"></header>
@@ -89,82 +72,19 @@
             <div id="alerta">
                 <span class="close" onclick="fecharNotificacoes()">&times;</span>
                 <p id="alerta_texto">Não há alertas</p>
-                <!-- AVISO VERMELHO -->
-                <div id="container_alerta" class="aviso_vermelho aviso_vermelho_100">
-                    <div class="centralizar_alertas">
-                        <img src="../assets/dashboard/aviso_vermelho.png" alt="aviso_vermelho">
-                        <div id="div_mensagem">
-                            <p>A máquina Leg Press está com a demanda alta</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- AVISO LARANJA -->
-                <div id="container_alerta" class="aviso_laranja aviso_laranja_100">
-                    <div class="centralizar_alertas">
-                        <img src="../assets/dashboard/aviso_laranja.png" alt="aviso_laranja">
-                        <div id="div_mensagem">
-                            <p>A máquinas Leg Press está com a demanda média</p>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
-
-    <div id="perk1" class="meu-modal">
-        <div class="modal-conteudo">
-            <span class="fechar" onclick="fecharperk1Modal()">&times;</span>
-            <p id="texto-explicativo">Vamos cadastrar sua máquina nova?</p>
-
-            <label for="input_idAparelho">Número de identificador do aparelho:</label>
-            <input type="text" id="input_idAparelho">
-
-            <label for="input_nomeAparelho">Nome do Aparelho:</label>
-            <input type="text" id="input_nomeAparelho">
-
-            <label for="input_categoria">Categoria:</label>
-            <input type="text" id="input_categoria">
-
-            <button onclick="cadastrarAparelho()">Cadastrar Aparelho</button>
-        </div>
-    </div>
-
 </body>
 
 </html>
 
-<script src="../js/dashboard/funcMenu.js"></script>
-<script src="../js/dashboard/funcCarrocel.js"></script>
 <script src="../js/dashboard/funcMaquina.js"></script>
+<script src="../js/dashboard/funcCarrocel.js"></script>
 <script src="../js/dashboard/funcGrafico.js"></script>
-<script src="../js/dashboard/funcPopup.js"></script>
-<!-- USAR SOMENTE SE O BANCO NÃO ESTIVER CONECTADO 👇 -->
 <script src="../js/dashboard/funcVerificarDados.js"></script>
+<script src="../js/dashboard/funcMenu.js"></script>
+<script data-jsd-embedded data-key="b3e6f822-b400-423e-b4aa-8b09a3b44fe8" data-base-url="https://jsd-widget.atlassian.com" src="https://jsd-widget.atlassian.com/assets/embed.js"></script>
 
-<script src="../js/dashboard/funcInformacoes.js"></script>
 <!-- EXECUTA FUNÇÔES DEPOIS DA <body> SER CARREGADA -->
-
-<body onload="obterMaquinas()">
-
-    <script>
-        function removerMaquina() {
-            window.location.href = 'removerMaquina.html';
-        }
-
-        function abrirperk1Modal() {
-            var modal = document.getElementById("perk1");
-            modal.style.display = "block";
-        }
-
-        function fecharperk1Modal() {
-            var modal = document.getElementById("perk1");
-            modal.style.display = "none";
-        }
-
-        function cadastrarAparelho() {
-
-        }
-
-
-    </script>
-    <script data-jsd-embedded data-key="b3e6f822-b400-423e-b4aa-8b09a3b44fe8" data-base-url="https://jsd-widget.atlassian.com" src="https://jsd-widget.atlassian.com/assets/embed.js"></script>
+<body onload="obterDemanda()">

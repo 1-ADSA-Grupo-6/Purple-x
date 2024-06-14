@@ -2,7 +2,7 @@ function esconderMenu() {
     menu_lateral.innerHTML = `
         <div id="esconder_menu" class="div_menu_oculto" onclick="mostrarMenu()">
             <div id="logo" class="menu_icon">
-                <img src="../assets/dashboard/icon-eye.png" class="lateral_icon">
+                <img src="../assets/dashboard/icon_exibir.png" class="lateral_icon">
             </div>
             <div class="menu_func">
                 <span>Exibir o menu lateral</span>
@@ -28,34 +28,18 @@ function mostrarMenu() {
         </div>
         <div class="menu" onclick="esconderMenu()">
             <div id="esconder_menu" class="menu_icon">
-                <img src="../assets/dashboard/icon-closedEye.png" class="lateral_icon">
+                <img src="../assets/dashboard/icon_ocultar.png" class="lateral_icon">
             </div>
             <div class="menu_func">
                 <span>Ocultar menu lateral</span>
             </div>
         </div>
-        <div class="menu">
-            <div id="trocar_academia" class="menu_icon">
+        <div class="menu" onclick="removerMaquina()">
+            <div id="remover_maq" class="menu_icon">
                 <img src="../assets/dashboard/icon-gym.png" class="lateral_icon">
             </div>
             <div class="menu_func">
-                <span>Mudar Academia</span>
-            </div>
-        </div>
-        <div class="menu">
-            <div id="adicionar_maq" class="menu_icon">
-                <img src="../assets/dashboard/icon-plus.png" class="lateral_icon">
-            </div>
-            <div class="menu_func">
-                <span>Adicionar Máquina</span>
-            </div>
-        </div>
-        <div class="menu">
-            <div id="remover_maq" class="menu_icon">
-                <img src="../assets/dashboard/icon-minus.png" class="lateral_icon">
-            </div>
-            <div class="menu_func">
-                <span>Remover Máquina</span>
+                <span>Gerenciar Máquinas</span>
             </div>
         </div>
         <div class="menu" onclick="abrirNotificações()">
@@ -83,4 +67,16 @@ function mostrarMenu() {
             </div>
         </a>
     </div>`
+}
+
+function abrirNotificações() {
+    alerta.style.display = 'flex';
+}
+
+function fecharNotificacoes() {
+    alerta.style.display = 'none';
+}
+
+function removerMaquina() {
+    window.location.href = 'removerMaquina.html';
 }

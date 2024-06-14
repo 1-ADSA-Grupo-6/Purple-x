@@ -20,7 +20,7 @@ CREATE TABLE sensor (
 CREATE TABLE parametro (
 	idParametro INT PRIMARY KEY AUTO_INCREMENT,
     demandaAlta INT,
-    demandaBaixa INT
+    demandaMedia INT
 );
 
 CREATE TABLE registro (
@@ -52,7 +52,8 @@ CREATE TABLE aparelho (
     fkParametro INT,
     nome VARCHAR(45),
     categoria VARCHAR(45),
-    urlImg VARCHAR(150)
+    urlImg VARCHAR(150),
+    mapeamento VARCHAR(160)
 );
 
 ALTER TABLE aparelho ADD CONSTRAINT chavesPrimariasAparelho PRIMARY KEY (idAparelho, fkAcademia, fkSensor, fkParametro);
@@ -106,49 +107,43 @@ INSERT INTO sensor VALUES
 (default),
 (default);
 
-INSERT INTO parametro (demandaAlta, demandaBaixa) VALUES
-(80, 20),
-(90, 10),
-(70, 30);
+INSERT INTO parametro (demandaAlta, demandaMedia) VALUES
+(6, 4);
 
 -- Inserir dados na tabela registro para todos os sensores com números mais aleatórios
 INSERT INTO registro (fkSensor, registro, momento) VALUES
 (1, '1', '2024-06-14 14:00:00'),
-(2, '1', '2024-06-14 14:00:00'),
+(2, '0', '2024-06-14 14:00:00'),
 (3, '1', '2024-06-14 14:00:00'),
-(1, '1', '2024-06-14 14:00:01'),
+(1, '0', '2024-06-14 14:00:01'),
 (2, '1', '2024-06-14 14:00:01'),
-(3, '1', '2024-06-14 14:00:01'),
+(3, '0', '2024-06-14 14:00:01'),
 (1, '0', '2024-06-14 14:00:02'),
 (2, '1', '2024-06-14 14:00:02'),
 (3, '0', '2024-06-14 14:00:02'),
 (1, '1', '2024-06-14 14:00:03'),
-(2, '1', '2024-06-14 14:00:03'),
+(2, '0', '2024-06-14 14:00:03'),
 (3, '1', '2024-06-14 14:00:03'),
-(1, '0', '2024-06-14 14:00:04'),
-(2, '1', '2024-06-14 14:00:04'),
-(3, '0', '2024-06-14 14:00:04'),
-(1, '1', '2024-06-14 14:00:05'),
+(1, '1', '2024-06-14 14:00:04'),
+(2, '0', '2024-06-14 14:00:04'),
+(3, '1', '2024-06-14 14:00:04'),
+(1, '0', '2024-06-14 14:00:05'),
 (2, '1', '2024-06-14 14:00:05'),
-(3, '1', '2024-06-14 14:00:05'),
-(2, '1', '2024-06-14 14:00:06'),
-(2, '1', '2024-06-14 14:00:07');
+(3, '0', '2024-06-14 14:00:05');
 
 INSERT INTO academia (fkMatriz, nome, token) VALUES
 (1, 'Smart Fit', 'ABC123'),
 (1, 'Smart Fit - Unidade 1', 'AAA111'),
 (1, 'Smart Fit - Unidade 2', 'BBB222');
 
-INSERT INTO aparelho (fkAcademia, fkSensor, fkParametro, nome, categoria, urlImg) VALUES
-(1, 1, 1, 'Leg Press', 'Perna', '../assets/dashboard/imgMaq/legPress.png'),
-(1, 2, 1, 'Supino Inclinado', 'Peito', '../assets/dashboard/imgMaq/supinoInclinado.webp'),
-(1, 3, 1, 'Smith', 'Perna', '../assets/dashboard/imgMaq/smith.png'),
-(1, 4, 1, 'Remada Convergente', 'Costas', '../assets/dashboard/imgMaq/remadaConvergente.png'),
-(1, 5, 1, 'Bíceps Convergente', 'Braço', '../assets/dashboard/imgMaq/bicepsConvergente.png'),
-(1, 6, 1, 'Shoulder Press', 'Braço', '../assets/dashboard/imgMaq/shoulderPress.png'),
-(1, 7, 1, 'Leg Press', 'Perna', '../assets/dashboard/imgMaq/legPress.png'),
-(1, 8, 1, 'Remada Convergente', 'Costas', '../assets/dashboard/imgMaq/remadaConvergente.png');
-
+INSERT INTO aparelho (fkAcademia, fkSensor, fkParametro, nome, categoria, urlImg, mapeamento) VALUES
+(1, 1, 1, 'Leg Press', 'Perna', '../assets/dashboard/imgMaq/legPress.png','Máquina localizada na área de pernas, ao lado direito da máquina Smith'),
+(1, 2, 1, 'Supino Inclinado', 'Peito', '../assets/dashboard/imgMaq/supinoInclinado.webp', 'Única máquina da área de peito, próximo à máquina Remada Convergente'),
+(1, 3, 1, 'Smith', 'Perna', '../assets/dashboard/imgMaq/smith.png', 'Máquina localizada na área de pernas, ao lado direito da máquina Leg Press'),
+(1, 4, 1, 'Remada Convergente', 'Costas', '../assets/dashboard/imgMaq/remadaConvergente.png', 'Única máquina da área de costas, próximo à máquina Supino Inclinado'),
+(1, 5, 1, 'Bíceps Convergente', 'Braço', '../assets/dashboard/imgMaq/bicepsConvergente.png', 'Máquina localizada na área de braço, ao lado direito da máquina Shoulder Press'),
+(1, 6, 1, 'Shoulder Press', 'Braço', '../assets/dashboard/imgMaq/shoulderPress.png', 'Máquina localizada na área de braço, ao lado direito da máquina Bíceps Convergente'),
+(1, 7, 1, 'Leg Press2', 'Perna', '../assets/dashboard/imgMaq/legPress.png', 'Máquina localizada na divisão da área de pernas e costas, ao lado esquerdo da máquina Remada Convergente');
 
 SELECT * FROM contato;
 SELECT * FROM sensor;
@@ -158,8 +153,6 @@ SELECT * FROM academia;
 SELECT * FROM aparelho;
 SELECT * FROM endereco;
 SELECT * FROM usuario;
-
-
 
 -- SELECIONANDO OS APARELHOS E A DEMANDA ALTA E BAIXA DE CADA
 SELECT ap.nome AS 'Nome do aparelho', pa.demandaAlta AS 'Valor de demanda alta', 
@@ -251,7 +244,7 @@ SELECT
     tempo_inativo_segundos % 60 AS tempo_inativo_segundos_restantes
 FROM
     tempos_agrupados;
-    
+
 
 -- PARA SELECIONAR A MÉDIA NUM DIA ESPECIFICO DA SEMANA
 SELECT ROUND(AVG(total_usos)) AS media_usos
@@ -263,5 +256,5 @@ FROM (
       AND registro = '1'
 ) AS subquery;
 
--- DROP DATABASE purplex --
--- DROP USER 'API'@'localhost' --
+-- DROP DATABASE purplex; --
+-- DROP USER 'API'@'localhost'; --

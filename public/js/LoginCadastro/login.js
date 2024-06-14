@@ -50,6 +50,7 @@ function login() {
                 sessionStorage.EMAIL_USUARIO = json.email;
                 sessionStorage.NOME_USUARIO = json.nomeCompleto;
                 sessionStorage.ID_USUARIO = json.idUsuario;
+                sessionStorage.ACADEMIA = json.fkAcademia;
                 div_erro_login.innerHTML = `<span style="color: #007A33;">Login realizado com sucesso!</span>`
                 setTimeout(() => {
                     window.location = "dashboard.html";

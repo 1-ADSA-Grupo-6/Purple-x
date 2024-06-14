@@ -1,9 +1,17 @@
-
 var database = require("../database/config");
+
+function obterDemanda() {
+    var instrucaoSql = `
+    SELECT * FROM parametro;
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
 
 function obterMaquinas() {
     var instrucaoSql = `
-    SELECT idAparelho, nome, categoria, urlImg FROM aparelho WHERE fkAcademia = 1;
+        SELECT * FROM aparelho
+        WHERE fkAcademia = 1;
     `;
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
@@ -25,8 +33,43 @@ function obterUltimasCapturas() {
     return database.executar(instrucaoSql);
 }
 
+function removerMaquina(idMaquina) {
+    var instrucaoSql = `
+        UPDATE aparelho SET nome = 'Desativado' WHERE idAparelho = ${idMaquina};
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
+function renomearMaquina(idMaquina, novoNome) {
+    var instrucaoSql = `
+        UPDATE aparelho SET nome = '${novoNome}' WHERE idAparelho = ${idMaquina};
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
+function inserirSensor() {
+    var instrucaoSql = `INSERT INTO sensor VALUES (DEFAULT);` 
+
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
+function inserirMaquina(idMaquina, nomeMaquina, urlMaquina, categoriaMaquina, mapeamentoMaquina) {
+    var instrucaoSql = `INSERT INTO aparelho VALUES ('${idMaquina}', '1', '${idMaquina}', 1, '${nomeMaquina}', '${categoriaMaquina}', '${urlMaquina}', '${mapeamentoMaquina}');`
+
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
 module.exports = {
+    obterDemanda,
     obterMaquinas,
     obterCapturas,
-    obterUltimasCapturas
+    obterUltimasCapturas,
+    removerMaquina,
+    renomearMaquina,
+    inserirMaquina,
+    inserirSensor
 };

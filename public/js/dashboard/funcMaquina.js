@@ -1,9 +1,35 @@
+let demanda = []
 let maquinas = []
 let capturas = []
 let ultimasCapturas = []
 const demandaMedia = 1 // VARIÁVEL PARA DEFINIR A DEMANDA MÉDIA
 const demandaAlta = 2// VARIÁVEL PARA DEFINIR A DEMANDA ALTA
 const tempoSetInterval = 5000 // TEMPO PARA O setInterval EM MILISSEGUNDOS
+
+function obterDemanda() {
+    fetch("/maquinas/obterDemanda", {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json"
+        }
+    }).then(function (resposta) {
+        if (resposta.ok) {
+            resposta.json().then(json => {
+                demanda = json
+                console.log("Parametro:", demanda);
+                obterMaquinas()
+            });
+        } else {
+            console.log("Houve um erro ao tentar obter os parametros!");
+
+            resposta.text().then(texto => {
+                console.error(texto);
+            });
+        }
+    }).catch(function (erro) {
+        console.log("Erro na requisição:", erro);
+    });
+}
 
 function obterMaquinas() {
     fetch("/maquinas/obter", {
@@ -14,7 +40,11 @@ function obterMaquinas() {
     }).then(function (resposta) {
         if (resposta.ok) {
             resposta.json().then(json => {
-                maquinas = json
+                for (let index = 0; index < json.length; index++) {
+                    if (json[index].nome != 'Desativado') {
+                        maquinas.push(json[index])
+                    }
+                }
                 console.log("máquinas:", maquinas);
                 obterCapturas()
                 carregarCarrocel()
@@ -40,7 +70,11 @@ function obterCapturas() {
     }).then(function (resposta) {
         if (resposta.ok) {
             resposta.json().then(json => {
-                capturas = json
+                for (let index = 0; index < json.length; index++) {
+                    if (json[index].nome != 'Desativado') {
+                        capturas.push(json[index])
+                    }
+                }
                 console.log("Capturas:", capturas);
                 for (let index = 0; index < maquinas.length; index++) {
                     const idMaquina = maquinas[index].idAparelho
@@ -73,30 +107,33 @@ function carregarMaquinas() {
         <div id="container_grafico_geral">
             <div id="container_info_maquinas">
                 <div class="container_alerta_geral">
-                    <span>NÚMERO DE MÁQUINAS EM ALERTA</span>
+                    <span>MÁQUINAS EM ALERTA:</span>
                     <div class="div_valor_alerta_geral">
                         <span>DEMANDA MÉDIA:</span>
-                        <span id="span_demanda_media" class="green"></span>
+                        <span id="span_demanda_media" class="green">0</span>
                     </div>
                     <div class="div_valor_alerta_geral">
                         <span>DEMANDA ALTA:</span>
-                        <span id="span_demanda_alta" class="green"></span>
+                        <span id="span_demanda_alta" class="green">0</span>
                     </div>
                 </div>
                 <div id="container_dado_geral">
-                <div class="txt_dash">
-                <span>TEMPO DE USO <br> POR CATEGORIA</span>
-                </div>
-                    <div class="container_categoria">
-                        <div class="div_categoria">
-                            <div class="div_valor_geral">
-                                <span id="span_maior_demanda">MÁQUINA MAIS USADA: <br></span>
-                                <span id="span_demanda_peito" class="green"></span>
-                            </div>
-                            <div style="margin-top:10px" class="div_valor_geral">
-                                <span id="span_menos_demanda">MÁQUINA MENOS USADA: <br></span>
-                                <span id="span_demanda_costas" class="green"></span>
-                            </div>
+                    <span>MÁQUINA MAIS USADA:</span>
+                    <div class="div_kpi_geral">
+                        <div class="div_nome_maq_mais_usada">
+                            <span id="span_nome_mais_usada">Sem registro</span>
+                        </div>
+                        <div class="div_tempo_maq_mais_usada">
+                            <span id="span_tempo_mais_usada"></span>
+                        </div>
+                    </div>
+                    <span>MÁQUINA MENOS USADA:</span>
+                    <div class="div_kpi_geral">
+                        <div class="div_nome_maq_mais_usada">
+                            <span id="span_nome_menos_usada">Sem registro</span>
+                        </div>
+                        <div class="div_tempo_maq_mais_usada">
+                            <span id="span_tempo_menos_usada"></span>
                         </div>
                     </div>
                 </div>
@@ -110,56 +147,55 @@ function carregarMaquinas() {
     </main>`
 
     for (let index = 0; index < maquinas.length; index++) {
-        const idMaquina = maquinas[index].idAparelho
         const nomeMaquina = maquinas[index].nome
+        const idMaquina = maquinas[index].idAparelho
         const categoriaMaquina = maquinas[index].categoria
         const imgMaquina = maquinas[index].urlImg
+        const mapeamentoMaquina = maquinas[index].mapeamento
 
         main_alert.innerHTML += `
-        <main id="main_${idMaquina}" class="oculto">
-            <div class="container_maq color2">
-                <div class="info_maq">
-                    <div class="div_nome_maq text_titulo">
-                        <span>${nomeMaquina}</span>
-                    </div>
-                    <div class="div_idMaq">
-                        
-                    </div>
-                    <div class="img_maquina">
-                        <img src="${imgMaquina}" class="ajustar_img_maquina">
-                    </div>
-                    <div class="dados_maq">
-                        <div class="div_dados_maq ">
-                            <span>Categoria:</span>
-                            <span>${categoriaMaquina}</span>
+            <main id="main_${idMaquina}" class="oculto">
+                <div class="container_maq color2">
+                    <div class="info_maq">
+                        <div class="div_nome_maq text_titulo">
+                            <span>${nomeMaquina}</span>
                         </div>
-                        <div class="div_dados_maq ">
-                            <span>Média de uso na sexta-feira:</span>
-                            <span id="span_media_${idMaquina}"></span>
+                        <div class="img_maquina">
+                            <img src="${imgMaquina}" class="ajustar_img_maquina">
+                        </div>
+                        <div class="dados_maq">
+                            <div class="div_categoria_maq ">
+                                <span>Categoria: ${categoriaMaquina}</span>
+                            </div>
+                            <div class="div_dados_maq ">
+                                <span>Mapeamento: ${mapeamentoMaquina}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="index_maq">
+                        <div class="container_grafico">
+                            <div class="grafico_maq">
+                                <canvas id="grafico_${idMaquina}"></canvas>
+                            </div>
+                        </div>
+                        <div class="container_valor">
+                            <div class="div_valor ">
+                                <span>Tempo ativo:</span>
+                                <span id="tempo_ativo_${idMaquina}" class="green">00:00:00</span>
+                            </div>
+                            <div class="div_valor ">
+                                <span>Tempo inativo:</span>
+                                <span id="tempo_inativo_${idMaquina}" class="green">00:00:00</span>
+                            </div>
+                            <div class="div_valor ">
+                                <span>Demanda da máquina:</span>
+                                <span id="span_demanda_${idMaquina}" class="green">Baixa</span>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="index_maq">
-                    <div class="container_grafico">
-                        <div class="grafico_maq">
-                            <canvas id="grafico_${idMaquina}"></canvas>
-                        </div>
-                    </div>
-                    <div class="container_valor">
-                        <div class="div_valor ">
-                            <span>Tempo ativo:</span>
-                            <span id="total_usos_${idMaquina}" class="green">Sem registro</span>
-                        </div>
-                        <div class="div_valor ">
-                            <span>Tempo inativo:</span>
-                            <span id="span_demanda_${idMaquina}" class="green">Sem registro</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </main>`
+            </main>`
     }
-
 }
 
 function mostrarMaquinas() {
@@ -172,8 +208,6 @@ function mostrarMaquinas() {
 
         if (idMaquina == idMaquinaExibir) {
             divMaquina.classList.remove('oculto');
-            obterInatividade(idMaquina);
-            obterMediaDia(idMaquina);
         } else {
             divMaquina.classList.add('oculto');
         }
@@ -181,6 +215,7 @@ function mostrarMaquinas() {
 }
 
 function obterUltimasCapturas() {
+    ultimasCapturas.splice(0, ultimasCapturas.length)
     fetch("/maquinas/obterUltimasCapturas", {
         method: "GET",
         headers: {
@@ -189,7 +224,11 @@ function obterUltimasCapturas() {
     }).then(function (resposta) {
         if (resposta.ok) {
             resposta.json().then(json => {
-                ultimasCapturas = json
+                for (let index = 0; index < json.length; index++) {
+                    if (json[index].nome != 'Desativado') {
+                        ultimasCapturas.push(json[index])
+                    }
+                }
                 console.log("Últimas Capturas:", ultimasCapturas);
                 atualizarTempo()
             });
@@ -197,62 +236,6 @@ function obterUltimasCapturas() {
             console.log("Houve um erro ao tentar obter as capturas!");
 
             resposta.text().then(texto => {
-                console.error(texto);
-            });
-        }
-    }).catch(function (erro) {
-        console.log("Erro na requisição:", erro);
-    });
-}
-
-function obterInatividade(id) {
-    fetch(`/informacoesDash/obterInatividade/${id}`, {
-        method: "GET",
-        headers: {
-            "Content-Type": "application/json"
-        }
-    }).then(function (resposta) {
-        if (resposta.status === 404) {
-            console.log("Máquina não encontrada (404)");
-        } else if (resposta.ok) {
-            resposta.json().then(function(resultado) {
-                const tempoAtivoElement = document.getElementById(`span_demanda_${id}`);
-                const totalUsosElement = document.getElementById(`total_usos_${id}`);
-                
-                tempoAtivoElement.textContent = `${resultado[0].tempo_ativo_minutos} minutos e ${resultado[0].tempo_ativo_segundos_restantes} segundos`;
-                totalUsosElement.textContent = `${resultado[0].tempo_inativo_minutos} minutos e ${resultado[0].tempo_inativo_segundos_restantes} segundos`;
-            });
-        } else {
-            console.log("Houve um erro ao tentar obter as capturas!");
-
-            resposta.text().then(function(texto) {
-                console.error(texto);
-            });
-        }
-    }).catch(function (erro) {
-        console.log("Erro na requisição:", erro);
-    });
-}
-
-function obterMediaDia(id) {
-    fetch(`/informacoesDash/obterMediaDia/${id}`, {
-        method: "GET",
-        headers: {
-            "Content-Type": "application/json"
-        }
-    }).then(function (resposta) {
-        if (resposta.status === 404) {
-            console.log("Máquina não encontrada (404)");
-        } else if (resposta.ok) {
-            resposta.json().then(function(resultado) {
-                const span = document.getElementById(`span_media_${id}`);
-                span.innerHTML = resultado[0].media_usos;
-                console.log(resultado[0].media_usos);
-            });
-        } else {
-            console.log("Houve um erro ao tentar obter as capturas!");
-
-            resposta.text().then(function(texto) {
                 console.error(texto);
             });
         }

@@ -7,8 +7,8 @@ function carregarCarrocel() {
     </div>`
 
     for (let index = 0; index < maquinas.length; index++) {
-        const idMaquina = maquinas[index].idAparelho
         const nomeMaquina = maquinas[index].nome
+        const idMaquina = maquinas[index].idAparelho
         let NomeMaquinaFormatado = nomeMaquina
 
         if (nomeMaquina.length > 15) {

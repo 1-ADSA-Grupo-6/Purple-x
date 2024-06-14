@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Remover Máquina</title>
+    <link rel="shortcut icon" type="imagex/png" href="../assets/SiteInstitucional/icon.png">
+    <title>Gerenciar Máquinas</title>
     <link rel="stylesheet" href="../css/removerMaquina.css">
 </head>
 
@@ -14,7 +15,7 @@
         <a href="./dashboard.html">
             <img src="../assets/addMaquina/voltar.png" alt="Voltar">
         </a>
-        <div class="titulo">Remover Máquinas da Dashboard</div>
+        <div class="titulo">Gerenciar Máquinas</div>
         <div class="adicionar-maquina">
             <span>Adicionar Máquina</span>
             <button onclick="abrirperk1Modal()">+</button>
@@ -25,9 +26,6 @@
         <div class="container_legenda">
             <div class="div_info_maquina">
                 <span>Máquina</span>
-            </div>
-            <div class="div_estatistica_maquina">
-                <span>Nome do Aparelho</span>
             </div>
             <div class="div_estatistica_maquina">
                 <span>Categoria</span>
@@ -41,163 +39,253 @@
         </div>
 
         <!-- Exemplos de itens na lista -->
-        <div class="container_item">
-            <div class="div_info_maquina">
-                <span>Máquina 1</span>
-            </div>
-            <div class="div_estatistica_maquina">
-                <span>Nome 1</span>
-            </div>
-            <div class="div_estatistica_maquina">
-                <span>Categoria 1</span>
-            </div>
-            <div class="div_estatistica_maquina">
-                <button onclick="abrirRenomearModal('Máquina 1')">Renomear</button>
-            </div>
-            <div class="div_acao_maquina">
-                <button onclick="removerMaquina('Máquina 1')">Remover</button>
+        <div id="container_itens" class="container_item">
+        </div>
+
+        <!-- Modal Renomear -->
+        <div id="renomearModal" class="meu-modal">
+            <div class="modal-conteudo">
+                <span class="fechar" onclick="fecharRenomearModal()">&times;</span>
+                <p>Renomear Máquina</p>
+                <input type="text" id="novoNomeMaquina" placeholder="Novo nome da máquina">
+                <button onclick="renomearMaquina()">Renomear</button>
             </div>
         </div>
 
-        <div class="container_item">
-            <div class="div_info_maquina">
-                <span>Máquina 2</span>
-            </div>
-            <div class="div_estatistica_maquina">
-                <span>Nome 2</span>
-            </div>
-            <div class="div_estatistica_maquina">
-                <span>Categoria 2</span>
-            </div>
-            <div class="div_estatistica_maquina">
-                <button onclick="abrirRenomearModal('Máquina 2')">Renomear</button>
-            </div>
-            <div class="div_acao_maquina">
-                <button onclick="removerMaquina('Máquina 2')">Remover</button>
+        <!-- Modal Adicionar Máquina -->
+        <div id="perk1" class="meu-modal">
+            <div class="modal-conteudo">
+                <span class="fechar" onclick="fecharperk1Modal()">&times;</span>
+                <p id="texto-explicativo">Vamos cadastrar sua máquina nova?</p>
+
+                <label for="input_nomeAparelho">Nome do Aparelho</label>
+                <input type="text" id="input_nomeAparelho">
+
+                <label for="input_urlAparelho">URL da imagem da máquina:</label>
+                <input type="text" id="input_urlAparelho">
+
+                <label for="input_categoria">Categoria:</label>
+                <select id="input_categoria">
+
+                    <option value="Peito">Peito</option>
+                    <option value="Braço">Braço</option>
+                    <option value="Costas">Costas</option>
+                    <option value="Perna">Pernas</option>
+                </select>
+
+                <label for="input_mapeamento">Insira a descrição do mapeamento do aparelho:</label>
+                <input type="text" id="input_mapeamento" maxlength="160">
+
+
+                <button onclick="cadastrarSensor()">Adicionar Máquina</button>
             </div>
         </div>
-
-        <div class="container_item">
-            <div class="div_info_maquina">
-                <span>Máquina 3</span>
-            </div>
-            <div class="div_estatistica_maquina">
-                <span>Nome 3</span>
-            </div>
-            <div class="div_estatistica_maquina">
-                <span>Categoria 3</span>
-            </div>
-            <div class="div_estatistica_maquina">
-                <button onclick="abrirRenomearModal('Máquina 3')">Renomear</button>
-            </div>
-            <div class="div_acao_maquina">
-                <button onclick="removerMaquina('Máquina 3')">Remover</button>
-            </div>
-        </div>
-
-        <div class="container_item">
-            <div class="div_info_maquina">
-                <span>Máquina 4</span>
-            </div>
-            <div class="div_estatistica_maquina">
-                <span>Nome 4</span>
-            </div>
-            <div class="div_estatistica_maquina">
-                <span>Categoria 4</span>
-            </div>
-            <div class="div_estatistica_maquina">
-                <button onclick="abrirRenomearModal('Máquina 4')">Renomear</button>
-            </div>
-            <div class="div_acao_maquina">
-                <button onclick="removerMaquina('Máquina 4')">Remover</button>
-            </div>
-        </div>
-
-        <div class="container_item">
-            <div class="div_info_maquina">
-                <span>Máquina 5</span>
-            </div>
-            <div class="div_estatistica_maquina">
-                <span>Nome 5</span>
-            </div>
-            <div class="div_estatistica_maquina">
-                <span>Categoria 5</span>
-            </div>
-            <div class="div_estatistica_maquina">
-                <button onclick="abrirRenomearModal('Máquina 5')">Renomear</button>
-            </div>
-            <div class="div_acao_maquina">
-                <button onclick="removerMaquina('Máquina 5')">Remover</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal Renomear -->
-    <div id="renomearModal" class="meu-modal">
-        <div class="modal-conteudo">
-            <span class="fechar" onclick="fecharRenomearModal()">&times;</span>
-            <p>Renomear Máquina</p>
-            <input type="text" id="novoNomeMaquina" placeholder="Novo nome da máquina">
-            <button onclick="renomearMaquina()">Renomear</button>
-        </div>
-    </div>
-
-    <!-- Modal Adicionar Máquina -->
-    <div id="perk1" class="meu-modal">
-        <div class="modal-conteudo">
-            <span class="fechar" onclick="fecharperk1Modal()">&times;</span>
-            <p id="texto-explicativo">Vamos cadastrar sua máquina nova?</p>
-
-            <label for="input_idAparelho">Nome do Aperelho</label>
-            <input type="text" id="input_idAparelho">
-
-            <label for="input_nomeAparelho">URL da imagem da máquina:</label>
-            <input type="text" id="input_nomeAparelho">
-
-            <label for="input_categoria">Categoria:</label>
-            <select id="input_categoria">
-                <option value="peito">Peito</option>
-                <option value="braco">Braço</option>
-                <option value="costas">Costas</option>
-                <option value="pernas">Pernas</option>
-            </select>
-
-            <button onclick="cadastrarAparelho()">Cadastrar Aparelho</button>
-        </div>
-    </div>
-
-    <script>
-        function removerMaquina(maquina) {
-            alert(`${maquina} removida!`);
-        }
-
-        function abrirRenomearModal(maquina) {
-            document.getElementById('renomearModal').style.display = 'block';
-            document.getElementById('novoNomeMaquina').dataset.maquina = maquina;
-        }
-
-        function fecharRenomearModal() {
-            document.getElementById('renomearModal').style.display = 'none';
-        }
-
-        function renomearMaquina() {
-            const maquina = document.getElementById('novoNomeMaquina').dataset.maquina;
-            const novoNome = document.getElementById('novoNomeMaquina').value;
-            alert(`Máquina ${maquina} renomeada para ${novoNome} com sucesso!`);
-            fecharRenomearModal();
-        }
-
-        function abrirperk1Modal() {
-            var modal = document.getElementById("perk1");
-            modal.style.display = "block";
-        }
-
-        function fecharperk1Modal() {
-            var modal = document.getElementById("perk1");
-            modal.style.display = "none";
-        }
-    </script>
-
 </body>
 
 </html>
+
+<script>
+    let maquinas = []
+    function obterMaquinas() {
+        fetch("/maquinas/obter", {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        }).then(function (resposta) {
+            if (resposta.ok) {
+                resposta.json().then(json => {
+                    for (let index = 0; index < json.length; index++) {
+                        if (json[index].nome != 'Desativado') {
+                            maquinas.push(json[index])
+                        }
+                    }
+                    console.log("máquinas:", maquinas);
+                    carregarMaquinas()
+                });
+            } else {
+                console.log("Houve um erro ao tentar obter as máquinas!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                });
+            }
+        }).catch(function (erro) {
+            console.log("Erro na requisição:", erro);
+        });
+    }
+
+    function carregarMaquinas() {
+        for (let index = 0; index < maquinas.length; index++) {
+            const nomeMaquina = maquinas[index].nome
+            const idMaquina = maquinas[index].idAparelho
+            const categoriaMaquina = maquinas[index].categoria
+
+
+            container_itens.innerHTML += `
+                <div id="item_${idMaquina}" class="div_info_maquina">
+                    <span>${nomeMaquina}</span>
+                </div>
+                <div id="item_categoria_${idMaquina}" class="div_estatistica_maquina">
+                    <span>${categoriaMaquina}</span>
+                </div>
+                <div id="item_renomear_${idMaquina}" class="div_estatistica_maquina">
+                    <button id="${idMaquina}" class="eventRenomear" onclick="abrirRenomearModal()">Renomear</button>
+                </div>
+                <div id="item_remover_${idMaquina}" class="div_acao_maquina">
+                    <button id="${idMaquina}" class="event" onclick="removerMaquina()">Remover</button>
+                </div>
+                `
+        }
+    }
+
+    function removerMaquina() {
+        const elemento = event.target.closest('.event');
+        const idMaquina = elemento.id;
+
+        fetch("/maquinas/removerMaquina", {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                idMaquina: idMaquina
+            })
+        }).then(function (resposta) {
+            if (resposta.ok) {
+                resposta.json().then(json => {
+                    console.log("Máquina removida com sucesso:", json);
+                    alert('Máquina removida com sucesso!')
+                    location.reload()
+                });
+            } else {
+                console.log("Houve um erro ao tentar remover a máquina!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                });
+            }
+        }).catch(function (erro) {
+            console.log("Erro na requisição:", erro);
+        });
+    }
+
+    let idMaquinaRenomear = 0
+    function abrirRenomearModal() {
+        document.getElementById('renomearModal').style.display = 'block';
+        const elemento = event.target.closest('.eventRenomear');
+        const idMaquina = elemento.id;
+        idMaquinaRenomear = idMaquina
+    }
+
+    function fecharRenomearModal() {
+        document.getElementById('renomearModal').style.display = 'none';
+    }
+
+    function renomearMaquina() {
+        const idMaquina = idMaquinaRenomear
+        const novoNome = novoNomeMaquina.value
+
+        fetch("/maquinas/renomearMaquina", {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                idMaquina: idMaquina,
+                novoNome: novoNome
+            })
+        }).then(function (resposta) {
+            if (resposta.ok) {
+                resposta.json().then(json => {
+                    console.log("Máquina renomeada com sucesso:", json);
+                    alert('Máquina renomeada com sucesso!')
+                    location.reload()
+                });
+            } else {
+                console.log("Houve um erro ao tentar renomear a máquina!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                });
+            }
+        }).catch(function (erro) {
+            console.log("Erro na requisição:", erro);
+        });
+        fecharRenomearModal();
+    }
+
+    function cadastrarSensor() {
+        const idMaquina = Number(maquinas[maquinas.length - 1].idAparelho) + 1
+        const nomeMaquina = input_nomeAparelho.value
+        const urlMaquina = input_urlAparelho.value
+        const categoriaMaquina = input_categoria.value
+        const mapeamentoMaquina = input_mapeamento.value
+
+        if (nomeMaquina != '' && nomeMaquina != ' ') {
+            fetch("/maquinas/inserirSensor", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    id: idMaquina
+                })
+            }).then(function (resposta) {
+                if (resposta.ok) {
+                    // console.log(resposta)
+                    cadastrarMaquina(idMaquina, nomeMaquina, urlMaquina, categoriaMaquina, mapeamentoMaquina)
+                } else {
+                    resposta.text().then(texto => {
+                        console.error(texto);
+                    });
+                }
+            }).catch(function (erro) {
+                console.log("Erro na requisição:", erro);
+            });
+        }
+        else {
+            alert('Preencha o campo nome da máquina')
+        }
+    }
+
+    function cadastrarMaquina(idMaquina, nomeMaquina, urlMaquina, categoriaMaquina, mapeamentoMaquina) {
+        fetch("/maquinas/inserirMaquina", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                id: idMaquina,
+                nome: nomeMaquina,
+                url: urlMaquina,
+                categoria: categoriaMaquina,
+                mapeamento: mapeamentoMaquina
+            })
+        }).then(function (resposta) {
+            if (resposta.ok) {
+                console.log(resposta)
+                alert('Máquina cadastrada com sucesso!')
+                location.reload()
+            } else {
+                resposta.text().then(texto => {
+                    console.error(texto);
+                });
+            }
+        }).catch(function (erro) {
+            console.log("Erro na requisição:", erro);
+        });
+    }
+
+    function abrirperk1Modal() {
+        var modal = document.getElementById("perk1");
+        modal.style.display = "block";
+    }
+
+    function fecharperk1Modal() {
+        var modal = document.getElementById("perk1");
+        modal.style.display = "none";
+    }
+</script>
+
+<body onload="obterMaquinas()">
