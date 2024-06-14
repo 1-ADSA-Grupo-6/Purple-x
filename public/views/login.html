@@ -72,9 +72,18 @@
 
 </html>
 
-<script src="../js/loginCadastro/mostrarSenha.js"></script>
+<!-- <script src="../js/loginCadastro/mostrarSenha.js"></script> -->
 <!-- <script src="../js/loginCadastro/formatacaoCampos.js"></script> -->
-<script src="../js/loginCadastro/login.js"></script>
-<script src="../js/loginCadastro/direcionador.js"></script>
+<!-- <script src="../js/loginCadastro/login.js"></script>
+<script src="../js/loginCadastro/direcionador.js"></script> -->
 
-<body onload="obterEmpresas()">
+<script>
+    function login() {
+    div_erro_login.innerHTML = `<span style="color: #007A33;">Login realizado com sucesso!</span>`
+                setTimeout(() => {
+                    window.location = "dashboard.html";
+                }, "600");
+}
+</script>
+
+<!-- <body onload="obterEmpresas()"> -->

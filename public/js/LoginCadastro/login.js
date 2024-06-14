@@ -23,56 +23,58 @@ function obterEmpresas() {
     });
 }
 
-function login() {
-    const emailVar = emailInput.value;
-    const senhaVar = senhaInput.value;
+// function login() {
+//     const emailVar = emailInput.value;
+//     const senhaVar = senhaInput.value;
 
-    if (emailVar == "" || senhaVar == "") {
-        div_erro_login.innerHTML = `
-        Preencha todos os campos para realizar o login!`
-        return false;
-    }
-    fetch("/usuarios/autenticar", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            emailServer: emailVar,
-            senhaServer: senhaVar,
-        })
-    }).then(function (resposta) {
-        if (resposta.ok) {
-            console.log(resposta);
+//     if (emailVar == "" || senhaVar == "") {
+//         div_erro_login.innerHTML = `
+//         Preencha todos os campos para realizar o login!`
+//         return false;
+//     }
+//     fetch("/usuarios/autenticar", {
+//         method: "POST",
+//         headers: {
+//             "Content-Type": "application/json"
+//         },
+//         body: JSON.stringify({
+//             emailServer: emailVar,
+//             senhaServer: senhaVar,
+//         })
+//     }).then(function (resposta) {
+//         if (resposta.ok) {
+//             console.log(resposta);
 
-            resposta.json().then(json => {
-                console.log('Usuario:', json);
-                sessionStorage.EMAIL_USUARIO = json.email;
-                sessionStorage.NOME_USUARIO = json.nomeCompleto;
-                sessionStorage.ID_USUARIO = json.idUsuario;
-                sessionStorage.ACADEMIA = json.fkAcademia;
-                div_erro_login.innerHTML = `<span style="color: #007A33;">Login realizado com sucesso!</span>`
-                setTimeout(() => {
-                    window.location = "dashboard.html";
-                }, "600");
-            });
+//             resposta.json().then(json => {
+//                 console.log('Usuario:', json);
+//                 sessionStorage.EMAIL_USUARIO = json.email;
+//                 sessionStorage.NOME_USUARIO = json.nomeCompleto;
+//                 sessionStorage.ID_USUARIO = json.idUsuario;
+//                 sessionStorage.ACADEMIA = json.fkAcademia;
+//                 div_erro_login.innerHTML = `<span style="color: #007A33;">Login realizado com sucesso!</span>`
+//                 setTimeout(() => {
+//                     window.location = "dashboard.html";
+//                 }, "600");
+//             });
 
-        } else {
+//         } else {
 
-            div_erro_login.innerHTML = `
-            As credenciais estão incorretas, tente novamente!`
+//             div_erro_login.innerHTML = `
+//             As credenciais estão incorretas, tente novamente!`
 
-            resposta.text().then(texto => {
-                console.error(texto);
-            });
-        }
+//             resposta.text().then(texto => {
+//                 console.error(texto);
+//             });
+//         }
 
-    }).catch(function (erro) {
-        console.log(erro);
-    })
+//     }).catch(function (erro) {
+//         console.log(erro);
+//     })
 
-    return false;
-}
+//     return false;
+// }
+
+
 
 // A FUNÇÃO ONLOAD FAZ COM QUE ESSE CÓDIGO SEJA CARREGADO PRIMEIRO NA PAGINA -- EVITA TER QUE CLICAR MULTIPLAS VEZES NO BOTAO 
 window.onload = function() {
