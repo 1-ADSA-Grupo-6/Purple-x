@@ -43,9 +43,10 @@ body {
     border: 1px solid #CCCCCC;
     background-color: #FFFFFF;
     width: 400px;
-    height: 950PX;
+    height: 700px;
     justify-content: center;
     border-radius: 30px;
+    margin-top: -4.7%;
 }
 
 #spanTitulo {
@@ -287,6 +288,6 @@ a {
     word-break: break-all;
     color: #ff2525;
     font-family: "Kumbh Sans", sans-serif;
-    font-size: 1.1vw;
+    font-size: 0.8vw;
     font-weight: 200;
 }

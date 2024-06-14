@@ -205,7 +205,8 @@
                             <input type="text" id="matriculados_input" class="input-com-imagem"
                                 placeholder="&nbsp;Quantidade de alunos matriculados&nbsp;">
                             <label class="label-imagem" id="imagemInputMatriculado">
-                                <img src="./assets/SiteInstitucional/advertencia-violeta.png" alt="Imagem" class="imagem-input">
+                                <img src="./assets/SiteInstitucional/advertencia-violeta.png" alt="Imagem"
+                                    class="imagem-input">
                             </label>
                             <p class="texto-pequeno" id="textoMatricula">Preencha esse campo para continuar</p>
                         </div>
@@ -214,7 +215,8 @@
                             <input type="text" id="mensalidade_input" class="input-com-imagem"
                                 placeholder="&nbsp;Valor da mensalidade&nbsp;">
                             <label class="label-imagem" id="imagemInputMensalidade">
-                                <img src="./assets/SiteInstitucional/advertencia-violeta.png" alt="Imagem" class="imagem-input">
+                                <img src="./assets/SiteInstitucional/advertencia-violeta.png" alt="Imagem"
+                                    class="imagem-input">
                             </label>
                             <p class="texto-pequeno" id="textoMensalidade">Preencha esse campo para continuar</p>
                         </div>
@@ -246,7 +248,7 @@
                         <h2>Nome:</h2>
                         <input class="input_contato" id="nome_input" type="search"><br>
                         <h2>Email:</h2>
-                        <input class="input_contato" id="email_input"  type="search"><br>
+                        <input class="input_contato" id="email_input" type="search"><br>
                         <h2>Assunto:</h2>
                         <input class="input_contato" id="assunto_input" type="search"><br>
                     </div>
@@ -260,7 +262,7 @@
             </div>
         </div>
     </main>
-    
+
     <footer>
         <div class="rodape_conteudo">
             <img class="logo_rodape" src="./assets/SiteInstitucional/logo.png">
@@ -295,23 +297,34 @@
                         <br>
                         <a href="#contato_id" class="button_rodape">Contato</a>
                         <br>
-                        <a href="views/lilac-X.html" class="button_rodape">Suporte Técnico</a>
+                        <a class="button_rodape" onclick="abrirSuporteTecnicoModal()">Suporte Técnico</a>
                         <br>
                     </span>
                 </div>
             </div>
         </div>
     </footer>
-    <div id="myModal" style="width: 100px;" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <div id="exibir"></div>
+
+    <div id="suporteTecnico" class="meu-modal">
+        <div class="modal-conteudo">
+            <span class="fechar" onclick="fecharSuporteTecnicoModal()">&times;</span>
+            <p class="texto-explicativo" id="texto-explicativo">Seja bem-vindo ao suporte técnico. <br>Insira suas credencias para acessar o lilac-X!</p>
+            <form id="suporteForm" action="views/lilac-X.html">
+                <div class="form-group">
+                    <label for="email" class="form-label">Email:</label>
+                    <input type="email" id="email" name="email" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label for="senha" class="form-label">Senha:</label>
+                    <input type="password" id="senha" name="senha" class="form-input" required>
+                </div>
+                <button type="submit" class="form-submit-button">Enviar</button>
+            </form>
         </div>
     </div>
 
-
-
 </body>
+
 </html>
 <script>
     function entrarContato() {
@@ -321,7 +334,7 @@
         var assuntoVar = assunto_input.value;
         var modal = document.getElementById("myModal");
         var btnFecharModal = document.getElementsByClassName("close")[0];
-        
+
         var textosAleatorios = [
             "Obrigado por entrar em contato!",
             "Recebemos sua mensagem. Entraremos em contato em breve.",
@@ -331,7 +344,7 @@
         ];
 
         var textoAleatorio = textosAleatorios[Math.floor(Math.random() * textosAleatorios.length)];
-        
+
         var exibirDiv = document.getElementById("exibir");
         exibirDiv.innerHTML = `<p>${textoAleatorio}</p>`;
 
@@ -347,12 +360,12 @@
                 descricaoServer: descricaoVar,
             }),
         })
-        .then(function (resposta) {
-            console.log("resposta: ", resposta);
-        })
-        .catch(function (resposta) {
-            console.log(`#ERRO: ${resposta}`);
-        });
+            .then(function (resposta) {
+                console.log("resposta: ", resposta);
+            })
+            .catch(function (resposta) {
+                console.log(`#ERRO: ${resposta}`);
+            });
 
         modal.style.display = "block";
 
@@ -360,7 +373,7 @@
             modal.style.display = "none";
         };
 
-        window.onclick = function(event) {
+        window.onclick = function (event) {
             if (event.target == modal) {
                 modal.style.display = "none";
             }
@@ -368,7 +381,35 @@
 
         return false;
     }
-</script>
 
+    function abrirSuporteTecnicoModal() {
+        var modal = document.getElementById("suporteTecnico");
+        modal.style.display = "block";
+        document.body.classList.add('modal-abrir');
+    }
+
+    function fecharSuporteTecnicoModal() {
+        var modal = document.getElementById("suporteTecnico");
+        modal.style.display = "none";
+        document.body.classList.remove('modal-abrir');
+    }
+
+    document.getElementById("suporteForm").addEventListener("submit", function (event) {
+        event.preventDefault(); // Evita que o formulário seja submetido normalmente
+
+        var email = document.getElementById("email").value;
+        var senha = document.getElementById("senha").value;
+
+        // Verificação das credenciais
+        if (email == "suporte@purplex.com.br" && senha == "lilacX#suporte") {
+            // Redirecionamento para a página desejada
+            window.location.href = "views/lilac-X.html";
+        } else {
+            // Caso as credenciais sejam incorretas, você pode exibir uma mensagem de erro
+            alert("Credenciais incorretas. Por favor, verifique seu email e senha.");
+        }
+    });
+
+</script>
 
 <script src="./js/SiteInstitucional/calculadora.js"></script>
